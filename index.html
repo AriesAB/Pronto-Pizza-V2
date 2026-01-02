@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pronto Pizza | Calgary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Syne for the funky Logo look, Anton for the bold headers, Permanent Marker for accents, Courier Prime for mono-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Syne:wght@400;700;800&family=Permanent+Marker&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pronto-cream': '#FEFBF6',
+              'pronto-orange': '#FF5A1F',
+              'pronto-navy': '#000000',
+              'pronto-blue': '#1A1B8C',
+            },
+            fontFamily: {
+              sans: ['Syne', 'sans-serif'],
+              display: ['Anton', 'sans-serif'],
+              marker: ['"Permanent Marker"', 'cursive'],
+              'mono-serif': ['"Courier Prime"', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        overflow-x: hidden; /* Prevent horizontal scroll from animations */
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #FF5A1F;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
