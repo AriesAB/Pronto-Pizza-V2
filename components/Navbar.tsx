@@ -38,10 +38,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-extrabold tracking-tighter text-pronto-blue font-sans"
           >
-            PRONTO
-            <span className="text-pronto-orange">.</span>
+            <img 
+              src="/assets/logo.png" 
+              alt="PRONZO" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </motion.div>
         </button>
 
