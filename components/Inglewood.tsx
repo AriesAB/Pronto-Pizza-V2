@@ -371,12 +371,33 @@ const Inglewood: React.FC = () => {
             />
           </motion.div>
           
+          {/* Rotating "Wheel" Text Animation */}
+          <div className="absolute bottom-[-45%] left-1/2 -translate-x-1/2 w-[180%] md:w-[150%] aspect-square pointer-events-none select-none">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute h-full flex items-start justify-center"
+                  style={{ transform: `rotate(${i * 30}deg)` }}
+                >
+                  <span className="text-5xl md:text-8xl font-display text-white/10 uppercase tracking-[0.2em] whitespace-nowrap">
+                    PRONTO • PIZZA • CALGARY • 
+                  </span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
           {/* Center main text - static with animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative z-10 text-center"
+            className="relative z-10 text-center mb-24"
           >
             <motion.h1 
               className="text-7xl md:text-[10rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
@@ -392,8 +413,6 @@ const Inglewood: React.FC = () => {
               INGLEWOOD
             </motion.h1>
           </motion.div>
-          
-          {/* Bottom marquee removed as requested */}
         </div>
         
         {/* Scroll indicator */}
