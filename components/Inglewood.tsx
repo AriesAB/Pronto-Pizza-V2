@@ -341,10 +341,10 @@ const Inglewood: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-white min-h-full w-full"
+      className="bg-white min-h-full w-full overflow-x-hidden"
     >
       {/* HERO SECTION WITH MARQUEE ANIMATION */}
-      <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
+      <div className="relative h-[85vh] w-full overflow-visible flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
@@ -371,23 +371,32 @@ const Inglewood: React.FC = () => {
             />
           </motion.div>
           
-          {/* Rotating "Wheel" Text Animation */}
-          <div className="absolute bottom-[-45%] left-1/2 -translate-x-1/2 w-[180%] md:w-[150%] aspect-square pointer-events-none select-none">
+          {/* Rotating "Wheel" Text Animation - showing top arc at bottom of hero */}
+          <div 
+            className="absolute left-1/2 pointer-events-none select-none"
+            style={{ 
+              bottom: '-60vh',
+              width: '140vh',
+              height: '140vh',
+              transform: 'translateX(-50%)'
+            }}
+          >
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 flex items-center justify-center"
+              className="relative w-full h-full"
             >
               {[...Array(12)].map((_, i) => (
-                <div
+                <span
                   key={i}
-                  className="absolute h-full flex items-start justify-center"
-                  style={{ transform: `rotate(${i * 30}deg)` }}
+                  className="absolute left-1/2 text-3xl md:text-6xl font-display text-white/20 uppercase tracking-[0.2em] whitespace-nowrap"
+                  style={{ 
+                    transform: `rotate(${i * 30}deg) translateY(-70vh)`,
+                    transformOrigin: '0 70vh'
+                  }}
                 >
-                  <span className="text-5xl md:text-8xl font-display text-white/10 uppercase tracking-[0.2em] whitespace-nowrap">
-                    PRONTO • PIZZA • CALGARY • 
-                  </span>
-                </div>
+                  PRONTO • PIZZA • CALGARY •
+                </span>
               ))}
             </motion.div>
           </div>
