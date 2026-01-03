@@ -357,14 +357,15 @@ const Inglewood: React.FC = () => {
         {/* Animated Text Layers */}
         <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none">
           
-          {/* Rotating "Wheel" Text Animation - SVG circle text at bottom center */}
+          {/* Rotating "Wheel" Text Animation - SVG circle text centered at bottom */}
           <motion.div 
-            className="absolute left-1/2 pointer-events-none select-none"
+            className="absolute left-0 right-0 mx-auto pointer-events-none select-none flex justify-center"
             style={{ 
-              bottom: '-350px',
+              bottom: '-318px',
               width: '700px',
               height: '700px',
-              transform: 'translateX(-50%)'
+              left: '50%',
+              marginLeft: '-350px'
             }}
             animate={{ rotate: 360 }}
             transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
