@@ -354,22 +354,8 @@ const Inglewood: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         
-        {/* Animated Marquee Text Layers */}
+        {/* Animated Text Layers */}
         <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none">
-          {/* Top marquee - scrolling left */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="absolute top-[15%]"
-          >
-            <MarqueeText 
-              text="PIZZA" 
-              direction="left" 
-              speed={25}
-              className="text-[8rem] md:text-[12rem] font-display text-white/20 leading-none"
-            />
-          </motion.div>
           
           {/* Rotating "Wheel" Text Animation - SVG circle text at bottom */}
           <motion.div 
