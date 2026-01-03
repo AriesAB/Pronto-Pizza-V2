@@ -371,35 +371,28 @@ const Inglewood: React.FC = () => {
             />
           </motion.div>
           
-          {/* Rotating "Wheel" Text Animation - showing top arc at bottom of hero */}
-          <div 
-            className="absolute left-1/2 pointer-events-none select-none"
-            style={{ 
-              bottom: '-60vh',
-              width: '140vh',
-              height: '140vh',
-              transform: 'translateX(-50%)'
-            }}
+          {/* Rotating "Wheel" Text Animation - SVG circle text at bottom */}
+          <motion.div 
+            className="absolute bottom-0 left-1/2 w-[800px] h-[400px] pointer-events-none select-none"
+            style={{ transform: 'translateX(-50%) translateY(50%)' }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-              className="relative w-full h-full"
-            >
-              {[...Array(12)].map((_, i) => (
-                <span
-                  key={i}
-                  className="absolute left-1/2 text-3xl md:text-6xl font-display text-white/20 uppercase tracking-[0.2em] whitespace-nowrap"
-                  style={{ 
-                    transform: `rotate(${i * 30}deg) translateY(-70vh)`,
-                    transformOrigin: '0 70vh'
-                  }}
-                >
-                  PRONTO • PIZZA • CALGARY •
-                </span>
-              ))}
-            </motion.div>
-          </div>
+            <svg viewBox="0 0 800 800" className="w-full h-[800px]">
+              <defs>
+                <path
+                  id="wheelTextPath"
+                  d="M 400,400 m -350,0 a 350,350 0 1,1 700,0 a 350,350 0 1,1 -700,0"
+                  fill="none"
+                />
+              </defs>
+              <text className="fill-white/20 text-[28px] uppercase tracking-[0.5em]" style={{ fontFamily: 'var(--font-display)' }}>
+                <textPath href="#wheelTextPath" startOffset="0%">
+                  PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY •
+                </textPath>
+              </text>
+            </svg>
+          </motion.div>
 
           {/* Center main text - static with animation */}
           <motion.div
