@@ -308,6 +308,33 @@ const MenuItem = ({ item }: { item: MenuItemData }) => {
   );
 };
 
+const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?: number; className?: string }> = ({ 
+  text, 
+  direction = 'left', 
+  speed = 20,
+  className = ''
+}) => {
+  const repeatedText = Array(10).fill(text).join(' \u2022 ');
+  
+  return (
+    <div className={`overflow-hidden whitespace-nowrap ${className}`}>
+      <motion.div
+        initial={{ x: direction === 'left' ? '0%' : '-50%' }}
+        animate={{ x: direction === 'left' ? '-50%' : '0%' }}
+        transition={{
+          duration: speed,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
+        className="inline-block"
+      >
+        <span className="inline-block pr-8">{repeatedText}</span>
+        <span className="inline-block pr-8">{repeatedText}</span>
+      </motion.div>
+    </div>
+  );
+};
+
 const Inglewood: React.FC = () => {
   return (
     <motion.div 
@@ -316,7 +343,7 @@ const Inglewood: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-full w-full"
     >
-      {/* HERO SECTION - UNTOUCHED */}
+      {/* HERO SECTION WITH MARQUEE ANIMATION */}
       <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -325,7 +352,88 @@ const Inglewood: React.FC = () => {
             filter: 'contrast(1.2) brightness(0.9) saturate(1.1)'
           }}
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
+        
+        {/* Animated Marquee Text Layers */}
+        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none">
+          {/* Top marquee - scrolling left */}
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="absolute top-[15%]"
+          >
+            <MarqueeText 
+              text="PIZZA" 
+              direction="left" 
+              speed={25}
+              className="text-[8rem] md:text-[12rem] font-display text-white/20 leading-none"
+            />
+          </motion.div>
+          
+          {/* Center main text - static with animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="relative z-10 text-center"
+          >
+            <motion.h1 
+              className="text-7xl md:text-[10rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+              animate={{ 
+                textShadow: [
+                  '0 0 20px rgba(255,90,31,0)',
+                  '0 0 60px rgba(255,90,31,0.5)',
+                  '0 0 20px rgba(255,90,31,0)'
+                ]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              INGLEWOOD
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="text-2xl md:text-4xl font-marker text-pronto-orange mt-4 rotate-[-2deg]"
+            >
+              Calgary's Finest Slice
+            </motion.p>
+          </motion.div>
+          
+          {/* Bottom marquee - scrolling right */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="absolute bottom-[15%]"
+          >
+            <MarqueeText 
+              text="FRESH \u2022 HANDMADE \u2022 AUTHENTIC" 
+              direction="right" 
+              speed={30}
+              className="text-4xl md:text-6xl font-mono-serif font-bold text-white/30 leading-none uppercase tracking-widest"
+            />
+          </motion.div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{ 
+            opacity: { delay: 2, duration: 1 },
+            y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
+          }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80"
+        >
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll for Menu</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </div>
+        </motion.div>
       </div>
 
       {/* NEW MENU LAYOUT - SINGLE COLUMN CENTERED */}
