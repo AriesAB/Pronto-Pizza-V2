@@ -391,30 +391,9 @@ const Inglewood: React.FC = () => {
             >
               INGLEWOOD
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="text-2xl md:text-4xl font-marker text-pronto-orange mt-4 rotate-[-2deg]"
-            >
-              Calgary's Finest Slice
-            </motion.p>
           </motion.div>
           
-          {/* Bottom marquee - scrolling right */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="absolute bottom-[15%]"
-          >
-            <MarqueeText 
-              text="FRESH \u2022 HANDMADE \u2022 AUTHENTIC" 
-              direction="right" 
-              speed={30}
-              className="text-4xl md:text-6xl font-mono-serif font-bold text-white/30 leading-none uppercase tracking-widest"
-            />
-          </motion.div>
+          {/* Bottom marquee removed as requested */}
         </div>
         
         {/* Scroll indicator */}
