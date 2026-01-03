@@ -361,25 +361,25 @@ const Inglewood: React.FC = () => {
           <motion.div 
             className="absolute left-1/2 pointer-events-none select-none"
             style={{ 
-              bottom: '-200px',
-              width: '500px',
-              height: '500px',
+              bottom: '-350px',
+              width: '700px',
+              height: '700px',
               transform: 'translateX(-50%)'
             }}
             animate={{ rotate: 360 }}
             transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
           >
-            <svg viewBox="0 0 500 500" className="w-full h-full">
+            <svg viewBox="0 0 700 700" className="w-full h-full">
               <defs>
                 <path
                   id="wheelTextPath"
-                  d="M 250,250 m -220,0 a 220,220 0 1,1 440,0 a 220,220 0 1,1 -440,0"
+                  d="M 350,350 m -320,0 a 320,320 0 1,1 640,0 a 320,320 0 1,1 -640,0"
                   fill="none"
                 />
               </defs>
-              <text className="fill-white/60 text-[22px] uppercase tracking-[0.4em] font-bold" style={{ fontFamily: 'var(--font-display)' }}>
+              <text className="fill-white/60 text-[26px] uppercase tracking-[0.5em] font-bold" style={{ fontFamily: 'var(--font-display)' }}>
                 <textPath href="#wheelTextPath" startOffset="0%">
-                  PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY • PRONTO • PIZZA •
+                  PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY •
                 </textPath>
               </text>
             </svg>
