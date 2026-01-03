@@ -354,38 +354,9 @@ const Inglewood: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         
-        {/* Animated Text Layers */}
+        {/* Text Layers */}
         <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none">
           
-          {/* Rotating "Wheel" Text Animation - SVG circle text centered at bottom */}
-          <motion.div 
-            className="absolute left-0 right-0 mx-auto pointer-events-none select-none flex justify-center"
-            style={{ 
-              bottom: '-318px',
-              width: '700px',
-              height: '700px',
-              left: '50%',
-              marginLeft: '-350px'
-            }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          >
-            <svg viewBox="0 0 700 700" className="w-full h-full">
-              <defs>
-                <path
-                  id="wheelTextPath"
-                  d="M 350,350 m -320,0 a 320,320 0 1,1 640,0 a 320,320 0 1,1 -640,0"
-                  fill="none"
-                />
-              </defs>
-              <text className="fill-white/60 text-[26px] uppercase tracking-[0.5em] font-bold" style={{ fontFamily: 'var(--font-display)' }}>
-                <textPath href="#wheelTextPath" startOffset="0%">
-                  PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY •
-                </textPath>
-              </text>
-            </svg>
-          </motion.div>
-
           {/* Center main text - static with animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
