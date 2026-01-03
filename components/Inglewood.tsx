@@ -343,26 +343,50 @@ const Inglewood: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
-      {/* HERO SECTION WITH MARQUEE ANIMATION */}
-      <div className="relative h-[85vh] w-full overflow-visible flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
+      {/* HERO SECTION WITH LAYERED TEXT EFFECT */}
+      <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
+        
+        {/* INGLEWOOD text BEHIND the image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.5, y: 100 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="absolute inset-0 flex items-center justify-center z-0"
+        >
+          <motion.h1 
+            className="text-[6rem] md:text-[14rem] lg:text-[18rem] font-display text-white/30 tracking-tight leading-none select-none"
+            animate={{ 
+              opacity: [0.2, 0.35, 0.2],
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            INGLEWOOD
+          </motion.h1>
+        </motion.div>
+        
+        {/* Pizza image layer - ON TOP of text */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="absolute inset-0 bg-cover bg-center z-10"
           style={{ 
             backgroundImage: 'url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop")',
-            filter: 'contrast(1.2) brightness(0.9) saturate(1.1)'
+            filter: 'contrast(1.2) brightness(0.9) saturate(1.1)',
+            mixBlendMode: 'multiply'
           }}
         />
-        <div className="absolute inset-0 bg-black/40" />
         
-        {/* Text Layers */}
-        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none">
-          
-          {/* Center main text - static with animation */}
+        {/* Dark overlay for better contrast */}
+        <div className="absolute inset-0 bg-black/30 z-20" />
+        
+        {/* Foreground INGLEWOOD text */}
+        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none z-30">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative z-10 text-center mb-24"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="relative text-center"
           >
             <motion.h1 
               className="text-7xl md:text-[10rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
