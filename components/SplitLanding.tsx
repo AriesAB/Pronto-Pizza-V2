@@ -141,7 +141,7 @@ const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
             >
               <button 
                 onClick={(e) => { e.stopPropagation(); onNavigate('downtown'); }}
-                className="mt-16 bg-pronto-navy text-pronto-cream px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 mx-auto hover:bg-white hover:text-pronto-navy transition-colors"
+                className="mt-16 bg-pronto-blue text-pronto-cream px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 mx-auto hover:bg-white hover:text-pronto-blue transition-colors"
               >
                   Book Catering <ArrowUpRight />
                </button>
