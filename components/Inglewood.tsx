@@ -357,24 +357,29 @@ const Inglewood: React.FC = () => {
         {/* Animated Text Layers */}
         <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none">
           
-          {/* Rotating "Wheel" Text Animation - SVG circle text at bottom */}
+          {/* Rotating "Wheel" Text Animation - SVG circle text at bottom center */}
           <motion.div 
-            className="absolute bottom-0 left-1/2 w-[800px] h-[400px] pointer-events-none select-none"
-            style={{ transform: 'translateX(-50%) translateY(50%)' }}
+            className="absolute left-1/2 pointer-events-none select-none"
+            style={{ 
+              bottom: '-200px',
+              width: '500px',
+              height: '500px',
+              transform: 'translateX(-50%)'
+            }}
             animate={{ rotate: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
           >
-            <svg viewBox="0 0 800 800" className="w-full h-[800px]">
+            <svg viewBox="0 0 500 500" className="w-full h-full">
               <defs>
                 <path
                   id="wheelTextPath"
-                  d="M 400,400 m -350,0 a 350,350 0 1,1 700,0 a 350,350 0 1,1 -700,0"
+                  d="M 250,250 m -220,0 a 220,220 0 1,1 440,0 a 220,220 0 1,1 -440,0"
                   fill="none"
                 />
               </defs>
-              <text className="fill-white/20 text-[28px] uppercase tracking-[0.5em]" style={{ fontFamily: 'var(--font-display)' }}>
+              <text className="fill-white/60 text-[22px] uppercase tracking-[0.4em] font-bold" style={{ fontFamily: 'var(--font-display)' }}>
                 <textPath href="#wheelTextPath" startOffset="0%">
-                  PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY •
+                  PRONTO • PIZZA • CALGARY • PRONTO • PIZZA • CALGARY • PRONTO • PIZZA •
                 </textPath>
               </text>
             </svg>
