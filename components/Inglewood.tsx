@@ -326,18 +326,6 @@ const Inglewood: React.FC = () => {
           }}
         />
         <div className="absolute inset-0 bg-black/30" />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative z-10"
-        >
-          <img 
-            src="/assets/logo.png" 
-            alt="PRONZO" 
-            className="w-64 md:w-[500px] h-auto drop-shadow-2xl"
-          />
-        </motion.div>
       </div>
 
       {/* NEW MENU LAYOUT - SINGLE COLUMN CENTERED */}
