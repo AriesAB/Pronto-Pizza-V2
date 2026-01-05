@@ -235,38 +235,59 @@ const About: React.FC = () => {
             </div>
 
             <div className="order-1 lg:order-2 relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
-                animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="absolute -inset-4 bg-gradient-to-br from-pronto-orange/20 to-pronto-blue/20 rounded-3xl blur-2xl" />
+              <div className="relative">
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative rounded-2xl overflow-hidden"
+                  initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
+                  animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                  transition={{ duration: 0.8 }}
+                  className="relative z-10"
                 >
-                  <img
-                    src="/attached_assets/IMG_6863_1767575536154.JPG"
-                    alt="Enjoying PRONTO Pizza"
-                    className="w-full aspect-[4/5] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
+                  <div className="absolute -inset-4 bg-gradient-to-br from-pronto-orange/20 to-pronto-blue/20 rounded-3xl blur-2xl" />
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={storyInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.5 }}
-                    className="absolute bottom-6 left-6 right-6"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="relative rounded-2xl overflow-hidden"
                   >
-                    <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                      <p className="text-pronto-orange font-mono text-sm uppercase tracking-wider">Est. 2016</p>
-                      <p className="text-pronto-cream font-mono-serif text-xl mt-1">8+ Years of Love</p>
-                    </div>
+                    <img
+                      src="/attached_assets/IMG_6863_1767575536154.JPG"
+                      alt="Enjoying PRONTO Pizza"
+                      className="w-full aspect-[4/5] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={storyInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ delay: 0.5 }}
+                      className="absolute bottom-6 left-6 right-6"
+                    >
+                      <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                        <p className="text-pronto-orange font-mono text-sm uppercase tracking-wider">Est. 2016</p>
+                        <p className="text-pronto-cream font-mono-serif text-xl mt-1">8+ Years of Love</p>
+                      </div>
+                    </motion.div>
                   </motion.div>
                 </motion.div>
-              </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 40, rotate: -5 }}
+                  animate={storyInView ? { opacity: 1, x: 0, rotate: 6 } : {}}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="absolute -bottom-12 -right-8 w-40 md:w-52 z-20"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.08, rotate: 0 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="rounded-xl overflow-hidden shadow-2xl border-4 border-[#0a0a0a]"
+                  >
+                    <img
+                      src="/attached_assets/IMG_6864_1767587166175.JPG"
+                      alt="Pepperoni pizza spread"
+                      className="w-full aspect-square object-cover"
+                    />
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -328,30 +349,55 @@ const About: React.FC = () => {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-8">
-            <RevealText delay={0.4}>
-              <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed text-center">
-                Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
-              </p>
-            </RevealText>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-5 gap-8 items-center">
+              <div className="lg:col-span-3 space-y-8">
+                <RevealText delay={0.4}>
+                  <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
+                    Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
+                  </p>
+                </RevealText>
 
-            <RevealText delay={0.5}>
-              <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed text-center">
-                In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
-              </p>
-            </RevealText>
+                <RevealText delay={0.5}>
+                  <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
+                    In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
+                  </p>
+                </RevealText>
 
-            <RevealText delay={0.6}>
-              <div className="flex justify-center pt-4">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-pronto-orange/10 border border-pronto-orange/30 rounded-full"
-                >
-                  <MapPin className="w-5 h-5 text-pronto-orange" />
-                  <span className="text-pronto-cream font-mono">1139 9th Ave SE, Calgary, Alberta</span>
-                </motion.div>
+                <RevealText delay={0.6}>
+                  <div className="flex justify-start pt-4">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-pronto-orange/10 border border-pronto-orange/30 rounded-full"
+                    >
+                      <MapPin className="w-5 h-5 text-pronto-orange" />
+                      <span className="text-pronto-cream font-mono">1139 9th Ave SE, Calgary, Alberta</span>
+                    </motion.div>
+                  </div>
+                </RevealText>
               </div>
-            </RevealText>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
+                animate={teamInView ? { opacity: 1, scale: 1, rotate: 3 } : {}}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="lg:col-span-2 relative"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-br from-pronto-blue/20 to-pronto-orange/20 rounded-3xl blur-2xl" />
+                <motion.div
+                  whileHover={{ scale: 1.02, rotate: 0 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative rounded-2xl overflow-hidden shadow-2xl"
+                >
+                  <img
+                    src="/attached_assets/IMG_6900_1767587161342.JPG"
+                    alt="Pizza with friends at PRONTO"
+                    className="w-full aspect-[4/5] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -371,7 +417,7 @@ const About: React.FC = () => {
           />
         </div>
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.span
             initial={{ opacity: 0 }}
             animate={valuesInView ? { opacity: 1 } : {}}
@@ -380,35 +426,63 @@ const About: React.FC = () => {
             03
           </motion.span>
 
-          <div className="text-center">
-            <RevealText>
-              <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-12">
-                What We're <span className="text-pronto-orange">About</span>
-              </h2>
-            </RevealText>
+          <div className="grid lg:grid-cols-3 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30, rotate: 3 }}
+              animate={valuesInView ? { opacity: 1, x: 0, rotate: -3 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:block relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-br from-pronto-orange/20 to-pronto-cream/10 rounded-3xl blur-2xl" />
+              <motion.div
+                whileHover={{ scale: 1.03, rotate: 0 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="relative rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="/attached_assets/IMG_6901_1767587167996.JPG"
+                  alt="Tiramisu dessert"
+                  className="w-full aspect-[3/4] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-pronto-cream font-mono-serif text-lg bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2 text-center">
+                    Homemade Tiramisu
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
 
-            <RevealText delay={0.2}>
-              <p className="text-xl md:text-2xl text-pronto-cream/80 font-mono-serif leading-relaxed">
-                At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community.
-              </p>
-            </RevealText>
+            <div className="lg:col-span-2 text-center lg:text-left">
+              <RevealText>
+                <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-12">
+                  What We're <span className="text-pronto-orange">About</span>
+                </h2>
+              </RevealText>
 
-            <RevealText delay={0.3}>
-              <div className="mt-12 flex flex-wrap justify-center gap-4">
-                {["Authentic", "Quality", "Family", "Community"].map((value, i) => (
-                  <motion.span
-                    key={value}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={valuesInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 107, 53, 0.2)" }}
-                    className="px-6 py-3 rounded-full border border-pronto-cream/20 text-pronto-cream font-mono text-sm uppercase tracking-wider transition-colors"
-                  >
-                    {value}
-                  </motion.span>
-                ))}
-              </div>
-            </RevealText>
+              <RevealText delay={0.2}>
+                <p className="text-xl md:text-2xl text-pronto-cream/80 font-mono-serif leading-relaxed">
+                  At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community.
+                </p>
+              </RevealText>
+
+              <RevealText delay={0.3}>
+                <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
+                  {["Authentic", "Quality", "Family", "Community"].map((value, i) => (
+                    <motion.span
+                      key={value}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={valuesInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: 0.4 + i * 0.1 }}
+                      whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 107, 53, 0.2)" }}
+                      className="px-6 py-3 rounded-full border border-pronto-cream/20 text-pronto-cream font-mono text-sm uppercase tracking-wider transition-colors"
+                    >
+                      {value}
+                    </motion.span>
+                  ))}
+                </div>
+              </RevealText>
+            </div>
           </div>
         </div>
       </section>
