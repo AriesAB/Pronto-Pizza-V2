@@ -429,7 +429,7 @@ const Inglewood: React.FC = () => {
                        y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                        rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                      }}
-                     className="absolute -right-4 md:-right-16 top-0 w-16 h-16 md:w-24 md:h-24 object-contain z-10 pointer-events-none hidden md:block"
+                     className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
                    />
                  )}
                  {section.id === 'bar' && (
@@ -446,7 +446,7 @@ const Inglewood: React.FC = () => {
                        y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
                        rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
                      }}
-                     className="absolute -left-4 md:-left-16 top-0 w-16 h-16 md:w-24 md:h-24 object-contain z-10 pointer-events-none hidden md:block"
+                     className="absolute -left-12 md:-left-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
                    />
                  )}
                  {section.id === 'cocktail' && (
@@ -463,7 +463,7 @@ const Inglewood: React.FC = () => {
                        y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                        rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
                      }}
-                     className="absolute -right-4 md:-right-16 top-0 w-16 h-16 md:w-24 md:h-24 object-contain z-10 pointer-events-none hidden md:block"
+                     className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
                    />
                  )}
 
