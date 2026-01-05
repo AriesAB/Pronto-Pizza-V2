@@ -355,6 +355,13 @@ const Downtown: React.FC = () => {
         <div className="font-mono-serif text-xl text-white space-y-2">
            <p className="font-bold">605 5th Ave, SW</p>
            <p>403-993-9093</p>
+           
+           <div className="py-6 space-y-2">
+             <p className="text-pronto-orange font-bold uppercase tracking-wider">Hours of operation</p>
+             <p>On-site: Monday to Friday - 11 AM to 2 PM</p>
+             <p>Catering: Monday to Saturday - 9 AM to 8 PM</p>
+           </div>
+
            <p className="pt-4 text-pronto-orange font-bold">Contact us for your next event!</p>
         </div>
       </div>
