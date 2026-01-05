@@ -364,30 +364,30 @@ const Inglewood: React.FC = () => {
         {/* Scrolling PIZZA text rows - Noble Pie inspired */}
         <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none overflow-hidden">
           
-          {/* Row 1 - scrolling left */}
-          <motion.div
-            initial={{ x: '0%' }}
-            animate={{ x: '-50%' }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="flex whitespace-nowrap mb-4"
-          >
-            {[...Array(8)].map((_, i) => (
-              <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider">
-                PIZZA
-              </span>
-            ))}
-          </motion.div>
+          {/* Row 1 - scrolling left - continuous */}
+          <div className="overflow-hidden mb-4">
+            <motion.div
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+              className="flex whitespace-nowrap"
+            >
+              {[...Array(16)].map((_, i) => (
+                <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider flex-shrink-0">
+                  PIZZA
+                </span>
+              ))}
+            </motion.div>
+          </div>
           
           {/* Row 2 - scrolling right with main title */}
-          <div className="relative flex items-center justify-center py-8">
+          <div className="relative flex items-center justify-center py-8 overflow-hidden">
             <motion.div
-              initial={{ x: '-50%' }}
-              animate={{ x: '0%' }}
-              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+              animate={{ x: ['-50%', '0%'] }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
               className="absolute flex whitespace-nowrap"
             >
-              {[...Array(8)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/10 mx-8 tracking-wider">
+              {[...Array(16)].map((_, i) => (
+                <span key={i} className="text-5xl md:text-8xl font-display text-white/10 mx-8 tracking-wider flex-shrink-0">
                   FRESH • HOT • CRAFT •
                 </span>
               ))}
@@ -415,19 +415,20 @@ const Inglewood: React.FC = () => {
             </motion.h1>
           </div>
           
-          {/* Row 3 - scrolling left */}
-          <motion.div
-            initial={{ x: '-25%' }}
-            animate={{ x: '-75%' }}
-            transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-            className="flex whitespace-nowrap mt-4"
-          >
-            {[...Array(10)].map((_, i) => (
-              <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider">
-                SLICE
-              </span>
-            ))}
-          </motion.div>
+          {/* Row 3 - scrolling left - continuous */}
+          <div className="overflow-hidden mt-4">
+            <motion.div
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+              className="flex whitespace-nowrap"
+            >
+              {[...Array(20)].map((_, i) => (
+                <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider flex-shrink-0">
+                  SLICE
+                </span>
+              ))}
+            </motion.div>
+          </div>
           
         </div>
         
