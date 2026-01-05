@@ -21,10 +21,11 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const isInglewoodPage = currentPage === 'inglewood';
+  const hideOnScrollPages = ['inglewood', 'downtown', 'about'];
+  const shouldHideOnScroll = hideOnScrollPages.includes(currentPage);
 
   useEffect(() => {
-    if (!isInglewoodPage) {
+    if (!shouldHideOnScroll) {
       setIsVisible(true);
       return;
     }
@@ -49,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
     return () => {
       mainElement.removeEventListener('scroll', handleScroll);
     };
-  }, [isInglewoodPage, lastScrollY]);
+  }, [shouldHideOnScroll, lastScrollY]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -72,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
       className={`z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 ${
-        isInglewoodPage ? 'fixed top-0 left-0 right-0' : 'relative shrink-0'
+        shouldHideOnScroll ? 'fixed top-0 left-0 right-0' : 'relative shrink-0'
       }`}
     >
       <div className="flex justify-between items-center w-full">
