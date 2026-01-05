@@ -449,6 +449,55 @@ const Inglewood: React.FC = () => {
                      />
                    </>
                  )}
+                 {section.id === 'panini' && (
+                   <>
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_194824_1767581374349.png"
+                       alt="Panini halves"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5 },
+                         scale: { type: "spring", stiffness: 300 },
+                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_194832_1767581372425.png"
+                       alt="Panini"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.2 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
+                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -left-12 md:-left-40 top-[20rem] md:top-[28rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_194841_1767581370484.png"
+                       alt="Panini in bag"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.3 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.3 },
+                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-[40rem] md:top-[56rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                   </>
+                 )}
                  {section.id === 'pizza' && (
                    <>
                      <motion.img
