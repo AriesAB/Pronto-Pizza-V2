@@ -3,6 +3,63 @@ import { motion } from 'framer-motion';
 import { SectionType, Page } from '../types';
 import { ArrowUpRight } from 'lucide-react';
 
+const RotatingWheelText: React.FC = () => {
+  const textContent = "PIZZA • PASTA • PAGNOTTA • PIZZA • PASTA • PAGNOTTA • PIZZA • PASTA • PAGNOTTA • PIZZA • PASTA • PAGNOTTA • ";
+  
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div 
+        className="absolute left-1/2"
+        style={{
+          bottom: '-550px',
+          transform: 'translateX(-50%)',
+        }}
+      >
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          style={{
+            width: '1600px',
+            height: '1600px',
+          }}
+        >
+          <svg
+            width="1600"
+            height="1600"
+            viewBox="0 0 1600 1600"
+            className="overflow-visible"
+          >
+            <defs>
+              <path
+                id="textCirclePath"
+                d="M 800,800 m -700,0 a 700,700 0 1,1 1400,0 a 700,700 0 1,1 -1400,0"
+                fill="none"
+              />
+            </defs>
+            <text
+              fill="rgba(255,248,240,0.4)"
+              style={{ 
+                fontSize: '48px', 
+                letterSpacing: '0.3em',
+                fontFamily: 'var(--font-display, "Bebas Neue", sans-serif)',
+                fontWeight: 800,
+              }}
+            >
+              <textPath href="#textCirclePath" startOffset="0%">
+                {textContent}
+              </textPath>
+            </text>
+          </svg>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
 interface SplitLandingProps {
   onNavigate: (page: Page) => void;
 }
@@ -55,6 +112,9 @@ const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-pronto-navy/40 group-hover:bg-pronto-navy/20 transition-colors duration-500" />
+
+        {/* Rotating Wheel Text Animation */}
+        <RotatingWheelText />
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
