@@ -450,21 +450,38 @@ const Inglewood: React.FC = () => {
                    </>
                  )}
                  {section.id === 'pizza' && (
-                   <motion.img
-                     src="/attached_assets/Screenshot_2026-01-04_182854_1767580131370.png"
-                     alt="Pizza"
-                     initial={{ opacity: 0, scale: 0 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
-                     viewport={{ once: true }}
-                     animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-                     transition={{
-                       opacity: { duration: 0.5 },
-                       scale: { type: "spring", stiffness: 300 },
-                       y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                       rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                     }}
-                     className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                   />
+                   <>
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_194052_1767580964963.png"
+                       alt="Whole Pizza"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5 },
+                         scale: { type: "spring", stiffness: 300 },
+                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_194129_1767580962260.png"
+                       alt="Pizza Box"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.2 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
+                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -left-12 md:-left-40 top-48 md:top-72 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                   </>
                  )}
                  {section.id === 'bar' && (
                    <motion.img
