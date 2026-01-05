@@ -270,15 +270,15 @@ const About: React.FC = () => {
       {/* THE ORIGIN STORY */}
       <div 
         ref={storyRef}
-        className="relative py-10 md:py-14 px-6 bg-black overflow-hidden"
+        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
       >
         <motion.div
           initial={{ x: "-100%" }}
           animate={storyInView ? { x: "100%" } : {}}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-4 left-0 whitespace-nowrap pointer-events-none"
+          className="absolute top-10 left-0 whitespace-nowrap pointer-events-none"
         >
-          <span className="text-[6rem] md:text-[10rem] font-mono-serif text-pronto-cream/5">
+          <span className="text-[8rem] md:text-[15rem] font-mono-serif text-pronto-cream/5">
             ANNIBALE • BRUNO • PASSION • FAMILY •
           </span>
         </motion.div>
@@ -288,9 +288,9 @@ const About: React.FC = () => {
             initial={{ opacity: 0, x: -100 }}
             animate={storyInView ? { opacity: 1, x: 0 } : {}}
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
-            className="mb-6"
+            className="mb-12"
           >
-            <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream uppercase">
+            <h2 className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase">
               Where It All
               <br />
               <motion.span
@@ -304,7 +304,7 @@ const About: React.FC = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
@@ -319,7 +319,7 @@ const About: React.FC = () => {
                 <img 
                   src="/attached_assets/IMG_6863_1767575536154.JPG" 
                   alt="Enjoying PRONTO Pizza"
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full h-80 md:h-[500px] object-cover"
                 />
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -333,14 +333,14 @@ const About: React.FC = () => {
                   y: [0, -5, 5, 0]
                 }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-4 -right-4 bg-pronto-orange text-white p-4 rounded-lg shadow-xl"
+                className="absolute -bottom-6 -right-6 bg-pronto-orange text-white p-6 rounded-lg shadow-xl"
               >
-                <span className="font-mono-serif text-2xl md:text-3xl">8+</span>
-                <p className="font-mono-serif text-xs">Years of Love</p>
+                <span className="font-mono-serif text-3xl md:text-5xl">8+</span>
+                <p className="font-mono-serif text-sm">Years of Love</p>
               </motion.div>
             </motion.div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               <AnimatedParagraph 
                 text="Our story begins with our father, Annibale Bruno, whose passion for food and service spans decades. Before PRONTO Pizza, Annibale owned and operated multiple restaurants across the industry — from fine dining to fast food to food trucks. He's done it all."
                 className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
@@ -359,17 +359,17 @@ const About: React.FC = () => {
       {/* THE NEXT GENERATION */}
       <div 
         ref={legacyRef}
-        className="relative py-10 md:py-14 px-6 bg-pronto-blue overflow-hidden"
+        className="relative py-24 md:py-40 px-6 bg-pronto-blue overflow-hidden"
       >
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-20 -right-20 w-48 h-48 border-[20px] border-pronto-orange/20 rounded-full"
+          className="absolute -top-40 -right-40 w-96 h-96 border-[40px] border-pronto-orange/20 rounded-full"
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-32 -left-32 w-64 h-64 border-[30px] border-white/5 rounded-full"
+          className="absolute -bottom-60 -left-60 w-[500px] h-[500px] border-[60px] border-white/5 rounded-full"
         />
 
         <div className="max-w-5xl mx-auto relative z-10">
@@ -377,22 +377,22 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={legacyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ type: "spring", stiffness: 80 }}
-            className="text-center mb-8"
+            className="text-center mb-16"
           >
             <motion.span
               initial={{ scaleX: 0 }}
               animate={legacyInView ? { scaleX: 1 } : {}}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="block w-16 h-1 bg-pronto-orange mx-auto mb-4"
+              className="block w-24 h-1 bg-pronto-orange mx-auto mb-8"
             />
-            <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream uppercase">
+            <h2 className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase">
               The Next
               <br />
               <span className="text-pronto-orange">Generation</span>
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16">
             {[
               { name: "Giulia Bruno", role: "Co-Owner" },
               { name: "Alessio Bruno", role: "Co-Owner" }
@@ -402,20 +402,20 @@ const About: React.FC = () => {
                 initial={{ opacity: 0, x: i === 0 ? -50 : 50, scale: 0.9 }}
                 animate={legacyInView ? { opacity: 1, x: 0, scale: 1 } : {}}
                 transition={{ delay: 0.4 + i * 0.2, type: "spring", stiffness: 100 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center cursor-pointer group"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center cursor-pointer group"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -5, 5, 0] }}
                   transition={{ duration: 0.5 }}
-                  className="w-20 h-20 mx-auto mb-3 rounded-full bg-pronto-orange/30 flex items-center justify-center"
+                  className="w-32 h-32 mx-auto mb-6 rounded-full bg-pronto-orange/30 flex items-center justify-center"
                 >
-                  <span className="text-3xl">👨‍🍳</span>
+                  <span className="text-5xl">👨‍🍳</span>
                 </motion.div>
-                <h3 className="font-mono-serif text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors">
+                <h3 className="font-mono-serif text-3xl md:text-4xl text-pronto-cream group-hover:text-pronto-orange transition-colors">
                   {person.name}
                 </h3>
-                <p className="font-mono-serif text-pronto-cream/60 mt-1 text-sm">{person.role}</p>
+                <p className="font-mono-serif text-pronto-cream/60 mt-2">{person.role}</p>
               </motion.div>
             ))}
           </div>
@@ -424,7 +424,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={legacyInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.8 }}
-            className="mt-8 text-center"
+            className="mt-16 text-center"
           >
             <AnimatedParagraph 
               text="Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it."
@@ -437,7 +437,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={legacyInView ? { opacity: 1 } : {}}
             transition={{ delay: 1.2 }}
-            className="mt-6 text-center"
+            className="mt-10 text-center"
           >
             <AnimatedParagraph 
               text="In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta."
@@ -451,14 +451,14 @@ const About: React.FC = () => {
       {/* OUR VALUES */}
       <div 
         ref={valuesRef}
-        className="relative py-6 md:py-8 px-6 bg-black overflow-hidden"
+        className="relative py-8 md:py-12 px-6 bg-black overflow-hidden"
       >
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
             animate={valuesInView ? { opacity: 1, x: 0 } : {}}
             transition={{ type: "spring", stiffness: 80 }}
-            className="text-3xl md:text-5xl font-mono-serif text-pronto-cream uppercase mb-4 text-center"
+            className="text-4xl md:text-6xl font-mono-serif text-pronto-cream uppercase mb-6 text-center"
           >
             What We're
             <span className="text-pronto-orange"> About</span>
@@ -482,7 +482,7 @@ const About: React.FC = () => {
       {/* CTA SECTION */}
       <div 
         ref={ctaRef}
-        className="relative py-10 md:py-14 px-6 bg-pronto-blue overflow-hidden"
+        className="relative py-24 md:py-40 px-6 bg-pronto-blue overflow-hidden"
       >
         <motion.div
           initial={{ x: "100%" }}
@@ -490,7 +490,7 @@ const About: React.FC = () => {
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap"
         >
-          <span className="text-[6rem] md:text-[12rem] font-mono-serif text-white/5">
+          <span className="text-[10rem] md:text-[20rem] font-mono-serif text-white/5">
             PRONTO • PIZZA • PRONTO • PIZZA •
           </span>
         </motion.div>
