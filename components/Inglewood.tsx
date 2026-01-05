@@ -346,166 +346,61 @@ const Inglewood: React.FC = () => {
       {/* HERO SECTION - Similar to About page */}
       <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center bg-black">
         
-        {/* Pizza image background with slow zoom */}
+        {/* Pizza image background */}
         <motion.div 
-          initial={{ opacity: 0, scale: 1.2 }}
+          initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <motion.div
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ 
-              backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")',
-              filter: 'contrast(1.1) brightness(0.6) saturate(1.1)'
-            }}
-          />
-        </motion.div>
-        
-        {/* Animated gradient overlay */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" 
-        />
-
-        {/* Animated vignette effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
-
-        {/* Decorative rotating circles */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1, rotate: 360 }}
-          transition={{ 
-            opacity: { duration: 1, delay: 0.5 },
-            scale: { duration: 1, delay: 0.5 },
-            rotate: { duration: 80, repeat: Infinity, ease: "linear" }
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")',
+            filter: 'contrast(1.1) brightness(0.6) saturate(1.1)'
           }}
-          className="absolute -bottom-24 -left-24 w-48 h-48 border-[25px] border-pronto-orange/20 rounded-full"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1, rotate: -360 }}
-          transition={{ 
-            opacity: { duration: 1, delay: 0.7 },
-            scale: { duration: 1, delay: 0.7 },
-            rotate: { duration: 100, repeat: Infinity, ease: "linear" }
-          }}
-          className="absolute -top-32 -right-32 w-64 h-64 border-[30px] border-pronto-blue/20 rounded-full"
-        />
-
-        {/* Floating particles */}
-        <motion.div
-          animate={{ y: [-20, 20, -20], x: [-10, 10, -10], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-2 h-2 bg-pronto-orange/40 rounded-full blur-sm"
-        />
-        <motion.div
-          animate={{ y: [20, -20, 20], x: [10, -10, 10], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-1/3 right-1/4 w-3 h-3 bg-pronto-cream/30 rounded-full blur-sm"
-        />
-        <motion.div
-          animate={{ y: [-15, 25, -15], opacity: [0.2, 0.5, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-pronto-blue/30 rounded-full blur-sm"
-        />
-
-        {/* Decorative lines */}
-        <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 0.3 }}
-          transition={{ duration: 1.5, delay: 1 }}
-          className="absolute top-1/2 left-0 w-1/4 h-[2px] bg-gradient-to-r from-transparent via-pronto-orange to-transparent origin-left"
-        />
-        <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 0.3 }}
-          transition={{ duration: 1.5, delay: 1.2 }}
-          className="absolute top-1/2 right-0 w-1/4 h-[2px] bg-gradient-to-l from-transparent via-pronto-orange to-transparent origin-right"
         />
         
-        {/* Main INGLEWOOD title - centered with enhanced animation */}
-        <div className="relative z-10 text-center">
-          {/* Glowing backdrop for title */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: [0.1, 0.2, 0.1], scale: 1 }}
-            transition={{ 
-              opacity: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-              scale: { duration: 1, delay: 0.2 }
-            }}
-            className="absolute inset-0 blur-3xl bg-pronto-orange/20 rounded-full"
-          />
-          
-          {/* Title with letter-by-letter animation effect */}
-          <motion.h1
-            initial={{ opacity: 0, y: 50, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              duration: 1.2, 
-              delay: 0.3, 
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100
-            }}
-            className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide leading-none relative"
-            style={{
-              textShadow: '0 0 40px rgba(0,0,0,0.5), 0 0 80px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.4)'
-            }}
-          >
-            <motion.span
-              animate={{ opacity: [1, 0.9, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              INGLEWOOD
-            </motion.span>
-          </motion.h1>
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
 
-          {/* Animated underline */}
-          <motion.div
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
-            className="mt-4 mx-auto w-48 md:w-96 h-1 bg-gradient-to-r from-transparent via-pronto-orange to-transparent origin-center"
-          />
+        {/* Decorative rotating circle */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-24 -left-24 w-48 h-48 border-[25px] border-pronto-orange/15 rounded-full"
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-32 -right-32 w-64 h-64 border-[30px] border-pronto-blue/15 rounded-full"
+        />
+        
+        {/* Main INGLEWOOD title - centered */}
+        <div className="relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+          >
+            INGLEWOOD
+          </motion.h1>
         </div>
         
-        {/* Scroll indicator with enhanced animation */}
+        {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{ 
+            opacity: { delay: 2, duration: 1 },
+            y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
+          }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80"
         >
-          <motion.div 
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-2"
-          >
-            <motion.span 
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="text-sm font-mono-serif uppercase tracking-widest"
-            >
-              Scroll for Menu
-            </motion.span>
-            <motion.svg 
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2"
-            >
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll for Menu</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14M5 12l7 7 7-7" />
-            </motion.svg>
-          </motion.div>
+            </svg>
+          </div>
         </motion.div>
       </div>
 
