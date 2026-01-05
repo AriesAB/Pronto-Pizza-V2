@@ -206,87 +206,85 @@ const Downtown: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
-      <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
+      {/* HERO SECTION - Similar to Inglewood page */}
+      <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
         
+        {/* Background image with cinematic zoom */}
         <motion.div 
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: [1, 1.08, 1] }}
+          transition={{ 
+            opacity: { duration: 1.5 },
+            scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' }
+          }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: 'url("/attached_assets/IconsofEataly_17-1-1024x711_1767573750861.jpg")',
-            filter: 'contrast(1.1) brightness(0.85) saturate(1.1)'
+            filter: 'contrast(1.05) brightness(0.75) saturate(1.15)'
           }}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
+        {/* Lighter gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
+
+        {/* Decorative rotating circle */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-24 -left-24 w-48 h-48 border-[25px] border-pronto-orange/15 rounded-full"
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-32 -right-32 w-64 h-64 border-[30px] border-pronto-blue/15 rounded-full"
+        />
         
-        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none overflow-hidden">
-          
-          <div className="overflow-hidden mb-4">
-            <motion.div
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              className="flex whitespace-nowrap"
-            >
-              {[...Array(16)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider flex-shrink-0">
-                  CATERING
-                </span>
-              ))}
-            </motion.div>
-          </div>
-          
-          <div className="relative flex items-center justify-center py-8 overflow-hidden">
-            <motion.div
-              animate={{ x: ['-50%', '0%'] }}
-              transition={{ duration: 25, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              className="absolute flex whitespace-nowrap"
-            >
-              {[...Array(16)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/10 mx-8 tracking-wider flex-shrink-0">
-                  FRESH • HOT • CRAFT •
-                </span>
-              ))}
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative z-10 text-7xl md:text-[11rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
-            >
-              <motion.span
-                animate={{ 
-                  textShadow: [
-                    '0 0 0px rgba(255,90,31,0)',
-                    '0 0 40px rgba(255,90,31,0.6)',
-                    '0 0 0px rgba(255,90,31,0)'
-                  ]
-                }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                DOWNTOWN
-              </motion.span>
-            </motion.h1>
-          </div>
-          
-          <div className="overflow-hidden mt-4">
-            <motion.div
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 18, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              className="flex whitespace-nowrap"
-            >
-              {[...Array(20)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider flex-shrink-0">
-                  EVENTS
-                </span>
-              ))}
-            </motion.div>
-          </div>
-          
+        {/* Main DOWNTOWN title - centered and moved higher */}
+        <div className="relative z-10 text-center -translate-y-16">
+          <motion.h1
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+          >
+            DOWNTOWN
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4"
+          >
+            607 11th Ave SW, Calgary, Alberta
+          </motion.p>
         </div>
         
+        {/* Hero text animation */}
+        <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <div className="overflow-hidden">
+              <motion.div
+                initial={{ x: '0%' }}
+                animate={{ x: '-50%' }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+                className="whitespace-nowrap flex"
+              >
+                <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+                  {Array(20).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
+                </span>
+                <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+                  {Array(20).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
+                </span>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
@@ -294,7 +292,7 @@ const Downtown: React.FC = () => {
             opacity: { delay: 2, duration: 1 },
             y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
           }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80 z-20"
         >
           <div className="flex flex-col items-center gap-2">
             <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll for Menu</span>
