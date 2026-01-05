@@ -144,7 +144,7 @@ const About: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-pronto-cream min-h-full w-full overflow-x-hidden relative"
+      className="bg-black min-h-full w-full overflow-x-hidden relative"
     >
       {/* HERO SECTION */}
       <div 
@@ -255,7 +255,7 @@ const About: React.FC = () => {
       {/* THE ORIGIN STORY */}
       <div 
         ref={storyRef}
-        className="relative py-24 md:py-40 px-6 bg-white overflow-hidden"
+        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
       >
         <motion.div
           initial={{ x: "-100%" }}
@@ -263,7 +263,7 @@ const About: React.FC = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-10 left-0 whitespace-nowrap pointer-events-none"
         >
-          <span className="text-[8rem] md:text-[15rem] font-display text-pronto-blue/5">
+          <span className="text-[8rem] md:text-[15rem] font-display text-pronto-cream/5">
             ANNIBALE • BRUNO • PASSION • FAMILY •
           </span>
         </motion.div>
@@ -275,7 +275,7 @@ const About: React.FC = () => {
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
             className="mb-12"
           >
-            <h2 className="text-5xl md:text-8xl font-display text-pronto-blue uppercase">
+            <h2 className="text-5xl md:text-8xl font-display text-pronto-cream uppercase">
               Where It All
               <br />
               <motion.span
@@ -328,12 +328,12 @@ const About: React.FC = () => {
             <div className="space-y-6">
               <AnimatedParagraph 
                 text="Our story begins with our father, Annibale Bruno, whose passion for food and service spans decades. Before PRONTO Pizza, Annibale owned and operated multiple restaurants across the industry — from fine dining to fast food to food trucks. He's done it all."
-                className="font-mono-serif text-lg md:text-xl text-pronto-blue/80 leading-relaxed"
+                className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
                 delayStart={0.4}
               />
               <AnimatedParagraph 
                 text="That journey ultimately led him to what he loves most: creating authentic Italian food that brings people together. Over eight years ago, he founded PRONTO Pizza, and it's been home ever since."
-                className="font-mono-serif text-lg md:text-xl text-pronto-blue/80 leading-relaxed"
+                className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
                 delayStart={0.6}
               />
             </div>
@@ -435,7 +435,7 @@ const About: React.FC = () => {
       {/* NEW LOCATION ANNOUNCEMENT */}
       <div 
         ref={newLocationRef}
-        className="relative py-24 md:py-40 px-6 bg-pronto-cream overflow-hidden"
+        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
       >
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(20)].map((_, i) => (
@@ -484,7 +484,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={newLocationInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4, type: "spring", stiffness: 80 }}
-              className="text-4xl md:text-7xl font-display text-pronto-blue uppercase mb-8"
+              className="text-4xl md:text-7xl font-display text-pronto-cream uppercase mb-8"
             >
               Now Open in
               <br />
@@ -504,10 +504,10 @@ const About: React.FC = () => {
               animate={newLocationInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="inline-block bg-white p-8 rounded-2xl shadow-2xl border-4 border-pronto-blue"
+              className="inline-block bg-pronto-blue p-8 rounded-2xl shadow-2xl border-4 border-pronto-orange"
             >
-              <p className="font-mono-serif text-lg text-pronto-blue/60 mb-2">Find us at</p>
-              <p className="font-display text-2xl md:text-4xl text-pronto-blue">
+              <p className="font-mono-serif text-lg text-pronto-cream/60 mb-2">Find us at</p>
+              <p className="font-display text-2xl md:text-4xl text-pronto-cream">
                 1139 9th Ave SE
               </p>
               <p className="font-mono-serif text-xl text-pronto-orange mt-2">
@@ -521,14 +521,14 @@ const About: React.FC = () => {
       {/* OUR VALUES */}
       <div 
         ref={valuesRef}
-        className="relative py-24 md:py-40 px-6 bg-white overflow-hidden"
+        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
       >
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
             animate={valuesInView ? { opacity: 1, x: 0 } : {}}
             transition={{ type: "spring", stiffness: 80 }}
-            className="text-5xl md:text-8xl font-display text-pronto-blue uppercase mb-16 text-center"
+            className="text-5xl md:text-8xl font-display text-pronto-cream uppercase mb-16 text-center"
           >
             What We're
             <span className="text-pronto-orange"> About</span>
@@ -561,7 +561,7 @@ const About: React.FC = () => {
                   scale: 1.05, 
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
                 }}
-                className="bg-pronto-cream p-8 rounded-2xl text-center cursor-pointer group"
+                className="bg-pronto-blue/30 p-8 rounded-2xl text-center cursor-pointer group border border-pronto-blue/50"
               >
                 <motion.div
                   animate={{ 
@@ -573,10 +573,10 @@ const About: React.FC = () => {
                 >
                   {value.icon}
                 </motion.div>
-                <h3 className="font-display text-2xl md:text-3xl text-pronto-blue group-hover:text-pronto-orange transition-colors mb-3">
+                <h3 className="font-display text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors mb-3">
                   {value.title}
                 </h3>
-                <p className="font-mono-serif text-pronto-blue/60">{value.desc}</p>
+                <p className="font-mono-serif text-pronto-cream/60">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -589,7 +589,7 @@ const About: React.FC = () => {
           >
             <AnimatedParagraph 
               text="At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community."
-              className="font-mono-serif text-lg md:text-xl text-pronto-blue/80 leading-relaxed"
+              className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
               delayStart={1}
             />
           </motion.div>
