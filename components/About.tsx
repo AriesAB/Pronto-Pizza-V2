@@ -452,7 +452,7 @@ const About: React.FC = () => {
       {/* NEW LOCATION ANNOUNCEMENT */}
       <div 
         ref={newLocationRef}
-        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
+        className="relative py-12 md:py-16 px-6 bg-black overflow-hidden"
       >
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
@@ -465,7 +465,7 @@ const About: React.FC = () => {
               initial={{ scale: 0, rotate: -180 }}
               animate={newLocationInView ? { scale: 1, rotate: 0 } : {}}
               transition={{ type: "spring", stiffness: 150, delay: 0.2 }}
-              className="inline-block mb-8"
+              className="inline-block mb-4"
             >
               <span className="bg-pronto-orange text-white font-mono-serif text-sm md:text-lg px-6 py-2 rounded-full uppercase tracking-widest">
                 Exciting News!
@@ -476,7 +476,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={newLocationInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4, type: "spring", stiffness: 80 }}
-              className="text-4xl md:text-7xl font-mono-serif text-pronto-cream uppercase mb-8"
+              className="text-3xl md:text-5xl font-mono-serif text-pronto-cream uppercase mb-4"
             >
               Now Open in
               <br />
@@ -485,7 +485,7 @@ const About: React.FC = () => {
                   color: ["#1A1B8C", "#FF5A1F", "#1A1B8C"]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="text-5xl md:text-9xl"
+                className="text-4xl md:text-7xl"
               >
                 Inglewood
               </motion.span>
@@ -496,13 +496,13 @@ const About: React.FC = () => {
               animate={newLocationInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="inline-block bg-pronto-blue p-8 rounded-2xl shadow-2xl border-4 border-pronto-orange"
+              className="inline-block bg-pronto-blue p-5 rounded-xl shadow-2xl border-2 border-pronto-orange"
             >
-              <p className="font-mono-serif text-lg text-pronto-cream/60 mb-2">Find us at</p>
-              <p className="font-mono-serif text-2xl md:text-4xl text-pronto-cream">
+              <p className="font-mono-serif text-sm text-pronto-cream/60 mb-1">Find us at</p>
+              <p className="font-mono-serif text-xl md:text-2xl text-pronto-cream">
                 1139 9th Ave SE
               </p>
-              <p className="font-mono-serif text-xl text-pronto-orange mt-2">
+              <p className="font-mono-serif text-lg text-pronto-orange mt-1">
                 Calgary, Alberta
               </p>
             </motion.div>
@@ -513,14 +513,14 @@ const About: React.FC = () => {
       {/* OUR VALUES */}
       <div 
         ref={valuesRef}
-        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
+        className="relative py-12 md:py-16 px-6 bg-black overflow-hidden"
       >
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
             animate={valuesInView ? { opacity: 1, x: 0 } : {}}
             transition={{ type: "spring", stiffness: 80 }}
-            className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase mb-16 text-center"
+            className="text-4xl md:text-6xl font-mono-serif text-pronto-cream uppercase mb-6 text-center"
           >
             What We're
             <span className="text-pronto-orange"> About</span>
@@ -530,7 +530,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={valuesInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.8 }}
-            className="mt-16 text-center max-w-3xl mx-auto"
+            className="text-center max-w-3xl mx-auto"
           >
             <AnimatedParagraph 
               text="At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community."
