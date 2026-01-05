@@ -547,6 +547,40 @@ const Inglewood: React.FC = () => {
                      />
                    </>
                  )}
+                 {section.id === 'coffee' && (
+                   <>
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_195639_1767581855982.png"
+                       alt="Coffee cup"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5 },
+                         scale: { type: "spring", stiffness: 300 },
+                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_195650_1767581855983.png"
+                       alt="Coffee saucer"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.2 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
+                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                   </>
+                 )}
                  {section.id === 'bar' && (
                    <motion.img
                      src="/attached_assets/Gemini_Generated_Image_uqgikduqgikduqgi_(1)_1767580147823.png"
