@@ -356,6 +356,52 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* FOOD GALLERY - SHOWCASE */}
+      <section className="py-24 md:py-32 px-6 md:px-16 relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pronto-cream/20 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <RevealText>
+              <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">The Experience</p>
+            </RevealText>
+            <RevealText delay={0.1}>
+              <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream">
+                Made With <span className="text-pronto-orange">Love</span>
+              </h2>
+            </RevealText>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              { src: "/attached_assets/IMG_6865_1767586910924.JPG", alt: "Friends sharing pizza at PRONTO" },
+              { src: "/attached_assets/IMG_6864_1767586912813.JPG", alt: "Classic pepperoni pizza" },
+              { src: "/attached_assets/IMG_6901_1767586918084.JPG", alt: "Homemade tiramisu dessert" }
+            ].map((image, i) => (
+              <motion.div
+                key={image.src}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative overflow-hidden rounded-2xl"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-br from-pronto-orange/30 to-pronto-blue/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative overflow-hidden rounded-2xl">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* OUR VALUES - MINIMAL SECTION */}
       <section ref={valuesRef} className="py-24 md:py-32 px-6 md:px-16 relative">
         <div className="absolute inset-0 overflow-hidden">
