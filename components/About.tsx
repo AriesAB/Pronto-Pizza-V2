@@ -127,14 +127,12 @@ const About: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const legacyRef = useRef<HTMLDivElement>(null);
-  const newLocationRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const heroInView = useInView(heroRef, { once: true });
   const storyInView = useInView(storyRef, { once: true, margin: "-20%" });
   const legacyInView = useInView(legacyRef, { once: true, margin: "-20%" });
-  const newLocationInView = useInView(newLocationRef, { once: true, margin: "-20%" });
   const valuesInView = useInView(valuesRef, { once: true, margin: "-20%" });
   const ctaInView = useInView(ctaRef, { once: true, margin: "-20%" });
 
@@ -450,71 +448,10 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      {/* NEW LOCATION ANNOUNCEMENT */}
-      <div 
-        ref={newLocationRef}
-        className="relative py-12 md:py-16 px-6 bg-black overflow-hidden"
-      >
-        <div className="max-w-5xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={newLocationInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={newLocationInView ? { scale: 1, rotate: 0 } : {}}
-              transition={{ type: "spring", stiffness: 150, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
-              <span className="bg-pronto-orange text-white font-mono-serif text-sm md:text-lg px-6 py-2 rounded-full uppercase tracking-widest">
-                Exciting News!
-              </span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 50 }}
-              animate={newLocationInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.4, type: "spring", stiffness: 80 }}
-              className="text-3xl md:text-5xl font-mono-serif text-pronto-cream uppercase mb-4"
-            >
-              Now Open in
-              <br />
-              <motion.span
-                animate={{ 
-                  color: ["#1A1B8C", "#FF5A1F", "#1A1B8C"]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-4xl md:text-7xl"
-              >
-                Inglewood
-              </motion.span>
-            </motion.h2>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={newLocationInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              className="inline-block bg-pronto-blue p-5 rounded-xl shadow-2xl border-2 border-pronto-orange"
-            >
-              <p className="font-mono-serif text-sm text-pronto-cream/60 mb-1">Find us at</p>
-              <p className="font-mono-serif text-xl md:text-2xl text-pronto-cream">
-                1139 9th Ave SE
-              </p>
-              <p className="font-mono-serif text-lg text-pronto-orange mt-1">
-                Calgary, Alberta
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-
       {/* OUR VALUES */}
       <div 
         ref={valuesRef}
-        className="relative py-12 md:py-16 px-6 bg-black overflow-hidden"
+        className="relative py-8 md:py-12 px-6 bg-black overflow-hidden"
       >
         <div className="max-w-5xl mx-auto">
           <motion.h2
