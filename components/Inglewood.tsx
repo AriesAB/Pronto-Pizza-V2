@@ -343,8 +343,8 @@ const Inglewood: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
-      {/* HERO SECTION WITH SCROLLING TEXT EFFECT */}
-      <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
+      {/* HERO SECTION - Similar to About page */}
+      <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center bg-black">
         
         {/* Pizza image background */}
         <motion.div 
@@ -354,82 +354,123 @@ const Inglewood: React.FC = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: 'url("/attached_assets/IMG_6864_1767574247920.JPG")',
-            filter: 'contrast(1.1) brightness(0.85) saturate(1.1)'
+            filter: 'contrast(1.1) brightness(0.6) saturate(1.1)'
           }}
         />
         
         {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+
+        {/* Floating decorative elements */}
+        <motion.img
+          src="/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png"
+          alt="Pizza"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -15, 0],
+            rotate: [0, 5, -5, 0]
+          }}
+          transition={{
+            opacity: { duration: 0.5 },
+            scale: { type: "spring", stiffness: 300 },
+            y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="absolute w-16 h-16 md:w-24 md:h-24 object-contain top-20 left-10 md:left-20 z-10 pointer-events-none"
+        />
+
+        <motion.span
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -20, 0],
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{
+            opacity: { duration: 0.5 },
+            scale: { type: "spring", stiffness: 300 },
+            y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="absolute text-4xl md:text-6xl pointer-events-none top-32 right-10 md:right-24"
+        >
+          🇮🇹
+        </motion.span>
+
+        <motion.img
+          src="/attached_assets/generated_images/hand-drawn_heart_doodle_icon.png"
+          alt="Heart"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -20, 0],
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{
+            opacity: { duration: 0.5 },
+            scale: { type: "spring", stiffness: 300 },
+            y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="absolute w-12 h-12 md:w-16 md:h-16 object-contain bottom-32 left-16 md:left-32 z-10 pointer-events-none"
+        />
+
+        <motion.img
+          src="/attached_assets/image_1767579477944.png"
+          alt="Pasta"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -20, 0],
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{
+            opacity: { duration: 0.5 },
+            scale: { type: "spring", stiffness: 300 },
+            y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="absolute w-16 h-16 md:w-24 md:h-24 object-contain bottom-40 right-12 md:right-36 z-10 pointer-events-none"
+        />
+
+        {/* Decorative rotating circle */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-24 -left-24 w-48 h-48 border-[25px] border-pronto-orange/15 rounded-full"
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-32 -right-32 w-64 h-64 border-[30px] border-pronto-blue/15 rounded-full"
+        />
         
-        {/* Scrolling PIZZA text rows - Noble Pie inspired */}
-        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none overflow-hidden">
-          
-          {/* Row 1 - scrolling left - continuous */}
-          <div className="overflow-hidden mb-4">
-            <motion.div
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              className="flex whitespace-nowrap"
+        {/* Main INGLEWOOD title - centered */}
+        <div className="relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+          >
+            <motion.span
+              animate={{ 
+                textShadow: [
+                  '0 0 0px rgba(255,90,31,0)',
+                  '0 0 60px rgba(255,90,31,0.6)',
+                  '0 0 0px rgba(255,90,31,0)'
+                ]
+              }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
             >
-              {[...Array(16)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider flex-shrink-0">
-                  PIZZA
-                </span>
-              ))}
-            </motion.div>
-          </div>
-          
-          {/* Row 2 - scrolling right with main title */}
-          <div className="relative flex items-center justify-center py-8 overflow-hidden">
-            <motion.div
-              animate={{ x: ['-50%', '0%'] }}
-              transition={{ duration: 25, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              className="absolute flex whitespace-nowrap"
-            >
-              {[...Array(16)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/10 mx-8 tracking-wider flex-shrink-0">
-                  FRESH • HOT • CRAFT •
-                </span>
-              ))}
-            </motion.div>
-            
-            {/* Main INGLEWOOD title */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative z-10 text-7xl md:text-[11rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
-            >
-              <motion.span
-                animate={{ 
-                  textShadow: [
-                    '0 0 0px rgba(255,90,31,0)',
-                    '0 0 40px rgba(255,90,31,0.6)',
-                    '0 0 0px rgba(255,90,31,0)'
-                  ]
-                }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                INGLEWOOD
-              </motion.span>
-            </motion.h1>
-          </div>
-          
-          {/* Row 3 - scrolling left - continuous */}
-          <div className="overflow-hidden mt-4">
-            <motion.div
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{ duration: 18, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-              className="flex whitespace-nowrap"
-            >
-              {[...Array(20)].map((_, i) => (
-                <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider flex-shrink-0">
-                  SLICE
-                </span>
-              ))}
-            </motion.div>
-          </div>
-          
+              INGLEWOOD
+            </motion.span>
+          </motion.h1>
         </div>
         
         {/* Scroll indicator */}
