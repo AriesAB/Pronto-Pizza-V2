@@ -436,15 +436,16 @@ const About: React.FC = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={legacyInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-            className="mt-12 text-center"
+            initial={{ opacity: 0 }}
+            animate={legacyInView ? { opacity: 1 } : {}}
+            transition={{ delay: 1.2 }}
+            className="mt-10 text-center"
           >
-            <div className="inline-block bg-pronto-orange text-white px-8 py-4 rounded-lg">
-              <span className="font-mono-serif text-2xl md:text-4xl">2022</span>
-              <p className="font-mono-serif text-sm mt-1">Opened Our Own Location</p>
-            </div>
+            <AnimatedParagraph 
+              text="In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta."
+              className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed max-w-3xl mx-auto"
+              delayStart={1.3}
+            />
           </motion.div>
         </div>
       </div>
