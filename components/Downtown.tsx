@@ -351,9 +351,10 @@ const Downtown: React.FC = () => {
           alt="PRONZO" 
           className="h-20 w-auto mb-8"
         />
-        <h3 className="text-5xl font-display text-white mb-8">CATERING INQUIRIES</h3>
+        <h3 className="text-5xl font-display text-white mb-8">5TH & 5TH</h3>
         <div className="font-mono-serif text-xl text-white space-y-2">
-           <p className="font-bold">COMING SOON</p>
+           <p className="font-bold">605 5th Ave, SW</p>
+           <p>403-993-9093</p>
            <p className="pt-4 text-pronto-orange font-bold">Contact us for your next event!</p>
         </div>
       </div>
