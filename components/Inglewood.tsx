@@ -353,7 +353,7 @@ const Inglewood: React.FC = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url("/attached_assets/IMG_6864_1767574247920.JPG")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")',
             filter: 'contrast(1.1) brightness(0.6) saturate(1.1)'
           }}
         />
