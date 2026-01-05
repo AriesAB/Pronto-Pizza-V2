@@ -537,7 +537,7 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
-                icon: "/attached_assets/image_1767576500220.png", 
+                icon: "/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png", 
                 title: "Authentic Italian", 
                 desc: "True to the style we grew up with" 
               },
