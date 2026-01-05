@@ -142,16 +142,11 @@ const About: React.FC = () => {
     offset: ["start start", "end end"]
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0.3]);
-
-  const heroRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const legacyRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  const heroInView = useInView(heroRef, { once: true });
   const storyInView = useInView(storyRef, { once: true, margin: "-20%" });
   const legacyInView = useInView(legacyRef, { once: true, margin: "-20%" });
   const valuesInView = useInView(valuesRef, { once: true, margin: "-20%" });
@@ -165,129 +160,6 @@ const About: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-black min-h-full w-full overflow-x-hidden relative"
     >
-      {/* HERO SECTION */}
-      <div 
-        ref={heroRef}
-        className="relative h-screen w-full overflow-hidden flex items-center justify-center"
-      >
-        <motion.div 
-          style={{ y: backgroundY }}
-          className="absolute inset-0 bg-cover bg-center"
-          initial={{ scale: 1.2 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-        >
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ 
-              backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")',
-              filter: 'contrast(1.1) brightness(0.7) saturate(1.2)'
-            }}
-          />
-        </motion.div>
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-
-        <motion.img 
-          src="/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png"
-          alt="Pizza"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: 0.8, 
-            scale: 1,
-            y: [0, -20, 0],
-            rotate: [-5, 5, -5]
-          }}
-          transition={{
-            opacity: { duration: 0.5, delay: Math.random() * 2 },
-            scale: { duration: 0.5, delay: Math.random() * 2 },
-            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="absolute w-16 h-16 md:w-24 md:h-24 object-contain top-20 left-10 md:left-20 z-0"
-        />
-        <FloatingEmoji emoji="🇮🇹" className="top-32 right-10 md:right-24" />
-        <FloatingEmoji emoji="❤️" className="bottom-32 left-16 md:left-32" />
-        <FloatingImage src="/attached_assets/image_1767579477944.png" alt="Pasta" className="bottom-40 right-12 md:right-36" size="w-16 h-16 md:w-24 md:h-24" />
-
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
-          >
-            <span className="font-mono-serif text-pronto-orange text-lg md:text-2xl uppercase tracking-[0.3em]">
-              Our Story
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
-            animate={heroInView ? { opacity: 1, scale: 1, rotateY: 0 } : {}}
-            transition={{ 
-              type: "spring", 
-              stiffness: 100, 
-              damping: 15,
-              delay: 0.4
-            }}
-            className="text-6xl md:text-[10rem] font-mono-serif text-pronto-cream leading-none mb-8"
-          >
-            <GlitchText text="FAMILY" />
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={heroInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.8 }}
-            className="flex items-center justify-center gap-4 text-4xl md:text-7xl font-mono-serif text-white/80"
-          >
-            <span>TRADITION</span>
-            <PulsingDot delay={1} />
-            <span>LOVE</span>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-10 font-mono-serif text-xl md:text-3xl text-pronto-cream/90 max-w-3xl mx-auto"
-          >
-            PRONTO Pizza is more than just pizza — it's family, tradition, and a lifelong love for hospitality.
-          </motion.p>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 15, 0] }}
-          transition={{ 
-            opacity: { delay: 2 },
-            y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream"
-        >
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll to discover</span>
-            <motion.div
-              animate={{ scaleY: [1, 1.3, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="4" y="2" width="16" height="28" rx="8" />
-                <motion.circle
-                  cx="12"
-                  cy="12"
-                  r="3"
-                  fill="currentColor"
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-              </svg>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
-
       {/* THE ORIGIN STORY */}
       <div 
         ref={storyRef}
