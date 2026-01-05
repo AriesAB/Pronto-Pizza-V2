@@ -350,7 +350,7 @@ const HeroTextAnimation: React.FC = () => {
           <motion.div
             initial={{ x: '0%' }}
             animate={{ x: '-50%' }}
-            transition={{ duration: 30, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
             className="whitespace-nowrap flex"
           >
             <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
