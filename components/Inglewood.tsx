@@ -337,7 +337,7 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
 
 const CircularText: React.FC = () => {
   const baseText = "PIZZA • PASTA • PAGNOTTA • ";
-  const text = Array(8).fill(baseText).join("");
+  const text = Array(6).fill(baseText).join("");
   
   return (
     <motion.div
@@ -352,7 +352,7 @@ const CircularText: React.FC = () => {
         width: '1000px', 
         height: '1000px',
         bottom: '-500px',
-        left: '50%',
+        left: 'calc(50% - 20px)',
         transform: 'translateX(-50%)'
       }}
     >
@@ -364,7 +364,7 @@ const CircularText: React.FC = () => {
             fill="none"
           />
         </defs>
-        <text className="fill-pronto-cream/70" style={{ fontSize: '14px', fontFamily: 'monospace', letterSpacing: '4px', textTransform: 'uppercase', fontWeight: 500 }}>
+        <text className="fill-pronto-cream/70" style={{ fontSize: '22px', fontFamily: 'monospace', letterSpacing: '6px', textTransform: 'uppercase', fontWeight: 500 }}>
           <textPath href="#circularTextPath" startOffset="0%">
             {text}
           </textPath>
