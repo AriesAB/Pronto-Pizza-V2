@@ -649,6 +649,40 @@ const Inglewood: React.FC = () => {
                      />
                    </>
                  )}
+                 {section.id === 'dessert' && (
+                   <>
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_200312_1767582275868.png"
+                       alt="Cake slice"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -12, 0], rotate: [0, 5, -5, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5 },
+                         scale: { type: "spring", stiffness: 300 },
+                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_200345_1767582273815.png"
+                       alt="Ice cream"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -10, 0], rotate: [0, -6, 6, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.2 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
+                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                   </>
+                 )}
 
                  {/* Section Header */}
                  <motion.div 
