@@ -421,7 +421,7 @@ const Inglewood: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-pronto-cream font-mono-serif text-xl md:text-3xl tracking-[0.2em] mt-6"
+            className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4"
           >
             1139 9th Ave SE, Calgary, Alberta
           </motion.p>
