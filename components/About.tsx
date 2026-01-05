@@ -272,6 +272,13 @@ const About: React.FC = () => {
         ref={storyRef}
         className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
       >
+        {/* Decorative half circle - bottom right */}
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-32 -right-32 w-64 h-64 border-[30px] border-pronto-orange/15 rounded-full"
+        />
+
         <motion.div
           initial={{ x: "-100%" }}
           animate={storyInView ? { x: "100%" } : {}}
@@ -453,6 +460,13 @@ const About: React.FC = () => {
         ref={valuesRef}
         className="relative py-8 md:py-12 px-6 bg-black overflow-hidden"
       >
+        {/* Decorative quarter circle - top left */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-20 -left-20 w-40 h-40 border-[20px] border-pronto-blue/20 rounded-full"
+        />
+
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
@@ -484,6 +498,18 @@ const About: React.FC = () => {
         ref={ctaRef}
         className="relative py-24 md:py-40 px-6 bg-pronto-blue overflow-hidden"
       >
+        {/* Decorative circles */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-24 -left-24 w-48 h-48 border-[25px] border-pronto-orange/20 rounded-full"
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-32 -right-32 w-64 h-64 border-[35px] border-white/10 rounded-full"
+        />
+
         <motion.div
           initial={{ x: "100%" }}
           animate={ctaInView ? { x: "-100%" } : {}}
