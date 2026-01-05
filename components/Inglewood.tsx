@@ -375,7 +375,7 @@ const Inglewood: React.FC = () => {
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
       {/* HERO SECTION - Similar to About page */}
-      <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center bg-black">
+      <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
         
         {/* Pizza image background with cinematic zoom */}
         <motion.div 
