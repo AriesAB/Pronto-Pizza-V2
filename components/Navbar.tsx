@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NavItem, Page } from '../types';
@@ -18,42 +18,6 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const shouldHideOnScroll = currentPage !== 'home';
-
-  useEffect(() => {
-    if (!shouldHideOnScroll) {
-      setIsHidden(false);
-      return;
-    }
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollThreshold = 100;
-
-      if (currentScrollY > scrollThreshold) {
-        if (currentScrollY > lastScrollY) {
-          setIsHidden(true);
-        } else {
-          setIsHidden(false);
-        }
-      } else {
-        setIsHidden(false);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, shouldHideOnScroll]);
-
-  useEffect(() => {
-    setIsHidden(false);
-    setLastScrollY(0);
-  }, [currentPage]);
 
   const handleNavClick = (item: NavItem) => {
     if (item.page) {
@@ -63,12 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   };
 
   return (
-    <motion.nav
-      initial={{ y: 0 }}
-      animate={{ y: isHidden ? -100 : 0 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="fixed top-0 left-0 right-0 z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10"
-    >
+    <nav className="relative z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 shrink-0">
       <div className="flex justify-between items-center w-full">
         {/* Logo */}
         <button 
@@ -159,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };
 
