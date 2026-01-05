@@ -346,18 +346,22 @@ const CircularText: React.FC = () => {
         opacity: { duration: 1, delay: 0.5 },
         rotate: { duration: 30, repeat: Infinity, ease: "linear" }
       }}
-      className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[55%] pointer-events-none"
-      style={{ width: '140vw', maxWidth: '1400px', height: '140vw', maxHeight: '1400px' }}
+      className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-10"
+      style={{ 
+        width: '800px', 
+        height: '800px',
+        bottom: '-400px'
+      }}
     >
       <svg viewBox="0 0 500 500" className="w-full h-full">
         <defs>
           <path
             id="circularTextPath"
-            d="M 250, 250 m -200, 0 a 200,200 0 1,1 400,0 a 200,200 0 1,1 -400,0"
+            d="M 250, 250 m -220, 0 a 220,220 0 1,1 440,0 a 220,220 0 1,1 -440,0"
             fill="none"
           />
         </defs>
-        <text className="fill-pronto-cream/40" style={{ fontSize: '18px', fontFamily: 'monospace', letterSpacing: '6px', textTransform: 'uppercase' }}>
+        <text className="fill-pronto-cream/70" style={{ fontSize: '16px', fontFamily: 'monospace', letterSpacing: '8px', textTransform: 'uppercase', fontWeight: 500 }}>
           <textPath href="#circularTextPath" startOffset="0%">
             {text}
           </textPath>
