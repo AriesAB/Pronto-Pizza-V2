@@ -441,7 +441,7 @@ const Inglewood: React.FC = () => {
             className="absolute inset-0 blur-3xl bg-pronto-orange/20 rounded-full"
           />
           
-          {/* Title with shimmer animation effect */}
+          {/* Title with letter-by-letter animation effect */}
           <motion.h1
             initial={{ opacity: 0, y: 50, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -452,47 +452,16 @@ const Inglewood: React.FC = () => {
               type: "spring",
               stiffness: 100
             }}
-            className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide leading-none relative overflow-hidden"
+            className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide leading-none relative"
             style={{
               textShadow: '0 0 40px rgba(0,0,0,0.5), 0 0 80px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.4)'
             }}
           >
             <motion.span
-              animate={{ letterSpacing: ['0.05em', '0.08em', '0.05em'] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative inline-block"
+              animate={{ opacity: [1, 0.9, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              {'INGLEWOOD'.split('').map((letter, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.5 + index * 0.08,
-                    ease: "easeOut"
-                  }}
-                  className="inline-block"
-                  style={{ 
-                    animationDelay: `${index * 0.1}s`
-                  }}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              {/* Shimmer overlay */}
-              <motion.span
-                initial={{ x: '-100%' }}
-                animate={{ x: '200%' }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  repeatDelay: 4,
-                  ease: "easeInOut",
-                  delay: 2
-                }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"
-              />
+              INGLEWOOD
             </motion.span>
           </motion.h1>
 
