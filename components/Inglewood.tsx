@@ -335,44 +335,48 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
   );
 };
 
-const CircularText: React.FC = () => {
-  const baseText = "PIZZA • PASTA • PAGNOTTA • ";
-  const text = Array(10).fill(baseText).join("");
+const HeroTextAnimation: React.FC = () => {
+  const text = "PIZZA • PASTA • PAGNOTTA • ";
+  const repeatedText = Array(20).fill(text).join("");
   
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, rotate: 360 }}
-      transition={{
-        opacity: { duration: 1, delay: 0.5 },
-        rotate: { duration: 45, repeat: Infinity, ease: "linear" }
-      }}
-      className="absolute pointer-events-none z-10"
-      style={{ 
-        width: '200vw',
-        height: '200vw',
-        maxWidth: '2400px',
-        maxHeight: '2400px',
-        bottom: '-100vw',
-        left: '50%',
-        transform: 'translateX(-50%)'
-      }}
-    >
-      <svg viewBox="0 0 500 500" className="w-full h-full">
-        <defs>
-          <path
-            id="circularTextPath"
-            d="M 250, 250 m -240, 0 a 240,240 0 1,1 480,0 a 240,240 0 1,1 -480,0"
-            fill="none"
-          />
-        </defs>
-        <text className="fill-pronto-cream/70" style={{ fontSize: '18px', fontFamily: 'monospace', letterSpacing: '5px', textTransform: 'uppercase', fontWeight: 500 }}>
-          <textPath href="#circularTextPath" startOffset="0%">
-            {text}
-          </textPath>
-        </text>
-      </svg>
-    </motion.div>
+    <div className="absolute inset-x-0 bottom-16 pointer-events-none z-10 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="space-y-3"
+      >
+        <div className="overflow-hidden">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+            className="whitespace-nowrap"
+          >
+            <span 
+              className="inline-block text-4xl md:text-6xl font-display tracking-widest text-pronto-cream/20"
+              style={{ fontStyle: 'italic' }}
+            >
+              {repeatedText}
+            </span>
+          </motion.div>
+        </div>
+        
+        <div className="overflow-hidden">
+          <motion.div
+            animate={{ x: ['-50%', '0%'] }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            className="whitespace-nowrap"
+          >
+            <span 
+              className="inline-block text-2xl md:text-4xl font-mono-serif tracking-[0.3em] text-pronto-orange/30 uppercase"
+            >
+              {repeatedText}
+            </span>
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
@@ -426,8 +430,8 @@ const Inglewood: React.FC = () => {
           </motion.h1>
         </div>
         
-        {/* Circular rotating text */}
-        <CircularText />
+        {/* Hero text animation */}
+        <HeroTextAnimation />
         
         {/* Scroll indicator */}
         <motion.div
