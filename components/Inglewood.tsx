@@ -481,6 +481,21 @@ const Inglewood: React.FC = () => {
                        }}
                        className="absolute -left-12 md:-left-40 top-48 md:top-72 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
                      />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_182854_1767581039044.png"
+                       alt="Pizza Slice"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.3 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.3 },
+                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-96 md:top-[28rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
                    </>
                  )}
                  {section.id === 'bar' && (
