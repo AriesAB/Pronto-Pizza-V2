@@ -340,37 +340,23 @@ const HeroTextAnimation: React.FC = () => {
   const repeatedText = Array(20).fill(text).join("");
   
   return (
-    <div className="absolute inset-x-0 bottom-16 pointer-events-none z-10 overflow-hidden">
+    <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="space-y-3"
       >
         <div className="overflow-hidden">
           <motion.div
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-            className="whitespace-nowrap"
+            initial={{ x: '0%' }}
+            animate={{ x: '-50%' }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+            className="whitespace-nowrap flex"
           >
-            <span 
-              className="inline-block text-4xl md:text-6xl font-display tracking-widest text-pronto-cream/20"
-              style={{ fontStyle: 'italic' }}
-            >
+            <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
               {repeatedText}
             </span>
-          </motion.div>
-        </div>
-        
-        <div className="overflow-hidden">
-          <motion.div
-            animate={{ x: ['-50%', '0%'] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="whitespace-nowrap"
-          >
-            <span 
-              className="inline-block text-2xl md:text-4xl font-mono-serif tracking-[0.3em] text-pronto-orange/30 uppercase"
-            >
+            <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
               {repeatedText}
             </span>
           </motion.div>
