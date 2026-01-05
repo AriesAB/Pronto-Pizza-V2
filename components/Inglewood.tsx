@@ -413,7 +413,7 @@ const Inglewood: React.FC = () => {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+            className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
           >
             INGLEWOOD
           </motion.h1>
