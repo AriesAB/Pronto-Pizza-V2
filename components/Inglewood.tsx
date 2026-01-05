@@ -499,9 +499,9 @@ const Inglewood: React.FC = () => {
       {/* Footer / Location Info - Redesigned to match new theme */}
       <div className="bg-black text-center py-20 px-4 flex flex-col items-center">
         <img 
-          src="/assets/logo.png" 
+          src="/attached_assets/Screenshot_2025-12-30_192545_1767574481771.png" 
           alt="PRONZO" 
-          className="h-20 w-auto mb-8 invert"
+          className="h-20 w-auto mb-8"
         />
         <h3 className="text-5xl font-display text-white mb-8">VISIT US</h3>
         <div className="font-mono-serif text-xl text-white space-y-2">
