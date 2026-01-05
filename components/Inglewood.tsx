@@ -377,20 +377,23 @@ const Inglewood: React.FC = () => {
       {/* HERO SECTION - Similar to About page */}
       <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center bg-black">
         
-        {/* Pizza image background */}
+        {/* Pizza image background with cinematic zoom */}
         <motion.div 
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: [1, 1.08, 1] }}
+          transition={{ 
+            opacity: { duration: 1.5 },
+            scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' }
+          }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")',
-            filter: 'contrast(1.1) brightness(0.6) saturate(1.1)'
+            filter: 'contrast(1.05) brightness(0.75) saturate(1.15)'
           }}
         />
         
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        {/* Lighter gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
 
         {/* Decorative rotating circle */}
         <motion.div
