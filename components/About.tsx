@@ -440,16 +440,11 @@ const About: React.FC = () => {
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
               >
                 <img
-                  src="/attached_assets/IMG_6901_1767587167996.JPG"
-                  alt="Tiramisu dessert"
+                  src="/attached_assets/IMG_6865_1767587413234.JPG"
+                  alt="Friends enjoying pizza"
                   className="w-full aspect-[3/4] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-pronto-cream font-mono-serif text-lg bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2 text-center">
-                    Homemade Tiramisu
-                  </p>
-                </div>
               </motion.div>
             </motion.div>
 
