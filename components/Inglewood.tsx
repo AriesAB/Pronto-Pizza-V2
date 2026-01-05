@@ -343,65 +343,92 @@ const Inglewood: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
-      {/* HERO SECTION WITH LAYERED TEXT EFFECT */}
+      {/* HERO SECTION WITH SCROLLING TEXT EFFECT */}
       <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
         
-        {/* INGLEWOOD text BEHIND the image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 1.5, y: 100 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute inset-0 flex items-center justify-center z-0"
-        >
-          <motion.h1 
-            className="text-[6rem] md:text-[14rem] lg:text-[18rem] font-display text-white/30 tracking-tight leading-none select-none"
-            animate={{ 
-              opacity: [0.2, 0.35, 0.2],
-            }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            INGLEWOOD
-          </motion.h1>
-        </motion.div>
-        
-        {/* Pizza image layer - ON TOP of text */}
+        {/* Pizza image background */}
         <motion.div 
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="absolute inset-0 bg-cover bg-center z-10"
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: 'url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop")',
-            filter: 'contrast(1.2) brightness(0.9) saturate(1.1)',
-            mixBlendMode: 'multiply'
+            filter: 'contrast(1.1) brightness(0.85) saturate(1.1)'
           }}
         />
         
-        {/* Dark overlay for better contrast */}
-        <div className="absolute inset-0 bg-black/30 z-20" />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
         
-        {/* Foreground INGLEWOOD text */}
-        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none z-30">
+        {/* Scrolling PIZZA text rows - Noble Pie inspired */}
+        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none overflow-hidden">
+          
+          {/* Row 1 - scrolling left */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative text-center"
+            initial={{ x: '0%' }}
+            animate={{ x: '-50%' }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            className="flex whitespace-nowrap mb-4"
           >
-            <motion.h1 
-              className="text-7xl md:text-[10rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
-              animate={{ 
-                textShadow: [
-                  '0 0 20px rgba(255,90,31,0)',
-                  '0 0 60px rgba(255,90,31,0.5)',
-                  '0 0 20px rgba(255,90,31,0)'
-                ]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              INGLEWOOD
-            </motion.h1>
+            {[...Array(8)].map((_, i) => (
+              <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider">
+                PIZZA
+              </span>
+            ))}
           </motion.div>
+          
+          {/* Row 2 - scrolling right with main title */}
+          <div className="relative flex items-center justify-center py-8">
+            <motion.div
+              initial={{ x: '-50%' }}
+              animate={{ x: '0%' }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+              className="absolute flex whitespace-nowrap"
+            >
+              {[...Array(8)].map((_, i) => (
+                <span key={i} className="text-5xl md:text-8xl font-display text-white/10 mx-8 tracking-wider">
+                  FRESH • HOT • CRAFT •
+                </span>
+              ))}
+            </motion.div>
+            
+            {/* Main INGLEWOOD title */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="relative z-10 text-7xl md:text-[11rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+            >
+              <motion.span
+                animate={{ 
+                  textShadow: [
+                    '0 0 0px rgba(255,90,31,0)',
+                    '0 0 40px rgba(255,90,31,0.6)',
+                    '0 0 0px rgba(255,90,31,0)'
+                  ]
+                }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                INGLEWOOD
+              </motion.span>
+            </motion.h1>
+          </div>
+          
+          {/* Row 3 - scrolling left */}
+          <motion.div
+            initial={{ x: '-25%' }}
+            animate={{ x: '-75%' }}
+            transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+            className="flex whitespace-nowrap mt-4"
+          >
+            {[...Array(10)].map((_, i) => (
+              <span key={i} className="text-5xl md:text-8xl font-display text-white/20 mx-8 tracking-wider">
+                SLICE
+              </span>
+            ))}
+          </motion.div>
+          
         </div>
         
         {/* Scroll indicator */}
