@@ -255,7 +255,7 @@ const Downtown: React.FC = () => {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4"
           >
-            607 11th Ave SW, Calgary, Alberta
+            605 5th Ave, SW
           </motion.p>
         </div>
         
