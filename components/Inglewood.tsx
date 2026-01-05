@@ -335,6 +335,38 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
   );
 };
 
+const CircularText: React.FC = () => {
+  const text = "PIZZA • PASTA • PAGNOTTA • PIZZA • PASTA • PAGNOTTA • ";
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, rotate: 360 }}
+      transition={{
+        opacity: { duration: 1, delay: 0.5 },
+        rotate: { duration: 30, repeat: Infinity, ease: "linear" }
+      }}
+      className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[55%] pointer-events-none"
+      style={{ width: '140vw', maxWidth: '1400px', height: '140vw', maxHeight: '1400px' }}
+    >
+      <svg viewBox="0 0 500 500" className="w-full h-full">
+        <defs>
+          <path
+            id="circularTextPath"
+            d="M 250, 250 m -200, 0 a 200,200 0 1,1 400,0 a 200,200 0 1,1 -400,0"
+            fill="none"
+          />
+        </defs>
+        <text className="fill-pronto-cream/40" style={{ fontSize: '18px', fontFamily: 'monospace', letterSpacing: '6px', textTransform: 'uppercase' }}>
+          <textPath href="#circularTextPath" startOffset="0%">
+            {text}
+          </textPath>
+        </text>
+      </svg>
+    </motion.div>
+  );
+};
+
 const Inglewood: React.FC = () => {
   return (
     <motion.div 
@@ -385,6 +417,9 @@ const Inglewood: React.FC = () => {
           </motion.h1>
         </div>
         
+        {/* Circular rotating text */}
+        <CircularText />
+        
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -393,7 +428,7 @@ const Inglewood: React.FC = () => {
             opacity: { delay: 2, duration: 1 },
             y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
           }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80 z-20"
         >
           <div className="flex flex-col items-center gap-2">
             <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll for Menu</span>
