@@ -75,6 +75,27 @@ const FloatingEmoji: React.FC<{ emoji: string; className: string }> = ({ emoji, 
   </motion.span>
 );
 
+const FloatingImage: React.FC<{ src: string; alt: string; className: string; size?: string }> = ({ src, alt, className, size = "w-12 h-12 md:w-16 md:h-16" }) => (
+  <motion.img
+    src={src}
+    alt={alt}
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ 
+      opacity: 1, 
+      scale: 1,
+      y: [0, -20, 0],
+      rotate: [0, 10, -10, 0]
+    }}
+    transition={{
+      opacity: { duration: 0.5 },
+      scale: { type: "spring", stiffness: 300 },
+      y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+      rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+    }}
+    className={`absolute pointer-events-none ${size} ${className}`}
+  />
+);
+
 const GlitchText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => {
   return (
     <motion.span
@@ -187,7 +208,7 @@ const About: React.FC = () => {
         />
         <FloatingEmoji emoji="🇮🇹" className="top-32 right-10 md:right-24" />
         <FloatingEmoji emoji="❤️" className="bottom-32 left-16 md:left-32" />
-        <FloatingEmoji emoji="👨‍👩‍👧‍👦" className="bottom-40 right-12 md:right-36" />
+        <FloatingImage src="/attached_assets/image_1767579477944.png" alt="Pasta" className="bottom-40 right-12 md:right-36" size="w-16 h-16 md:w-24 md:h-24" />
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <motion.div
