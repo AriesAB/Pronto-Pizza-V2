@@ -582,38 +582,72 @@ const Inglewood: React.FC = () => {
                    </>
                  )}
                  {section.id === 'bar' && (
-                   <motion.img
-                     src="/attached_assets/Gemini_Generated_Image_uqgikduqgikduqgi_(1)_1767580147823.png"
-                     alt="Drink"
-                     initial={{ opacity: 0, scale: 0 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
-                     viewport={{ once: true }}
-                     animate={{ y: [0, -12, 0], rotate: [0, -5, 5, 0] }}
-                     transition={{
-                       opacity: { duration: 0.5 },
-                       scale: { type: "spring", stiffness: 300 },
-                       y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
-                       rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
-                     }}
-                     className="absolute -left-12 md:-left-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                   />
+                   <>
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_200053_1767582080825.png"
+                       alt="Whiskey glass"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -12, 0], rotate: [0, -5, 5, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5 },
+                         scale: { type: "spring", stiffness: 300 },
+                         y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -left-12 md:-left-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Gemini_Generated_Image_uqgikduqgikduqgi_(1)_1767580147823.png"
+                       alt="Drink"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.2 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
+                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                   </>
                  )}
                  {section.id === 'cocktail' && (
-                   <motion.img
-                     src="/attached_assets/Gemini_Generated_Image_uqgikduqgikduqgi_(1)_1767580147823.png"
-                     alt="Cocktail"
-                     initial={{ opacity: 0, scale: 0 }}
-                     whileInView={{ opacity: 1, scale: 1 }}
-                     viewport={{ once: true }}
-                     animate={{ y: [0, -10, 0], rotate: [0, 8, -8, 0] }}
-                     transition={{
-                       opacity: { duration: 0.5 },
-                       scale: { type: "spring", stiffness: 300 },
-                       y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-                       rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
-                     }}
-                     className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                   />
+                   <>
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_200041_1767582080826.png"
+                       alt="Martini"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -10, 0], rotate: [0, 8, -8, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5 },
+                         scale: { type: "spring", stiffness: 300 },
+                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                     <motion.img
+                       src="/attached_assets/Screenshot_2026-01-04_200053_1767582080825.png"
+                       alt="Whiskey glass"
+                       initial={{ opacity: 0, scale: 0 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       viewport={{ once: true }}
+                       animate={{ y: [0, -12, 0], rotate: [0, -6, 6, 0] }}
+                       transition={{
+                         opacity: { duration: 0.5, delay: 0.2 },
+                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
+                         y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
+                         rotate: { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
+                       }}
+                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                     />
+                   </>
                  )}
 
                  {/* Section Header */}
