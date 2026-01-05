@@ -407,8 +407,8 @@ const Inglewood: React.FC = () => {
           className="absolute -top-32 -right-32 w-64 h-64 border-[30px] border-pronto-blue/15 rounded-full"
         />
         
-        {/* Main INGLEWOOD title - centered */}
-        <div className="relative z-10 text-center">
+        {/* Main INGLEWOOD title - centered and moved higher */}
+        <div className="relative z-10 text-center -translate-y-16">
           <motion.h1
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -417,6 +417,14 @@ const Inglewood: React.FC = () => {
           >
             INGLEWOOD
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="text-pronto-cream font-mono-serif text-xl md:text-3xl tracking-[0.2em] mt-6"
+          >
+            1139 9th Ave SE, Calgary, Alberta
+          </motion.p>
         </div>
         
         {/* Hero text animation */}
