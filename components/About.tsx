@@ -537,17 +537,17 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
-                icon: "🍕", 
+                icon: "/attached_assets/Gemini_Generated_Image_k8zti9k8zti9k8zt_(1)_1767576197108.png", 
                 title: "Authentic Italian", 
                 desc: "True to the style we grew up with" 
               },
               { 
-                icon: "⭐", 
+                icon: "/attached_assets/generated_images/hand-drawn_star_doodle_icon.png", 
                 title: "Premium Quality", 
                 desc: "Only the finest ingredients" 
               },
               { 
-                icon: "👨‍👩‍👧‍👦", 
+                icon: "/attached_assets/generated_images/hand-drawn_heart_doodle_icon.png", 
                 title: "100% Family Owned", 
                 desc: "Our family serving yours" 
               }
@@ -569,9 +569,9 @@ const About: React.FC = () => {
                     rotate: [0, 5, -5, 0]
                   }}
                   transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                  className="text-6xl mb-6"
+                  className="h-20 w-20 mx-auto mb-6"
                 >
-                  {value.icon}
+                  <img src={value.icon} alt={value.title} className="w-full h-full object-contain" />
                 </motion.div>
                 <h3 className="font-mono-serif text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors mb-3">
                   {value.title}
