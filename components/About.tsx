@@ -551,53 +551,6 @@ const About: React.FC = () => {
             <span className="text-pronto-orange"> About</span>
           </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: "/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png", 
-                title: "Authentic Italian", 
-                desc: "True to the style we grew up with" 
-              },
-              { 
-                icon: "/attached_assets/generated_images/hand-drawn_star_doodle_icon.png", 
-                title: "Premium Quality", 
-                desc: "Only the finest ingredients" 
-              },
-              { 
-                icon: "/attached_assets/generated_images/hand-drawn_heart_doodle_icon.png", 
-                title: "100% Family Owned", 
-                desc: "Our family serving yours" 
-              }
-            ].map((value, i) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 50, rotateY: -30 }}
-                animate={valuesInView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
-                transition={{ delay: 0.2 + i * 0.15, type: "spring", stiffness: 100 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
-                }}
-                className="bg-pronto-blue/30 p-8 rounded-2xl text-center cursor-pointer group border border-pronto-blue/50"
-              >
-                <motion.div
-                  animate={{ 
-                    y: [0, -10, 0],
-                    rotate: [0, 5, -5, 0]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                  className="h-20 w-20 mx-auto mb-6"
-                >
-                  <img src={value.icon} alt={value.title} className="w-full h-full object-contain" />
-                </motion.div>
-                <h3 className="font-mono-serif text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors mb-3">
-                  {value.title}
-                </h3>
-                <p className="font-mono-serif text-pronto-cream/60">{value.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={valuesInView ? { opacity: 1 } : {}}
