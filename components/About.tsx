@@ -1,49 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-
-const TypewriterText: React.FC<{ text: string; className?: string; speed?: number }> = ({ 
-  text, 
-  className = "",
-  speed = 15
-}) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [isComplete, setIsComplete] = useState(false);
-  const ref = useRef<HTMLParagraphElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-10%" });
-
-  useEffect(() => {
-    if (!isInView) return;
-    
-    let index = 0;
-    setDisplayedText('');
-    setIsComplete(false);
-    
-    const interval = setInterval(() => {
-      if (index < text.length) {
-        setDisplayedText(text.slice(0, index + 1));
-        index++;
-      } else {
-        setIsComplete(true);
-        clearInterval(interval);
-      }
-    }, speed);
-
-    return () => clearInterval(interval);
-  }, [isInView, text, speed]);
-
-  return (
-    <p ref={ref} className={className}>
-      {displayedText}
-      {!isComplete && isInView && (
-        <motion.span
-          animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.5, repeat: Infinity }}
-          className="inline-block w-0.5 h-5 bg-pronto-orange ml-1 align-middle"
-        />
-      )}
-    </p>
-  );
-};
 
 const AnimatedWord: React.FC<{ word: string; delay: number }> = ({ word, delay }) => {
   return (
@@ -464,21 +420,31 @@ const About: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <TypewriterText 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={legacyInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.8 }}
+            className="mt-16 text-center"
+          >
+            <AnimatedParagraph 
               text="Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it."
               className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed max-w-3xl mx-auto"
-              speed={12}
+              delayStart={1}
             />
-          </div>
+          </motion.div>
 
-          <div className="mt-10 text-center">
-            <TypewriterText 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={legacyInView ? { opacity: 1 } : {}}
+            transition={{ delay: 1.2 }}
+            className="mt-10 text-center"
+          >
+            <AnimatedParagraph 
               text="In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta."
               className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed max-w-3xl mx-auto"
-              speed={12}
+              delayStart={1.3}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
