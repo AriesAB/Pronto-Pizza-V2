@@ -497,18 +497,17 @@ const Inglewood: React.FC = () => {
       </div>
 
       {/* Footer / Location Info - Redesigned to match new theme */}
-      <div className="bg-pronto-orange text-center py-20 px-4 flex flex-col items-center">
+      <div className="bg-black text-center py-20 px-4 flex flex-col items-center">
         <img 
           src="/assets/logo.png" 
           alt="PRONZO" 
-          className="h-20 w-auto mb-8 brightness-0"
+          className="h-20 w-auto mb-8 invert"
         />
-        <h3 className="text-5xl font-display text-pronto-navy mb-8">VISIT US</h3>
+        <h3 className="text-5xl font-display text-white mb-8">VISIT US</h3>
         <div className="font-mono-serif text-xl text-white space-y-2">
-           <p className="font-bold">1234 9th Ave SE, Calgary</p>
-           <p>403-555-0199</p>
-           <p className="pt-4 text-pronto-navy font-bold">TUE-SUN: 4PM - LATE</p>
-           <p className="text-pronto-navy/60">MON: CLOSED</p>
+           <p className="font-bold">COMING SOON</p>
+           <p className="pt-4 text-pronto-orange font-bold">TUE-SUN: 4PM - LATE</p>
+           <p className="text-white/60">MON: CLOSED</p>
         </div>
       </div>
     </motion.div>
