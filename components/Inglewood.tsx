@@ -458,18 +458,7 @@ const Inglewood: React.FC = () => {
             transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-7xl md:text-[12rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
           >
-            <motion.span
-              animate={{ 
-                textShadow: [
-                  '0 0 0px rgba(255,90,31,0)',
-                  '0 0 60px rgba(255,90,31,0.6)',
-                  '0 0 0px rgba(255,90,31,0)'
-                ]
-              }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              INGLEWOOD
-            </motion.span>
+            INGLEWOOD
           </motion.h1>
         </div>
         
