@@ -13,11 +13,9 @@ const App: React.FC = () => {
     <div className="bg-pronto-navy h-screen flex flex-col text-pronto-cream font-sans selection:bg-pronto-orange selection:text-white">
       <Navbar onNavigate={setCurrentPage} currentPage={currentPage} />
       
-      {/* 
-        We use overflow-y-auto here to allow the Inglewood page to scroll, 
-        while SplitLanding manages its own internal layout.
-      */}
-      <main className="flex-1 relative overflow-y-auto overflow-x-hidden no-scrollbar">
+      <main className={`flex-1 relative overflow-y-auto overflow-x-hidden no-scrollbar ${
+        currentPage === 'inglewood' ? 'mt-0' : ''
+      }`}>
         {currentPage === 'home' && <SplitLanding onNavigate={setCurrentPage} />}
         {currentPage === 'inglewood' && <Inglewood />}
         {currentPage === 'downtown' && <Downtown />}

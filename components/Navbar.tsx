@@ -21,8 +21,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const isInglewoodPage = currentPage === 'inglewood';
+
   useEffect(() => {
-    if (currentPage !== 'inglewood') {
+    if (!isInglewoodPage) {
       setIsVisible(true);
       return;
     }
@@ -47,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
     return () => {
       mainElement.removeEventListener('scroll', handleScroll);
     };
-  }, [currentPage, lastScrollY]);
+  }, [isInglewoodPage, lastScrollY]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -63,10 +65,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
 
   return (
     <motion.nav 
-      initial={{ y: 0 }}
-      animate={{ y: isVisible ? 0 : -100 }}
+      initial={{ y: 0, opacity: 1 }}
+      animate={{ 
+        y: isVisible ? 0 : -120, 
+        opacity: isVisible ? 1 : 0 
+      }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="relative z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 shrink-0"
+      className={`z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 ${
+        isInglewoodPage ? 'fixed top-0 left-0 right-0' : 'relative shrink-0'
+      }`}
     >
       <div className="flex justify-between items-center w-full">
         <button 
