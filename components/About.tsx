@@ -454,31 +454,6 @@ const About: React.FC = () => {
         ref={newLocationRef}
         className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
       >
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ 
-                x: Math.random() * 100 + "%", 
-                y: Math.random() * 100 + "%",
-                opacity: 0
-              }}
-              animate={{ 
-                y: [null, Math.random() * 100 + "%"],
-                opacity: [0, 0.3, 0]
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Infinity,
-                delay: Math.random() * 5
-              }}
-              className="absolute w-12 h-12 md:w-16 md:h-16"
-            >
-              <img src="/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png" alt="Pizza" className="w-full h-full object-contain" />
-            </motion.div>
-          ))}
-        </div>
-
         <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
