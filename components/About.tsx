@@ -195,7 +195,7 @@ const About: React.FC = () => {
               damping: 15,
               delay: 0.4
             }}
-            className="text-6xl md:text-[10rem] font-display text-pronto-cream leading-none mb-8"
+            className="text-6xl md:text-[10rem] font-mono-serif text-pronto-cream leading-none mb-8"
           >
             <GlitchText text="FAMILY" />
           </motion.h1>
@@ -204,7 +204,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={heroInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.8 }}
-            className="flex items-center justify-center gap-4 text-4xl md:text-7xl font-display text-white/80"
+            className="flex items-center justify-center gap-4 text-4xl md:text-7xl font-mono-serif text-white/80"
           >
             <span>TRADITION</span>
             <PulsingDot delay={1} />
@@ -263,7 +263,7 @@ const About: React.FC = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-10 left-0 whitespace-nowrap pointer-events-none"
         >
-          <span className="text-[8rem] md:text-[15rem] font-display text-pronto-cream/5">
+          <span className="text-[8rem] md:text-[15rem] font-mono-serif text-pronto-cream/5">
             ANNIBALE • BRUNO • PASSION • FAMILY •
           </span>
         </motion.div>
@@ -275,7 +275,7 @@ const About: React.FC = () => {
             transition={{ type: "spring", stiffness: 80, damping: 20 }}
             className="mb-12"
           >
-            <h2 className="text-5xl md:text-8xl font-display text-pronto-cream uppercase">
+            <h2 className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase">
               Where It All
               <br />
               <motion.span
@@ -320,7 +320,7 @@ const About: React.FC = () => {
                 transition={{ duration: 4, repeat: Infinity }}
                 className="absolute -bottom-6 -right-6 bg-pronto-orange text-white p-6 rounded-lg shadow-xl"
               >
-                <span className="font-display text-3xl md:text-5xl">8+</span>
+                <span className="font-mono-serif text-3xl md:text-5xl">8+</span>
                 <p className="font-mono-serif text-sm">Years of Love</p>
               </motion.div>
             </motion.div>
@@ -370,7 +370,7 @@ const About: React.FC = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="block w-24 h-1 bg-pronto-orange mx-auto mb-8"
             />
-            <h2 className="text-5xl md:text-8xl font-display text-pronto-cream uppercase">
+            <h2 className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase">
               The Next
               <br />
               <span className="text-pronto-orange">Generation</span>
@@ -397,7 +397,7 @@ const About: React.FC = () => {
                 >
                   <span className="text-5xl">👨‍🍳</span>
                 </motion.div>
-                <h3 className="font-display text-3xl md:text-4xl text-pronto-cream group-hover:text-pronto-orange transition-colors">
+                <h3 className="font-mono-serif text-3xl md:text-4xl text-pronto-cream group-hover:text-pronto-orange transition-colors">
                   {person.name}
                 </h3>
                 <p className="font-mono-serif text-pronto-cream/60 mt-2">{person.role}</p>
@@ -425,7 +425,7 @@ const About: React.FC = () => {
             className="mt-12 text-center"
           >
             <div className="inline-block bg-pronto-orange text-white px-8 py-4 rounded-lg">
-              <span className="font-display text-2xl md:text-4xl">2022</span>
+              <span className="font-mono-serif text-2xl md:text-4xl">2022</span>
               <p className="font-mono-serif text-sm mt-1">Opened Our Own Location</p>
             </div>
           </motion.div>
@@ -484,7 +484,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={newLocationInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4, type: "spring", stiffness: 80 }}
-              className="text-4xl md:text-7xl font-display text-pronto-cream uppercase mb-8"
+              className="text-4xl md:text-7xl font-mono-serif text-pronto-cream uppercase mb-8"
             >
               Now Open in
               <br />
@@ -507,7 +507,7 @@ const About: React.FC = () => {
               className="inline-block bg-pronto-blue p-8 rounded-2xl shadow-2xl border-4 border-pronto-orange"
             >
               <p className="font-mono-serif text-lg text-pronto-cream/60 mb-2">Find us at</p>
-              <p className="font-display text-2xl md:text-4xl text-pronto-cream">
+              <p className="font-mono-serif text-2xl md:text-4xl text-pronto-cream">
                 1139 9th Ave SE
               </p>
               <p className="font-mono-serif text-xl text-pronto-orange mt-2">
@@ -528,7 +528,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={valuesInView ? { opacity: 1, x: 0 } : {}}
             transition={{ type: "spring", stiffness: 80 }}
-            className="text-5xl md:text-8xl font-display text-pronto-cream uppercase mb-16 text-center"
+            className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase mb-16 text-center"
           >
             What We're
             <span className="text-pronto-orange"> About</span>
@@ -573,7 +573,7 @@ const About: React.FC = () => {
                 >
                   {value.icon}
                 </motion.div>
-                <h3 className="font-display text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors mb-3">
+                <h3 className="font-mono-serif text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors mb-3">
                   {value.title}
                 </h3>
                 <p className="font-mono-serif text-pronto-cream/60">{value.desc}</p>
@@ -607,7 +607,7 @@ const About: React.FC = () => {
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap"
         >
-          <span className="text-[10rem] md:text-[20rem] font-display text-white/5">
+          <span className="text-[10rem] md:text-[20rem] font-mono-serif text-white/5">
             PRONTO • PIZZA • PRONTO • PIZZA •
           </span>
         </motion.div>
@@ -618,7 +618,7 @@ const About: React.FC = () => {
             animate={ctaInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ type: "spring", stiffness: 100 }}
           >
-            <h2 className="text-4xl md:text-7xl font-display text-pronto-cream uppercase mb-8">
+            <h2 className="text-4xl md:text-7xl font-mono-serif text-pronto-cream uppercase mb-8">
               Ready for a taste?
             </h2>
           </motion.div>
@@ -644,7 +644,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={ctaInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.5 }}
-            className="font-display text-3xl md:text-5xl text-pronto-orange"
+            className="font-mono-serif text-3xl md:text-5xl text-pronto-orange"
           >
             We can't wait to serve you.
           </motion.p>
@@ -658,14 +658,14 @@ const About: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.1, rotate: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-pronto-orange text-white font-display text-xl md:text-2xl px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
+              className="bg-pronto-orange text-white font-mono-serif text-xl md:text-2xl px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
             >
               View Our Menu
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.1, rotate: 2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-pronto-cream text-pronto-cream font-display text-xl md:text-2xl px-10 py-4 rounded-lg hover:bg-pronto-cream hover:text-pronto-blue transition-colors"
+              className="bg-transparent border-2 border-pronto-cream text-pronto-cream font-mono-serif text-xl md:text-2xl px-10 py-4 rounded-lg hover:bg-pronto-cream hover:text-pronto-blue transition-colors"
             >
               Find Us
             </motion.button>
