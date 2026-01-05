@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NavItem, Page } from '../types';
@@ -18,6 +18,41 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    if (currentPage !== 'inglewood') {
+      setIsVisible(true);
+      return;
+    }
+
+    const mainElement = document.querySelector('main');
+    if (!mainElement) return;
+
+    const handleScroll = () => {
+      const currentScrollY = mainElement.scrollTop;
+      
+      if (currentScrollY <= 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    mainElement.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      mainElement.removeEventListener('scroll', handleScroll);
+    };
+  }, [currentPage, lastScrollY]);
+
+  useEffect(() => {
+    setIsVisible(true);
+    setLastScrollY(0);
+  }, [currentPage]);
 
   const handleNavClick = (item: NavItem) => {
     if (item.page) {
@@ -27,9 +62,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   };
 
   return (
-    <nav className="relative z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 shrink-0">
+    <motion.nav 
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className="relative z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 shrink-0"
+    >
       <div className="flex justify-between items-center w-full">
-        {/* Logo */}
         <button 
           onClick={() => onNavigate('home')} 
           className="relative z-50 group text-left" 
@@ -47,7 +86,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           </motion.div>
         </button>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-12">
           {navItems.map((item, index) => (
             <motion.button
@@ -75,7 +113,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           ))}
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden relative z-50 text-pronto-blue"
           onClick={() => setIsOpen(!isOpen)}
@@ -84,7 +121,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -118,7 +154,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 
