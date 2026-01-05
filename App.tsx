@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import SplitLanding from './components/SplitLanding';
 import Inglewood from './components/Inglewood';
 import Downtown from './components/Downtown';
+import About from './components/About';
 import { Page } from './types';
 
 const App: React.FC = () => {
@@ -20,11 +21,7 @@ const App: React.FC = () => {
         {currentPage === 'home' && <SplitLanding onNavigate={setCurrentPage} />}
         {currentPage === 'inglewood' && <Inglewood />}
         {currentPage === 'downtown' && <Downtown />}
-        {currentPage === 'about' && (
-          <div className="flex items-center justify-center h-full">
-            <h1 className="text-4xl font-display">COMING SOON</h1>
-          </div>
-        )}
+        {currentPage === 'about' && <About />}
       </main>
     </div>
   );
