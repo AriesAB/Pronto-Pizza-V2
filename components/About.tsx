@@ -302,8 +302,8 @@ const About: React.FC = () => {
                 className="relative overflow-hidden rounded-lg shadow-2xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2670&auto=format&fit=crop" 
-                  alt="Italian Kitchen"
+                  src="/attached_assets/IMG_6863_1767575536154.JPG" 
+                  alt="Enjoying PRONTO Pizza"
                   className="w-full h-80 md:h-[500px] object-cover"
                 />
                 <motion.div
