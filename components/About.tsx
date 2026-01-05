@@ -537,7 +537,7 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
-                icon: "🇮🇹", 
+                icon: "/attached_assets/image_1767575637697.png", 
                 title: "Authentic Italian", 
                 desc: "True to the style we grew up with" 
               },
@@ -569,9 +569,13 @@ const About: React.FC = () => {
                     rotate: [0, 5, -5, 0]
                   }}
                   transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                  className="text-6xl mb-6"
+                  className="mb-6 h-16 flex items-center justify-center text-6xl"
                 >
-                  {value.icon}
+                  {value.icon.startsWith('/') ? (
+                    <img src={value.icon} alt={value.title} className="h-full w-auto object-contain" />
+                  ) : (
+                    value.icon
+                  )}
                 </motion.div>
                 <h3 className="font-display text-2xl md:text-3xl text-pronto-cream group-hover:text-pronto-orange transition-colors mb-3">
                   {value.title}
