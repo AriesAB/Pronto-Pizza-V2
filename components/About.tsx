@@ -1,500 +1,493 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { Heart, Utensils, Users, MapPin, Clock, ChefHat } from 'lucide-react';
 
-const AnimatedWord: React.FC<{ word: string; delay: number }> = ({ word, delay }) => {
-  return (
-    <motion.span
-      initial={{ opacity: 0, y: 30, rotateX: -60, filter: "blur(5px)" }}
-      whileInView={{ opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-5%" }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 20, 
-        delay,
-        mass: 0.5
-      }}
-      className="inline-block mr-2"
-    >
-      {word}
-    </motion.span>
-  );
-};
-
-const AnimatedParagraph: React.FC<{ text: string; className?: string; delayStart?: number }> = ({ 
-  text, 
-  className = "",
-  delayStart = 0 
-}) => {
-  const words = text.split(' ');
-  
-  return (
-    <p className={className}>
-      {words.map((word, i) => (
-        <AnimatedWord key={i} word={word} delay={delayStart + i * 0.012} />
-      ))}
-    </p>
-  );
-};
-
-const PulsingDot: React.FC<{ delay?: number }> = ({ delay = 0 }) => (
-  <motion.span
-    initial={{ scale: 0, opacity: 0 }}
-    animate={{ 
-      scale: [1, 1.5, 1],
-      opacity: [0.5, 1, 0.5]
-    }}
-    transition={{
-      duration: 2,
-      delay,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }}
-    className="inline-block w-2 h-2 md:w-3 md:h-3 bg-pronto-orange rounded-full mx-1"
-  />
-);
-
-const FloatingEmoji: React.FC<{ emoji: string; className: string }> = ({ emoji, className }) => (
-  <motion.span
-    initial={{ opacity: 0, scale: 0 }}
-    animate={{ 
-      opacity: 1, 
-      scale: 1,
-      y: [0, -20, 0],
-      rotate: [0, 10, -10, 0]
-    }}
-    transition={{
-      opacity: { duration: 0.5 },
-      scale: { type: "spring", stiffness: 300 },
-      y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-      rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-    }}
-    className={`absolute text-4xl md:text-6xl pointer-events-none ${className}`}
+const RevealText: React.FC<{ children: React.ReactNode; delay?: number }> = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-10%" }}
+    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
   >
-    {emoji}
-  </motion.span>
+    {children}
+  </motion.div>
 );
 
-const FloatingImage: React.FC<{ src: string; alt: string; className: string; size?: string }> = ({ src, alt, className, size = "w-12 h-12 md:w-16 md:h-16" }) => (
-  <motion.img
-    src={src}
-    alt={alt}
-    initial={{ opacity: 0, scale: 0 }}
-    animate={{ 
-      opacity: 1, 
-      scale: 1,
-      y: [0, -20, 0],
-      rotate: [0, 10, -10, 0]
-    }}
-    transition={{
-      opacity: { duration: 0.5 },
-      scale: { type: "spring", stiffness: 300 },
-      y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-      rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-    }}
-    className={`absolute pointer-events-none ${size} ${className}`}
-  />
-);
-
-const GlitchText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => {
+const SplitReveal: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => {
+  const words = text.split(' ');
   return (
-    <motion.span
-      className={`relative inline-block ${className}`}
-      whileHover={{ scale: 1.05 }}
-    >
-      <motion.span
-        animate={{
-          x: [0, -2, 2, -1, 1, 0],
-          opacity: [1, 0.8, 1, 0.9, 1]
-        }}
-        transition={{
-          duration: 0.3,
-          repeat: Infinity,
-          repeatDelay: 3
-        }}
-        className="relative z-10"
-      >
-        {text}
-      </motion.span>
-      <motion.span
-        animate={{
-          x: [0, 3, -3, 2, -2, 0],
-          opacity: [0, 0.3, 0, 0.2, 0]
-        }}
-        transition={{
-          duration: 0.3,
-          repeat: Infinity,
-          repeatDelay: 3
-        }}
-        className="absolute inset-0 text-pronto-orange"
-        aria-hidden
-      >
-        {text}
-      </motion.span>
-    </motion.span>
+    <span className={className}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 20, rotateX: 45 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.03, ease: "easeOut" }}
+          className="inline-block mr-[0.25em]"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
   );
 };
+
+const FloatingBadge: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = "" }) => (
+  <motion.div
+    initial={{ scale: 0, rotate: -10 }}
+    whileInView={{ scale: 1, rotate: 0 }}
+    viewport={{ once: true }}
+    whileHover={{ scale: 1.1, rotate: 5 }}
+    transition={{ type: "spring", stiffness: 200, damping: 15 }}
+    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${className}`}
+  >
+    {children}
+  </motion.div>
+);
 
 const About: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
+  const heroRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
-  const legacyRef = useRef<HTMLDivElement>(null);
+  const teamRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
 
+  const heroInView = useInView(heroRef, { once: true });
   const storyInView = useInView(storyRef, { once: true, margin: "-20%" });
-  const legacyInView = useInView(legacyRef, { once: true, margin: "-20%" });
+  const teamInView = useInView(teamRef, { once: true, margin: "-20%" });
   const valuesInView = useInView(valuesRef, { once: true, margin: "-20%" });
-  const ctaInView = useInView(ctaRef, { once: true, margin: "-20%" });
 
   return (
-    <motion.div 
-      ref={containerRef}
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-black min-h-full w-full overflow-x-hidden relative"
+      className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden"
     >
-      {/* THE ORIGIN STORY */}
-      <div 
-        ref={storyRef}
-        className="relative py-24 md:py-40 px-6 bg-black overflow-hidden"
-      >
-        {/* Decorative half circle - bottom right */}
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-32 -right-32 w-64 h-64 border-[30px] border-pronto-orange/15 rounded-full"
-        />
-
-        <motion.div
-          initial={{ x: "-100%" }}
-          animate={storyInView ? { x: "100%" } : {}}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-10 left-0 whitespace-nowrap pointer-events-none"
-        >
-          <span className="text-[8rem] md:text-[15rem] font-mono-serif text-pronto-cream/5">
-            ANNIBALE • BRUNO • PASSION • FAMILY •
-          </span>
-        </motion.div>
-
-        <div className="max-w-5xl mx-auto relative z-10">
+      {/* EDITORIAL HERO */}
+      <section ref={heroRef} className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
+        <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={storyInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ type: "spring", stiffness: 80, damping: 20 }}
-            className="mb-12"
+            initial={{ scale: 1.2, opacity: 0 }}
+            animate={heroInView ? { scale: 1, opacity: 0.15 } : {}}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0"
           >
-            <h2 className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase">
-              Where It All
-              <br />
-              <motion.span
-                initial={{ opacity: 0, scale: 0 }}
-                animate={storyInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                className="text-pronto-orange inline-block"
-              >
-                Began
-              </motion.span>
-            </h2>
+            <img
+              src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop"
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-              transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
-              className="relative"
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={heroInView ? { width: "120px" } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-[2px] bg-pronto-orange mb-8"
+          />
+          
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={heroInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-6"
+          >
+            Our Story
+          </motion.p>
+
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ y: "100%" }}
+              animate={heroInView ? { y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[clamp(3rem,12vw,10rem)] font-mono-serif text-pronto-cream leading-[0.9] tracking-tight"
             >
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="relative overflow-hidden rounded-lg shadow-2xl"
-              >
-                <img 
-                  src="/attached_assets/IMG_6863_1767575536154.JPG" 
-                  alt="Enjoying PRONTO Pizza"
-                  className="w-full h-80 md:h-[500px] object-cover"
-                />
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  className="absolute inset-0 bg-pronto-orange/20"
-                />
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  rotate: [0, 5, -5, 0],
-                  y: [0, -5, 5, 0]
-                }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -right-6 bg-pronto-orange text-white p-6 rounded-lg shadow-xl"
-              >
-                <span className="font-mono-serif text-3xl md:text-5xl">8+</span>
-                <p className="font-mono-serif text-sm">Years of Love</p>
-              </motion.div>
-            </motion.div>
+              More Than
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ y: "100%" }}
+              animate={heroInView ? { y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[clamp(3rem,12vw,10rem)] font-mono-serif leading-[0.9] tracking-tight"
+            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pronto-orange to-orange-400">Just Pizza</span>
+            </motion.h1>
+          </div>
 
-            <div className="space-y-6">
-              <AnimatedParagraph 
-                text="Our story begins with our father, Annibale Bruno, whose passion for food and service spans decades. Before PRONTO Pizza, Annibale owned and operated multiple restaurants across the industry — from fine dining to fast food to food trucks. He's done it all."
-                className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
-                delayStart={0.4}
-              />
-              <AnimatedParagraph 
-                text="That journey ultimately led him to what he loves most: creating authentic Italian food that brings people together. Over eight years ago, he founded PRONTO Pizza, and it's been home ever since."
-                className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
-                delayStart={0.6}
-              />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
+          >
+            It's family, tradition, and a lifelong love for hospitality.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={heroInView ? { opacity: 1 } : {}}
+            transition={{ delay: 1 }}
+            className="mt-12 flex flex-wrap gap-4"
+          >
+            <FloatingBadge className="bg-pronto-orange/20 text-pronto-orange border border-pronto-orange/30">
+              <Clock className="w-4 h-4" />
+              <span className="font-mono text-sm">8+ Years</span>
+            </FloatingBadge>
+            <FloatingBadge className="bg-pronto-blue/30 text-pronto-cream border border-pronto-blue/30">
+              <Users className="w-4 h-4" />
+              <span className="font-mono text-sm">Family Owned</span>
+            </FloatingBadge>
+            <FloatingBadge className="bg-white/10 text-pronto-cream border border-white/20">
+              <MapPin className="w-4 h-4" />
+              <span className="font-mono text-sm">Calgary, Alberta</span>
+            </FloatingBadge>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={heroInView ? { opacity: 1 } : {}}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-6 h-10 rounded-full border-2 border-pronto-cream/30 flex justify-center pt-2"
+          >
+            <motion.div
+              animate={{ opacity: [1, 0.3, 1], y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1 h-2 bg-pronto-orange rounded-full"
+            />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* THE ORIGIN - HORIZONTAL LAYOUT */}
+      <section ref={storyRef} className="py-24 md:py-32 px-6 md:px-16 relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pronto-orange/30 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={storyInView ? { opacity: 1 } : {}}
+                className="text-[8rem] md:text-[12rem] font-mono-serif text-pronto-orange/10 absolute -top-16 -left-8 pointer-events-none select-none"
+              >
+                01
+              </motion.span>
+              
+              <RevealText>
+                <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-8">
+                  Where It All <span className="text-pronto-orange">Began</span>
+                </h2>
+              </RevealText>
+
+              <div className="space-y-6 relative z-10">
+                <RevealText delay={0.1}>
+                  <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed">
+                    Our story begins with our father, Annibale Bruno, whose passion for food and service spans decades. Before PRONTO Pizza, Annibale owned and operated multiple restaurants across the industry — from fine dining to fast food to food trucks. He's done it all.
+                  </p>
+                </RevealText>
+
+                <RevealText delay={0.2}>
+                  <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed">
+                    That journey ultimately led him to what he loves most: creating authentic Italian food that brings people together. Over eight years ago, he founded PRONTO Pizza, and it's been home ever since.
+                  </p>
+                </RevealText>
+              </div>
+
+              <RevealText delay={0.3}>
+                <div className="mt-10 flex items-center gap-6">
+                  <div className="flex -space-x-4">
+                    <motion.div
+                      whileHover={{ scale: 1.1, zIndex: 10 }}
+                      className="w-14 h-14 rounded-full bg-pronto-orange flex items-center justify-center ring-4 ring-[#0a0a0a]"
+                    >
+                      <ChefHat className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.1, zIndex: 10 }}
+                      className="w-14 h-14 rounded-full bg-pronto-blue flex items-center justify-center ring-4 ring-[#0a0a0a]"
+                    >
+                      <Heart className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.1, zIndex: 10 }}
+                      className="w-14 h-14 rounded-full bg-pronto-cream flex items-center justify-center ring-4 ring-[#0a0a0a]"
+                    >
+                      <Utensils className="w-6 h-6 text-pronto-blue" />
+                    </motion.div>
+                  </div>
+                  <p className="text-pronto-cream/50 font-mono text-sm">
+                    Decades of culinary expertise
+                  </p>
+                </div>
+              </RevealText>
+            </div>
+
+            <div className="order-1 lg:order-2 relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
+                animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-br from-pronto-orange/20 to-pronto-blue/20 rounded-3xl blur-2xl" />
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative rounded-2xl overflow-hidden"
+                >
+                  <img
+                    src="/attached_assets/IMG_6863_1767575536154.JPG"
+                    alt="Enjoying PRONTO Pizza"
+                    className="w-full aspect-[4/5] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={storyInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.5 }}
+                    className="absolute bottom-6 left-6 right-6"
+                  >
+                    <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                      <p className="text-pronto-orange font-mono text-sm uppercase tracking-wider">Est. 2016</p>
+                      <p className="text-pronto-cream font-mono-serif text-xl mt-1">8+ Years of Love</p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* THE NEXT GENERATION */}
-      <div 
-        ref={legacyRef}
-        className="relative py-24 md:py-40 px-6 bg-pronto-blue overflow-hidden"
-      >
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-40 -right-40 w-96 h-96 border-[40px] border-pronto-orange/20 rounded-full"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-60 -left-60 w-[500px] h-[500px] border-[60px] border-white/5 rounded-full"
-        />
+      {/* THE NEXT GENERATION - CARD LAYOUT */}
+      <section ref={teamRef} className="py-24 md:py-32 px-6 md:px-16 relative bg-gradient-to-b from-[#0a0a0a] via-pronto-blue/20 to-[#0a0a0a]">
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={teamInView ? { opacity: 1 } : {}}
+          className="text-[8rem] md:text-[12rem] font-mono-serif text-white/5 absolute top-8 right-8 pointer-events-none select-none"
+        >
+          02
+        </motion.span>
 
-        <div className="max-w-5xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={legacyInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: "spring", stiffness: 80 }}
-            className="text-center mb-16"
-          >
-            <motion.span
-              initial={{ scaleX: 0 }}
-              animate={legacyInView ? { scaleX: 1 } : {}}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="block w-24 h-1 bg-pronto-orange mx-auto mb-8"
-            />
-            <h2 className="text-5xl md:text-8xl font-mono-serif text-pronto-cream uppercase">
-              The Next
-              <br />
-              <span className="text-pronto-orange">Generation</span>
-            </h2>
-          </motion.div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <RevealText>
+              <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">Meet The Team</p>
+            </RevealText>
+            <RevealText delay={0.1}>
+              <h2 className="text-4xl md:text-7xl font-mono-serif text-pronto-cream">
+                The Next <span className="text-pronto-orange">Generation</span>
+              </h2>
+            </RevealText>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             {[
-              { name: "Giulia Bruno", role: "Co-Owner" },
-              { name: "Alessio Bruno", role: "Co-Owner" }
+              { name: "Giulia Bruno", role: "Co-Owner", emoji: "👩‍🍳" },
+              { name: "Alessio Bruno", role: "Co-Owner", emoji: "👨‍🍳" }
             ].map((person, i) => (
               <motion.div
                 key={person.name}
-                initial={{ opacity: 0, x: i === 0 ? -50 : 50, scale: 0.9 }}
-                animate={legacyInView ? { opacity: 1, x: 0, scale: 1 } : {}}
-                transition={{ delay: 0.4 + i * 0.2, type: "spring", stiffness: 100 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center cursor-pointer group"
+                initial={{ opacity: 0, y: 40 }}
+                animate={teamInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 + i * 0.15, duration: 0.6 }}
+                whileHover={{ y: -8 }}
+                className="group cursor-pointer"
               >
-                <motion.div
-                  whileHover={{ rotate: [0, -5, 5, 0] }}
-                  transition={{ duration: 0.5 }}
-                  className="w-32 h-32 mx-auto mb-6 rounded-full bg-pronto-orange/30 flex items-center justify-center"
-                >
-                  <span className="text-5xl">👨‍🍳</span>
-                </motion.div>
-                <h3 className="font-mono-serif text-3xl md:text-4xl text-pronto-cream group-hover:text-pronto-orange transition-colors">
-                  {person.name}
-                </h3>
-                <p className="font-mono-serif text-pronto-cream/60 mt-2">{person.role}</p>
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border border-white/10 backdrop-blur-sm overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-pronto-orange/20 rounded-full blur-3xl group-hover:bg-pronto-orange/30 transition-colors" />
+                  
+                  <div className="relative z-10">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 10 }}
+                      className="w-20 h-20 rounded-2xl bg-pronto-orange/20 flex items-center justify-center mb-6 text-4xl"
+                    >
+                      {person.emoji}
+                    </motion.div>
+                    
+                    <h3 className="text-2xl md:text-3xl font-mono-serif text-pronto-cream group-hover:text-pronto-orange transition-colors">
+                      {person.name}
+                    </h3>
+                    <p className="text-pronto-cream/50 font-mono mt-2">{person.role}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={legacyInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.8 }}
-            className="mt-16 text-center"
-          >
-            <AnimatedParagraph 
-              text="Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it."
-              className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed max-w-3xl mx-auto"
-              delayStart={1}
-            />
-          </motion.div>
+          <div className="max-w-3xl mx-auto space-y-8">
+            <RevealText delay={0.4}>
+              <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed text-center">
+                Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
+              </p>
+            </RevealText>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={legacyInView ? { opacity: 1 } : {}}
-            transition={{ delay: 1.2 }}
-            className="mt-10 text-center"
-          >
-            <AnimatedParagraph 
-              text="In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta."
-              className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed max-w-3xl mx-auto"
-              delayStart={1.3}
-            />
-          </motion.div>
+            <RevealText delay={0.5}>
+              <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed text-center">
+                In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
+              </p>
+            </RevealText>
+
+            <RevealText delay={0.6}>
+              <div className="flex justify-center pt-4">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-pronto-orange/10 border border-pronto-orange/30 rounded-full"
+                >
+                  <MapPin className="w-5 h-5 text-pronto-orange" />
+                  <span className="text-pronto-cream font-mono">1139 9th Ave SE, Calgary, Alberta</span>
+                </motion.div>
+              </div>
+            </RevealText>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* OUR VALUES */}
-      <div 
-        ref={valuesRef}
-        className="relative py-8 md:py-12 px-6 bg-black overflow-hidden"
-      >
-        {/* Decorative quarter circle - top left */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-20 -left-20 w-40 h-40 border-[20px] border-pronto-blue/20 rounded-full"
-        />
-
-        <div className="max-w-5xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, x: -50 }}
-            animate={valuesInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ type: "spring", stiffness: 80 }}
-            className="text-4xl md:text-6xl font-mono-serif text-pronto-cream uppercase mb-6 text-center"
-          >
-            What We're
-            <span className="text-pronto-orange"> About</span>
-          </motion.h2>
-
+      {/* OUR VALUES - MINIMAL SECTION */}
+      <section ref={valuesRef} className="py-24 md:py-32 px-6 md:px-16 relative">
+        <div className="absolute inset-0 overflow-hidden">
           <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] border border-pronto-orange/10 rounded-full"
+          />
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] border border-pronto-blue/10 rounded-full"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.span
             initial={{ opacity: 0 }}
             animate={valuesInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-[8rem] md:text-[12rem] font-mono-serif text-pronto-orange/10 absolute -top-20 left-0 pointer-events-none select-none"
           >
-            <AnimatedParagraph 
-              text="At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community."
-              className="font-mono-serif text-lg md:text-xl text-pronto-cream/80 leading-relaxed"
-              delayStart={1}
-            />
-          </motion.div>
+            03
+          </motion.span>
+
+          <div className="text-center">
+            <RevealText>
+              <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-12">
+                What We're <span className="text-pronto-orange">About</span>
+              </h2>
+            </RevealText>
+
+            <RevealText delay={0.2}>
+              <p className="text-xl md:text-2xl text-pronto-cream/80 font-mono-serif leading-relaxed">
+                At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community.
+              </p>
+            </RevealText>
+
+            <RevealText delay={0.3}>
+              <div className="mt-12 flex flex-wrap justify-center gap-4">
+                {["Authentic", "Quality", "Family", "Community"].map((value, i) => (
+                  <motion.span
+                    key={value}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={valuesInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 107, 53, 0.2)" }}
+                    className="px-6 py-3 rounded-full border border-pronto-cream/20 text-pronto-cream font-mono text-sm uppercase tracking-wider transition-colors"
+                  >
+                    {value}
+                  </motion.span>
+                ))}
+              </div>
+            </RevealText>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* CTA SECTION */}
-      <div 
-        ref={ctaRef}
-        className="relative py-24 md:py-40 px-6 bg-pronto-blue overflow-hidden"
-      >
-        {/* Decorative circles */}
+      {/* CTA SECTION - BOLD STATEMENT */}
+      <section className="py-24 md:py-40 px-6 md:px-16 relative overflow-hidden bg-pronto-orange">
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-24 -left-24 w-48 h-48 border-[25px] border-pronto-orange/20 rounded-full"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-32 -right-32 w-64 h-64 border-[35px] border-white/10 rounded-full"
-        />
-
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={ctaInView ? { x: "-100%" } : {}}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          initial={{ x: "0%" }}
+          animate={{ x: "-50%" }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap"
         >
-          <span className="text-[10rem] md:text-[20rem] font-mono-serif text-white/5">
-            PRONTO • PIZZA • PRONTO • PIZZA •
+          <span className="text-[15rem] md:text-[25rem] font-mono-serif text-white/10">
+            PRONTO • PIZZA • PRONTO • PIZZA • PRONTO • PIZZA •
           </span>
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={ctaInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ type: "spring", stiffness: 100 }}
-          >
-            <h2 className="text-4xl md:text-7xl font-mono-serif text-pronto-cream uppercase mb-8">
+          <RevealText>
+            <h2 className="text-4xl md:text-8xl font-mono-serif text-white leading-tight">
               Ready for a taste?
             </h2>
-          </motion.div>
+          </RevealText>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.3 }}
-            className="font-mono-serif text-xl md:text-2xl text-pronto-cream/80 mb-8 max-w-2xl mx-auto"
-          >
-            Whether you're craving great pizza, a panini with gelato for dessert 
-            <motion.span
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
-              className="inline-block ml-1"
-            >
-              (espresso after 12?… okay, we're joking 😉)
-            </motion.span>
-            , or just a place that feels like home — come by PRONTO Pizza today.
-          </motion.p>
+          <RevealText delay={0.2}>
+            <p className="mt-8 text-xl md:text-2xl text-white/80 font-mono-serif leading-relaxed max-w-2xl mx-auto">
+              Whether you're craving great pizza, a panini with gelato for dessert (espresso after 12?… okay, we're joking 😉), or just a place that feels like home — come by PRONTO Pizza today.
+            </p>
+          </RevealText>
 
-          <motion.p
+          <RevealText delay={0.3}>
+            <p className="mt-8 text-2xl md:text-4xl font-mono-serif text-white font-bold">
+              We can't wait to serve you.
+            </p>
+          </RevealText>
+
+          <RevealText delay={0.4}>
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-pronto-orange font-mono-serif text-lg md:text-xl px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-shadow"
+              >
+                View Our Menu
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-transparent border-2 border-white text-white font-mono-serif text-lg md:text-xl px-8 py-4 rounded-full hover:bg-white hover:text-pronto-orange transition-colors"
+              >
+                Find Us
+              </motion.button>
+            </div>
+          </RevealText>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[#0a0a0a] py-16 px-6 border-t border-white/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.img
+            src="/attached_assets/Screenshot_2025-12-30_192545_1767574481771.png"
+            alt="PRONTO"
             initial={{ opacity: 0, y: 20 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5 }}
-            className="font-mono-serif text-3xl md:text-5xl text-pronto-orange"
-          >
-            We can't wait to serve you.
-          </motion.p>
-
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="h-16 w-auto mx-auto mb-8"
+          />
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={ctaInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
-            className="mt-12 flex flex-wrap justify-center gap-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="font-mono text-pronto-cream/50 text-sm"
           >
-            <motion.button
-              whileHover={{ scale: 1.1, rotate: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-pronto-orange text-white font-mono-serif text-xl md:text-2xl px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
-            >
-              View Our Menu
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-pronto-cream text-pronto-cream font-mono-serif text-xl md:text-2xl px-10 py-4 rounded-lg hover:bg-pronto-cream hover:text-pronto-blue transition-colors"
-            >
-              Find Us
-            </motion.button>
+            <p>© 2024 PRONTO Pizza. All rights reserved.</p>
+            <p className="mt-2 text-pronto-orange">Made with ❤️ by the Bruno Family</p>
           </motion.div>
         </div>
-      </div>
-
-      {/* Footer */}
-      <div className="bg-black text-center py-20 px-4 flex flex-col items-center">
-        <motion.img 
-          src="/attached_assets/Screenshot_2025-12-30_192545_1767574481771.png" 
-          alt="PRONTO" 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="h-20 w-auto mb-8"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="font-mono-serif text-pronto-cream/60"
-        >
-          <p>© 2024 PRONTO Pizza. All rights reserved.</p>
-          <p className="mt-2 text-pronto-orange">Made with ❤️ by the Bruno Family</p>
-        </motion.div>
-      </div>
+      </footer>
     </motion.div>
   );
 };
