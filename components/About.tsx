@@ -169,7 +169,24 @@ const About: React.FC = () => {
         
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
-        <FloatingEmoji emoji="🍕" className="top-20 left-10 md:left-20" />
+        <motion.img 
+          src="/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png"
+          alt="Pizza"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: 0.8, 
+            scale: 1,
+            y: [0, -20, 0],
+            rotate: [-5, 5, -5]
+          }}
+          transition={{
+            opacity: { duration: 0.5, delay: Math.random() * 2 },
+            scale: { duration: 0.5, delay: Math.random() * 2 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="absolute w-16 h-16 md:w-24 md:h-24 object-contain top-20 left-10 md:left-20 z-0"
+        />
         <FloatingEmoji emoji="🇮🇹" className="top-32 right-10 md:right-24" />
         <FloatingEmoji emoji="❤️" className="bottom-32 left-16 md:left-32" />
         <FloatingEmoji emoji="👨‍👩‍👧‍👦" className="bottom-40 right-12 md:right-36" />
@@ -455,9 +472,9 @@ const About: React.FC = () => {
                 repeat: Infinity,
                 delay: Math.random() * 5
               }}
-              className="absolute text-6xl"
+              className="absolute w-12 h-12 md:w-16 md:h-16"
             >
-              🍕
+              <img src="/attached_assets/Screenshot_2026-01-04_182854_1767576580110.png" alt="Pizza" className="w-full h-full object-contain" />
             </motion.div>
           ))}
         </div>
