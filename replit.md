@@ -15,6 +15,7 @@ A React-based website for Pronto Pizza, a pizza restaurant in Calgary. The site 
 /
 ├── components/          # React components
 │   ├── CustomCursor.tsx
+│   ├── Downtown.tsx     # Downtown/Catering menu page
 │   ├── Inglewood.tsx
 │   ├── Navbar.tsx
 │   └── SplitLanding.tsx
@@ -41,6 +42,6 @@ Output will be in the `dist` directory.
 
 ## Pages
 - **Home**: Split-screen landing showcasing both locations
-- **Inglewood**: Dedicated page for the Inglewood location
-- **Downtown**: Coming soon page
+- **Inglewood**: Dedicated page for the Inglewood location with full menu
+- **Downtown**: Catering menu page with items from yycpronto.com/catering (Specials, Pizza, Salads, Pagnotta)
 - **About**: Coming soon page
