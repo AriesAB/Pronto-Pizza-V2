@@ -4,15 +4,15 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 const AnimatedWord: React.FC<{ word: string; delay: number }> = ({ word, delay }) => {
   return (
     <motion.span
-      initial={{ opacity: 0, y: 50, rotateX: -90, filter: "blur(10px)" }}
+      initial={{ opacity: 0, y: 30, rotateX: -60, filter: "blur(5px)" }}
       whileInView={{ opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-5%" }}
       transition={{ 
         type: "spring", 
-        stiffness: 200, 
-        damping: 15, 
+        stiffness: 400, 
+        damping: 20, 
         delay,
-        mass: 0.8
+        mass: 0.5
       }}
       className="inline-block mr-2"
     >
@@ -31,7 +31,7 @@ const AnimatedParagraph: React.FC<{ text: string; className?: string; delayStart
   return (
     <p className={className}>
       {words.map((word, i) => (
-        <AnimatedWord key={i} word={word} delay={delayStart + i * 0.03} />
+        <AnimatedWord key={i} word={word} delay={delayStart + i * 0.012} />
       ))}
     </p>
   );
