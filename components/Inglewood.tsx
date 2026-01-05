@@ -337,7 +337,7 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
 
 const CircularText: React.FC = () => {
   const baseText = "PIZZA • PASTA • PAGNOTTA • ";
-  const text = Array(6).fill(baseText).join("");
+  const text = Array(10).fill(baseText).join("");
   
   return (
     <motion.div
@@ -345,14 +345,16 @@ const CircularText: React.FC = () => {
       animate={{ opacity: 1, rotate: 360 }}
       transition={{
         opacity: { duration: 1, delay: 0.5 },
-        rotate: { duration: 30, repeat: Infinity, ease: "linear" }
+        rotate: { duration: 45, repeat: Infinity, ease: "linear" }
       }}
       className="absolute pointer-events-none z-10"
       style={{ 
-        width: '1000px', 
-        height: '1000px',
-        bottom: '-500px',
-        left: 'calc(50% - 20px)',
+        width: '200vw',
+        height: '200vw',
+        maxWidth: '2400px',
+        maxHeight: '2400px',
+        bottom: '-100vw',
+        left: '50%',
         transform: 'translateX(-50%)'
       }}
     >
@@ -360,11 +362,11 @@ const CircularText: React.FC = () => {
         <defs>
           <path
             id="circularTextPath"
-            d="M 250, 250 m -230, 0 a 230,230 0 1,1 460,0 a 230,230 0 1,1 -460,0"
+            d="M 250, 250 m -240, 0 a 240,240 0 1,1 480,0 a 240,240 0 1,1 -480,0"
             fill="none"
           />
         </defs>
-        <text className="fill-pronto-cream/70" style={{ fontSize: '22px', fontFamily: 'monospace', letterSpacing: '6px', textTransform: 'uppercase', fontWeight: 500 }}>
+        <text className="fill-pronto-cream/70" style={{ fontSize: '18px', fontFamily: 'monospace', letterSpacing: '5px', textTransform: 'uppercase', fontWeight: 500 }}>
           <textPath href="#circularTextPath" startOffset="0%">
             {text}
           </textPath>
