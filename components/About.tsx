@@ -256,67 +256,38 @@ const About: React.FC = () => {
         </motion.span>
 
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <RevealText>
-              <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">Meet The Team</p>
-            </RevealText>
-            <RevealText delay={0.1}>
-              <h2 className="text-4xl md:text-7xl font-mono-serif text-pronto-cream">
-                The Next <span className="text-pronto-orange">Generation</span>
-              </h2>
-            </RevealText>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={teamInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="relative bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-white/10 backdrop-blur-sm flex flex-col justify-center"
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-pronto-orange/10 rounded-full blur-3xl" />
+              
+              <div className="relative z-10 space-y-6">
+                <RevealText>
+                  <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">Meet The Team</p>
+                </RevealText>
+                <RevealText delay={0.1}>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono-serif text-pronto-cream leading-tight">
+                    The Next <span className="text-pronto-orange">Generation</span>
+                  </h2>
+                </RevealText>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            {[
-              { name: "Giulia Bruno", role: "Co-Owner", emoji: "👩‍🍳" },
-              { name: "Alessio Bruno", role: "Co-Owner", emoji: "👨‍🍳" }
-            ].map((person, i) => (
-              <motion.div
-                key={person.name}
-                initial={{ opacity: 0, y: 40 }}
-                animate={teamInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2 + i * 0.15, duration: 0.6 }}
-                whileHover={{ y: -8 }}
-                className="group cursor-pointer"
-              >
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border border-white/10 backdrop-blur-sm overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-pronto-orange/20 rounded-full blur-3xl group-hover:bg-pronto-orange/30 transition-colors" />
-                  
-                  <div className="relative z-10">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 10 }}
-                      className="w-20 h-20 rounded-2xl bg-pronto-orange/20 flex items-center justify-center mb-6 text-4xl"
-                    >
-                      {person.emoji}
-                    </motion.div>
-                    
-                    <h3 className="text-2xl md:text-3xl font-mono-serif text-pronto-cream group-hover:text-pronto-orange transition-colors">
-                      {person.name}
-                    </h3>
-                    <p className="text-pronto-cream/50 font-mono mt-2">{person.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-5 gap-8 items-center">
-              <div className="lg:col-span-3 space-y-8">
-                <RevealText delay={0.4}>
+                <RevealText delay={0.2}>
                   <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
                     Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
                   </p>
                 </RevealText>
 
-                <RevealText delay={0.5}>
+                <RevealText delay={0.3}>
                   <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
                     In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
                   </p>
                 </RevealText>
 
-                <RevealText delay={0.6}>
+                <RevealText delay={0.4}>
                   <div className="flex justify-start pt-4">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
@@ -328,26 +299,53 @@ const About: React.FC = () => {
                   </div>
                 </RevealText>
               </div>
+            </motion.div>
+
+            <div className="flex flex-col gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={teamInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ scale: 1.02 }}
+                className="relative flex-1 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl border border-white/10 overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-pronto-cream/5 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-pronto-orange/20 flex items-center justify-center text-3xl">
+                      👩‍🍳
+                    </div>
+                    <p className="text-pronto-cream/40 font-mono text-sm">Image Placeholder</p>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-2xl md:text-3xl font-mono-serif text-pronto-cream group-hover:text-pronto-orange transition-colors">
+                    Giulia Bruno
+                  </h3>
+                  <p className="text-pronto-cream/50 font-mono mt-1">Co-Owner</p>
+                </div>
+              </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
-                animate={teamInView ? { opacity: 1, scale: 1, rotate: 3 } : {}}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="lg:col-span-2 relative"
+                initial={{ opacity: 0, y: 30 }}
+                animate={teamInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                whileHover={{ scale: 1.02 }}
+                className="relative flex-1 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl border border-white/10 overflow-hidden group"
               >
-                <div className="absolute -inset-4 bg-gradient-to-br from-pronto-blue/20 to-pronto-orange/20 rounded-3xl blur-2xl" />
-                <motion.div
-                  whileHover={{ scale: 1.02, rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative rounded-2xl overflow-hidden shadow-2xl"
-                >
-                  <img
-                    src="/attached_assets/IMG_6900_1767587161342.JPG"
-                    alt="Pizza with friends at PRONTO"
-                    className="w-full aspect-[4/5] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                </motion.div>
+                <div className="absolute inset-0 bg-pronto-cream/5 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-pronto-orange/20 flex items-center justify-center text-3xl">
+                      👨‍🍳
+                    </div>
+                    <p className="text-pronto-cream/40 font-mono text-sm">Image Placeholder</p>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-2xl md:text-3xl font-mono-serif text-pronto-cream group-hover:text-pronto-orange transition-colors">
+                    Alessio Bruno
+                  </h3>
+                  <p className="text-pronto-cream/50 font-mono mt-1">Co-Owner</p>
+                </div>
               </motion.div>
             </div>
           </div>
