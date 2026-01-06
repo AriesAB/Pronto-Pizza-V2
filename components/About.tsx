@@ -324,13 +324,13 @@ const About: React.FC = () => {
                 </RevealText>
 
                 <RevealText delay={0.2}>
-                  <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed">
+                  <p className="text-xl md:text-2xl text-pronto-cream/70 font-mono-serif leading-relaxed">
                     Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
                   </p>
                 </RevealText>
 
                 <RevealText delay={0.3}>
-                  <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed">
+                  <p className="text-xl md:text-2xl text-pronto-cream/70 font-mono-serif leading-relaxed">
                     In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
                   </p>
                 </RevealText>
