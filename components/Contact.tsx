@@ -147,14 +147,6 @@ const Contact: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="relative">
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={formInView ? { opacity: 1 } : {}}
-                className="text-[8rem] md:text-[12rem] font-mono-serif text-pronto-orange/10 absolute -top-16 -left-8 pointer-events-none select-none"
-              >
-                01
-              </motion.span>
-              
               <RevealText>
                 <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-8">
                   Send Us a <span className="text-pronto-orange">Message</span>
@@ -266,14 +258,6 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="relative lg:pl-8">
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={formInView ? { opacity: 1 } : {}}
-                className="text-[8rem] md:text-[12rem] font-mono-serif text-white/5 absolute -top-16 -right-8 pointer-events-none select-none hidden lg:block"
-              >
-                02
-              </motion.span>
-
               <RevealText>
                 <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-12">
                   Follow <span className="text-pronto-orange">Along</span>
