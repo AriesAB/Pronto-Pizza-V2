@@ -257,50 +257,6 @@ const About: React.FC = () => {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={teamInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="relative py-8 md:py-4 flex flex-col justify-center"
-            >
-              <div className="absolute top-0 right-0 w-40 h-40 bg-pronto-orange/10 rounded-full blur-3xl" />
-              
-              <div className="relative z-10 space-y-6">
-                <RevealText>
-                  <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">Meet The Team</p>
-                </RevealText>
-                <RevealText delay={0.1}>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono-serif text-pronto-cream leading-tight">
-                    The Next <span className="text-pronto-orange">Generation</span>
-                  </h2>
-                </RevealText>
-
-                <RevealText delay={0.2}>
-                  <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
-                    Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
-                  </p>
-                </RevealText>
-
-                <RevealText delay={0.3}>
-                  <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
-                    In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
-                  </p>
-                </RevealText>
-
-                <RevealText delay={0.4}>
-                  <div className="flex justify-start pt-4">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      className="inline-flex items-center gap-3 px-6 py-3 bg-pronto-orange/10 border border-pronto-orange/30 rounded-full"
-                    >
-                      <MapPin className="w-5 h-5 text-pronto-orange" />
-                      <span className="text-pronto-cream font-mono">1139 9th Ave SE, Calgary, Alberta</span>
-                    </motion.div>
-                  </div>
-                </RevealText>
-              </div>
-            </motion.div>
-
             <div className="flex flex-col gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -348,6 +304,50 @@ const About: React.FC = () => {
                 </div>
               </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={teamInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="relative py-8 md:py-4 flex flex-col justify-center"
+            >
+              <div className="absolute top-0 left-0 w-40 h-40 bg-pronto-orange/10 rounded-full blur-3xl" />
+              
+              <div className="relative z-10 space-y-6">
+                <RevealText>
+                  <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">Meet The Team</p>
+                </RevealText>
+                <RevealText delay={0.1}>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono-serif text-pronto-cream leading-tight">
+                    The Next <span className="text-pronto-orange">Generation</span>
+                  </h2>
+                </RevealText>
+
+                <RevealText delay={0.2}>
+                  <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
+                    Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
+                  </p>
+                </RevealText>
+
+                <RevealText delay={0.3}>
+                  <p className="text-lg md:text-xl text-pronto-cream/70 font-mono-serif leading-relaxed">
+                    In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
+                  </p>
+                </RevealText>
+
+                <RevealText delay={0.4}>
+                  <div className="flex justify-start pt-4">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-pronto-orange/10 border border-pronto-orange/30 rounded-full"
+                    >
+                      <MapPin className="w-5 h-5 text-pronto-orange" />
+                      <span className="text-pronto-cream font-mono">1139 9th Ave SE, Calgary, Alberta</span>
+                    </motion.div>
+                  </div>
+                </RevealText>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
