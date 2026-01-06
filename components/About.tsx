@@ -184,34 +184,6 @@ const About: React.FC = () => {
                   </p>
                 </RevealText>
               </div>
-
-              <RevealText delay={0.3}>
-                <div className="mt-10 flex items-center gap-6">
-                  <div className="flex -space-x-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1, zIndex: 10 }}
-                      className="w-14 h-14 rounded-full bg-pronto-orange flex items-center justify-center ring-4 ring-[#0a0a0a]"
-                    >
-                      <ChefHat className="w-6 h-6 text-white" />
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.1, zIndex: 10 }}
-                      className="w-14 h-14 rounded-full bg-pronto-blue flex items-center justify-center ring-4 ring-[#0a0a0a]"
-                    >
-                      <Heart className="w-6 h-6 text-white" />
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.1, zIndex: 10 }}
-                      className="w-14 h-14 rounded-full bg-pronto-cream flex items-center justify-center ring-4 ring-[#0a0a0a]"
-                    >
-                      <Utensils className="w-6 h-6 text-pronto-blue" />
-                    </motion.div>
-                  </div>
-                  <p className="text-pronto-cream/50 font-mono text-sm">
-                    Decades of culinary expertise
-                  </p>
-                </div>
-              </RevealText>
             </div>
 
             <div className="order-1 lg:order-2 relative">
