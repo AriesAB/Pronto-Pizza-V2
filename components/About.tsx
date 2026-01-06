@@ -261,7 +261,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, x: -40 }}
               animate={teamInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="relative bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-white/10 backdrop-blur-sm flex flex-col justify-center"
+              className="relative py-8 md:py-4 flex flex-col justify-center"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-pronto-orange/10 rounded-full blur-3xl" />
               
