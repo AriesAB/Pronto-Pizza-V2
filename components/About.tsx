@@ -406,7 +406,7 @@ const About: React.FC = () => {
               </RevealText>
 
               <RevealText delay={0.2}>
-                <p className="text-xl md:text-2xl text-pronto-cream/80 font-mono-serif leading-relaxed">
+                <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed">
                   At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community.
                 </p>
               </RevealText>
