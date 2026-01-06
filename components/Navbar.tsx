@@ -8,6 +8,7 @@ const navItems: NavItem[] = [
   { label: 'INGLEWOOD', href: '#inglewood', page: 'inglewood' },
   { label: 'DOWNTOWN', href: '#downtown', page: 'downtown' },
   { label: 'ABOUT', href: '#about', page: 'about' },
+  { label: 'CONTACT', href: '#contact', page: 'contact' },
   { label: 'ORDER NOW', href: '#order', isButton: true },
 ];
 
@@ -21,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const hideOnScrollPages = ['inglewood', 'downtown', 'about'];
+  const hideOnScrollPages = ['inglewood', 'downtown', 'about', 'contact'];
   const shouldHideOnScroll = hideOnScrollPages.includes(currentPage);
 
   useEffect(() => {

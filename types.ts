@@ -7,4 +7,4 @@ export interface NavItem {
 
 export type SectionType = 'top' | 'bottom' | null;
 
-export type Page = 'home' | 'inglewood' | 'downtown' | 'about';
+export type Page = 'home' | 'inglewood' | 'downtown' | 'about' | 'contact';

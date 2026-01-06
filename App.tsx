@@ -4,6 +4,7 @@ import SplitLanding from './components/SplitLanding';
 import Inglewood from './components/Inglewood';
 import Downtown from './components/Downtown';
 import About from './components/About';
+import Contact from './components/Contact';
 import { Page } from './types';
 
 const App: React.FC = () => {
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         {currentPage === 'inglewood' && <Inglewood />}
         {currentPage === 'downtown' && <Downtown />}
         {currentPage === 'about' && <About />}
+        {currentPage === 'contact' && <Contact />}
       </main>
     </div>
   );
