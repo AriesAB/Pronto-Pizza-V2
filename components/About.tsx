@@ -314,9 +314,6 @@ const About: React.FC = () => {
               <div className="absolute top-0 left-0 w-40 h-40 bg-pronto-orange/10 rounded-full blur-3xl" />
               
               <div className="relative z-10 space-y-6">
-                <RevealText>
-                  <p className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-4">Meet The Team</p>
-                </RevealText>
                 <RevealText delay={0.1}>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono-serif text-pronto-cream leading-tight">
                     The Next <span className="text-pronto-orange">Generation</span>
