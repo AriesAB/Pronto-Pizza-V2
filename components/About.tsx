@@ -128,26 +128,6 @@ const About: React.FC = () => {
           >
             It's family, tradition, and a lifelong love for hospitality.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={heroInView ? { opacity: 1 } : {}}
-            transition={{ delay: 1 }}
-            className="mt-12 flex flex-wrap gap-4"
-          >
-            <FloatingBadge className="bg-pronto-orange/20 text-pronto-orange border border-pronto-orange/30">
-              <Clock className="w-4 h-4" />
-              <span className="font-mono text-sm">8+ Years</span>
-            </FloatingBadge>
-            <FloatingBadge className="bg-pronto-blue/30 text-pronto-cream border border-pronto-blue/30">
-              <Users className="w-4 h-4" />
-              <span className="font-mono text-sm">Family Owned</span>
-            </FloatingBadge>
-            <FloatingBadge className="bg-white/10 text-pronto-cream border border-white/20">
-              <MapPin className="w-4 h-4" />
-              <span className="font-mono text-sm">Calgary, Alberta</span>
-            </FloatingBadge>
-          </motion.div>
         </div>
 
         <motion.div
