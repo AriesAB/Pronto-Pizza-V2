@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-pronto-orange text-pronto-orange hover:border-white hover:text-white inline-flex flex-col items-center justify-center leading-tight"
+                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-[#1A1B8C] text-[#1A1B8C] hover:border-[#FF5A1F] hover:text-[#FF5A1F] inline-flex flex-col items-center justify-center leading-tight"
               >
                 <span>{item.label}</span>
                 <span className="text-xs font-normal lowercase opacity-80 font-sans mt-0.5">(coming soon)</span>
@@ -120,12 +120,12 @@ const Navbar: React.FC = () => {
                   onClick={handleNavClick}
                   className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
                     currentPath === item.path 
-                      ? 'text-white'
-                      : 'text-pronto-orange hover:text-white'
+                      ? 'text-[#FF5A1F]'
+                      : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                   }`}
                 >
                   <span>{item.label}</span>
-                  <span className={`absolute -bottom-1 left-0 h-1 bg-white transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                 </Link>
               </motion.div>
             )
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <button
-          className="md:hidden relative z-50 text-pronto-orange"
+          className="md:hidden relative z-50 text-[#1A1B8C] hover:text-[#FF5A1F] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={32} /> : <Menu size={32} />}
@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-pronto-orange hover:text-white"
+                  className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-[#1A1B8C] hover:text-[#FF5A1F]"
                 >
                   <span>{item.label}</span>
                   <span className="text-lg font-sans font-normal mt-1 opacity-70">(coming soon)</span>
@@ -173,8 +173,8 @@ const Navbar: React.FC = () => {
                     onClick={handleNavClick}
                     className={`text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center ${
                       currentPath === item.path
-                        ? 'text-white'
-                        : 'text-pronto-orange hover:text-white'
+                        ? 'text-[#FF5A1F]'
+                        : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                     }`}
                   >
                     <span>{item.label}</span>
