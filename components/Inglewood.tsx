@@ -1,5 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
+import { Page } from '../types';
+
+interface InglewoodProps {
+  onNavigate: (page: Page) => void;
+}
 
 interface MenuItemData {
   name: string;
@@ -366,7 +372,7 @@ const HeroTextAnimation: React.FC = () => {
   );
 };
 
-const Inglewood: React.FC = () => {
+const Inglewood: React.FC<InglewoodProps> = ({ onNavigate }) => {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -374,6 +380,18 @@ const Inglewood: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
+      {/* Back Button */}
+      <motion.button
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 0.3 }}
+        onClick={() => onNavigate('home')}
+        className="fixed top-24 left-6 z-50 flex items-center gap-2 bg-pronto-navy/90 hover:bg-pronto-orange text-pronto-cream px-4 py-2 rounded-full font-mono-serif text-sm uppercase tracking-wider transition-colors duration-300 backdrop-blur-sm shadow-lg"
+      >
+        <ArrowLeft size={18} />
+        Back
+      </motion.button>
+
       {/* HERO SECTION - Similar to About page */}
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
         

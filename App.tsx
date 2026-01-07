@@ -18,8 +18,8 @@ const App: React.FC = () => {
         currentPage === 'inglewood' ? 'mt-0' : ''
       }`}>
         {currentPage === 'home' && <SplitLanding onNavigate={setCurrentPage} />}
-        {currentPage === 'inglewood' && <Inglewood />}
-        {currentPage === 'downtown' && <Downtown />}
+        {currentPage === 'inglewood' && <Inglewood onNavigate={setCurrentPage} />}
+        {currentPage === 'downtown' && <Downtown onNavigate={setCurrentPage} />}
         {currentPage === 'about' && <About />}
         {currentPage === 'contact' && <Contact />}
       </main>
