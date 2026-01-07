@@ -314,7 +314,7 @@ const Downtown: React.FC = () => {
                  <motion.div 
                     initial={{ opacity: 0, y: 40, rotateX: 90 }}
                     whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    viewport={{ once: true, margin: "-10%" }}
+                    viewport={{ once: false, margin: "-15%" }}
                     transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="flex flex-col md:flex-row items-baseline gap-4 mb-16 border-b-8 border-pronto-blue pb-4 origin-bottom"
                     style={{ perspective: 1000 }}
