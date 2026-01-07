@@ -475,7 +475,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-32 md:top-48 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-32 md:top-48 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_193607_1767580652649.png"
@@ -490,7 +490,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 3.6, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-64 md:top-96 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-64 md:top-96 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
@@ -509,7 +509,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-0 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_194832_1767581372425.png"
@@ -524,7 +524,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-[12rem] md:top-[16rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_194841_1767581370484.png"
@@ -539,7 +539,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-[24rem] md:top-[32rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-[24rem] md:top-[32rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
@@ -558,7 +558,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-0 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_194129_1767580962260.png"
@@ -573,7 +573,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-[20rem] md:top-[28rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-[20rem] md:top-[28rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_182854_1767581039044.png"
@@ -588,7 +588,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-[40rem] md:top-[56rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-[40rem] md:top-[56rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
@@ -607,7 +607,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-0 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_195650_1767581855983.png"
@@ -622,7 +622,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-[12rem] md:top-[16rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
@@ -641,7 +641,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-0 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Gemini_Generated_Image_uqgikduqgikduqgi_(1)_1767580147823.png"
@@ -656,7 +656,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-[12rem] md:top-[16rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
@@ -675,7 +675,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-0 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_200053_1767582080825.png"
@@ -690,7 +690,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-[12rem] md:top-[16rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
@@ -709,7 +709,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute right-2 md:-right-40 top-0 w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                      <motion.img
                        src="/attached_assets/Screenshot_2026-01-04_200345_1767582273815.png"
@@ -724,7 +724,7 @@ const Inglewood: React.FC = () => {
                          y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
                          rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
                        }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
+                       className="absolute left-2 md:-left-40 top-[12rem] md:top-[16rem] w-16 h-16 md:w-40 md:h-40 object-contain z-0 md:z-10 pointer-events-none opacity-30 md:opacity-100"
                      />
                    </>
                  )}
