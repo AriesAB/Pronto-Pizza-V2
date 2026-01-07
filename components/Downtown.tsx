@@ -312,10 +312,10 @@ const Downtown: React.FC = () => {
                   className="mb-24 lg:mb-40"
                >
                  <motion.div 
-                    initial={{ opacity: 0, y: 50, rotateX: 90 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    viewport={{ once: false, margin: "-15%" }}
-                    transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-10%" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     className="flex flex-col md:flex-row items-baseline gap-4 mb-16 border-b-8 border-pronto-blue pb-4 origin-bottom"
                  >
                     <h3 className="text-6xl md:text-9xl font-display text-pronto-blue uppercase leading-none hover:text-pronto-orange transition-colors duration-200 cursor-default">
