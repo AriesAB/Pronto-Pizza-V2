@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-pronto-blue text-pronto-blue hover:border-pronto-orange hover:text-pronto-orange inline-flex flex-col items-center justify-center leading-tight"
+                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-pronto-blue text-pronto-blue hover:border-white hover:text-white inline-flex flex-col items-center justify-center leading-tight"
               >
                 <span>{item.label}</span>
                 <span className="text-xs font-normal lowercase opacity-80 font-sans mt-0.5">(coming soon)</span>
@@ -120,12 +120,12 @@ const Navbar: React.FC = () => {
                   onClick={handleNavClick}
                   className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
                     currentPath === item.path 
-                      ? 'text-pronto-orange'
-                      : 'text-pronto-blue hover:text-pronto-orange'
+                      ? 'text-white'
+                      : 'text-pronto-blue hover:text-white'
                   }`}
                 >
                   <span>{item.label}</span>
-                  <span className={`absolute -bottom-1 left-0 h-1 bg-pronto-orange transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                  <span className={`absolute -bottom-1 left-0 h-1 bg-white transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                 </Link>
               </motion.div>
             )
@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-pronto-blue hover:text-pronto-orange"
+                  className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-pronto-blue hover:text-white"
                 >
                   <span>{item.label}</span>
                   <span className="text-lg font-sans font-normal mt-1 opacity-70">(coming soon)</span>
@@ -173,8 +173,8 @@ const Navbar: React.FC = () => {
                     onClick={handleNavClick}
                     className={`text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center ${
                       currentPath === item.path
-                        ? 'text-pronto-orange'
-                        : 'text-pronto-blue hover:text-pronto-orange'
+                        ? 'text-white'
+                        : 'text-pronto-blue hover:text-white'
                     }`}
                   >
                     <span>{item.label}</span>
