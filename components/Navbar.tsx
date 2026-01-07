@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { NavItem, Page } from '../types';
+import { Link, useLocation } from 'react-router-dom';
 
-const navItems: NavItem[] = [
-  { label: 'HOME', href: '#', page: 'home' },
-  { label: 'INGLEWOOD', href: '#inglewood', page: 'inglewood' },
-  { label: 'DOWNTOWN', href: '#downtown', page: 'downtown' },
-  { label: 'ABOUT', href: '#about', page: 'about' },
-  { label: 'CONTACT', href: '#contact', page: 'contact' },
-  { label: 'ORDER NOW', href: '#order', isButton: true },
-];
-
-interface NavbarProps {
-  onNavigate: (page: Page) => void;
-  currentPage: Page;
+interface NavItem {
+  label: string;
+  path: string;
+  isButton?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
+const navItems: NavItem[] = [
+  { label: 'HOME', path: '/' },
+  { label: 'INGLEWOOD', path: '/inglewood' },
+  { label: 'DOWNTOWN', path: '/downtown' },
+  { label: 'ABOUT', path: '/about' },
+  { label: 'CONTACT', path: '/contact' },
+  { label: 'ORDER NOW', path: '#order', isButton: true },
+];
+
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
-  const hideOnScrollPages = ['inglewood', 'downtown', 'about', 'contact'];
-  const shouldHideOnScroll = hideOnScrollPages.includes(currentPage);
+  const hideOnScrollPages = ['/inglewood', '/downtown', '/about', '/contact'];
+  const shouldHideOnScroll = hideOnScrollPages.includes(currentPath);
 
   useEffect(() => {
     if (!shouldHideOnScroll) {
@@ -56,12 +59,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   useEffect(() => {
     setIsVisible(true);
     setLastScrollY(0);
-  }, [currentPage]);
+  }, [currentPath]);
 
-  const handleNavClick = (item: NavItem) => {
-    if (item.page) {
-      onNavigate(item.page);
-    }
+  const handleNavClick = () => {
     setIsOpen(false);
   };
 
@@ -78,8 +78,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       }`}
     >
       <div className="flex justify-between items-center w-full">
-        <button 
-          onClick={() => onNavigate('home')} 
+        <Link 
+          to="/"
           className="relative z-50 group text-left" 
         >
           <motion.div
@@ -93,32 +93,42 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               className="h-12 md:h-16 w-auto object-contain"
             />
           </motion.div>
-        </button>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-12">
           {navItems.map((item, index) => (
-            <motion.button
-              key={item.label}
-              onClick={() => handleNavClick(item)}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
-                item.isButton 
-                  ? 'px-8 py-2 border-2 border-pronto-blue text-pronto-blue hover:border-pronto-orange hover:text-pronto-orange inline-flex flex-col items-center justify-center leading-tight' 
-                  : currentPage === item.page 
-                    ? 'text-pronto-orange'
-                    : 'text-pronto-blue hover:text-pronto-orange'
-              }`}
-            >
-              <span>{item.label}</span>
-              {item.label === 'ORDER NOW' && (
+            item.isButton ? (
+              <motion.button
+                key={item.label}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-pronto-blue text-pronto-blue hover:border-pronto-orange hover:text-pronto-orange inline-flex flex-col items-center justify-center leading-tight"
+              >
+                <span>{item.label}</span>
                 <span className="text-xs font-normal lowercase opacity-80 font-sans mt-0.5">(coming soon)</span>
-              )}
-              {!item.isButton && (
-                <span className={`absolute -bottom-1 left-0 h-1 bg-pronto-orange transition-all duration-300 ${currentPage === item.page ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-              )}
-            </motion.button>
+              </motion.button>
+            ) : (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Link
+                  to={item.path}
+                  onClick={handleNavClick}
+                  className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
+                    currentPath === item.path 
+                      ? 'text-pronto-orange'
+                      : 'text-pronto-blue hover:text-pronto-orange'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <span className={`absolute -bottom-1 left-0 h-1 bg-pronto-orange transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                </Link>
+              </motion.div>
+            )
           ))}
         </div>
 
@@ -140,25 +150,37 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
             className="fixed inset-0 bg-pronto-navy flex flex-col justify-center items-center z-40"
           >
             {navItems.map((item, index) => (
-              <motion.button
-                key={item.label}
-                onClick={() => handleNavClick(item)}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-                className={`text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center ${
-                  item.isButton 
-                    ? 'text-pronto-blue hover:text-pronto-orange' 
-                    : currentPage === item.page
-                      ? 'text-pronto-orange'
-                      : 'text-pronto-blue hover:text-pronto-orange'
-                }`}
-              >
-                <span>{item.label}</span>
-                {item.label === 'ORDER NOW' && (
+              item.isButton ? (
+                <motion.button
+                  key={item.label}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
+                  className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-pronto-blue hover:text-pronto-orange"
+                >
+                  <span>{item.label}</span>
                   <span className="text-lg font-sans font-normal mt-1 opacity-70">(coming soon)</span>
-                )}
-              </motion.button>
+                </motion.button>
+              ) : (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
+                >
+                  <Link
+                    to={item.path}
+                    onClick={handleNavClick}
+                    className={`text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center ${
+                      currentPath === item.path
+                        ? 'text-pronto-orange'
+                        : 'text-pronto-blue hover:text-pronto-orange'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                  </Link>
+                </motion.div>
+              )
             ))}
           </motion.div>
         )}

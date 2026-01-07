@@ -1,30 +1,24 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { SectionType, Page } from '../types';
+import { useNavigate } from 'react-router-dom';
+import { SectionType } from '../types';
 import { ArrowUpRight } from 'lucide-react';
 
-interface SplitLandingProps {
-  onNavigate: (page: Page) => void;
-}
-
-const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
+const SplitLanding: React.FC = () => {
   const [hoveredSection, setHoveredSection] = useState<SectionType>(null);
+  const navigate = useNavigate();
 
-  // Animation variants for the container heights
-  // Using percentages to fill the flex container defined in App.tsx
   const containerVariants = {
     expanded: { height: '70%' },
     collapsed: { height: '30%' },
     default: { height: '50%' },
   };
 
-  // Animation for the background image scale
   const imageVariants = {
     hovered: { scale: 1.1 },
     initial: { scale: 1 },
   };
 
-  // Helper to determine variants based on state
   const getVariant = (section: 'top' | 'bottom') => {
     if (hoveredSection === null) return 'default';
     return hoveredSection === section ? 'expanded' : 'collapsed';
@@ -41,7 +35,7 @@ const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
         transition={{ type: 'spring', stiffness: 120, damping: 20 }}
         onMouseEnter={() => setHoveredSection('top')}
         onMouseLeave={() => setHoveredSection(null)}
-        onClick={() => onNavigate('inglewood')}
+        onClick={() => navigate('/inglewood')}
       >
         {/* Background Image */}
         <motion.div
@@ -77,7 +71,7 @@ const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
               className="overflow-hidden"
             >
                <button 
-                onClick={(e) => { e.stopPropagation(); onNavigate('inglewood'); }}
+                onClick={(e) => { e.stopPropagation(); navigate('/inglewood'); }}
                 className="mt-6 bg-pronto-orange text-pronto-navy px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 mx-auto hover:bg-white transition-colors"
                >
                   View Menu <ArrowUpRight />
@@ -96,7 +90,7 @@ const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
         transition={{ type: 'spring', stiffness: 120, damping: 20 }}
         onMouseEnter={() => setHoveredSection('bottom')}
         onMouseLeave={() => setHoveredSection(null)}
-        onClick={() => onNavigate('downtown')}
+        onClick={() => navigate('/downtown')}
       >
         {/* Background Image */}
         <motion.div
@@ -140,7 +134,7 @@ const SplitLanding: React.FC<SplitLandingProps> = ({ onNavigate }) => {
               className="overflow-hidden"
             >
               <button 
-                onClick={(e) => { e.stopPropagation(); onNavigate('downtown'); }}
+                onClick={(e) => { e.stopPropagation(); navigate('/downtown'); }}
                 className="mt-16 bg-pronto-blue text-pronto-cream px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 mx-auto hover:bg-white hover:text-pronto-blue transition-colors"
               >
                   Book Catering <ArrowUpRight />

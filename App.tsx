@@ -1,29 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SplitLanding from './components/SplitLanding';
 import Inglewood from './components/Inglewood';
 import Downtown from './components/Downtown';
 import About from './components/About';
 import Contact from './components/Contact';
-import { Page } from './types';
 
-const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+const AppContent: React.FC = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
     <div className="bg-pronto-navy h-screen flex flex-col text-pronto-cream font-sans selection:bg-pronto-orange selection:text-white">
-      <Navbar onNavigate={setCurrentPage} currentPage={currentPage} />
+      <Navbar />
       
       <main className={`flex-1 relative overflow-y-auto overflow-x-hidden no-scrollbar ${
-        currentPage === 'inglewood' ? 'mt-0' : ''
+        currentPath === '/inglewood' ? 'mt-0' : ''
       }`}>
-        {currentPage === 'home' && <SplitLanding onNavigate={setCurrentPage} />}
-        {currentPage === 'inglewood' && <Inglewood onNavigate={setCurrentPage} />}
-        {currentPage === 'downtown' && <Downtown onNavigate={setCurrentPage} />}
-        {currentPage === 'about' && <About />}
-        {currentPage === 'contact' && <Contact />}
+        <Routes>
+          <Route path="/" element={<SplitLanding />} />
+          <Route path="/inglewood" element={<Inglewood />} />
+          <Route path="/downtown" element={<Downtown />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 };
 
