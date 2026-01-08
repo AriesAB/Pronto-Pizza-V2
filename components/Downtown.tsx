@@ -271,7 +271,7 @@ const Downtown: React.FC = () => {
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ 
                   x: {
-                    duration: 25,
+                    duration: 20,
                     repeat: Infinity,
                     ease: "linear",
                     repeatType: "loop"
