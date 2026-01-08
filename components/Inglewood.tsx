@@ -341,7 +341,7 @@ const HeroTextAnimation: React.FC = () => {
             animate={{ x: ["0%", "-50%"] }}
             transition={{ 
               x: {
-                duration: 120,
+                duration: 180,
                 repeat: Infinity,
                 ease: "linear",
                 repeatType: "loop"
