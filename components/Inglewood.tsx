@@ -276,7 +276,7 @@ const MenuItem = ({ item }: { item: MenuItemData; key?: string }) => {
         className="flex items-baseline justify-between border-b-2 border-pronto-blue/20 pb-1 mb-2 border-dashed relative transition-colors duration-200 group-hover:border-pronto-orange group-hover:border-solid"
       >
         <h4 
-          className="font-mono-serif font-normal text-xl md:text-3xl text-pronto-blue uppercase tracking-tight origin-left transition-colors duration-200 group-hover:text-pronto-orange"
+          className="font-mono-serif font-normal text-xl md:text-3xl text-white uppercase tracking-tight origin-left transition-colors duration-200 group-hover:text-pronto-orange"
         >
           {item.name}
         </h4>
@@ -289,7 +289,7 @@ const MenuItem = ({ item }: { item: MenuItemData; key?: string }) => {
       
       {item.ingredients && (
         <p 
-          className="font-mono-serif text-base md:text-lg text-pronto-blue/70 leading-relaxed max-w-2xl transition-colors duration-200 group-hover:text-pronto-orange/80"
+          className="font-mono-serif text-base md:text-lg text-white/70 leading-relaxed max-w-2xl transition-colors duration-200 group-hover:text-pronto-orange/80"
         >
           {item.ingredients}
         </p>
@@ -368,7 +368,7 @@ const Inglewood: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-white min-h-full w-full overflow-x-hidden"
+      className="bg-black min-h-full w-full overflow-x-hidden"
     >
       {/* HERO SECTION - Similar to About page */}
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
@@ -462,14 +462,14 @@ const Inglewood: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                         viewport={{ once: true, margin: "-10%" }}
                         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                        className="flex flex-col md:flex-row items-baseline gap-4 border-b-8 border-pronto-blue pb-4 origin-bottom"
+                        className="flex flex-col md:flex-row items-baseline gap-4 border-b-8 border-white pb-4 origin-bottom"
                         style={{ perspective: 1000 }}
                     >
-                        <h3 className="text-6xl md:text-9xl font-display text-pronto-blue uppercase leading-none hover:text-pronto-orange transition-colors duration-200 cursor-default">
+                        <h3 className="text-6xl md:text-9xl font-display text-white uppercase leading-none hover:text-pronto-orange transition-colors duration-200 cursor-default">
                         {section.title}
                         </h3>
                         {section.note && (
-                        <p className="font-mono-serif text-pronto-blue text-sm md:text-xl font-bold italic md:ml-auto max-w-md text-right">
+                        <p className="font-mono-serif text-white text-sm md:text-xl font-bold italic md:ml-auto max-w-md text-right">
                             {section.note}
                         </p>
                         )}
@@ -484,8 +484,8 @@ const Inglewood: React.FC = () => {
                </div>
              ))}
 
-             <div className="mt-12 mb-12 border-t-2 border-pronto-blue pt-12 text-center">
-                 <p className="font-mono-serif font-bold text-2xl text-pronto-blue">(V) = VEGETARIAN</p>
+             <div className="mt-12 mb-12 border-t-2 border-white pt-12 text-center">
+                 <p className="font-mono-serif font-bold text-2xl text-white">(V) = VEGETARIAN</p>
                  <p className="font-mono-serif font-bold text-2xl text-pronto-orange mt-4">GLUTEN FRIENDLY OPTIONS AVAILABLE</p>
              </div>
 
