@@ -459,296 +459,27 @@ const Inglewood: React.FC = () => {
                   id={section.id} 
                   className="mb-24 lg:mb-40 relative"
                >
-                 {/* Floating section icons */}
-                 {section.id === 'antipasti' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Gemini_Generated_Image_kz2xxakz2xxakz2x_(1)_1767580646949.png"
-                       alt="Appetizer plate"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-32 md:top-48 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_193607_1767580652649.png"
-                       alt="Soup with crackers"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 3.6, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-64 md:top-96 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
-                 {section.id === 'panini' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_194824_1767581374349.png"
-                       alt="Panini halves"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_194832_1767581372425.png"
-                       alt="Panini"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_194841_1767581370484.png"
-                       alt="Panini in bag"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.3 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.3 },
-                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-[24rem] md:top-[32rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
-                 {section.id === 'pizza' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_194052_1767580964963.png"
-                       alt="Whole Pizza"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_194129_1767580962260.png"
-                       alt="Pizza Box"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-[20rem] md:top-[28rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_182854_1767581039044.png"
-                       alt="Pizza Slice"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.3 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.3 },
-                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-[40rem] md:top-[56rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
-                 {section.id === 'coffee' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_195639_1767581855982.png"
-                       alt="Coffee cup"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_195650_1767581855983.png"
-                       alt="Coffee saucer"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, -4, 4, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
-                 {section.id === 'bar' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_200053_1767582080825.png"
-                       alt="Whiskey glass"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, -5, 5, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Gemini_Generated_Image_uqgikduqgikduqgi_(1)_1767580147823.png"
-                       alt="Drink"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -10, 0], rotate: [0, 6, -6, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
-                 {section.id === 'cocktail' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_200041_1767582080826.png"
-                       alt="Martini"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -10, 0], rotate: [0, 8, -8, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_200053_1767582080825.png"
-                       alt="Whiskey glass"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, -6, 6, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
-                 {section.id === 'dessert' && (
-                   <>
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_200312_1767582275868.png"
-                       alt="Cake slice"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -12, 0], rotate: [0, 5, -5, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5 },
-                         scale: { type: "spring", stiffness: 300 },
-                         y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -right-12 md:-right-40 top-0 w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                     <motion.img
-                       src="/attached_assets/Screenshot_2026-01-04_200345_1767582273815.png"
-                       alt="Ice cream"
-                       initial={{ opacity: 0, scale: 0 }}
-                       whileInView={{ opacity: 1, scale: 1 }}
-                       viewport={{ once: true }}
-                       animate={{ y: [0, -10, 0], rotate: [0, -6, 6, 0] }}
-                       transition={{
-                         opacity: { duration: 0.5, delay: 0.2 },
-                         scale: { type: "spring", stiffness: 300, delay: 0.2 },
-                         y: { duration: 3.4, repeat: Infinity, ease: "easeInOut" },
-                         rotate: { duration: 4.4, repeat: Infinity, ease: "easeInOut" }
-                       }}
-                       className="absolute -left-12 md:-left-40 top-[12rem] md:top-[16rem] w-24 h-24 md:w-40 md:h-40 object-contain z-10 pointer-events-none hidden md:block"
-                     />
-                   </>
-                 )}
+                 
+                 <div className="flex flex-col mb-16 relative">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 40, rotateX: 90 }}
+                        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                        viewport={{ once: true, margin: "-10%" }}
+                        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="flex flex-col md:flex-row items-baseline gap-4 border-b-8 border-pronto-blue pb-4 origin-bottom"
+                        style={{ perspective: 1000 }}
+                    >
+                        <h3 className="text-6xl md:text-9xl font-display text-pronto-blue uppercase leading-none hover:text-pronto-orange transition-colors duration-200 cursor-default">
+                        {section.title}
+                        </h3>
+                        {section.note && (
+                        <p className="font-mono-serif text-pronto-blue text-sm md:text-xl font-bold italic md:ml-auto max-w-md text-right">
+                            {section.note}
+                        </p>
+                        )}
+                    </motion.div>
+                 </div>
 
-                 {/* Section Header */}
-                 <motion.div 
-                    initial={{ opacity: 0, y: 40, rotateX: 90 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                    viewport={{ once: true, margin: "-10%" }}
-                    transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="flex flex-col md:flex-row items-baseline gap-4 mb-16 border-b-8 border-pronto-blue pb-4 origin-bottom"
-                    style={{ perspective: 1000 }}
-                 >
-                    <h3 className="text-6xl md:text-9xl font-display text-pronto-blue uppercase leading-none hover:text-pronto-orange transition-colors duration-200 cursor-default">
-                      {section.title}
-                    </h3>
-                    {section.note && (
-                      <p className="font-mono-serif text-pronto-blue text-sm md:text-xl font-bold italic md:ml-auto max-w-md text-right">
-                        {section.note}
-                      </p>
-                    )}
-                 </motion.div>
-
-                 {/* Single Column Layout for Items */}
                  <div className="flex flex-col gap-4">
                     {section.items.map((item) => (
                       <MenuItem key={item.name} item={item} />
@@ -757,26 +488,33 @@ const Inglewood: React.FC = () => {
                </div>
              ))}
 
-             {/* Footer Note */}
              <div className="mt-12 mb-12 border-t-2 border-pronto-blue pt-12 text-center">
                  <p className="font-mono-serif font-bold text-2xl text-pronto-blue">(V) = VEGETARIAN</p>
-                 <p className="font-mono-serif font-bold text-2xl text-pronto-orange mt-4">GLUTEN FRIENDLY CRUST + $4</p>
+                 <p className="font-mono-serif font-bold text-2xl text-pronto-orange mt-4">GLUTEN FRIENDLY OPTIONS AVAILABLE</p>
              </div>
 
       </div>
 
-      {/* Footer / Location Info - Redesigned to match new theme */}
+      {/* FOOTER - INGLEWOOD Specific */}
       <div className="bg-black text-center py-20 px-4 flex flex-col items-center">
         <img 
           src="/attached_assets/Screenshot_2025-12-30_192545_1767574481771.png" 
           alt="PRONZO" 
           className="h-20 w-auto mb-8"
         />
-        <h3 className="text-5xl font-display text-white mb-8">VISIT US</h3>
+        <h3 className="text-5xl font-display text-white mb-8 uppercase tracking-widest">Inglewood</h3>
         <div className="font-mono-serif text-xl text-white space-y-2">
-           <p className="font-bold">COMING SOON</p>
-           <p className="pt-4 text-pronto-orange font-bold">TUE-SUN: 4PM - LATE</p>
-           <p className="text-white/60">MON: CLOSED</p>
+           <p className="font-bold">1139 9th Ave SE</p>
+           <p>403-993-9093</p>
+           
+           <div className="py-6 space-y-2">
+             <p className="text-pronto-orange font-bold uppercase tracking-wider">Hours of operation</p>
+             <p>Monday to Friday - 11 AM to 8 PM</p>
+             <p>Saturday - 11 AM to 8 PM</p>
+             <p>Sunday - Closed</p>
+           </div>
+
+           <p className="pt-4 text-pronto-orange font-bold">Follow us for updates!</p>
         </div>
       </div>
     </motion.div>
