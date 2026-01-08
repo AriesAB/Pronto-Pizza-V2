@@ -15,7 +15,6 @@ const navItems: NavItem[] = [
   { label: 'DOWNTOWN', path: '/downtown' },
   { label: 'ABOUT', path: '/about' },
   { label: 'CONTACT', path: '/contact' },
-  { label: 'ORDER NOW', path: '#order', isButton: true },
 ];
 
 const Navbar: React.FC = () => {
