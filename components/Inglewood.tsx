@@ -249,6 +249,26 @@ const menuSections: MenuSectionData[] = [
         ]
       },
       {
+        title: "COCKTAIL",
+        items: [
+          {
+            name: "MOSCOW MULE",
+            price: "13.75",
+            ingredients: "VODKA, LIME JUICE, GINGER BEER, MINT"
+          },
+          {
+            name: "THATS AMORE",
+            price: "12",
+            ingredients: "SPRITZ - CLINK RASPBERRY LIMONCELLO VODKA COCKTAIL, MINT"
+          },
+          {
+            name: "APEROL SPRITZ",
+            price: "12.50",
+            ingredients: "PROSECCO, APEROL, SODA WATER, ORANGE SLICE"
+          }
+        ]
+      },
+      {
         title: "SODAS",
         items: [
           {
@@ -257,27 +277,6 @@ const menuSections: MenuSectionData[] = [
             ingredients: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI"
           }
         ]
-      }
-    ]
-  },
-  {
-    id: "cocktail",
-    title: "COCKTAIL",
-    items: [
-      {
-        name: "MOSCOW MULE",
-        price: "13.75",
-        ingredients: "VODKA, LIME JUICE, GINGER BEER, MINT"
-      },
-      {
-        name: "THATS AMORE",
-        price: "12",
-        ingredients: "SPRITZ - CLINK RASPBERRY LIMONCELLO VODKA COCKTAIL, MINT"
-      },
-      {
-        name: "APEROL SPRITZ",
-        price: "12.50",
-        ingredients: "PROSECCO, APEROL, SODA WATER, ORANGE SLICE"
       }
     ]
   },
@@ -519,9 +518,9 @@ const Inglewood: React.FC = () => {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true, margin: "-10%" }}
                           transition={{ duration: 0.4 }}
-                          className="flex items-baseline gap-4 mb-6 border-b-2 border-pronto-orange/40 pb-2"
+                          className="flex items-baseline gap-4 mb-6 border-b-2 border-white/40 pb-2"
                         >
-                          <h4 className="text-3xl md:text-5xl font-display text-pronto-orange uppercase">
+                          <h4 className="text-3xl md:text-5xl font-display text-white uppercase">
                             {subcategory.title}
                           </h4>
                           {subcategory.note && (
