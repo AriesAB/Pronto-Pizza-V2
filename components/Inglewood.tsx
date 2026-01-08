@@ -511,8 +511,7 @@ const Inglewood: React.FC = () => {
            <div className="py-6 space-y-2">
              <p className="text-pronto-orange font-bold uppercase tracking-wider">Hours of operation</p>
              <p>Sunday to Thursday - 4 PM to 10 PM</p>
-             <p>Friday - 4 PM to 12 AM</p>
-             <p>Saturday - 4 PM to 12 AM</p>
+             <p>Friday & Saturday - 4 PM to 12 AM</p>
            </div>
 
            <p className="pt-4 text-pronto-orange font-bold">Follow us for updates!</p>
