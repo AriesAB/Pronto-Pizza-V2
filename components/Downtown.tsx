@@ -266,18 +266,24 @@ const Downtown: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <div className="overflow-hidden">
+            <div className="overflow-hidden whitespace-nowrap">
               <motion.div
-                initial={{ x: '0%' }}
-                animate={{ x: '-50%' }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-                className="whitespace-nowrap flex"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ 
+                  x: {
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatType: "loop"
+                  }
+                }}
+                className="inline-flex"
               >
                 <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
-                  {Array(20).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
+                  {Array(15).fill("ANTIPASTI - PIZZA - PANINI - ").join("")}
                 </span>
                 <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
-                  {Array(20).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
+                  {Array(15).fill("ANTIPASTI - PIZZA - PANINI - ").join("")}
                 </span>
               </motion.div>
             </div>

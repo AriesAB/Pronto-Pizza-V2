@@ -326,8 +326,8 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
 };
 
 const HeroTextAnimation: React.FC = () => {
-  const text = "PIZZA • PASTA • PAGNOTTA • ";
-  const repeatedText = Array(20).fill(text).join("");
+  const text = "ANTIPASTI - PIZZA - PANINI - ";
+  const repeatedText = Array(15).fill(text).join("");
   
   return (
     <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
@@ -336,12 +336,18 @@ const HeroTextAnimation: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <div className="overflow-hidden">
+        <div className="overflow-hidden whitespace-nowrap">
           <motion.div
-            initial={{ x: '0%' }}
-            animate={{ x: '-50%' }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-            className="whitespace-nowrap flex"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              x: {
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop"
+              }
+            }}
+            className="inline-flex"
           >
             <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
               {repeatedText}
