@@ -280,10 +280,10 @@ const Downtown: React.FC = () => {
                 className="inline-flex"
               >
                 <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
-                  {Array(15).fill("ANTIPASTI - PIZZA - PANINI - ").join("")}
+                  {Array(15).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
                 </span>
                 <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
-                  {Array(15).fill("ANTIPASTI - PIZZA - PANINI - ").join("")}
+                  {Array(15).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
                 </span>
               </motion.div>
             </div>
