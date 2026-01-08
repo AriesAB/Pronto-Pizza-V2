@@ -326,7 +326,7 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
 };
 
 const HeroTextAnimation: React.FC = () => {
-  const text = "ANTIPASTI - PIZZA - PANINI - ";
+  const text = "ANTIPASTI • PIZZA • PANINI • ";
   const repeatedText = Array(15).fill(text).join("");
   
   return (
