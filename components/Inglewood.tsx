@@ -8,11 +8,18 @@ interface MenuItemData {
   isFeature?: boolean;
 }
 
+interface BarSubcategory {
+  title: string;
+  note?: string;
+  items: MenuItemData[];
+}
+
 interface MenuSectionData {
   id: string;
   title: string;
-  items: MenuItemData[];
+  items?: MenuItemData[];
   note?: string;
+  subcategories?: BarSubcategory[];
 }
 
 const menuSections: MenuSectionData[] = [
@@ -165,67 +172,91 @@ const menuSections: MenuSectionData[] = [
   {
     id: "bar",
     title: "BAR",
-    note: "VINO PRICES ARE 6OZ / 8OZ",
-    items: [
+    subcategories: [
       {
-        name: "WAVE POOL IPA",
-        price: "8.75",
-        ingredients: "EIGHTY EIGHT BREWING 6.2% - 12 OZ"
+        title: "BEERS",
+        items: [
+          {
+            name: "WAVE POOL IPA",
+            price: "8.75",
+            ingredients: "EIGHTY EIGHT BREWING 6.2% - 12 OZ"
+          },
+          {
+            name: "HI-FI IPA",
+            price: "8.75",
+            ingredients: "EIGHTY EIGHT BREWING 6.7% - 12 OZ"
+          },
+          {
+            name: "PRETTY IN PINK",
+            price: "8.75",
+            ingredients: "EIGHTY EIGHT BREWING 5% - 12 OZ"
+          },
+          {
+            name: "BIRRA MORETTI",
+            price: "9",
+            ingredients: "BOTTLED 4.6% - 11 OZ"
+          },
+          {
+            name: "STELLA ARTOIS",
+            price: "9",
+            ingredients: "BOTTLED 5% - 11 OZ"
+          }
+        ]
       },
       {
-        name: "HI-FI IPA",
-        price: "8.75",
-        ingredients: "EIGHTY EIGHT BREWING 6.7% - 12 OZ"
+        title: "VINO",
+        note: "6OZ / 8OZ",
+        items: []
       },
       {
-        name: "PRETTY IN PINK",
-        price: "8.75",
-        ingredients: "EIGHTY EIGHT BREWING 5% - 12 OZ"
+        title: "WHITE WINE",
+        items: [
+          {
+            name: "PINOT GRIGIO",
+            price: "15 / 20",
+            ingredients: "SANTA MARGHERITA"
+          },
+          {
+            name: "INCASTRO BIANCO",
+            price: "15 / 20",
+            ingredients: "TORRE ZAMBRA"
+          },
+          {
+            name: "CHARDONNAY",
+            price: "18 / 21",
+            ingredients: ""
+          }
+        ]
       },
       {
-        name: "BIRRA MORETTI",
-        price: "9",
-        ingredients: "BOTTLED 4.6% - 11 OZ"
+        title: "RED WINE",
+        items: [
+          {
+            name: "CAFAGGIO",
+            price: "13 / 16",
+            ingredients: "SANGIOVESE CHIANTI CLASSICO"
+          },
+          {
+            name: "CATENA MALBEC",
+            price: "15 / 18",
+            ingredients: ""
+          },
+          {
+            name: "CHIANTI CECCHI",
+            price: "13 / 16",
+            ingredients: ""
+          }
+        ]
       },
       {
-        name: "STELLA ARTOIS",
-        price: "9",
-        ingredients: "BOTTLED 5% - 11 OZ"
-      },
-      {
-        name: "PINOT GRIGIO",
-        price: "15 / 20",
-        ingredients: "SANTA MARGHERITA (WHITE)"
-      },
-      {
-        name: "INCASTRO BIANCO",
-        price: "15 / 20",
-        ingredients: "TORRE ZAMBRA (WHITE)"
-      },
-      {
-        name: "CHARDONNAY",
-        price: "18 / 21",
-        ingredients: "(WHITE)"
-      },
-      {
-        name: "CAFAGGIO",
-        price: "13 / 16",
-        ingredients: "SANGIOVESE CHIANTI CLASSICO (RED)"
-      },
-      {
-        name: "CATENA MALBEC",
-        price: "15 / 18",
-        ingredients: "(RED)"
-      },
-      {
-        name: "CHIANTI CECCHI",
-        price: "13 / 16",
-        ingredients: "(RED)"
-      },
-      {
-        name: "SODAS",
-        price: "3.50",
-        ingredients: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI"
+        title: "SODAS",
+        items: [
+          {
+            name: "SODAS",
+            price: "3.50",
+            ingredients: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI"
+          }
+        ]
       }
     ]
   },
@@ -477,8 +508,32 @@ const Inglewood: React.FC = () => {
                  </div>
 
                  <div className="flex flex-col gap-4">
-                    {section.items.map((item) => (
+                    {section.items && section.items.map((item) => (
                       <MenuItem key={item.name} item={item} />
+                    ))}
+                    
+                    {section.subcategories && section.subcategories.map((subcategory) => (
+                      <div key={subcategory.title} className="mb-8">
+                        <motion.div
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true, margin: "-10%" }}
+                          transition={{ duration: 0.4 }}
+                          className="flex items-baseline gap-4 mb-6 border-b-2 border-pronto-orange/40 pb-2"
+                        >
+                          <h4 className="text-3xl md:text-5xl font-display text-pronto-orange uppercase">
+                            {subcategory.title}
+                          </h4>
+                          {subcategory.note && (
+                            <span className="font-mono-serif text-white/70 text-sm md:text-base italic ml-auto">
+                              {subcategory.note}
+                            </span>
+                          )}
+                        </motion.div>
+                        {subcategory.items && subcategory.items.length > 0 && subcategory.items.map((item) => (
+                          <MenuItem key={item.name} item={item} />
+                        ))}
+                      </div>
                     ))}
                  </div>
                </div>
