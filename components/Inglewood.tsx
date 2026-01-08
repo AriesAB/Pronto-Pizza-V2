@@ -485,13 +485,13 @@ const Inglewood: React.FC = () => {
              ))}
 
              <div className="mt-12 mb-12 border-t-2 border-white pt-12 text-center">
-                 <p className="font-mono-serif font-bold text-2xl text-white mb-4 uppercase tracking-wider">GLUTEN FRIENDLY CRUST + $4</p>
+                 <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-4 uppercase tracking-wider">GLUTEN FRIENDLY CRUST + $4</p>
                  <div className="mb-8">
-                   <p className="font-mono-serif font-bold text-2xl text-white mb-2 uppercase tracking-wider underline underline-offset-8">Dips</p>
-                   <p className="font-mono-serif font-bold text-2xl text-white uppercase tracking-wider">Garlic Parmesan - $4</p>
-                   <p className="font-mono-serif font-bold text-2xl text-white uppercase tracking-wider">Hot Honey - $4</p>
+                   <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-2 uppercase tracking-wider underline underline-offset-8">Dips</p>
+                   <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Garlic Parmesan - $4</p>
+                   <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Hot Honey - $4</p>
                  </div>
-                 <p className="font-mono-serif font-bold text-2xl text-white">(V) = VEGETARIAN</p>
+                 <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70">(V) = VEGETARIAN</p>
              </div>
 
       </div>
