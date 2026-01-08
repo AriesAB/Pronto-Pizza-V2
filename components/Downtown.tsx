@@ -277,24 +277,14 @@ const Downtown: React.FC = () => {
                     repeatType: "loop"
                   }
                 }}
-                className="inline-flex items-center"
+                className="inline-flex"
               >
-                {[1, 2].map((block) => (
-                  <span key={block} className="inline-flex items-center">
-                    {Array(15).fill(["ANTIPASTI", "PIZZA", "PANINI"]).flat().map((item, idx) => (
-                      <span key={idx} className="inline-flex items-center">
-                        <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
-                          {item}
-                        </span>
-                        <img 
-                          src="/attached_assets/image_1767909182454.png" 
-                          alt="" 
-                          className="inline-block w-6 h-6 md:w-10 md:h-10 mx-4 md:mx-6 align-middle opacity-60"
-                        />
-                      </span>
-                    ))}
-                  </span>
-                ))}
+                <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+                  {Array(15).fill("ANTIPASTI - PIZZA - PANINI - ").join("")}
+                </span>
+                <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+                  {Array(15).fill("ANTIPASTI - PIZZA - PANINI - ").join("")}
+                </span>
               </motion.div>
             </div>
           </motion.div>

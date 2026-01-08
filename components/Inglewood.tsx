@@ -326,27 +326,8 @@ const MarqueeText: React.FC<{ text: string; direction?: 'left' | 'right'; speed?
 };
 
 const HeroTextAnimation: React.FC = () => {
-  const items = ["ANTIPASTI", "PIZZA", "PANINI"];
-  const Separator = () => (
-    <img 
-      src="/attached_assets/image_1767909182454.png" 
-      alt="" 
-      className="inline-block w-6 h-6 md:w-10 md:h-10 mx-4 md:mx-6 align-middle opacity-60"
-    />
-  );
-  
-  const TextBlock = () => (
-    <>
-      {Array(15).fill(items).flat().map((item, idx) => (
-        <span key={idx} className="inline-flex items-center">
-          <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
-            {item}
-          </span>
-          <Separator />
-        </span>
-      ))}
-    </>
-  );
+  const text = "ANTIPASTI - PIZZA - PANINI - ";
+  const repeatedText = Array(15).fill(text).join("");
   
   return (
     <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
@@ -366,10 +347,14 @@ const HeroTextAnimation: React.FC = () => {
                 repeatType: "loop"
               }
             }}
-            className="inline-flex items-center"
+            className="inline-flex"
           >
-            <TextBlock />
-            <TextBlock />
+            <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+              {repeatedText}
+            </span>
+            <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+              {repeatedText}
+            </span>
           </motion.div>
         </div>
       </motion.div>
