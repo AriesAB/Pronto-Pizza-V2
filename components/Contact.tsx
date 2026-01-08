@@ -385,8 +385,8 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="font-mono text-pronto-cream/50 text-sm"
           >
-            <p>© 2024 PRONTO Pizza. All rights reserved.</p>
-            <p className="mt-2 text-pronto-orange">Made with love by the Bruno Family</p>
+            <p>© 2026 PRONTO Pizza. All rights reserved.</p>
+            <p className="mt-2 text-pronto-orange">Made with ❤️ by the Bruno Family</p>
           </motion.div>
         </div>
       </footer>
