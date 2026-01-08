@@ -255,19 +255,9 @@ const menuSections: MenuSectionData[] = [
     title: "DESSERT",
     items: [
       {
-        name: "GELATO",
-        price: "6 / 9 / 12",
-        ingredients: "Tahitian Vanilla Bean, Caramel Seasalt, Chocolate Honeycomb, Roasted Strawberry, Almond Chocolate, Espresso Toffee Pretzel (1, 2, or 3 scoops)"
-      },
-      {
         name: "TIRAMISU",
         price: "12.50",
         ingredients: "Traditional homemade tiramisu topped with cocoa powder"
-      },
-      {
-        name: "AFFOGATO",
-        price: "7 / 10",
-        ingredients: "Espresso shot with choice of gelato. Add shot of Bailey +$5"
       }
     ]
   }
