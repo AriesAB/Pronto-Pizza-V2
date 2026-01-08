@@ -292,49 +292,76 @@ const Contact: React.FC = () => {
               </RevealText>
 
               <RevealText delay={0.4}>
-                <div className="mt-16 space-y-6">
+                <div className="mt-16 space-y-12">
                   <h3 className="text-2xl font-mono-serif text-pronto-cream mb-6">
-                    Quick <span className="text-pronto-orange">Info</span>
+                    Location <span className="text-pronto-orange">& Info</span>
                   </h3>
                   
-                  <motion.div
-                    whileHover={{ x: 10 }}
-                    className="flex items-center gap-4 text-pronto-cream/70"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-pronto-orange" />
-                    </div>
-                    <div className="font-mono-serif">
-                      <p className="text-pronto-cream">1139 9th Ave SE</p>
-                      <p className="text-sm">Calgary, Alberta</p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    whileHover={{ x: 10 }}
-                    className="flex items-center gap-4 text-pronto-cream/70"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-pronto-orange" />
-                    </div>
-                    <div className="font-mono-serif">
-                      <p className="text-pronto-cream">(403) 555-0123</p>
-                      <p className="text-sm">Mon-Sun 11am - 10pm</p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    whileHover={{ x: 10 }}
-                    className="flex items-center gap-4 text-pronto-cream/70"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-pronto-orange" />
-                    </div>
-                    <div className="font-mono-serif">
-                      <p className="text-pronto-cream">hello@prontopizza.ca</p>
-                      <p className="text-sm">We reply within 24h</p>
-                    </div>
-                  </motion.div>
+                  {/* Inglewood */}
+                  <div className="space-y-6">
+                    <h4 className="text-xl font-mono-serif text-pronto-orange uppercase tracking-widest">Inglewood</h4>
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                      className="flex items-center gap-4 text-pronto-cream/70"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-pronto-orange" />
+                      </div>
+                      <div className="font-mono-serif">
+                        <p className="text-pronto-cream text-lg">1139 9th Ave SE</p>
+                        <p className="text-sm">Calgary, Alberta</p>
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                      className="flex items-center gap-4 text-pronto-cream/70"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
+                        <Phone className="w-5 h-5 text-pronto-orange" />
+                      </div>
+                      <div className="font-mono-serif">
+                        <p className="text-pronto-cream text-lg">403-993-9093</p>
+                        <div className="text-sm mt-1 space-y-1">
+                          <p>Sunday to Thursday: 4 PM - 10 PM</p>
+                          <p>Friday & Saturday: 4 PM - 12 AM</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Downtown */}
+                  <div className="space-y-6">
+                    <h4 className="text-xl font-mono-serif text-pronto-orange uppercase tracking-widest">Downtown (5th & 5th)</h4>
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                      className="flex items-center gap-4 text-pronto-cream/70"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-pronto-orange" />
+                      </div>
+                      <div className="font-mono-serif">
+                        <p className="text-pronto-cream text-lg">605 5th Ave, SW</p>
+                        <p className="text-sm">Calgary, Alberta</p>
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                      className="flex items-center gap-4 text-pronto-cream/70"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
+                        <Phone className="w-5 h-5 text-pronto-orange" />
+                      </div>
+                      <div className="font-mono-serif">
+                        <p className="text-pronto-cream text-lg">403-993-9093</p>
+                        <div className="text-sm mt-1 space-y-1">
+                          <p>On-site: Monday to Friday: 11 AM - 2 PM</p>
+                          <p>Catering: Monday to Saturday: 9 AM - 8 PM</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
               </RevealText>
             </div>
