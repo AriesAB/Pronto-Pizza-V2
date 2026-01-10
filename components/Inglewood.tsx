@@ -305,12 +305,18 @@ const MenuItem = ({ item }: { item: MenuItemData; key?: string }) => {
       <div 
         className="flex items-baseline justify-between border-b-2 border-pronto-blue/20 pb-1 mb-2 border-dashed relative transition-colors duration-200 group-hover:border-pronto-orange group-hover:border-solid"
       >
-        {item.name && (
+        {item.name ? (
           <h4 
             className="font-mono-serif font-normal text-xl md:text-3xl text-white uppercase tracking-tight origin-left transition-colors duration-200 group-hover:text-pronto-orange"
           >
             {item.name}
           </h4>
+        ) : item.ingredients && (
+          <p 
+            className="font-mono-serif text-base md:text-lg text-white/70 leading-relaxed max-w-2xl transition-colors duration-200 group-hover:text-pronto-orange/80"
+          >
+            {item.ingredients}
+          </p>
         )}
         <span 
           className={`font-mono-serif font-bold text-lg md:text-2xl text-pronto-orange whitespace-nowrap origin-right transition-colors duration-200 ${item.name ? 'ml-4' : 'ml-auto'}`}
@@ -319,7 +325,7 @@ const MenuItem = ({ item }: { item: MenuItemData; key?: string }) => {
         </span>
       </div>
       
-      {item.ingredients && (
+      {item.name && item.ingredients && (
         <p 
           className="font-mono-serif text-base md:text-lg text-white/70 leading-relaxed max-w-2xl transition-colors duration-200 group-hover:text-pronto-orange/80"
         >
