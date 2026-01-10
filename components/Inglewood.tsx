@@ -272,9 +272,9 @@ const menuSections: MenuSectionData[] = [
         title: "SODAS",
         items: [
           {
-            name: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI",
+            name: "SODAS",
             price: "3.50",
-            ingredients: ""
+            ingredients: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI"
           }
         ]
       }
