@@ -298,7 +298,7 @@ const Downtown: React.FC = () => {
             opacity: { delay: 2, duration: 1 },
             y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
           }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80 z-20"
+          className="absolute bottom-32 md:bottom-8 left-1/2 -translate-x-1/2 text-pronto-cream/80 z-20"
         >
           <div className="flex flex-col items-center gap-2">
             <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll for Menu</span>
