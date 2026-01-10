@@ -272,7 +272,7 @@ const menuSections: MenuSectionData[] = [
         title: "SODAS",
         items: [
           {
-            name: "SODAS",
+            name: "",
             price: "3.50",
             ingredients: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI"
           }
@@ -305,13 +305,15 @@ const MenuItem = ({ item }: { item: MenuItemData; key?: string }) => {
       <div 
         className="flex items-baseline justify-between border-b-2 border-pronto-blue/20 pb-1 mb-2 border-dashed relative transition-colors duration-200 group-hover:border-pronto-orange group-hover:border-solid"
       >
-        <h4 
-          className="font-mono-serif font-normal text-xl md:text-3xl text-white uppercase tracking-tight origin-left transition-colors duration-200 group-hover:text-pronto-orange"
-        >
-          {item.name}
-        </h4>
+        {item.name && (
+          <h4 
+            className="font-mono-serif font-normal text-xl md:text-3xl text-white uppercase tracking-tight origin-left transition-colors duration-200 group-hover:text-pronto-orange"
+          >
+            {item.name}
+          </h4>
+        )}
         <span 
-          className="font-mono-serif font-bold text-lg md:text-2xl text-pronto-orange whitespace-nowrap ml-4 origin-right transition-colors duration-200"
+          className={`font-mono-serif font-bold text-lg md:text-2xl text-pronto-orange whitespace-nowrap origin-right transition-colors duration-200 ${item.name ? 'ml-4' : 'ml-auto'}`}
         >
           {item.price}
         </span>
