@@ -87,8 +87,8 @@ const Navbar: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <img 
-              src="/assets/logo.png" 
-              alt="PRONZO" 
+              src="/attached_assets/Gemini_Generated_Image_ewat1ewat1ewat1e_(1)_1768074157002.png" 
+              alt="PRONTO" 
               className="h-12 md:h-16 w-auto object-contain"
             />
           </motion.div>
