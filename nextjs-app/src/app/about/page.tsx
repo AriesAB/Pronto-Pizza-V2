@@ -327,13 +327,6 @@ export default function AboutPage() {
                       className="w-full aspect-[4/5] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                        <p className="text-pronto-orange font-mono text-sm uppercase tracking-wider">Est. 2016</p>
-                        <p className="text-pronto-cream font-mono-serif text-xl mt-1">8+ Years of Love</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
