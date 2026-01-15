@@ -159,7 +159,7 @@ export default function AboutPage() {
               Ready for a taste?
             </h2>
             <p className="mt-8 text-xl md:text-2xl text-white/80 font-mono leading-relaxed max-w-2xl mx-auto">
-              Whether you're craving great pizza, a panini with gelato for dessert (espresso after 12?… okay, we're joking), or just a place that feels like home — come by PRONTO Pizza today.
+              Whether you're craving great pizza, a panini with gelato for dessert (espresso after 12?… okay, we're joking 😊), or just a place that feels like home — come by PRONTO Pizza today.
             </p>
             <p className="mt-8 text-2xl md:text-4xl font-display text-white font-bold">
               We can't wait to serve you.
@@ -181,7 +181,7 @@ export default function AboutPage() {
             <img src="/assets/pronto-logo.png" alt="PRONTO" className="h-16 w-auto mx-auto mb-8" />
             <div className="font-mono text-[#FEFBF6]/50 text-sm">
               <p>© 2026 PRONTO Pizza. All rights reserved.</p>
-              <p className="mt-2 text-[#FF5A1F]">Made with love by the Bruno Family</p>
+              <p className="mt-2 text-[#FF5A1F]">Made with ❤️ by the Bruno Family</p>
             </div>
           </div>
         </footer>
@@ -509,7 +509,7 @@ export default function AboutPage() {
 
           <RevealText delay={0.2}>
             <p className="mt-8 text-xl md:text-2xl text-white/80 font-mono-serif leading-relaxed max-w-2xl mx-auto">
-              Whether you're craving great pizza, a panini with gelato for dessert (espresso after 12?… okay, we're joking), or just a place that feels like home — come by PRONTO Pizza today.
+              Whether you're craving great pizza, a panini with gelato for dessert (espresso after 12?… okay, we're joking 😊), or just a place that feels like home — come by PRONTO Pizza today.
             </p>
           </RevealText>
 
@@ -558,7 +558,7 @@ export default function AboutPage() {
             className="font-mono text-pronto-cream/50 text-sm"
           >
             <p>© 2026 PRONTO Pizza. All rights reserved.</p>
-            <p className="mt-2 text-pronto-orange">Made with love by the Bruno Family</p>
+            <p className="mt-2 text-pronto-orange">Made with ❤️ by the Bruno Family</p>
           </motion.div>
         </div>
       </footer>
