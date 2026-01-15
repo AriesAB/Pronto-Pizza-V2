@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 const RevealText: React.FC<{ children: React.ReactNode; delay?: number }> = ({ children, delay = 0 }) => (
   <motion.div
@@ -163,12 +164,12 @@ export default function AboutPage() {
               We can't wait to serve you.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-4">
-              <button className="bg-white text-[#FF5A1F] font-display text-lg md:text-xl px-8 py-4 rounded-full shadow-xl">
+              <Link href="/inglewood" className="bg-white text-[#FF5A1F] font-display text-lg md:text-xl px-8 py-4 rounded-full shadow-xl">
                 View Our Menu
-              </button>
-              <button className="bg-transparent border-2 border-white text-white font-display text-lg md:text-xl px-8 py-4 rounded-full">
+              </Link>
+              <Link href="/contact" className="bg-transparent border-2 border-white text-white font-display text-lg md:text-xl px-8 py-4 rounded-full">
                 Find Us
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -519,20 +520,24 @@ export default function AboutPage() {
 
           <RevealText delay={0.4}>
             <div className="mt-12 flex flex-wrap justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-pronto-orange font-mono-serif text-lg md:text-xl px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-shadow"
-              >
-                View Our Menu
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white text-white font-mono-serif text-lg md:text-xl px-8 py-4 rounded-full hover:bg-white hover:text-pronto-orange transition-colors"
-              >
-                Find Us
-              </motion.button>
+              <Link href="/inglewood">
+                <motion.span
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-white text-pronto-orange font-mono-serif text-lg md:text-xl px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-shadow"
+                >
+                  View Our Menu
+                </motion.span>
+              </Link>
+              <Link href="/contact">
+                <motion.span
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-transparent border-2 border-white text-white font-mono-serif text-lg md:text-xl px-8 py-4 rounded-full hover:bg-white hover:text-pronto-orange transition-colors"
+                >
+                  Find Us
+                </motion.span>
+              </Link>
             </div>
           </RevealText>
         </div>
