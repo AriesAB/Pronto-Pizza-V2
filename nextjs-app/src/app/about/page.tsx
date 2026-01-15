@@ -83,7 +83,7 @@ export default function AboutPage() {
               </div>
               <div className="order-1 lg:order-2 relative">
                 <div className="relative rounded-2xl overflow-hidden">
-                  <img src="/assets/about-1.jpg" alt="Enjoying PRONTO Pizza" className="w-full aspect-[4/5] object-cover" />
+                  <img src="/assets/about-1.png" alt="Enjoying PRONTO Pizza" className="w-full aspect-[4/5] object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
@@ -324,57 +324,34 @@ export default function AboutPage() {
 
             <div className="order-1 lg:order-2 relative">
               <div className="relative">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
-                  animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : { opacity: 0, scale: 0.9, rotate: 3 }}
-                  transition={{ duration: 0.8 }}
-                  className="relative z-10"
-                >
+                <div className="relative z-10">
                   <div className="absolute -inset-4 bg-gradient-to-br from-pronto-orange/20 to-pronto-blue/20 rounded-3xl blur-2xl" />
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="relative rounded-2xl overflow-hidden"
-                  >
+                  <div className="relative rounded-2xl overflow-hidden">
                     <img
-                      src="/assets/about-1.jpg"
+                      src="/assets/about-1.png"
                       alt="Enjoying PRONTO Pizza"
                       className="w-full aspect-[4/5] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={storyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ delay: 0.5 }}
-                      className="absolute bottom-6 left-6 right-6"
-                    >
+                    <div className="absolute bottom-6 left-6 right-6">
                       <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
                         <p className="text-pronto-orange font-mono text-sm uppercase tracking-wider">Est. 2016</p>
                         <p className="text-pronto-cream font-mono-serif text-xl mt-1">8+ Years of Love</p>
                       </div>
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
+                    </div>
+                  </div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, x: 40, rotate: -5 }}
-                  animate={storyInView ? { opacity: 1, x: 0, rotate: 6 } : { opacity: 0, x: 40, rotate: -5 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="absolute -bottom-12 -right-8 w-40 md:w-52 z-20"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.08, rotate: 0 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="rounded-xl overflow-hidden shadow-2xl border-4 border-[#0a0a0a]"
-                  >
+                <div className="absolute -bottom-12 -right-8 w-40 md:w-52 z-20 rotate-6">
+                  <div className="rounded-xl overflow-hidden shadow-2xl border-4 border-[#0a0a0a]">
                     <img
                       src="/assets/about-2.jpg"
                       alt="Pepperoni pizza spread"
                       className="w-full aspect-square object-cover"
                     />
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
