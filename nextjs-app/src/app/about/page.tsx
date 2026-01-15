@@ -190,17 +190,13 @@ export default function AboutPage() {
   }
 
   return (
-    <motion.div
-      initial={false}
-      animate={{ opacity: 1 }}
-      className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden"
-    >
+    <div className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden">
       {/* EDITORIAL HERO */}
       <section ref={heroRef} className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={heroInView ? { scale: 1, opacity: 0.15 } : { scale: 1.2, opacity: 0 }}
+            initial={false}
+            animate={{ scale: 1, opacity: 0.15 }}
             transition={{ duration: 1.5 }}
             className="absolute inset-0"
           >
@@ -215,15 +211,15 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <motion.div
-            initial={{ width: 0 }}
-            animate={heroInView ? { width: "120px" } : { width: 0 }}
+            initial={false}
+            animate={{ width: "120px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-[2px] bg-pronto-orange mb-8"
           />
           
           <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            initial={false}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-6"
           >
@@ -232,28 +228,28 @@ export default function AboutPage() {
 
           <div className="overflow-hidden">
             <motion.h1
-              initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : { y: "100%" }}
+              initial={false}
+              animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[clamp(3rem,12vw,10rem)] font-mono-serif text-pronto-cream leading-[0.9] tracking-tight"
+              className="text-[clamp(3rem,12vw,10rem)] font-display text-pronto-cream leading-[0.9] tracking-tight"
             >
               More Than
             </motion.h1>
           </div>
           <div className="overflow-hidden">
             <motion.h1
-              initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : { y: "100%" }}
+              initial={false}
+              animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[clamp(3rem,12vw,10rem)] font-mono-serif leading-[0.9] tracking-tight"
+              className="text-[clamp(3rem,12vw,10rem)] font-display leading-[0.9] tracking-tight"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pronto-orange to-orange-400">Just Pizza</span>
             </motion.h1>
           </div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
           >
@@ -261,12 +257,7 @@ export default function AboutPage() {
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -278,7 +269,7 @@ export default function AboutPage() {
               className="w-1 h-2 bg-pronto-orange rounded-full"
             />
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* THE ORIGIN - HORIZONTAL LAYOUT */}
@@ -580,6 +571,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </footer>
-    </motion.div>
+    </div>
   );
 }

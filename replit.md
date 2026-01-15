@@ -75,3 +75,7 @@ cd nextjs-app && npm run dev
   - All pages now render static HTML first, then enable Framer Motion animations after hydration
   - Fixed allowedDevOrigins in next.config.ts for proper HMR connection
   - Hydration warnings in dev console are expected with animation libraries and don't affect production
+- **Jan 15, 2026**: Fixed About page visibility issue
+  - Changed hero animations from `initial={{ opacity: 0 }}` to `initial={false}` to prevent invisible content
+  - Content now visible by default, animations run as enhancements only
+  - SSR fallback uses `font-display` class for Anton font on hero headings
