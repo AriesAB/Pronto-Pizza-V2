@@ -33,33 +33,35 @@ export default function AboutPage() {
 
   if (!isMounted) {
     return (
-      <div className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden">
+      <div className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden">
         {/* HERO SECTION */}
-        <section className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0 opacity-15">
-              <img
-                src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto w-full">
-            <div style={{ height: '2px', width: '120px', backgroundColor: '#FF5A1F', marginBottom: '2rem' }} />
-            <p style={{ color: '#FF5A1F', fontFamily: 'monospace', letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '1.5rem' }}>Our Story</p>
-            <h1 style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', fontFamily: 'Anton, sans-serif', color: '#FEFBF6', lineHeight: '0.9', letterSpacing: '-0.02em' }}>
+        <div className="relative h-screen w-full overflow-hidden flex items-center bg-[#0a0a0a]">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-15"
+            style={{ 
+              backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")'
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-16">
+            <div className="h-[2px] w-[120px] mb-8" style={{ backgroundColor: '#FF5A1F' }} />
+            <p className="font-mono tracking-[0.3em] uppercase text-sm mb-6" style={{ color: '#FF5A1F' }}>Our Story</p>
+            <h1 className="text-[clamp(3rem,10vw,8rem)] font-display leading-[0.95] tracking-tight" style={{ color: '#FEFBF6' }}>
               More Than
             </h1>
-            <h1 style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', fontFamily: 'Anton, sans-serif', color: '#FF5A1F', lineHeight: '0.9', letterSpacing: '-0.02em' }}>
+            <h1 className="text-[clamp(3rem,10vw,8rem)] font-display leading-[0.95] tracking-tight" style={{ color: '#FF5A1F' }}>
               Just Pizza
             </h1>
-            <p style={{ marginTop: '3rem', fontSize: '1.25rem', color: 'rgba(254, 251, 246, 0.7)', maxWidth: '42rem', fontFamily: 'Courier Prime, monospace', lineHeight: '1.625' }}>
+            <p className="mt-12 text-xl md:text-2xl max-w-2xl font-mono-serif leading-relaxed" style={{ color: 'rgba(254, 251, 246, 0.7)' }}>
               It's family, tradition, and a lifelong love for hospitality.
             </p>
           </div>
-        </section>
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+            <div className="w-6 h-10 rounded-full border-2 flex justify-center pt-2" style={{ borderColor: 'rgba(254, 251, 246, 0.3)' }}>
+              <div className="w-1 h-2 rounded-full" style={{ backgroundColor: '#FF5A1F' }} />
+            </div>
+          </div>
+        </div>
 
         {/* WHERE IT ALL BEGAN */}
         <section className="py-24 md:py-32 px-6 md:px-16 relative">
