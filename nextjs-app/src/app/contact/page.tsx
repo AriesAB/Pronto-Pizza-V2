@@ -117,33 +117,27 @@ export default function ContactPage() {
     >
       <section ref={heroRef} className="min-h-[60vh] relative flex flex-col justify-center px-6 md:px-16 py-20">
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={heroInView ? { scale: 1, opacity: 0.15 } : { scale: 1.2, opacity: 0 }}
-            transition={{ duration: 1.5 }}
-            className="absolute inset-0"
-          >
+          <div className="absolute inset-0 opacity-15">
             <img
               src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2574&auto=format&fit=crop"
               alt=""
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </div>
           <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <motion.div
-            initial={{ width: 0 }}
-            animate={heroInView ? { width: "120px" } : { width: 0 }}
+            initial={false}
+            animate={{ width: "120px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-[2px] bg-pronto-orange mb-8"
           />
           
           <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={false}
+            animate={{ opacity: 1, x: 0 }}
             className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-6"
           >
             Get In Touch
@@ -151,9 +145,8 @@ export default function ContactPage() {
 
           <div className="overflow-hidden">
             <motion.h1
-              initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : { y: "100%" }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              initial={false}
+              animate={{ y: 0 }}
               className="text-[clamp(3rem,12vw,10rem)] font-mono-serif text-pronto-cream leading-[0.9] tracking-tight"
             >
               Contact
@@ -161,9 +154,8 @@ export default function ContactPage() {
           </div>
           <div className="overflow-hidden">
             <motion.h1
-              initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : { y: "100%" }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              initial={false}
+              animate={{ y: 0 }}
               className="text-[clamp(3rem,12vw,10rem)] font-mono-serif leading-[0.9] tracking-tight"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pronto-orange to-orange-400">Us</span>
@@ -171,9 +163,8 @@ export default function ContactPage() {
           </div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
           >
             We'd love to hear from you. Drop us a message or find us on social media.
