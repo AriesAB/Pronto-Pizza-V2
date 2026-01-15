@@ -37,7 +37,7 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["bash", "-c", "cd nextjs-app && npm run build"]
+build = ["bash", "-c", "cd nextjs-app && npm install && npm run build"]
 publicDir = "dist"
 run = ["bash", "-c", "cd nextjs-app && npm run start"]
 
