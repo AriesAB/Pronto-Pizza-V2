@@ -302,16 +302,11 @@ export default function DowntownPage() {
         />
         
         {/* Main DOWNTOWN title - centered and moved higher */}
-        <motion.div 
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="relative z-10 text-center -translate-y-16"
-        >
+        <div className="relative z-10 text-center -translate-y-16">
           <motion.h1 
-            initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
           >
             DOWNTOWN
@@ -319,18 +314,18 @@ export default function DowntownPage() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4"
           >
             605 5th Ave, SW, Calgary, Alberta
           </motion.p>
-        </motion.div>
+        </div>
         
         {/* Hero text animation */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 1, delay: 0.5 }}
           className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden"
         >
           <div className="overflow-hidden whitespace-nowrap">
