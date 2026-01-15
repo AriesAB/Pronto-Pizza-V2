@@ -1,51 +1,73 @@
 # Pronto Pizza Calgary
 
 ## Overview
-A React-based website for Pronto Pizza, a pizza restaurant in Calgary. The site features a split-screen landing page showcasing two locations: Inglewood and Downtown (Catering).
+A Next.js 14 website for Pronto Pizza, a pizza restaurant in Calgary. The site features a split-screen landing page showcasing two locations: Inglewood and Downtown (Catering). Migrated from React/Vite to Next.js for improved SEO through Server-Side Rendering.
 
 ## Tech Stack
-- React 19 with TypeScript
-- Vite for build tooling
-- Tailwind CSS (via CDN) for styling
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS v4 (properly compiled)
 - Framer Motion for animations
 - Lucide React for icons
+- Server-Side Rendering for SEO
 
 ## Project Structure
 ```
-/
-├── components/          # React components
-│   ├── About.tsx        # About page with family story
-│   ├── CustomCursor.tsx
-│   ├── Downtown.tsx     # Downtown/Catering menu page
-│   ├── Inglewood.tsx
-│   ├── Navbar.tsx
-│   └── SplitLanding.tsx
-├── App.tsx             # Main application component
-├── index.tsx           # Entry point
-├── index.html          # HTML template
-├── types.ts            # TypeScript type definitions
-├── vite.config.ts      # Vite configuration
-└── package.json        # Dependencies
+nextjs-app/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout with Navbar
+│   │   ├── page.tsx            # Home page (split landing)
+│   │   ├── globals.css         # Global styles and Tailwind config
+│   │   ├── sitemap.ts          # Dynamic sitemap for SEO
+│   │   ├── robots.ts           # robots.txt configuration
+│   │   └── [page]/             # Dynamic routing for subpages
+│   │       ├── layout.tsx      # Page-specific metadata
+│   │       └── page.tsx        # Page content
+│   └── components/
+│       ├── Navbar.tsx          # Navigation component
+│       └── SplitLanding.tsx    # Split-screen landing component
+├── next.config.ts              # Next.js configuration
+├── tailwind.config.ts          # Tailwind configuration
+└── package.json                # Dependencies
 ```
 
 ## Development
-The dev server runs on port 5000 using Vite. Start with:
+The dev server runs on port 5000. Start with:
 ```bash
-npm run dev
+cd nextjs-app && npm run dev
 ```
 
-## Build
-To build for production:
-```bash
-npm run build
-```
-Output will be in the `dist` directory.
+## SEO Features
+- Server-Side Rendering for all pages
+- Metadata API for title, description, keywords
+- Open Graph tags for social media sharing
+- Twitter Card tags
+- Dynamic sitemap generation
+- robots.txt configuration
+
+## Custom Colors
+- pronto-cream: #FEFBF6
+- pronto-orange: #FF5A1F
+- pronto-navy: #000000
+- pronto-blue: #1A1B8C
+
+## Custom Fonts
+- Syne (sans-serif)
+- Anton (display)
+- Permanent Marker (cursive)
+- Courier Prime (monospace)
 
 ## Pages
 - **Home**: Split-screen landing showcasing both locations
 - **Inglewood**: Dedicated page for the Inglewood location with full menu
-- **Downtown**: Catering menu page with items from yycpronto.com/catering (Specials, Pizza, Salads, Pagnotta)
-- **About**: Family story page featuring the Bruno family history with high-stimulus animations (inspired by Noble Pie's about page)
+- **Downtown**: Catering menu page with items from yycpronto.com/catering
+- **About**: Family story page featuring the Bruno family history with animations
+- **Contact**: Contact information and forms
 
 ## Recent Changes
-- **Jan 2026**: Added About page with Bruno family story, animated sections, parallax effects, and high-engagement animations
+- **Jan 2026**: Migrated from React/Vite (CSR) to Next.js 14 (SSR) for improved SEO
+- Added comprehensive metadata, Open Graph, and Twitter Card tags
+- Created dynamic sitemap and robots.txt
+- Configured Tailwind CSS v4 with custom theme
+- All pages render identically to original design
