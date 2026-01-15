@@ -36,9 +36,10 @@ localPort = 5000
 externalPort = 80
 
 [deployment]
-deploymentTarget = "static"
-build = ["npm", "run", "build"]
+deploymentTarget = "autoscale"
+build = ["bash", "-c", "cd nextjs-app && npm run build"]
 publicDir = "dist"
+run = ["bash", "-c", "cd nextjs-app && npm run start"]
 
 [[deployment.rewrites]]
 from = "/*"
