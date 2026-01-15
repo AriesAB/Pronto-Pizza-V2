@@ -442,6 +442,9 @@ export default function InglewoodPage() {
               1139 9th Ave SE, Calgary, Alberta
             </p>
           </div>
+          
+          {/* Hero text animation - static version */}
+          <HeroTextAnimation isMounted={isMounted} />
         </div>
       </div>
     );

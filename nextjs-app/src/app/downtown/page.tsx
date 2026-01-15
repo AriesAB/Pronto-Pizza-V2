@@ -247,6 +247,17 @@ export default function DowntownPage() {
               605 5th Ave, SW, Calgary, Alberta
             </p>
           </div>
+          
+          {/* Hero text animation - static version */}
+          <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
+            <div className="overflow-hidden whitespace-nowrap">
+              <div className="inline-flex">
+                <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+                  {Array(15).fill("PIZZA • PASTA • PAGNOTTA • ").join("")}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
