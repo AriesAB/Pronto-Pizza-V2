@@ -33,7 +33,8 @@ export default function AboutPage() {
 
   if (!isMounted) {
     return (
-      <div className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden">
+      <div className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden">
+        {/* HERO SECTION */}
         <section className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 opacity-15">
@@ -46,19 +47,142 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto w-full">
-            <div className="h-[2px] w-[120px] bg-[#FF5A1F] mb-8" />
-            <p className="text-[#FF5A1F] font-mono tracking-[0.3em] uppercase text-sm mb-6">Our Story</p>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display text-[#FEFBF6] leading-[0.9] tracking-tight">
+            <div style={{ height: '2px', width: '120px', backgroundColor: '#FF5A1F', marginBottom: '2rem' }} />
+            <p style={{ color: '#FF5A1F', fontFamily: 'monospace', letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '1.5rem' }}>Our Story</p>
+            <h1 style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', fontFamily: 'Anton, sans-serif', color: '#FEFBF6', lineHeight: '0.9', letterSpacing: '-0.02em' }}>
               More Than
             </h1>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display leading-[0.9] tracking-tight text-[#FF5A1F]">
+            <h1 style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', fontFamily: 'Anton, sans-serif', color: '#FF5A1F', lineHeight: '0.9', letterSpacing: '-0.02em' }}>
               Just Pizza
             </h1>
-            <p className="mt-12 text-xl md:text-2xl text-[#FEFBF6]/70 max-w-2xl font-mono leading-relaxed">
+            <p style={{ marginTop: '3rem', fontSize: '1.25rem', color: 'rgba(254, 251, 246, 0.7)', maxWidth: '42rem', fontFamily: 'Courier Prime, monospace', lineHeight: '1.625' }}>
               It's family, tradition, and a lifelong love for hospitality.
             </p>
           </div>
         </section>
+
+        {/* WHERE IT ALL BEGAN */}
+        <section className="py-24 md:py-32 px-6 md:px-16 relative">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1">
+                <span className="text-[8rem] md:text-[12rem] font-display text-[#FF5A1F]/10 absolute -top-16 -left-8 pointer-events-none select-none">01</span>
+                <h2 className="text-4xl md:text-6xl font-display text-[#FEFBF6] mb-8">
+                  Where It All <span className="text-[#FF5A1F]">Began</span>
+                </h2>
+                <div className="space-y-6">
+                  <p className="text-lg text-[#FEFBF6]/70 font-mono leading-relaxed">
+                    Our story begins with our father, Annibale Bruno, whose passion for food and service spans decades. Before PRONTO Pizza, Annibale owned and operated multiple restaurants across the industry — from fine dining to fast food to food trucks. He's done it all.
+                  </p>
+                  <p className="text-lg text-[#FEFBF6]/70 font-mono leading-relaxed">
+                    That journey ultimately led him to what he loves most: creating authentic Italian food that brings people together. Over eight years ago, he founded PRONTO Pizza, and it's been home ever since.
+                  </p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 relative">
+                <div className="relative rounded-2xl overflow-hidden">
+                  <img src="/assets/about-1.jpg" alt="Enjoying PRONTO Pizza" className="w-full aspect-[4/5] object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                      <p className="text-[#FF5A1F] font-mono text-sm uppercase tracking-wider">Est. 2016</p>
+                      <p className="text-[#FEFBF6] font-display text-xl mt-1">8+ Years of Love</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute -bottom-12 -right-8 w-40 md:w-52 z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-[#0a0a0a]">
+                  <img src="/assets/about-2.jpg" alt="Pepperoni pizza spread" className="w-full aspect-square object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* THE NEXT GENERATION */}
+        <section className="py-24 md:py-32 px-6 md:px-16 relative bg-gradient-to-b from-[#0a0a0a] via-[#1A1B8C]/20 to-[#0a0a0a]">
+          <span className="text-[8rem] md:text-[12rem] font-display text-white/5 absolute top-8 right-8 pointer-events-none select-none">02</span>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-7xl font-display text-[#FEFBF6] leading-tight">
+              The Next <span className="text-[#FF5A1F]">Generation</span>
+            </h2>
+            <div className="space-y-6 mt-8">
+              <p className="text-lg md:text-xl text-[#FEFBF6]/70 font-mono leading-relaxed">
+                Growing up in the restaurant world, Giulia and Alessio were raised behind the counter, in the kitchen, and at the table — learning the importance of quality ingredients, genuine hospitality, and treating every guest like family. Naturally, they fell in love with the craft and the community that comes with it.
+              </p>
+              <p className="text-lg md:text-xl text-[#FEFBF6]/70 font-mono leading-relaxed">
+                In 2022, we proudly opened our own PRONTO Pizza location, continuing the family legacy while bringing our own energy and vision to the brand. Now, we're beyond excited to announce the opening of our new PRONTO Pizza location in Inglewood, located at 1139 9th Ave SE, Calgary, Alberta.
+              </p>
+            </div>
+            <div className="flex justify-center pt-8">
+              <div className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF5A1F]/10 border border-[#FF5A1F]/30 rounded-full">
+                <MapPin className="w-5 h-5 text-[#FF5A1F]" />
+                <span className="text-[#FEFBF6] font-mono text-lg">1139 9th Ave SE, Calgary, Alberta</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT WE'RE ABOUT */}
+        <section className="py-24 md:py-32 px-6 md:px-16 relative">
+          <span className="text-[8rem] md:text-[12rem] font-display text-[#FF5A1F]/10 absolute -top-20 left-0 pointer-events-none select-none">03</span>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="grid lg:grid-cols-3 gap-12 items-center">
+              <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-2xl">
+                <img src="/assets/about-3.jpg" alt="Friends enjoying pizza" className="w-full aspect-[3/4] object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+              <div className="lg:col-span-2 text-center lg:text-left">
+                <h2 className="text-4xl md:text-6xl font-display text-[#FEFBF6] mb-12">
+                  What We're <span className="text-[#FF5A1F]">About</span>
+                </h2>
+                <p className="text-lg text-[#FEFBF6]/70 font-mono leading-relaxed">
+                  At PRONTO, we stay true to the authentic Italian style we grew up with — using premium-quality ingredients to serve delicious pizza, fresh panini, and classic Italian favourites made with care. We're proud to share our food, our story, and our good vibes with the community.
+                </p>
+                <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
+                  {["Authentic", "Quality", "Family", "Community"].map((value) => (
+                    <span key={value} className="px-6 py-3 rounded-full border border-[#FEFBF6]/20 text-[#FEFBF6] font-mono text-sm uppercase tracking-wider">
+                      {value}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA SECTION */}
+        <section className="py-24 md:py-40 px-6 md:px-16 relative overflow-hidden bg-[#FF5A1F]">
+          <div className="max-w-4xl mx-auto relative z-10 text-center">
+            <h2 className="text-4xl md:text-8xl font-display text-white leading-tight">
+              Ready for a taste?
+            </h2>
+            <p className="mt-8 text-xl md:text-2xl text-white/80 font-mono leading-relaxed max-w-2xl mx-auto">
+              Whether you're craving great pizza, a panini with gelato for dessert (espresso after 12?… okay, we're joking), or just a place that feels like home — come by PRONTO Pizza today.
+            </p>
+            <p className="mt-8 text-2xl md:text-4xl font-display text-white font-bold">
+              We can't wait to serve you.
+            </p>
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+              <button className="bg-white text-[#FF5A1F] font-display text-lg md:text-xl px-8 py-4 rounded-full shadow-xl">
+                View Our Menu
+              </button>
+              <button className="bg-transparent border-2 border-white text-white font-display text-lg md:text-xl px-8 py-4 rounded-full">
+                Find Us
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="bg-[#0a0a0a] py-16 px-6 border-t border-white/10">
+          <div className="max-w-4xl mx-auto text-center">
+            <img src="/assets/pronto-logo.png" alt="PRONTO" className="h-16 w-auto mx-auto mb-8" />
+            <div className="font-mono text-[#FEFBF6]/50 text-sm">
+              <p>© 2026 PRONTO Pizza. All rights reserved.</p>
+              <p className="mt-2 text-[#FF5A1F]">Made with love by the Bruno Family</p>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
@@ -67,7 +191,7 @@ export default function AboutPage() {
     <motion.div
       initial={false}
       animate={{ opacity: 1 }}
-      className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden"
+      className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden"
     >
       {/* EDITORIAL HERO */}
       <section ref={heroRef} className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
