@@ -46,10 +46,10 @@ export default function AboutPage() {
           <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-16">
             <div className="h-[2px] w-[120px] mb-8" style={{ backgroundColor: '#FF5A1F' }} />
             <p className="font-mono tracking-[0.3em] uppercase text-sm mb-6" style={{ color: '#FF5A1F' }}>Our Story</p>
-            <h1 className="text-[clamp(3rem,10vw,8rem)] font-display leading-[0.95] tracking-tight" style={{ color: '#FEFBF6' }}>
+            <h1 className="text-[clamp(3rem,10vw,8rem)] font-mono-serif leading-[0.95] tracking-tight" style={{ color: '#FEFBF6' }}>
               More Than
             </h1>
-            <h1 className="text-[clamp(3rem,10vw,8rem)] font-display leading-[0.95] tracking-tight" style={{ color: '#FF5A1F' }}>
+            <h1 className="text-[clamp(3rem,10vw,8rem)] font-mono-serif leading-[0.95] tracking-tight" style={{ color: '#FF5A1F' }}>
               Just Pizza
             </h1>
             <p className="mt-12 text-xl md:text-2xl max-w-2xl font-mono-serif leading-relaxed" style={{ color: 'rgba(254, 251, 246, 0.7)' }}>
@@ -236,7 +236,7 @@ export default function AboutPage() {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[clamp(3rem,12vw,10rem)] font-display text-pronto-cream leading-[0.9] tracking-tight"
+              className="text-[clamp(3rem,12vw,10rem)] font-mono-serif text-pronto-cream leading-[0.9] tracking-tight"
             >
               More Than
             </motion.h1>
@@ -248,7 +248,7 @@ export default function AboutPage() {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[clamp(3rem,12vw,10rem)] font-display leading-[0.9] tracking-tight"
+              className="text-[clamp(3rem,12vw,10rem)] font-mono-serif leading-[0.9] tracking-tight"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pronto-orange to-orange-400">Just Pizza</span>
             </motion.h1>
