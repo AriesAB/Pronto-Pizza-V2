@@ -432,8 +432,8 @@ export default function AboutPage() {
 
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30, rotate: 3 }}
-              animate={valuesInView ? { opacity: 1, x: 0, rotate: -3 } : { opacity: 0, x: -30, rotate: 3 }}
+              initial={false}
+              animate={valuesInView ? { opacity: 1, x: 0, rotate: -3 } : { opacity: 1, x: 0, rotate: -3 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hidden lg:block relative"
             >
