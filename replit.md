@@ -21,14 +21,13 @@ nextjs-app/
 │   │   ├── globals.css         # Global styles and Tailwind config
 │   │   ├── sitemap.ts          # Dynamic sitemap for SEO
 │   │   ├── robots.ts           # robots.txt configuration
-│   │   └── [page]/             # Dynamic routing for subpages
-│   │       ├── layout.tsx      # Page-specific metadata
-│   │       └── page.tsx        # Page content
+│   │   ├── inglewood/          # Inglewood location pages
+│   │   ├── downtown/           # Downtown location pages
+│   │   ├── about/              # About page
+│   │   └── contact/            # Contact page
 │   └── components/
-│       ├── Navbar.tsx          # Navigation component
-│       └── SplitLanding.tsx    # Split-screen landing component
+│       └── Navbar.tsx          # Navigation component
 ├── next.config.ts              # Next.js configuration
-├── tailwind.config.ts          # Tailwind configuration
 └── package.json                # Dependencies
 ```
 
@@ -79,3 +78,10 @@ cd nextjs-app && npm run dev
   - Changed hero animations from `initial={{ opacity: 0 }}` to `initial={false}` to prevent invisible content
   - Content now visible by default, animations run as enhancements only
   - SSR fallback uses `font-display` class for Anton font on hero headings
+- **Jan 15, 2026**: Codebase cleanup post-migration
+  - Removed unused React imports (React namespace not needed with modern JSX)
+  - Removed unused ClientOnly.tsx component
+  - Removed unused variables (heroRef, heroInView, pathname)
+  - Added accessibility improvements (aria-labels, alt text for images)
+  - Moved RevealText component to module level in contact page
+  - Configured production deployment with Tailwind compilation

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -25,8 +25,7 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  const pathname = usePathname();
-  const currentPath = pathname;
+  const currentPath = usePathname();
 
   const hideOnScrollPages = ['/inglewood', '/downtown', '/about', '/contact'];
   const shouldHideOnScroll = hideOnScrollPages.includes(currentPath);
@@ -101,8 +100,8 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
           </div>
-          <button className="md:hidden relative z-50 text-[#1A1B8C] hover:text-[#FF5A1F] transition-colors">
-            <Menu size={32} />
+          <button className="md:hidden relative z-50 text-[#1A1B8C] hover:text-[#FF5A1F] transition-colors" aria-label="Open menu">
+            <Menu size={32} aria-hidden="true" />
           </button>
         </div>
       </nav>
@@ -166,8 +165,10 @@ const Navbar: React.FC = () => {
         <button
           className="md:hidden relative z-50 text-[#1A1B8C] hover:text-[#FF5A1F] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+          {isOpen ? <X size={32} aria-hidden="true" /> : <Menu size={32} aria-hidden="true" />}
         </button>
       </div>
 

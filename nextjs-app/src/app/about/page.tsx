@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
@@ -17,12 +17,10 @@ const RevealText: React.FC<{ children: React.ReactNode; delay?: number }> = ({ c
 
 export default function AboutPage() {
   const [isMounted, setIsMounted] = useState(false);
-  const heroRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
 
-  const heroInView = useInView(heroRef, { once: true });
   const storyInView = useInView(storyRef, { once: true, margin: "-20%" });
   const teamInView = useInView(teamRef, { once: true, margin: "-20%" });
   const valuesInView = useInView(valuesRef, { once: true, margin: "-20%" });
@@ -192,7 +190,7 @@ export default function AboutPage() {
   return (
     <div className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden">
       {/* EDITORIAL HERO */}
-      <section ref={heroRef} className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
+      <section className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
         {/* Background with slow zoom effect */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -203,7 +201,7 @@ export default function AboutPage() {
           >
             <img
               src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop"
-              alt=""
+              alt="Pizza background"
               className="w-full h-full object-cover"
             />
           </motion.div>
