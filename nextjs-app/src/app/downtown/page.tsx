@@ -302,17 +302,37 @@ export default function DowntownPage() {
         />
         
         {/* Main DOWNTOWN title - centered and moved higher */}
-        <div className="relative z-10 text-center -translate-y-16">
-          <h1 className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none">
+        <motion.div 
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="relative z-10 text-center -translate-y-16"
+        >
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
+          >
             DOWNTOWN
-          </h1>
-          <p className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4"
+          >
             605 5th Ave, SW, Calgary, Alberta
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         {/* Hero text animation */}
-        <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden"
+        >
           <div className="overflow-hidden whitespace-nowrap">
             <motion.div
               animate={{ x: ["0%", "-50%"] }}
@@ -334,11 +354,11 @@ export default function DowntownPage() {
               </span>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Scroll indicator */}
         <motion.div
-          initial={false}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
           transition={{ 
             y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
