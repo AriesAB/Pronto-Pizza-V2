@@ -83,8 +83,14 @@ export default function AboutPage() {
               </div>
               <div className="order-1 lg:order-2 relative">
                 <div className="relative rounded-2xl overflow-hidden">
-                  <img src="/assets/about-1.png" alt="Enjoying PRONTO Pizza" className="w-full aspect-[4/5] object-cover" />
+                  <img src="/assets/about-1.jpg" alt="Enjoying PRONTO Pizza" className="w-full aspect-[4/5] object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                      <p className="text-[#FF5A1F] font-mono text-sm uppercase tracking-wider">Est. 2016</p>
+                      <p className="text-[#FEFBF6] font-mono-serif text-xl mt-1">8+ Years of Love</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="absolute -bottom-12 -right-8 w-40 md:w-52 z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-[#0a0a0a]">
                   <img src="/assets/about-2.jpg" alt="Pepperoni pizza spread" className="w-full aspect-square object-cover" />
@@ -322,11 +328,17 @@ export default function AboutPage() {
                   <div className="absolute -inset-4 bg-gradient-to-br from-pronto-orange/20 to-pronto-blue/20 rounded-3xl blur-2xl" />
                   <div className="relative rounded-2xl overflow-hidden">
                     <img
-                      src="/assets/about-1.png"
+                      src="/assets/about-1.jpg"
                       alt="Enjoying PRONTO Pizza"
                       className="w-full aspect-[4/5] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                        <p className="text-pronto-orange font-mono text-sm uppercase tracking-wider">Est. 2016</p>
+                        <p className="text-pronto-cream font-mono-serif text-xl mt-1">8+ Years of Love</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
