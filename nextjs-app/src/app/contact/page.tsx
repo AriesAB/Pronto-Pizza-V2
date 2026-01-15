@@ -1,19 +1,8 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Send, MapPin, Phone } from 'lucide-react';
-
-const RevealText: React.FC<{ children: React.ReactNode; delay?: number }> = ({ children, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-10%" }}
-    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-  >
-    {children}
-  </motion.div>
-);
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -34,6 +23,7 @@ const InstagramIcon = () => (
 );
 
 export default function ContactPage() {
+  const [isMounted, setIsMounted] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   
@@ -47,6 +37,10 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,18 +64,62 @@ export default function ContactPage() {
     { name: 'Instagram', icon: InstagramIcon, href: '#' },
   ];
 
+  if (!isMounted) {
+    return (
+      <div className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden">
+        <section className="min-h-[60vh] relative flex flex-col justify-center px-6 md:px-16 py-20">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 opacity-15">
+              <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2574&auto=format&fit=crop"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto w-full">
+            <div className="h-[2px] w-[120px] bg-[#FF5A1F] mb-8" />
+            <p className="text-[#FF5A1F] font-mono tracking-[0.3em] uppercase text-sm mb-6">
+              Get In Touch
+            </p>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display text-[#FEFBF6] leading-[0.9] tracking-tight">
+              Contact
+            </h1>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display leading-[0.9] tracking-tight text-[#FF5A1F]">
+              Us
+            </h1>
+            <p className="mt-12 text-xl md:text-2xl text-[#FEFBF6]/70 max-w-2xl font-mono leading-relaxed">
+              We'd love to hear from you. Drop us a message or find us on social media.
+            </p>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  const RevealText: React.FC<{ children: React.ReactNode; delay?: number }> = ({ children, delay = 0 }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden"
     >
       <section ref={heroRef} className="min-h-[60vh] relative flex flex-col justify-center px-6 md:px-16 py-20">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             initial={{ scale: 1.2, opacity: 0 }}
-            animate={heroInView ? { scale: 1, opacity: 0.15 } : {}}
+            animate={heroInView ? { scale: 1, opacity: 0.15 } : { scale: 1.2, opacity: 0 }}
             transition={{ duration: 1.5 }}
             className="absolute inset-0"
           >
@@ -97,14 +135,14 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ width: 0 }}
-            animate={heroInView ? { width: "120px" } : {}}
+            animate={heroInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-[2px] bg-pronto-orange mb-8"
           />
           
           <motion.p
             initial={{ opacity: 0, x: -20 }}
-            animate={heroInView ? { opacity: 1, x: 0 } : {}}
+            animate={heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-6"
           >
@@ -114,7 +152,7 @@ export default function ContactPage() {
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : {}}
+              animate={heroInView ? { y: 0 } : { y: "100%" }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(3rem,12vw,10rem)] font-mono-serif text-pronto-cream leading-[0.9] tracking-tight"
             >
@@ -124,7 +162,7 @@ export default function ContactPage() {
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : {}}
+              animate={heroInView ? { y: 0 } : { y: "100%" }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(3rem,12vw,10rem)] font-mono-serif leading-[0.9] tracking-tight"
             >
@@ -134,7 +172,7 @@ export default function ContactPage() {
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
           >
@@ -279,7 +317,7 @@ export default function ContactPage() {
                       key={social.name}
                       href={social.href}
                       initial={{ opacity: 0, y: 20 }}
-                      animate={formInView ? { opacity: 1, y: 0 } : {}}
+                      animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ delay: 0.3 + i * 0.1 }}
                       whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 107, 53, 0.2)" }}
                       className="flex items-center gap-3 px-6 py-4 rounded-full border border-pronto-cream/20 text-pronto-cream hover:border-pronto-orange transition-colors group"
@@ -373,23 +411,15 @@ export default function ContactPage() {
 
       <footer className="bg-[#0a0a0a] py-16 px-6 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.img
+          <img
             src="/assets/pronto-logo.png"
             alt="PRONTO"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="h-16 w-auto mx-auto mb-8"
           />
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-mono text-pronto-cream/50 text-sm"
-          >
+          <div className="font-mono text-pronto-cream/50 text-sm">
             <p>© 2026 PRONTO Pizza. All rights reserved.</p>
             <p className="mt-2 text-pronto-orange">Made with love by the Bruno Family</p>
-          </motion.div>
+          </div>
         </div>
       </footer>
     </motion.div>

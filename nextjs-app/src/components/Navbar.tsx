@@ -24,11 +24,16 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
   const currentPath = pathname;
 
   const hideOnScrollPages = ['/inglewood', '/downtown', '/about', '/contact'];
   const shouldHideOnScroll = hideOnScrollPages.includes(currentPath);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!shouldHideOnScroll) {
@@ -67,9 +72,46 @@ const Navbar: React.FC = () => {
     setIsOpen(false);
   };
 
+  if (!isMounted) {
+    return (
+      <nav className={`z-50 px-8 py-6 w-full bg-pronto-navy border-b border-white/10 ${
+        shouldHideOnScroll ? 'fixed top-0 left-0 right-0' : 'relative shrink-0'
+      }`}>
+        <div className="flex justify-between items-center w-full">
+          <Link href="/" className="relative z-50 group text-left">
+            <img 
+              src="/assets/logo.jpg" 
+              alt="Pronto" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
+          </Link>
+          <div className="hidden md:flex items-center space-x-12">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.path}
+                className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
+                  currentPath === item.path 
+                    ? 'text-[#FF5A1F]'
+                    : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
+                }`}
+              >
+                <span>{item.label}</span>
+                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0'}`} />
+              </Link>
+            ))}
+          </div>
+          <button className="md:hidden relative z-50 text-[#1A1B8C] hover:text-[#FF5A1F] transition-colors">
+            <Menu size={32} />
+          </button>
+        </div>
+      </nav>
+    );
+  }
+
   return (
     <motion.nav 
-      initial={{ y: 0, opacity: 1 }}
+      initial={false}
       animate={{ 
         y: isVisible ? 0 : -120, 
         opacity: isVisible ? 1 : 0 
@@ -84,52 +126,39 @@ const Navbar: React.FC = () => {
           href="/"
           className="relative z-50 group text-left" 
         >
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <img 
               src="/assets/logo.jpg" 
               alt="Pronto" 
               className="h-12 md:h-16 w-auto object-contain"
             />
-          </motion.div>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center space-x-12">
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             item.isButton ? (
-              <motion.button
+              <button
                 key={item.label}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
                 className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-[#1A1B8C] text-[#1A1B8C] hover:border-[#FF5A1F] hover:text-[#FF5A1F] inline-flex flex-col items-center justify-center leading-tight"
               >
                 <span>{item.label}</span>
                 <span className="text-xs font-normal lowercase opacity-80 font-sans mt-0.5">(coming soon)</span>
-              </motion.button>
+              </button>
             ) : (
-              <motion.div
+              <Link
                 key={item.label}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                href={item.path}
+                onClick={handleNavClick}
+                className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
+                  currentPath === item.path 
+                    ? 'text-[#FF5A1F]'
+                    : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
+                }`}
               >
-                <Link
-                  href={item.path}
-                  onClick={handleNavClick}
-                  className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
-                    currentPath === item.path 
-                      ? 'text-[#FF5A1F]'
-                      : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
-                  }`}
-                >
-                  <span>{item.label}</span>
-                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                </Link>
-              </motion.div>
+                <span>{item.label}</span>
+                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              </Link>
             )
           ))}
         </div>

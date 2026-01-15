@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
@@ -16,6 +16,7 @@ const RevealText: React.FC<{ children: React.ReactNode; delay?: number }> = ({ c
 );
 
 export default function AboutPage() {
+  const [isMounted, setIsMounted] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
@@ -26,11 +27,46 @@ export default function AboutPage() {
   const teamInView = useInView(teamRef, { once: true, margin: "-20%" });
   const valuesInView = useInView(valuesRef, { once: true, margin: "-20%" });
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden">
+        <section className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 opacity-15">
+              <img
+                src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto w-full">
+            <div className="h-[2px] w-[120px] bg-[#FF5A1F] mb-8" />
+            <p className="text-[#FF5A1F] font-mono tracking-[0.3em] uppercase text-sm mb-6">Our Story</p>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display text-[#FEFBF6] leading-[0.9] tracking-tight">
+              More Than
+            </h1>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display leading-[0.9] tracking-tight text-[#FF5A1F]">
+              Just Pizza
+            </h1>
+            <p className="mt-12 text-xl md:text-2xl text-[#FEFBF6]/70 max-w-2xl font-mono leading-relaxed">
+              It's family, tradition, and a lifelong love for hospitality.
+            </p>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       className="bg-[#0a0a0a] min-h-full w-full overflow-x-hidden"
     >
       {/* EDITORIAL HERO */}
@@ -38,7 +74,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             initial={{ scale: 1.2, opacity: 0 }}
-            animate={heroInView ? { scale: 1, opacity: 0.15 } : {}}
+            animate={heroInView ? { scale: 1, opacity: 0.15 } : { scale: 1.2, opacity: 0 }}
             transition={{ duration: 1.5 }}
             className="absolute inset-0"
           >
@@ -54,14 +90,14 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ width: 0 }}
-            animate={heroInView ? { width: "120px" } : {}}
+            animate={heroInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-[2px] bg-pronto-orange mb-8"
           />
           
           <motion.p
             initial={{ opacity: 0, x: -20 }}
-            animate={heroInView ? { opacity: 1, x: 0 } : {}}
+            animate={heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-6"
           >
@@ -71,7 +107,7 @@ export default function AboutPage() {
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : {}}
+              animate={heroInView ? { y: 0 } : { y: "100%" }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(3rem,12vw,10rem)] font-mono-serif text-pronto-cream leading-[0.9] tracking-tight"
             >
@@ -81,7 +117,7 @@ export default function AboutPage() {
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
-              animate={heroInView ? { y: 0 } : {}}
+              animate={heroInView ? { y: 0 } : { y: "100%" }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(3rem,12vw,10rem)] font-mono-serif leading-[0.9] tracking-tight"
             >
@@ -91,7 +127,7 @@ export default function AboutPage() {
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
           >
@@ -101,7 +137,7 @@ export default function AboutPage() {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={heroInView ? { opacity: 1 } : {}}
+          animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 1.2 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2"
         >
@@ -128,7 +164,7 @@ export default function AboutPage() {
             <div className="order-2 lg:order-1">
               <motion.span
                 initial={{ opacity: 0 }}
-                animate={storyInView ? { opacity: 1 } : {}}
+                animate={storyInView ? { opacity: 1 } : { opacity: 0 }}
                 className="text-[8rem] md:text-[12rem] font-mono-serif text-pronto-orange/10 absolute -top-16 -left-8 pointer-events-none select-none"
               >
                 01
@@ -159,7 +195,7 @@ export default function AboutPage() {
               <div className="relative">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
-                  animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                  animate={storyInView ? { opacity: 1, scale: 1, rotate: 0 } : { opacity: 0, scale: 0.9, rotate: 3 }}
                   transition={{ duration: 0.8 }}
                   className="relative z-10"
                 >
@@ -178,7 +214,7 @@ export default function AboutPage() {
                     
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
-                      animate={storyInView ? { opacity: 1, y: 0 } : {}}
+                      animate={storyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ delay: 0.5 }}
                       className="absolute bottom-6 left-6 right-6"
                     >
@@ -192,7 +228,7 @@ export default function AboutPage() {
 
                 <motion.div
                   initial={{ opacity: 0, x: 40, rotate: -5 }}
-                  animate={storyInView ? { opacity: 1, x: 0, rotate: 6 } : {}}
+                  animate={storyInView ? { opacity: 1, x: 0, rotate: 6 } : { opacity: 0, x: 40, rotate: -5 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="absolute -bottom-12 -right-8 w-40 md:w-52 z-20"
                 >
@@ -218,7 +254,7 @@ export default function AboutPage() {
       <section ref={teamRef} className="py-24 md:py-32 px-6 md:px-16 relative bg-gradient-to-b from-[#0a0a0a] via-pronto-blue/20 to-[#0a0a0a]">
         <motion.span
           initial={{ opacity: 0 }}
-          animate={teamInView ? { opacity: 1 } : {}}
+          animate={teamInView ? { opacity: 1 } : { opacity: 0 }}
           className="text-[8rem] md:text-[12rem] font-mono-serif text-white/5 absolute top-8 right-8 pointer-events-none select-none"
         >
           02
@@ -281,7 +317,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.span
             initial={{ opacity: 0 }}
-            animate={valuesInView ? { opacity: 1 } : {}}
+            animate={valuesInView ? { opacity: 1 } : { opacity: 0 }}
             className="text-[8rem] md:text-[12rem] font-mono-serif text-pronto-orange/10 absolute -top-20 left-0 pointer-events-none select-none"
           >
             03
@@ -290,7 +326,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30, rotate: 3 }}
-              animate={valuesInView ? { opacity: 1, x: 0, rotate: -3 } : {}}
+              animate={valuesInView ? { opacity: 1, x: 0, rotate: -3 } : { opacity: 0, x: -30, rotate: 3 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hidden lg:block relative"
             >
@@ -328,7 +364,7 @@ export default function AboutPage() {
                     <motion.span
                       key={value}
                       initial={{ opacity: 0, scale: 0.8 }}
-                      animate={valuesInView ? { opacity: 1, scale: 1 } : {}}
+                      animate={valuesInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                       transition={{ delay: 0.4 + i * 0.1 }}
                       whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 107, 53, 0.2)" }}
                       className="px-6 py-3 rounded-full border border-pronto-cream/20 text-pronto-cream font-mono text-sm uppercase tracking-wider transition-colors"

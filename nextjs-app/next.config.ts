@@ -11,9 +11,11 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: [
-    'https://*.replit.dev',
-    'https://*.spock.replit.dev',
-    'https://*.repl.co',
+    'localhost',
+    '127.0.0.1',
+    '*.replit.dev',
+    '*.spock.replit.dev',
+    '*.repl.co',
   ],
   turbopack: {
     root: path.resolve(__dirname),

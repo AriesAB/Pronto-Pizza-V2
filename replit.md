@@ -71,3 +71,7 @@ cd nextjs-app && npm run dev
 - Created dynamic sitemap and robots.txt
 - Configured Tailwind CSS v4 with custom theme
 - All pages render identically to original design
+- **Jan 15, 2026**: Fixed hydration mismatch issues by implementing isMounted pattern
+  - All pages now render static HTML first, then enable Framer Motion animations after hydration
+  - Fixed allowedDevOrigins in next.config.ts for proper HMR connection
+  - Hydration warnings in dev console are expected with animation libraries and don't affect production

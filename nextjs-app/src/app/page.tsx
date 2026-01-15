@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
@@ -9,7 +9,12 @@ type SectionType = 'top' | 'bottom' | null;
 
 export default function Home() {
   const [hoveredSection, setHoveredSection] = useState<SectionType>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const containerVariants = {
     expanded: { height: '70%' },
@@ -26,6 +31,48 @@ export default function Home() {
     if (hoveredSection === null) return 'default';
     return hoveredSection === section ? 'expanded' : 'collapsed';
   };
+
+  if (!isMounted) {
+    return (
+      <div className="h-full w-full flex flex-col relative overflow-hidden bg-pronto-navy">
+        <div className="w-full h-1/2 relative overflow-hidden border-b-8 border-black">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2574&auto=format&fit=crop")',
+            }}
+          />
+          <div className="absolute inset-0 bg-pronto-navy/40" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+            <h1 className="text-7xl md:text-9xl font-display font-black text-pronto-cream tracking-wide drop-shadow-lg leading-none">
+              INGLEWOOD
+            </h1>
+          </div>
+        </div>
+        <div className="w-full h-1/2 relative overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url("https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2670&auto=format&fit=crop")',
+            }}
+          />
+          <div className="absolute inset-0 bg-pronto-orange/30 mix-blend-multiply" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+            <div className="relative inline-block">
+              <h1 className="text-7xl md:text-9xl font-display font-black text-pronto-cream tracking-wide drop-shadow-lg leading-none relative z-10">
+                DOWNTOWN
+              </h1>
+              <div className="absolute -bottom-2 right-0 md:bottom-2 md:-right-4 z-20 transform translate-y-1/2 rotate-[-6deg]">
+                <span className="text-4xl md:text-6xl font-marker text-pronto-orange whitespace-nowrap drop-shadow-md">
+                  (CATERING)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="h-full w-full flex flex-col relative overflow-hidden bg-pronto-navy">

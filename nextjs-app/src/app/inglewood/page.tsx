@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface MenuItemData {
@@ -295,7 +295,33 @@ const menuSections: MenuSectionData[] = [
   }
 ];
 
-const MenuItem = ({ item }: { item: MenuItemData }) => {
+const MenuItem = ({ item, isMounted }: { item: MenuItemData; isMounted: boolean }) => {
+  if (!isMounted) {
+    return (
+      <div className="flex flex-col mb-10 break-inside-avoid group cursor-pointer">
+        <div className="flex items-baseline justify-between border-b-2 border-pronto-blue/20 pb-1 mb-2 border-dashed relative transition-colors duration-200">
+          {item.name ? (
+            <h4 className="font-mono-serif font-normal text-xl md:text-3xl text-white uppercase tracking-tight origin-left transition-colors duration-200">
+              {item.name}
+            </h4>
+          ) : item.ingredients && (
+            <p className="font-mono-serif text-base md:text-lg text-white/70 leading-relaxed max-w-2xl transition-colors duration-200">
+              {item.ingredients}
+            </p>
+          )}
+          <span className={`font-mono-serif font-bold text-lg md:text-2xl text-pronto-orange whitespace-nowrap origin-right transition-colors duration-200 ${item.name ? 'ml-4' : 'ml-auto'}`}>
+            {item.price}
+          </span>
+        </div>
+        {item.name && item.ingredients && (
+          <p className="font-mono-serif text-base md:text-lg text-white/70 leading-relaxed max-w-2xl transition-colors duration-200">
+            {item.ingredients}
+          </p>
+        )}
+      </div>
+    );
+  }
+
   return (
     <motion.div 
       initial={{ opacity: 0, x: -30, filter: "blur(8px)" }}
@@ -338,14 +364,28 @@ const MenuItem = ({ item }: { item: MenuItemData }) => {
   );
 };
 
-const HeroTextAnimation: React.FC = () => {
+const HeroTextAnimation: React.FC<{ isMounted: boolean }> = ({ isMounted }) => {
   const text = "ANTIPASTI • PIZZA • PANINI • ";
   const repeatedText = Array(15).fill(text).join("");
   
+  if (!isMounted) {
+    return (
+      <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
+        <div className="overflow-hidden whitespace-nowrap">
+          <div className="inline-flex">
+            <span className="text-4xl md:text-7xl font-mono-serif tracking-[0.2em] text-pronto-orange/60 uppercase">
+              {repeatedText}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="absolute inset-x-0 bottom-20 pointer-events-none z-10 overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
@@ -376,11 +416,41 @@ const HeroTextAnimation: React.FC = () => {
 };
 
 export default function InglewoodPage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div className="bg-black min-h-full w-full overflow-x-hidden">
+        <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ 
+              backgroundImage: 'url("https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=2574&auto=format&fit=crop")',
+              filter: 'contrast(1.05) brightness(0.75) saturate(1.15)'
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
+          <div className="relative z-10 text-center -translate-y-16">
+            <h1 className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none">
+              INGLEWOOD
+            </h1>
+            <p className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4">
+              1139 9th Ave SE, Calgary, Alberta
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <motion.div 
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       className="bg-black min-h-full w-full overflow-x-hidden"
     >
       {/* HERO SECTION */}
@@ -388,10 +458,9 @@ export default function InglewoodPage() {
         
         {/* Pizza image background with cinematic zoom */}
         <motion.div 
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={false}
           animate={{ opacity: 1, scale: [1, 1.08, 1] }}
           transition={{ 
-            opacity: { duration: 1.5 },
             scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' }
           }}
           className="absolute inset-0 bg-cover bg-center"
@@ -418,33 +487,22 @@ export default function InglewoodPage() {
         
         {/* Main INGLEWOOD title - centered and moved higher */}
         <div className="relative z-10 text-center -translate-y-16">
-          <motion.h1
-            initial={{ opacity: 0, y: 30, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none"
-          >
+          <h1 className="text-6xl md:text-[9rem] font-display text-pronto-cream tracking-wide drop-shadow-2xl leading-none">
             INGLEWOOD
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4"
-          >
+          </h1>
+          <p className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4">
             1139 9th Ave SE, Calgary, Alberta
-          </motion.p>
+          </p>
         </div>
         
         {/* Hero text animation */}
-        <HeroTextAnimation />
+        <HeroTextAnimation isMounted={isMounted} />
         
         {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1, y: [0, 10, 0] }}
           transition={{ 
-            opacity: { delay: 2, duration: 1 },
             y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
           }}
           className="absolute bottom-24 left-6 md:bottom-8 md:left-1/2 md:-translate-x-1/2 text-pronto-cream/80 z-20"
@@ -491,7 +549,7 @@ export default function InglewoodPage() {
 
                  <div className="flex flex-col gap-4">
                     {section.items && section.items.map((item) => (
-                      <MenuItem key={item.name} item={item} />
+                      <MenuItem key={item.name} item={item} isMounted={isMounted} />
                     ))}
                     
                     {section.subcategories && section.subcategories.map((subcategory) => (
@@ -513,7 +571,7 @@ export default function InglewoodPage() {
                           )}
                         </motion.div>
                         {subcategory.items && subcategory.items.length > 0 && subcategory.items.map((item) => (
-                          <MenuItem key={item.name || item.ingredients} item={item} />
+                          <MenuItem key={item.name || item.ingredients} item={item} isMounted={isMounted} />
                         ))}
                       </div>
                     ))}
