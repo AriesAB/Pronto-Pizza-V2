@@ -6,10 +6,10 @@
   --color-pronto-navy: #000000;
   --color-pronto-blue: #1A1B8C;
   
-  --font-sans: 'Syne', sans-serif;
-  --font-display: 'Anton', sans-serif;
-  --font-marker: 'Permanent Marker', cursive;
-  --font-mono-serif: 'Courier Prime', monospace;
+  --font-sans: var(--font-syne), 'Syne', sans-serif;
+  --font-display: var(--font-anton), 'Anton', sans-serif;
+  --font-marker: var(--font-permanent-marker), 'Permanent Marker', cursive;
+  --font-mono-serif: var(--font-courier-prime), 'Courier Prime', monospace;
 }
 
 body {

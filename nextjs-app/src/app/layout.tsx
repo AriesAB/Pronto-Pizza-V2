@@ -1,6 +1,34 @@
 import type { Metadata } from "next";
+import { Anton, Syne, Permanent_Marker, Courier_Prime } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
+const permanentMarker = Permanent_Marker({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-permanent-marker",
+  display: "swap",
+});
+
+const courierPrime = Courier_Prime({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-courier-prime",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Pronto Pizza | Calgary",
@@ -31,13 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Syne:wght@400;700;800&family=Permanent+Marker&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="antialiased" suppressHydrationWarning>
+    <html lang="en" className={`${anton.variable} ${syne.variable} ${permanentMarker.variable} ${courierPrime.variable}`}>
+      <body className="antialiased">
         <div className="bg-pronto-navy h-screen flex flex-col text-pronto-cream font-sans selection:bg-pronto-orange selection:text-white">
           <Navbar />
           <main className="flex-1 relative overflow-y-auto overflow-x-hidden no-scrollbar">
