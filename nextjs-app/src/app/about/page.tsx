@@ -193,9 +193,10 @@ export default function AboutPage() {
     <div className="bg-[#0a0a0a] min-h-screen w-full overflow-x-hidden">
       {/* EDITORIAL HERO */}
       <section ref={heroRef} className="min-h-screen relative flex flex-col justify-center px-6 md:px-16 py-20">
+        {/* Background with slow zoom effect */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            initial={false}
+            initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.15 }}
             transition={{ duration: 1.5 }}
             className="absolute inset-0"
@@ -206,19 +207,22 @@ export default function AboutPage() {
               className="w-full h-full object-cover"
             />
           </motion.div>
+          {/* Dark gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
+          {/* Orange accent line */}
           <motion.div
-            initial={false}
+            initial={{ width: 0 }}
             animate={{ width: "120px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-[2px] bg-pronto-orange mb-8"
           />
           
+          {/* "OUR STORY" label */}
           <motion.p
-            initial={false}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-pronto-orange font-mono tracking-[0.3em] uppercase text-sm mb-6"
@@ -226,9 +230,10 @@ export default function AboutPage() {
             Our Story
           </motion.p>
 
+          {/* "More Than" headline - reveal from below */}
           <div className="overflow-hidden">
             <motion.h1
-              initial={false}
+              initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(3rem,12vw,10rem)] font-display text-pronto-cream leading-[0.9] tracking-tight"
@@ -236,9 +241,11 @@ export default function AboutPage() {
               More Than
             </motion.h1>
           </div>
+          
+          {/* "Just Pizza" headline - reveal from below with gradient */}
           <div className="overflow-hidden">
             <motion.h1
-              initial={false}
+              initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(3rem,12vw,10rem)] font-display leading-[0.9] tracking-tight"
@@ -247,8 +254,9 @@ export default function AboutPage() {
             </motion.h1>
           </div>
 
+          {/* Tagline */}
           <motion.p
-            initial={false}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
@@ -257,7 +265,13 @@ export default function AboutPage() {
           </motion.p>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        >
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -269,7 +283,7 @@ export default function AboutPage() {
               className="w-1 h-2 bg-pronto-orange rounded-full"
             />
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* THE ORIGIN - HORIZONTAL LAYOUT */}

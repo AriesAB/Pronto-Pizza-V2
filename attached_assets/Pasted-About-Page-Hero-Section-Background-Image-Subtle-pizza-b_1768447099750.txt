@@ -1,0 +1,56 @@
+About Page Hero Section
+Background
+Image: Subtle pizza background at 15% opacity with slow zoom effect
+Starting state: Scale 1.2 (20% zoomed in), opacity 0
+Ending state: Scale 1 (normal), opacity 0.15
+Duration: 1.5 seconds
+Overlay: Dark gradient from near-black fading to transparent (bottom-left to top-right)
+Text Elements
+1. Orange Horizontal Line (Accent Bar)
+Starting state: Width 0px
+Ending state: Width 120px, height 2px, orange color
+Duration: 0.8 seconds
+Delay: 0.2 seconds
+2. "OUR STORY" Label
+Typography: Monospace font, uppercase, extra-wide letter spacing (0.3em), small size (~14px), orange color
+Starting state: Opacity 0, shifted 20px to the left
+Ending state: Opacity 1, at final position
+Duration: 0.6 seconds
+Delay: 0.3 seconds
+3. "More Than" (First Headline)
+Typography: Mono-serif font (slab serif style), responsive size (3rem to 10rem based on viewport), cream/off-white color, tight line-height (0.9), tight letter-spacing
+Animation style: Text reveal from below (masked overflow)
+Starting state: Translated 100% downward (hidden below container)
+Ending state: Translated to Y position 0 (revealed)
+Duration: 0.8 seconds
+Delay: 0.4 seconds
+Easing: [0.22, 1, 0.36, 1] (exponential ease-out - starts fast, ends very smooth)
+4. "Just Pizza" (Second Headline)
+Typography: Same as above but with orange gradient text (gradient from orange to lighter orange-400, applied via text clipping)
+Animation style: Same text reveal from below
+Starting state: Translated 100% downward (hidden)
+Ending state: Translated to Y position 0 (revealed)
+Duration: 0.8 seconds
+Delay: 0.5 seconds (staggers 0.1s after "More Than")
+Easing: [0.22, 1, 0.36, 1]
+5. Tagline ("It's family, tradition, and a lifelong love for hospitality.")
+Typography: Mono-serif font, responsive size (1.25rem to 1.5rem), cream color at 70% opacity, relaxed line-height, max-width 2xl
+Starting state: Opacity 0, shifted 20px down
+Ending state: Opacity 1, at final position
+Duration: 0.6 seconds
+Delay: 0.8 seconds
+Scroll Indicator (Bottom Center)
+Container: Appears with fade-in, then gently bobs up/down infinitely
+Starting state: Opacity 0
+Ending state: Opacity 1
+Delay: 1.2 seconds
+Bobbing motion: Y oscillates 0 → 8px → 0, duration 1.5 seconds, infinite loop
+Inner dot: Orange pill shape that pulses (opacity 1 → 0.3 → 1) and moves with the same bobbing rhythm
+Animation Sequence Timeline:
+Time	Element
+0.2s	Orange accent line starts expanding
+0.3s	"OUR STORY" slides in from left
+0.4s	"More Than" reveals upward from below
+0.5s	"Just Pizza" reveals upward from below
+0.8s	Tagline fades in and rises
+1.2s	Scroll indicator fades in, begins bobbing infinitely
