@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://prontopizza.ca/sitemap.xml',
+    sitemap: 'https://yycpronto.com/sitemap.xml',
   }
 }

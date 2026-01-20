@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://prontopizza.ca';
+  const baseUrl = 'https://yycpronto.com';
   
   return [
     {
