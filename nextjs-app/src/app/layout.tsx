@@ -31,6 +31,7 @@ const courierPrime = Courier_Prime({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yycpronto.com"),
   title: "Pronto Pizza | Calgary",
   description: "Authentic Italian pizza in Calgary. Visit our Inglewood and Downtown locations for delicious pizza, fresh panini, and classic Italian favourites made with care.",
   keywords: "pizza, Calgary, Italian food, Inglewood, Downtown, Pronto Pizza, authentic Italian, panini",

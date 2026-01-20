@@ -19,7 +19,7 @@ const contactPageSchema = {
   "@type": "ContactPage",
   name: "Contact Pronto Pizza",
   description: "Find our locations, hours, and get in touch with Pronto Pizza Calgary",
-  url: "https://yycpronto.vercel.app/contact",
+  url: "https://yycpronto.com/contact",
   mainEntity: {
     "@type": "Organization",
     name: "Pronto Pizza",
@@ -74,13 +74,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://yycpronto.vercel.app/",
+      item: "https://yycpronto.com/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Contact Us",
-      item: "https://yycpronto.vercel.app/contact",
+      item: "https://yycpronto.com/contact",
     },
   ],
 };

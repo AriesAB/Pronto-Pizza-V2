@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://yycpronto.vercel.app/#organization",
+  "@id": "https://yycpronto.com/#organization",
   name: "Pronto Pizza",
-  url: "https://yycpronto.vercel.app",
-  logo: "https://yycpronto.vercel.app/assets/logo.jpg",
+  url: "https://yycpronto.com",
+  logo: "https://yycpronto.com/assets/logo.jpg",
   foundingDate: "2022",
   founders: [
     {
@@ -43,9 +43,9 @@ const aboutPageSchema = {
   "@type": "AboutPage",
   name: "About Pronto Pizza",
   description: "The Bruno family story - more than just pizza, it's family, tradition, and hospitality",
-  url: "https://yycpronto.vercel.app/about",
+  url: "https://yycpronto.com/about",
   mainEntity: {
-    "@id": "https://yycpronto.vercel.app/#organization",
+    "@id": "https://yycpronto.com/#organization",
   },
 };
 
@@ -57,13 +57,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://yycpronto.vercel.app",
+      item: "https://yycpronto.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "About Us",
-      item: "https://yycpronto.vercel.app/about",
+      item: "https://yycpronto.com/about",
     },
   ],
 };

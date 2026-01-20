@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://yycpronto.vercel.app/downtown",
+  "@id": "https://yycpronto.com/downtown",
   "name": "Pronto Pizza - Downtown Catering",
-  "image": "https://yycpronto.vercel.app/assets/pronto-logo.png",
-  "url": "https://yycpronto.vercel.app/downtown",
+  "image": "https://yycpronto.com/assets/pronto-logo.png",
+  "url": "https://yycpronto.com/downtown",
   "telephone": "+1-403-555-1234",
   "priceRange": "$$",
   "servesCuisine": ["Italian", "Pizza", "Catering"],
@@ -17,7 +17,7 @@ const localBusinessSchema = {
     "@type": "Menu",
     "name": "Catering Menu",
     "description": "Corporate catering menu featuring pizza, pasta, salads, and pagnotta",
-    "url": "https://yycpronto.vercel.app/downtown"
+    "url": "https://yycpronto.com/downtown"
   },
   "address": {
     "@type": "PostalAddress",
@@ -56,13 +56,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://yycpronto.vercel.app/"
+      "item": "https://yycpronto.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Downtown",
-      "item": "https://yycpronto.vercel.app/downtown"
+      "item": "https://yycpronto.com/downtown"
     }
   ]
 };

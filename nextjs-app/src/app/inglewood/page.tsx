@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://yycpronto.vercel.app/inglewood",
+  "@id": "https://yycpronto.com/inglewood",
   "name": "Pronto Pizza - Inglewood",
-  "image": "https://yycpronto.vercel.app/assets/pronto-logo.png",
-  "url": "https://yycpronto.vercel.app/inglewood",
+  "image": "https://yycpronto.com/assets/pronto-logo.png",
+  "url": "https://yycpronto.com/inglewood",
   "telephone": "+1-403-555-1234",
   "priceRange": "$$",
   "servesCuisine": ["Italian", "Pizza"],
@@ -50,13 +50,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://yycpronto.vercel.app/"
+      "item": "https://yycpronto.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Inglewood",
-      "item": "https://yycpronto.vercel.app/inglewood"
+      "item": "https://yycpronto.com/inglewood"
     }
   ]
 };

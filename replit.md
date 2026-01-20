@@ -91,5 +91,7 @@ cd nextjs-app && npm run dev
 - **Jan 20, 2026**: SEO structured data enhancements
   - Added Restaurant schema.org JSON-LD for both Inglewood and Downtown locations
   - Includes addresses, phone numbers, opening hours, cuisine type, and price range
-  - Added homepage-specific canonical URL pointing to https://yycpronto.vercel.app
+  - Added homepage-specific canonical URL pointing to https://yycpronto.com/
   - Refactored homepage to server/client split (page.tsx + HomeClient.tsx) for proper metadata export
+  - Fixed all canonical URLs and schema URLs to use yycpronto.com (removed vercel.app and www references)
+  - Added metadataBase to root layout for proper URL resolution

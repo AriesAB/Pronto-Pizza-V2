@@ -11,10 +11,10 @@ const restaurantSchema = {
   "@graph": [
     {
       "@type": "Restaurant",
-      "@id": "https://yycpronto.vercel.app/#inglewood",
+      "@id": "https://yycpronto.com/#inglewood",
       "name": "Pronto Pizza - Inglewood",
-      "image": "https://yycpronto.vercel.app/assets/logo.jpg",
-      "url": "https://yycpronto.vercel.app/inglewood",
+      "image": "https://yycpronto.com/assets/logo.jpg",
+      "url": "https://yycpronto.com/inglewood",
       "telephone": "+1-403-555-1234",
       "priceRange": "$$",
       "servesCuisine": ["Italian", "Pizza"],
@@ -43,10 +43,10 @@ const restaurantSchema = {
     },
     {
       "@type": "Restaurant",
-      "@id": "https://yycpronto.vercel.app/#downtown",
+      "@id": "https://yycpronto.com/#downtown",
       "name": "Pronto Pizza - Downtown (Catering)",
-      "image": "https://yycpronto.vercel.app/assets/logo.jpg",
-      "url": "https://yycpronto.vercel.app/downtown",
+      "image": "https://yycpronto.com/assets/logo.jpg",
+      "url": "https://yycpronto.com/downtown",
       "telephone": "+1-403-555-1234",
       "priceRange": "$$",
       "servesCuisine": ["Italian", "Pizza"],

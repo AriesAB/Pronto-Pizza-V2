@@ -3,7 +3,7 @@ import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://yycpronto.vercel.app",
+    canonical: "https://yycpronto.com/",
   },
 };
 
