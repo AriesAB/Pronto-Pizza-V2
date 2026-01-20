@@ -3,6 +3,70 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://yycpronto.vercel.app/downtown",
+  "name": "Pronto Pizza - Downtown Catering",
+  "image": "https://yycpronto.vercel.app/assets/pronto-logo.png",
+  "url": "https://yycpronto.vercel.app/downtown",
+  "telephone": "+1-403-555-1234",
+  "priceRange": "$$",
+  "servesCuisine": ["Italian", "Pizza", "Catering"],
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "Catering Menu",
+    "description": "Corporate catering menu featuring pizza, pasta, salads, and pagnotta",
+    "url": "https://yycpronto.vercel.app/downtown"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "605 5th Ave SW",
+    "addressLocality": "Calgary",
+    "addressRegion": "AB",
+    "postalCode": "T2P 0M6",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.0486,
+    "longitude": -114.0708
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "11:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "12:00",
+      "closes": "22:00"
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yycpronto.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Downtown",
+      "item": "https://yycpronto.vercel.app/downtown"
+    }
+  ]
+};
+
 interface MenuItemData {
   name: string;
   price: string;
@@ -269,6 +333,14 @@ export default function DowntownPage() {
       animate={{ opacity: 1 }}
       className="bg-white min-h-full w-full overflow-x-hidden"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* HERO SECTION */}
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
         
