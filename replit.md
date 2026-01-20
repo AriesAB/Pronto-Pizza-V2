@@ -17,7 +17,8 @@ nextjs-app/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx          # Root layout with Navbar
-│   │   ├── page.tsx            # Home page (split landing)
+│   │   ├── page.tsx            # Homepage server wrapper (metadata export)
+│   │   ├── HomeClient.tsx      # Homepage client component (animations)
 │   │   ├── globals.css         # Global styles and Tailwind config
 │   │   ├── sitemap.ts          # Dynamic sitemap for SEO
 │   │   ├── robots.ts           # robots.txt configuration
@@ -44,6 +45,8 @@ cd nextjs-app && npm run dev
 - Twitter Card tags
 - Dynamic sitemap generation
 - robots.txt configuration
+- Restaurant schema.org JSON-LD structured data (both locations)
+- Canonical URLs for proper indexing
 
 ## Custom Colors
 - pronto-cream: #FEFBF6
@@ -85,3 +88,8 @@ cd nextjs-app && npm run dev
   - Added accessibility improvements (aria-labels, alt text for images)
   - Moved RevealText component to module level in contact page
   - Configured production deployment with Tailwind compilation
+- **Jan 20, 2026**: SEO structured data enhancements
+  - Added Restaurant schema.org JSON-LD for both Inglewood and Downtown locations
+  - Includes addresses, phone numbers, opening hours, cuisine type, and price range
+  - Added homepage-specific canonical URL pointing to https://yycpronto.vercel.app
+  - Refactored homepage to server/client split (page.tsx + HomeClient.tsx) for proper metadata export
