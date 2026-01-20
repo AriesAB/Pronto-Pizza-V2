@@ -9,6 +9,80 @@ export const metadata: Metadata = {
     description: "Find our locations, hours, and get in touch with Pronto Pizza Calgary.",
     type: "website",
   },
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Pronto Pizza",
+  description: "Find our locations, hours, and get in touch with Pronto Pizza Calgary",
+  url: "https://yycpronto.vercel.app/contact",
+  mainEntity: {
+    "@type": "Organization",
+    name: "Pronto Pizza",
+  },
+};
+
+const contactPointSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Pronto Pizza",
+  telephone: "+1-403-555-1234",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-403-555-1234",
+    contactType: "customer service",
+    areaServed: "CA",
+    availableLanguage: ["English", "Italian"],
+  },
+  location: [
+    {
+      "@type": "Place",
+      name: "Pronto Pizza Inglewood",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1139 9 Ave SE",
+        addressLocality: "Calgary",
+        addressRegion: "AB",
+        postalCode: "T2G 0T3",
+        addressCountry: "CA",
+      },
+    },
+    {
+      "@type": "Place",
+      name: "Pronto Pizza Downtown",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "605 5th Ave SW",
+        addressLocality: "Calgary",
+        addressRegion: "AB",
+        postalCode: "T2P 0M6",
+        addressCountry: "CA",
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://yycpronto.vercel.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact Us",
+      item: "https://yycpronto.vercel.app/contact",
+    },
+  ],
 };
 
 export default function ContactLayout({
@@ -16,5 +90,21 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPointSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {children}
+    </>
+  );
 }
