@@ -30,10 +30,10 @@ const contactPointSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Pronto Pizza",
-  telephone: "+1-403-555-1234",
+  telephone: "+1-403-993-9093",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-403-555-1234",
+    telephone: "+1-403-993-9093",
     contactType: "customer service",
     areaServed: "CA",
     availableLanguage: ["English", "Italian"],
