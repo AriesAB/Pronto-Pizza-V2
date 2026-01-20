@@ -3,6 +3,64 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://yycpronto.vercel.app/inglewood",
+  "name": "Pronto Pizza - Inglewood",
+  "image": "https://yycpronto.vercel.app/assets/pronto-logo.png",
+  "url": "https://yycpronto.vercel.app/inglewood",
+  "telephone": "+1-403-555-1234",
+  "priceRange": "$$",
+  "servesCuisine": ["Italian", "Pizza"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1139 9 Ave SE",
+    "addressLocality": "Calgary",
+    "addressRegion": "AB",
+    "postalCode": "T2G 0T3",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.0360,
+    "longitude": -114.0497
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "11:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "12:00",
+      "closes": "22:00"
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yycpronto.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Inglewood",
+      "item": "https://yycpronto.vercel.app/inglewood"
+    }
+  ]
+};
+
 interface MenuItemData {
   name: string;
   price: string;
@@ -456,6 +514,14 @@ export default function InglewoodPage() {
       animate={{ opacity: 1 }}
       className="bg-black min-h-full w-full overflow-x-hidden"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* HERO SECTION */}
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
         

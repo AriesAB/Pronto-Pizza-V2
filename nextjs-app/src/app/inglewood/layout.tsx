@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Inglewood Menu | Pronto Pizza Calgary",
-  description: "View our Inglewood location menu. Authentic Italian pizza, antipasti, panini, and more at 1139 9th Ave SE, Calgary. Open Sunday-Thursday 4PM-10PM, Friday-Saturday 4PM-12AM.",
+  description: "Visit our Inglewood location at 1139 9 Ave SE for authentic Italian pizza, panini, and antipasti. Dine-in, takeout, and catering available.",
   keywords: "Inglewood pizza, Calgary pizza menu, Italian restaurant Inglewood, Pronto Pizza menu, pizza near me Calgary",
+  alternates: {
+    canonical: "/inglewood",
+  },
   openGraph: {
     title: "Inglewood Menu | Pronto Pizza Calgary",
     description: "Authentic Italian pizza, antipasti, panini, and more at our Inglewood location.",
