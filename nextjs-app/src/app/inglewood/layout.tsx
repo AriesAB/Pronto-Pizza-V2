@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Visit our Inglewood location at 1139 9 Ave SE for authentic Italian pizza, panini, and antipasti. Dine-in, takeout, and catering available.",
   keywords: "Inglewood pizza, Calgary pizza menu, Italian restaurant Inglewood, Pronto Pizza menu, pizza near me Calgary",
   alternates: {
-    canonical: "/inglewood",
+    canonical: "https://yycpronto.com/inglewood",
   },
   openGraph: {
     title: "Inglewood Menu | Pronto Pizza Calgary",

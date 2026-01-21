@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "/contact",
+    canonical: "https://yycpronto.com/contact",
   },
 };
 
