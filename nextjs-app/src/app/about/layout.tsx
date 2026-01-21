@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "About Us | Pronto Pizza Calgary",
-  description: "Learn about the Bruno family and the story behind PRONTO Pizza. From our father Annibale's decades of restaurant experience to the next generation carrying on the tradition in Calgary.",
-  keywords: "Pronto Pizza story, Bruno family Calgary, Italian restaurant history, family owned pizza Calgary",
+  title: "About Us | Pronto Pizza Calgary - The Bruno Family Story",
+  description: "Discover the story behind Pronto Pizza Calgary. From Annibale Bruno's passion for authentic Italian cuisine to the next generation continuing the family legacy in Inglewood and Downtown.",
+  keywords: "Pronto Pizza story, Bruno family Calgary, Italian restaurant history, family owned pizza Calgary, authentic Italian cuisine",
   openGraph: {
-    title: "About Us | Pronto Pizza Calgary",
-    description: "The Bruno family story - more than just pizza, it's family, tradition, and hospitality.",
+    title: "About Us | Pronto Pizza Calgary - The Bruno Family Story",
+    description: "Discover the story behind Pronto Pizza Calgary. From Annibale Bruno's passion for authentic Italian cuisine to the next generation continuing the family legacy in Inglewood and Downtown.",
     type: "website",
   },
   alternates: {
@@ -22,14 +22,14 @@ const organizationSchema = {
   name: "Pronto Pizza",
   url: "https://yycpronto.com",
   logo: "https://yycpronto.com/assets/logo.jpg",
-  foundingDate: "2022",
+  foundingDate: "2016",
   founders: [
     {
       "@type": "Person",
-      name: "Bruno Family",
+      name: "Annibale Bruno",
     },
   ],
-  description: "Family-owned Italian pizza restaurant in Calgary, continuing a tradition of authentic Italian cuisine and hospitality since 2022",
+  description: "Family-owned Italian pizza restaurant in Calgary, continuing a tradition of authentic Italian cuisine and hospitality since 2016",
   slogan: "More than just pizza - it's family, tradition, and hospitality",
   areaServed: {
     "@type": "Place",
