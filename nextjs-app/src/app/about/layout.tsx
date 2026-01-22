@@ -21,7 +21,8 @@ const organizationSchema = {
   "@id": "https://yycpronto.com/#organization",
   name: "Pronto Pizza",
   url: "https://yycpronto.com",
-  logo: "https://yycpronto.com/assets/logo.jpg",
+  logo: "https://yycpronto.com/assets/pronto-logo.png",
+  image: "https://yycpronto.com/assets/pronto-logo.png",
   foundingDate: "2016",
   founders: [
     {

@@ -21,6 +21,7 @@ const localBusinessSchema = {
   "@id": "https://yycpronto.com/inglewood",
   name: "Pronto Pizza - Inglewood",
   image: "https://yycpronto.com/assets/pronto-logo.png",
+  logo: "https://yycpronto.com/assets/pronto-logo.png",
   url: "https://yycpronto.com/inglewood",
   telephone: "+1-403-993-9093",
   priceRange: "$$",

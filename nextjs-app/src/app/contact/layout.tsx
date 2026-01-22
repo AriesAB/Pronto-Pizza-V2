@@ -30,6 +30,8 @@ const contactPointSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Pronto Pizza",
+  logo: "https://yycpronto.com/assets/pronto-logo.png",
+  image: "https://yycpronto.com/assets/pronto-logo.png",
   telephone: "+1-403-993-9093",
   contactPoint: {
     "@type": "ContactPoint",

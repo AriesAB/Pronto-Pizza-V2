@@ -36,17 +36,41 @@ export const metadata: Metadata = {
   description: "Authentic Italian pizza in Calgary. Visit our Inglewood and Downtown locations for delicious pizza, fresh panini, and classic Italian favourites made with care.",
   keywords: "pizza, Calgary, Italian food, Inglewood, Downtown, Pronto Pizza, authentic Italian, panini",
   authors: [{ name: "PRONTO Pizza" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "android-chrome", url: "/android-chrome-192x192.png", sizes: "192x192" },
+      { rel: "android-chrome", url: "/android-chrome-512x512.png", sizes: "512x512" },
+    ],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Pronto Pizza | Calgary",
     description: "Authentic Italian pizza in Calgary. Visit our Inglewood and Downtown locations.",
     type: "website",
     locale: "en_CA",
     siteName: "Pronto Pizza",
+    images: [
+      {
+        url: "/assets/pronto-logo.png",
+        width: 1080,
+        height: 330,
+        alt: "Pronto Pizza Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pronto Pizza | Calgary",
     description: "Authentic Italian pizza in Calgary. Visit our Inglewood and Downtown locations.",
+    images: ["/assets/pronto-logo.png"],
   },
   robots: {
     index: true,
