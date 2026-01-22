@@ -95,3 +95,9 @@ cd nextjs-app && npm run dev
   - Refactored homepage to server/client split (page.tsx + HomeClient.tsx) for proper metadata export
   - Fixed all canonical URLs and schema URLs to use yycpronto.com (removed vercel.app and www references)
   - Added metadataBase to root layout for proper URL resolution
+- **Jan 22, 2026**: Favicon and logo SEO configuration
+  - Generated all favicon sizes: favicon.ico, favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png (180x180), android-chrome-192x192.png, android-chrome-512x512.png
+  - Created site.webmanifest with proper icon references
+  - Updated layout.tsx metadata with comprehensive icon definitions
+  - Added logo and image properties to all structured data schemas (Organization, LocalBusiness)
+  - Added Open Graph and Twitter Card images pointing to pronto-logo.png
