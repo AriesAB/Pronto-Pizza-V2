@@ -481,23 +481,10 @@ const HeroTextAnimation: React.FC<{ isMounted: boolean }> = ({ isMounted }) => {
 
 export default function InglewoodPage() {
   const [isMounted, setIsMounted] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   if (!isMounted) {
     return (
@@ -528,7 +515,6 @@ export default function InglewoodPage() {
   }
 
   return (
-    <>
     <motion.div 
       initial={false}
       animate={{ opacity: 1 }}
@@ -719,26 +705,6 @@ export default function InglewoodPage() {
            </div>
         </div>
       </div>
-
     </motion.div>
-    
-    {/* Scroll to top button - outside main container for proper fixed positioning */}
-    {showScrollTop && (
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.2 }}
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 w-12 h-12 bg-pronto-orange hover:bg-orange-500 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
-        style={{ zIndex: 9999 }}
-        aria-label="Scroll to top"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-          <path d="M12 19V5M5 12l7-7 7 7" />
-        </svg>
-      </motion.button>
-    )}
-    </>
   );
 }
