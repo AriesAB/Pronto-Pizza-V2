@@ -669,18 +669,9 @@ export default function InglewoodPage() {
                  <div className="mb-8">
                    <p className="font-mono-serif text-pronto-orange uppercase tracking-widest text-sm mb-4">Hours of Operation</p>
                    <div className="font-mono-serif text-white/80 space-y-1">
-                     <div className="flex justify-center gap-6">
-                       <span className="w-36 text-right">Mon - Thu:</span>
-                       <span className="w-52 text-left">11 AM - 2 PM, 4 - 10 PM</span>
-                     </div>
-                     <div className="flex justify-center gap-6">
-                       <span className="w-36 text-right">Fri - Sat:</span>
-                       <span className="w-52 text-left">11 AM - 2 PM, 4 - 11 PM</span>
-                     </div>
-                     <div className="flex justify-center gap-6">
-                       <span className="w-36 text-right">Sunday:</span>
-                       <span className="w-52 text-left">11 AM - 2 PM, 4 - 9 PM</span>
-                     </div>
+                     <p>Monday to Thursday - 11 AM - 2 PM, 4 - 10 PM</p>
+                     <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
+                     <p>Sunday - 11 AM - 2 PM, 4 - 9 PM</p>
                    </div>
                  </div>
                  <div className="mb-8">
@@ -707,18 +698,9 @@ export default function InglewoodPage() {
            <div className="py-6">
              <p className="text-pronto-orange font-bold uppercase tracking-wider mb-4">Hours of operation</p>
              <div className="space-y-1 text-base">
-                <div className="flex justify-center gap-6">
-                  <span className="w-28 text-right">Mon - Thu:</span>
-                  <span className="w-48 text-left">11 AM - 2 PM, 4 - 10 PM</span>
-                </div>
-                <div className="flex justify-center gap-6">
-                  <span className="w-28 text-right">Fri - Sat:</span>
-                  <span className="w-48 text-left">11 AM - 2 PM, 4 - 11 PM</span>
-                </div>
-                <div className="flex justify-center gap-6">
-                  <span className="w-28 text-right">Sunday:</span>
-                  <span className="w-48 text-left">11 AM - 2 PM, 4 - 9 PM</span>
-                </div>
+                <p>Monday to Thursday - 11 AM - 2 PM, 4 - 10 PM</p>
+                <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
+                <p>Sunday - 11 AM - 2 PM, 4 - 9 PM</p>
              </div>
            </div>
         </div>

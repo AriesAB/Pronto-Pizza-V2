@@ -369,9 +369,9 @@ export default function ContactPage() {
                       <div className="font-mono-serif">
                         <p className="text-pronto-cream text-lg">403-993-9093</p>
                         <div className="text-sm mt-2 space-y-0.5">
-                          <p>Mon - Thu: 11 AM - 2 PM, 4 - 10 PM</p>
-                          <p>Fri - Sat: 11 AM - 2 PM, 4 - 11 PM</p>
-                          <p>Sunday: 11 AM - 2 PM, 4 - 9 PM</p>
+                          <p>Monday to Thursday - 11 AM - 2 PM, 4 - 10 PM</p>
+                          <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
+                          <p>Sunday - 11 AM - 2 PM, 4 - 9 PM</p>
                         </div>
                       </div>
                     </motion.div>
