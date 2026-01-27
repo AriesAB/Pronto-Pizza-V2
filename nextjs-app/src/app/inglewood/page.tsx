@@ -668,14 +668,18 @@ export default function InglewoodPage() {
                  <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-4 uppercase tracking-wider">GLUTEN FRIENDLY CRUST - $5</p>
                  <div className="mb-8">
                    <p className="font-mono-serif text-pronto-orange uppercase tracking-widest text-sm mb-4">Hours of Operation</p>
-                   <div className="flex flex-col items-center gap-2 font-mono-serif text-white/80">
-                     <div className="grid grid-cols-2 gap-x-8 w-fit text-left">
-                       <span>Monday - Thursday</span>
-                       <span>11 AM - 2 PM, 4 - 10 PM</span>
-                       <span>Friday - Saturday</span>
-                       <span>11 AM - 2 PM, 4 - 11 PM</span>
-                       <span>Sunday</span>
-                       <span>11 AM - 2 PM, 4 - 9 PM</span>
+                   <div className="font-mono-serif text-white/80 space-y-1">
+                     <div className="flex justify-center gap-6">
+                       <span className="w-36 text-right">Mon - Thu:</span>
+                       <span className="w-52 text-left">11 AM - 2 PM, 4 - 10 PM</span>
+                     </div>
+                     <div className="flex justify-center gap-6">
+                       <span className="w-36 text-right">Fri - Sat:</span>
+                       <span className="w-52 text-left">11 AM - 2 PM, 4 - 11 PM</span>
+                     </div>
+                     <div className="flex justify-center gap-6">
+                       <span className="w-36 text-right">Sunday:</span>
+                       <span className="w-52 text-left">11 AM - 2 PM, 4 - 9 PM</span>
                      </div>
                    </div>
                  </div>
@@ -700,15 +704,21 @@ export default function InglewoodPage() {
            <p className="font-bold">1139 9th Ave SE</p>
            <p>403-993-9093</p>
            
-           <div className="py-6 space-y-2">
-             <p className="text-pronto-orange font-bold uppercase tracking-wider">Hours of operation</p>
-             <div className="grid grid-cols-2 gap-x-4 max-w-sm mx-auto text-left px-4">
-                <span>Mon - Thu:</span>
-                <span>11 AM - 2 PM, 4 - 10 PM</span>
-                <span>Fri - Sat:</span>
-                <span>11 AM - 2 PM, 4 - 11 PM</span>
-                <span>Sunday:</span>
-                <span>11 AM - 2 PM, 4 - 9 PM</span>
+           <div className="py-6">
+             <p className="text-pronto-orange font-bold uppercase tracking-wider mb-4">Hours of operation</p>
+             <div className="space-y-1 text-base">
+                <div className="flex justify-center gap-6">
+                  <span className="w-28 text-right">Mon - Thu:</span>
+                  <span className="w-48 text-left">11 AM - 2 PM, 4 - 10 PM</span>
+                </div>
+                <div className="flex justify-center gap-6">
+                  <span className="w-28 text-right">Fri - Sat:</span>
+                  <span className="w-48 text-left">11 AM - 2 PM, 4 - 11 PM</span>
+                </div>
+                <div className="flex justify-center gap-6">
+                  <span className="w-28 text-right">Sunday:</span>
+                  <span className="w-48 text-left">11 AM - 2 PM, 4 - 9 PM</span>
+                </div>
              </div>
            </div>
         </div>

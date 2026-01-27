@@ -368,15 +368,10 @@ export default function ContactPage() {
                       </div>
                       <div className="font-mono-serif">
                         <p className="text-pronto-cream text-lg">403-993-9093</p>
-                        <div className="text-sm mt-1 space-y-1">
-                          <div className="grid grid-cols-[140px_1fr] gap-x-4">
-                            <span>Mon - Thu:</span>
-                            <span>11 AM - 2 PM, 4 - 10 PM</span>
-                            <span>Fri - Sat:</span>
-                            <span>11 AM - 2 PM, 4 - 11 PM</span>
-                            <span>Sunday:</span>
-                            <span>11 AM - 2 PM, 4 - 9 PM</span>
-                          </div>
+                        <div className="text-sm mt-2 space-y-0.5">
+                          <p>Mon - Thu: 11 AM - 2 PM, 4 - 10 PM</p>
+                          <p>Fri - Sat: 11 AM - 2 PM, 4 - 11 PM</p>
+                          <p>Sunday: 11 AM - 2 PM, 4 - 9 PM</p>
                         </div>
                       </div>
                     </motion.div>
