@@ -528,6 +528,7 @@ export default function InglewoodPage() {
   }
 
   return (
+    <>
     <motion.div 
       initial={false}
       animate={{ opacity: 1 }}
@@ -719,19 +720,25 @@ export default function InglewoodPage() {
         </div>
       </div>
 
-      {/* Scroll to top button */}
+    </motion.div>
+    
+    {/* Scroll to top button - outside main container for proper fixed positioning */}
+    {showScrollTop && (
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: showScrollTop ? 1 : 0, scale: showScrollTop ? 1 : 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.2 }}
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 w-12 h-12 bg-pronto-orange/80 hover:bg-pronto-orange rounded-full flex items-center justify-center text-white shadow-lg z-50 transition-colors ${!showScrollTop ? 'pointer-events-none' : ''}`}
+        className="fixed bottom-6 right-6 w-12 h-12 bg-pronto-orange hover:bg-orange-500 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
+        style={{ zIndex: 9999 }}
         aria-label="Scroll to top"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M12 19V5M5 12l7-7 7 7" />
         </svg>
       </motion.button>
-    </motion.div>
+    )}
+    </>
   );
 }
