@@ -29,15 +29,21 @@ const localBusinessSchema = {
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
       "opens": "11:00",
       "closes": "22:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday"],
-      "opens": "12:00",
-      "closes": "22:00"
+      "dayOfWeek": ["Friday", "Saturday"],
+      "opens": "11:00",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday"],
+      "opens": "11:00",
+      "closes": "21:00"
     }
   ]
 };
@@ -661,6 +667,19 @@ export default function InglewoodPage() {
              <div className="mt-12 mb-12 border-t-2 border-white pt-12 text-center">
                  <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-4 uppercase tracking-wider">GLUTEN FRIENDLY CRUST - $5</p>
                  <div className="mb-8">
+                   <p className="font-mono-serif text-pronto-orange uppercase tracking-widest text-sm mb-4">Hours of Operation</p>
+                   <div className="flex flex-col items-center gap-2 font-mono-serif text-white/80">
+                     <div className="grid grid-cols-2 gap-x-8 w-fit text-left">
+                       <span>Monday - Thursday</span>
+                       <span>11 AM - 2 PM, 4 - 10 PM</span>
+                       <span>Friday - Saturday</span>
+                       <span>11 AM - 2 PM, 4 - 11 PM</span>
+                       <span>Sunday</span>
+                       <span>11 AM - 2 PM, 4 - 9 PM</span>
+                     </div>
+                   </div>
+                 </div>
+             </div>
                    <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-2 uppercase tracking-wider underline underline-offset-8">Dips</p>
                    <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Garlic Parmesan - $4</p>
                    <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Hot Honey - $4</p>
