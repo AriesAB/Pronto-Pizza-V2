@@ -430,7 +430,7 @@ export default function DowntownPage() {
           transition={{ 
             y: { duration: 1.5, repeat: Infinity, ease: 'easeInOut' }
           }}
-          className="absolute bottom-24 left-6 md:bottom-8 md:left-1/2 md:-translate-x-1/2 text-pronto-cream/80 z-20"
+          className="hidden md:block absolute md:bottom-8 md:left-1/2 md:-translate-x-1/2 text-pronto-cream/80 z-20"
         >
           <div className="flex flex-col items-start md:items-center gap-2">
             <span className="text-sm font-mono-serif uppercase tracking-widest">Scroll for Menu</span>
