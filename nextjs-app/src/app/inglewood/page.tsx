@@ -679,14 +679,13 @@ export default function InglewoodPage() {
                      </div>
                    </div>
                  </div>
-             </div>
+                 <div className="mb-8">
                    <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-2 uppercase tracking-wider underline underline-offset-8">Dips</p>
                    <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Garlic Parmesan - $4</p>
                    <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Hot Honey - $4</p>
                  </div>
                  <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70">(V) = VEGETARIAN</p>
              </div>
-
       </div>
 
       {/* FOOTER - INGLEWOOD Specific */}
@@ -703,8 +702,14 @@ export default function InglewoodPage() {
            
            <div className="py-6 space-y-2">
              <p className="text-pronto-orange font-bold uppercase tracking-wider">Hours of operation</p>
-             <p>Sunday to Thursday - 4 PM - 10 PM</p>
-             <p>Friday & Saturday - 4 PM - 12 AM</p>
+             <div className="grid grid-cols-2 gap-x-4 max-w-sm mx-auto text-left px-4">
+                <span>Mon - Thu:</span>
+                <span>11 AM - 2 PM, 4 - 10 PM</span>
+                <span>Fri - Sat:</span>
+                <span>11 AM - 2 PM, 4 - 11 PM</span>
+                <span>Sunday:</span>
+                <span>11 AM - 2 PM, 4 - 9 PM</span>
+             </div>
            </div>
         </div>
       </div>
