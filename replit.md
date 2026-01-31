@@ -101,3 +101,12 @@ cd nextjs-app && npm run dev
   - Updated layout.tsx metadata with comprehensive icon definitions
   - Added logo and image properties to all structured data schemas (Organization, LocalBusiness)
   - Added Open Graph and Twitter Card images pointing to pronto-logo.png
+- **Jan 31, 2026**: Inglewood menu update
+  - Updated Antipasti: new prices for Bruschetta ($12), Caprese ($13.50), added Caesar Salad, Polpette; removed Focaccia
+  - Updated Pizza: added Nonnas Garden, Pep & Shroom; updated La Morta Bella price; removed Saucy Rossa
+  - Added new Dips section: Garlic Parmesan Dip, Hot Honey
+  - Updated Dessert: added Cheesecake, updated Tiramisu description
+  - Updated Coffee: removed Macchiato
+  - Restructured Bar: added Beers on Tap section (Night Gallery IPA, Premium Lager), updated beers (Japanese Ale, Peroni), simplified wine list, updated cocktail prices, added Espresso Martini
+  - Removed Panini section
+  - Updated hero animation text to show "ANTIPASTI • PIZZA • DIPS •"
