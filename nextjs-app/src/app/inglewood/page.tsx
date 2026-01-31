@@ -189,17 +189,22 @@ const menuSections: MenuSectionData[] = [
   },
   {
     id: "dips",
-    title: "DIPS",
-    items: [
+    title: "",
+    subcategories: [
       {
-        name: "GARLIC PARMESAN DIP",
-        price: "4",
-        ingredients: ""
-      },
-      {
-        name: "HOT HONEY",
-        price: "4",
-        ingredients: ""
+        title: "DIPS",
+        items: [
+          {
+            name: "GARLIC PARMESAN DIP",
+            price: "4",
+            ingredients: ""
+          },
+          {
+            name: "HOT HONEY",
+            price: "4",
+            ingredients: ""
+          }
+        ]
       }
     ]
   },
@@ -613,6 +618,7 @@ export default function InglewoodPage() {
                   className="mb-24 lg:mb-40 relative"
                >
                  
+                 {section.title && (
                  <div className="flex flex-col mb-16 relative">
                     <motion.div 
                         initial={{ opacity: 0, y: 40, rotateX: 90 }}
@@ -632,6 +638,7 @@ export default function InglewoodPage() {
                         )}
                     </motion.div>
                  </div>
+                 )}
 
                  <div className="flex flex-col gap-4">
                     {section.items && section.items.map((item) => (
