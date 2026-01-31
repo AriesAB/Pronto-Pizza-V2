@@ -292,41 +292,6 @@ const menuSections: MenuSectionData[] = [
         ]
       },
       {
-        title: "VINO",
-        note: "6 OZ",
-        items: []
-      },
-      {
-        title: "WHITE WINE",
-        items: [
-          {
-            name: "PINOT GRIGIO",
-            price: "15",
-            ingredients: "SANTA MARGHERITA"
-          },
-          {
-            name: "CHARDONNAY",
-            price: "18",
-            ingredients: ""
-          }
-        ]
-      },
-      {
-        title: "RED WINE",
-        items: [
-          {
-            name: "TORRE ZAMBRA",
-            price: "18",
-            ingredients: ""
-          },
-          {
-            name: "CATENA MALBEC",
-            price: "18",
-            ingredients: ""
-          }
-        ]
-      },
-      {
         title: "COCKTAIL",
         items: [
           {
@@ -358,6 +323,43 @@ const menuSections: MenuSectionData[] = [
             name: "",
             price: "3.50",
             ingredients: "BLOOD ORANGE SAN PALLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI, GINGERALE, APPLE JUICE, ORANGE JUICE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "vino",
+    title: "VINO",
+    note: "6 OZ",
+    subcategories: [
+      {
+        title: "WHITE WINE",
+        items: [
+          {
+            name: "",
+            price: "15",
+            ingredients: "PINOT GRIGIO - SANTA MARGHERITA"
+          },
+          {
+            name: "",
+            price: "18",
+            ingredients: "CHARDONNAY"
+          }
+        ]
+      },
+      {
+        title: "RED WINE",
+        items: [
+          {
+            name: "",
+            price: "18",
+            ingredients: "TORRE ZAMBRA"
+          },
+          {
+            name: "",
+            price: "18",
+            ingredients: "CATENA MALBEC"
           }
         ]
       }
