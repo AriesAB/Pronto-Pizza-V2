@@ -95,23 +95,28 @@ const menuSections: MenuSectionData[] = [
     items: [
       {
         name: "BRUSCHETTA",
-        price: "10",
-        ingredients: "Italian style grilled homemade bread with classic pomodoro and Basil topping (6pc). Add Burrata +$6"
+        price: "12",
+        ingredients: "Italian Style Grilled Homemade Bread with Classic Pomodoro and Basil Topping (6pc). Add Burrata $8"
+      },
+      {
+        name: "CAESAR SALAD",
+        price: "15.50",
+        ingredients: "Romaine, Croutons, Shaved Parmesan with Homemade Caesar Dressing"
       },
       {
         name: "CAPRESE",
-        price: "12.50",
-        ingredients: "Mozzarella, Pomodori, Arugula, with olive oil dressing"
+        price: "13.50",
+        ingredients: "Mozzarella, Pomodori, Arugula, with Olive Oil Dressing"
       },
       {
-        name: "FOCACCIA",
-        price: "6",
-        ingredients: "Homemade Focaccia bread, with a side of Balsamic vinegar and olive oil (4pc)"
+        name: "POLPETTE",
+        price: "18",
+        ingredients: "House-made Meatballs Simmered in Rich Tomato Sauce, Finished with Shaved Parmesan"
       },
       {
         name: "ANTIPASTO PLATTER",
         price: "22",
-        ingredients: "Italian-style board with prosciutto, soppresata, olives, manchego, brie, chili fig jam, and rosemary croccantini"
+        ingredients: "Italian-Style Board with Proscuitto, Soppresata, Assorted Marinated Olives, Manchego, Taleggio, Chili Fig Jam, and Rosemary Croccantini"
       }
     ]
   },
@@ -123,90 +128,85 @@ const menuSections: MenuSectionData[] = [
       {
         name: "THE OG",
         price: "23 / 33",
-        ingredients: "San marzano Tomato sauce, Mozzarella di bufala, Basil, Olive Oil"
+        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Basil, Olive Oil"
       },
       {
         name: "QUATTRO FORMAGGI",
         price: "25 / 35",
-        ingredients: "San marzano Tomato sauce, Parmigiano, Mozzarella di bufala, provolone, Asiago, hot Honey drizzle"
+        ingredients: "San Marzano Tomato Sauce, Parmigiano, Mozzarella di Bufala, Provolone, Asiago, hot Honey Drizzle"
       },
       {
         name: "MAMMA MIA",
         price: "27 / 37",
-        ingredients: "San marzano Tomato sauce, Spicy Calabrese Sausage, Mozzarella di bufala, Pepperoncino, Parmigiano"
+        ingredients: "San Marzano Tomato Sauce, Spicy Calabrese Sausage, Mozzarella di Bufala, Pepperoncino, Parmigiano"
       },
       {
         name: "TONY PEPPERONI",
         price: "27 / 37",
-        ingredients: "San marzano Tomato sauce, Mozzarella cheese, Ezzo Pepperoni, dollop of Ricotta, Hot Honey drizzle"
+        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Ezzo Pepperoni, Dollop of Ricotta, Hot Honey Drizzle"
       },
       {
         name: "FORBIDDEN PIE",
         price: "25 / 35",
-        ingredients: "San marzano tomato sauce, Pineapple slices, Prosciutto Cotto, Asiago, Mozzarella di bufala"
+        ingredients: "San Marzano Tomato Sauce, Pineapple slices, Prosciutto Cotto, Asiago, Mozzarella di Bufala"
       },
       {
         name: "PARMA-DRAMA",
         price: "27 / 37",
-        ingredients: "San marzano Tomato sauce, Mozzarella cheese, carmalized cherry tomato, Prosciutto, Arugula, shaved Parmesan cheese"
+        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Caramelized Cherry Tomato, Prosciutto, Arugula, Shaved Parmesan cheese"
       },
       {
         name: "FUN GUY",
         price: "27 / 37",
-        ingredients: "San marzano Tomato sauce, Mozzarella di bufala, italian Meatball, marinated oyster Mushroom, and Gorgonzola"
+        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Italian Meatball, Marinated Oyster Mushroom, and Gorgonzola"
       },
       {
         name: "FUGGADEBOUTIT",
         price: "27 / 37",
-        ingredients: "Olive Oil base, Mozzarella di bufala, Arugula, Prosciutto, chili Fig Jam, dollop of Ricotta"
+        ingredients: "Olive Oil base, Mozzarella di Bufala, Arugula, Prosciutto, Chili Fig Jam, Dollop of Ricotta"
       },
       {
         name: "ITALIAN STALLION",
         price: "28 / 38",
-        ingredients: "San marzano tomato sauce, Ezzo Pepperoni, fennel Sausage, Pancetta, Mozzarella di bufala"
+        ingredients: "San Marzano Tomato Sauce, Ezzo Pepperoni, Fennel Sausage, Pancetta, Mozzarella di Bufala"
       },
       {
         name: "LA MORTA BELLA",
-        price: "28 / 38",
-        ingredients: "San marzano tomato sauce, mortadella, creamy Burrata, crushed roasted pistachios, finished with house made pesto"
+        price: "30 / 40",
+        ingredients: "San Marzano Tomato Sauce, Mortadella, Creamy Burrata, Crushed Roasted Pistachios, Finished with house made Pesto"
       },
       {
-        name: "SAUCY ROSSA",
-        price: "23 / 33",
-        ingredients: "San marzano tomato sauce, basil, oregano, garlic, extra virgin olive oil"
+        name: "NONNAS GARDEN",
+        price: "27 / 37",
+        ingredients: "San Marzano Tomato Sauce, Bell Peppers, Caramelized Cherry Tomato, Marinated Oyster Mushroom, Artichoke hearts, Mozzarella di Bufala"
+      },
+      {
+        name: "PEP & SHROOM",
+        price: "25 / 35",
+        ingredients: "San Marzano Tomato Sauce, Ezzo Pepperoni, Mozzarella di Bufala, Marinated Oyster mushrooms"
       }
     ]
   },
   {
-    id: "panini",
-    title: "PANINI",
+    id: "dips",
+    title: "DIPS",
     items: [
       {
-        name: "ITALIAN CUT",
-        price: "18.50",
-        ingredients: "Salami, Prosciutto, Mozzarella di bufala, Arugula, Roasted Bell Pepper spread"
+        name: "GARLIC PARMESAN DIP",
+        price: "4",
+        ingredients: ""
       },
       {
-        name: "POLLO",
-        price: "18.50",
-        ingredients: "Grilled chicken, aged cheddar, carmalized cherry tomato, arugula, Roasted Bell Pepper spread"
-      },
-      {
-        name: "PARMA",
-        price: "18.50",
-        ingredients: "Proscuitto, mozzarella di bufala, carmalized cherry tomato, arugula, house made pesto spread"
-      },
-      {
-        name: "FIG AND PIG",
-        price: "18.50",
-        ingredients: "Proscuitto, goat cheese, chili fig jam spread, arugula"
+        name: "HOT HONEY",
+        price: "4",
+        ingredients: ""
       }
     ]
   },
   {
     id: "coffee",
     title: "COFFEE",
-    note: "SUB: ALMOND / OAT / CHOCOLATE MILK + $0.75 | ADD: EXTRA ESPRESSO SHOT (2OZ) + $2",
+    note: "SUB: ALMOND / OAT / — + $0.75 | ADD: EXTRA ESPRESSO SHOT (2OZ) — + $2",
     items: [
       {
         name: "AMERICANO",
@@ -216,11 +216,6 @@ const menuSections: MenuSectionData[] = [
       {
         name: "CAPPUCCINO",
         price: "4.00",
-        ingredients: ""
-      },
-      {
-        name: "MACCHIATO",
-        price: "3.75",
         ingredients: ""
       },
       {
@@ -240,38 +235,44 @@ const menuSections: MenuSectionData[] = [
     title: "BAR",
     subcategories: [
       {
+        title: "BEERS ON TAP",
+        note: "ASK YOUR SERVER ABOUT OUR SEASONAL TAP BEER",
+        items: [
+          {
+            name: "NIGHT GALLERY IPA",
+            price: "12.75",
+            ingredients: "EIGHTY EIGHT BREWING - 18 OZ"
+          },
+          {
+            name: "PREMIUM LAGER",
+            price: "11.75",
+            ingredients: "COLD GARDEN - 18 OZ"
+          }
+        ]
+      },
+      {
         title: "BEERS",
         items: [
           {
-            name: "WAVE POOL IPA",
+            name: "JAPANESE ALE",
             price: "8.75",
-            ingredients: "EIGHTY EIGHT BREWING 6.2% - 12 OZ"
+            ingredients: "OL'BEAUTIFUL - 355 ML"
           },
           {
-            name: "HI-FI IPA",
-            price: "8.75",
-            ingredients: "EIGHTY EIGHT BREWING 6.7% - 12 OZ"
+            name: "PERONI",
+            price: "11",
+            ingredients: "12 OZ"
           },
           {
             name: "PRETTY IN PINK",
             price: "8.75",
-            ingredients: "EIGHTY EIGHT BREWING 5% - 12 OZ"
-          },
-          {
-            name: "BIRRA MORETTI",
-            price: "9",
-            ingredients: "BOTTLED 4.6% - 11 OZ"
-          },
-          {
-            name: "STELLA ARTOIS",
-            price: "9",
-            ingredients: "BOTTLED 5% - 11 OZ"
+            ingredients: "EIGHTY EIGHT BREWING - 12 OZ"
           }
         ]
       },
       {
         title: "VINO",
-        note: "6OZ / 8OZ",
+        note: "6 OZ",
         items: []
       },
       {
@@ -279,17 +280,12 @@ const menuSections: MenuSectionData[] = [
         items: [
           {
             name: "PINOT GRIGIO",
-            price: "15 / 20",
+            price: "15",
             ingredients: "SANTA MARGHERITA"
           },
           {
-            name: "INCASTRO BIANCO",
-            price: "15 / 20",
-            ingredients: "TORRE ZAMBRA"
-          },
-          {
             name: "CHARDONNAY",
-            price: "18 / 21",
+            price: "18",
             ingredients: ""
           }
         ]
@@ -298,18 +294,13 @@ const menuSections: MenuSectionData[] = [
         title: "RED WINE",
         items: [
           {
-            name: "CAFAGGIO",
-            price: "13 / 16",
-            ingredients: "SANGIOVESE CHIANTI CLASSICO"
-          },
-          {
-            name: "CATENA MALBEC",
-            price: "15 / 18",
+            name: "TORRE ZAMBRA",
+            price: "18",
             ingredients: ""
           },
           {
-            name: "CHIANTI CECCHI",
-            price: "13 / 16",
+            name: "CATENA MALBEC",
+            price: "18",
             ingredients: ""
           }
         ]
@@ -319,28 +310,33 @@ const menuSections: MenuSectionData[] = [
         items: [
           {
             name: "MOSCOW MULE",
-            price: "13.75",
-            ingredients: "VODKA, LIME JUICE, GINGER BEER, MINT"
+            price: "15.50",
+            ingredients: "VODKA • LIME JUICE • GINGER BEER • MINT"
           },
           {
-            name: "THATS AMORE",
-            price: "12",
-            ingredients: "SPRITZ - CLINK RASPBERRY LIMONCELLO VODKA COCKTAIL, MINT"
+            name: "THATS AMORE SPRITZ",
+            price: "16",
+            ingredients: "RASPBERRY • LIMONCELLO • PROSECCO • SODA WATER • MINT"
           },
           {
             name: "APEROL SPRITZ",
-            price: "12.50",
-            ingredients: "PROSECCO, APEROL, SODA WATER, ORANGE SLICE"
+            price: "17",
+            ingredients: "PROSECCO • APEROL • SODA WATER • ORANGE SLICE"
+          },
+          {
+            name: "ESPRESSO MARTINI",
+            price: "17",
+            ingredients: "VODKA • ESPRESSO • COFFEE LIQUEUR"
           }
         ]
       },
       {
-        title: "SODAS",
+        title: "SODAS / JUICE",
         items: [
           {
             name: "",
             price: "3.50",
-            ingredients: "BLOOD ORANGE SAN PELLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI"
+            ingredients: "BLOOD ORANGE SAN PALLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI, GINGERALE, APPLE JUICE, ORANGE JUICE"
           }
         ]
       }
@@ -353,7 +349,12 @@ const menuSections: MenuSectionData[] = [
       {
         name: "TIRAMISU",
         price: "12.50",
-        ingredients: "Traditional homemade tiramisu topped with cocoa powder"
+        ingredients: "Espresso-Soaked Ladyfingers Layered with Silky Mascarpone Cream and Topped with Cocoa"
+      },
+      {
+        name: "CHEESECAKE",
+        price: "12.50",
+        ingredients: "Rich, Creamy Cheesecake with a buttery Graham Cracker Crust"
       }
     ]
   }
@@ -429,7 +430,7 @@ const MenuItem = ({ item, isMounted }: { item: MenuItemData; isMounted: boolean 
 };
 
 const HeroTextAnimation: React.FC<{ isMounted: boolean }> = ({ isMounted }) => {
-  const text = "ANTIPASTI • PIZZA • PANINI • ";
+  const text = "ANTIPASTI • PIZZA • DIPS • ";
   const repeatedText = Array(15).fill(text).join("");
   
   if (!isMounted) {
@@ -673,11 +674,6 @@ export default function InglewoodPage() {
                      <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
                      <p>Sunday - 11 AM - 2 PM, 4 - 9 PM</p>
                    </div>
-                 </div>
-                 <div className="mb-8">
-                   <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-2 uppercase tracking-wider underline underline-offset-8">Dips</p>
-                   <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Garlic Parmesan - $4</p>
-                   <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 uppercase tracking-wider">Hot Honey - $4</p>
                  </div>
                  <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70">(V) = VEGETARIAN</p>
              </div>
