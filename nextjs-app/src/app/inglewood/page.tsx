@@ -675,15 +675,7 @@ export default function InglewoodPage() {
              ))}
 
              <div className="mt-12 mb-12 border-t-2 border-white pt-12 text-center">
-                 <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-4 uppercase tracking-wider">GLUTEN FRIENDLY CRUST - $5</p>
-                 <div className="mb-8">
-                   <p className="font-mono-serif text-pronto-orange uppercase tracking-widest text-sm mb-4">Hours of Operation</p>
-                   <div className="font-mono-serif text-white/80 space-y-1">
-                     <p>Monday to Thursday - 11 AM - 2 PM, 4 - 10 PM</p>
-                     <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
-                     <p>Sunday - 11 AM - 2 PM, 4 - 9 PM</p>
-                   </div>
-                 </div>
+                 <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70 mb-8 uppercase tracking-wider">GLUTEN FRIENDLY CRUST - $5</p>
                  <p className="font-mono-serif font-normal text-lg md:text-xl text-white/70">(V) = VEGETARIAN</p>
              </div>
       </div>
