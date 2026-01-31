@@ -48,6 +48,8 @@ const Navbar: React.FC = () => {
       
       if (currentScrollY <= 50) {
         setIsVisible(true);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       }
