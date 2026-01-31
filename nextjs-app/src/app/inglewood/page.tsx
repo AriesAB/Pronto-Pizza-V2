@@ -204,6 +204,22 @@ const menuSections: MenuSectionData[] = [
     ]
   },
   {
+    id: "dessert",
+    title: "DESSERT",
+    items: [
+      {
+        name: "TIRAMISU",
+        price: "12.50",
+        ingredients: "Espresso-Soaked Ladyfingers Layered with Silky Mascarpone Cream and Topped with Cocoa"
+      },
+      {
+        name: "CHEESECAKE",
+        price: "12.50",
+        ingredients: "Rich, Creamy Cheesecake with a buttery Graham Cracker Crust"
+      }
+    ]
+  },
+  {
     id: "coffee",
     title: "COFFEE",
     note: "SUB: ALMOND / OAT / — + $0.75 | ADD: EXTRA ESPRESSO SHOT (2OZ) — + $2",
@@ -339,22 +355,6 @@ const menuSections: MenuSectionData[] = [
             ingredients: "BLOOD ORANGE SAN PALLEGRINO, COKE ZERO, COCA-COLA, DR PEPPER, ICE TEA, PEPSI, DIET PEPSI, GINGERALE, APPLE JUICE, ORANGE JUICE"
           }
         ]
-      }
-    ]
-  },
-  {
-    id: "dessert",
-    title: "DESSERT",
-    items: [
-      {
-        name: "TIRAMISU",
-        price: "12.50",
-        ingredients: "Espresso-Soaked Ladyfingers Layered with Silky Mascarpone Cream and Topped with Cocoa"
-      },
-      {
-        name: "CHEESECAKE",
-        price: "12.50",
-        ingredients: "Rich, Creamy Cheesecake with a buttery Graham Cracker Crust"
       }
     ]
   }
