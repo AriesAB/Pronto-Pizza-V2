@@ -195,14 +195,14 @@ const menuSections: MenuSectionData[] = [
         title: "DIPS",
         items: [
           {
-            name: "GARLIC PARMESAN DIP",
+            name: "",
             price: "4",
-            ingredients: ""
+            ingredients: "Garlic Parmesan Dip"
           },
           {
-            name: "HOT HONEY",
+            name: "",
             price: "4",
-            ingredients: ""
+            ingredients: "Hot Honey"
           }
         ]
       }
