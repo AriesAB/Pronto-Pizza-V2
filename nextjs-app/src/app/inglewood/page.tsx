@@ -437,7 +437,7 @@ const MenuItem = ({ item, isMounted }: { item: MenuItemData; isMounted: boolean 
 };
 
 const HeroTextAnimation: React.FC<{ isMounted: boolean }> = ({ isMounted }) => {
-  const text = "ANTIPASTI • PIZZA • DIPS • ";
+  const text = "ANTIPASTI • PIZZA • DESSERT • ";
   const repeatedText = Array(15).fill(text).join("");
   
   if (!isMounted) {
