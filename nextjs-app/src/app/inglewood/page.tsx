@@ -697,7 +697,7 @@ export default function InglewoodPage() {
              <div className="space-y-1 text-base">
                 <p>Monday to Thursday - 11 AM - 2 PM, 4 - 10 PM</p>
                 <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
-                <p>Sunday - 11 AM - 2 PM, 4 - 9 PM</p>
+                <p>Sunday - 4 - 9 PM</p>
              </div>
            </div>
         </div>
