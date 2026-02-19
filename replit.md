@@ -110,3 +110,7 @@ cd nextjs-app && npm run dev
   - Restructured Bar: added Beers on Tap section (Night Gallery IPA, Premium Lager), updated beers (Japanese Ale, Peroni), simplified wine list, updated cocktail prices, added Espresso Martini
   - Removed Panini section
   - Updated hero animation text to show "ANTIPASTI • PIZZA • DIPS •"
+- **Feb 2026**: Added Waitlist.me integration for Inglewood location
+  - Created /inglewood/waitlist page with embedded Waitlist.me widget (widget ID: 18711190655)
+  - Added "Join Waitlist" button on main landing page under Inglewood section (appears on hover alongside View Menu)
+  - Added "Join Waitlist" button on Inglewood page hero section

@@ -513,6 +513,12 @@ export default function InglewoodPage() {
             <p className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4">
               1139 9th Ave SE, Calgary, Alberta
             </p>
+            <a
+              href="/inglewood/waitlist"
+              className="mt-6 inline-block bg-pronto-orange text-pronto-navy px-8 py-3 font-bold text-lg uppercase tracking-wider hover:bg-white transition-colors"
+            >
+              Join Waitlist
+            </a>
           </div>
           
           {/* Hero text animation - static version */}
@@ -586,6 +592,15 @@ export default function InglewoodPage() {
           >
             1139 9th Ave SE, Calgary, Alberta
           </motion.p>
+          <motion.a
+            href="/inglewood/waitlist"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.1, ease: "easeOut" }}
+            className="mt-6 inline-block bg-pronto-orange text-pronto-navy px-8 py-3 font-bold text-lg uppercase tracking-wider hover:bg-white transition-colors"
+          >
+            Join Waitlist
+          </motion.a>
         </div>
         
         {/* Hero text animation */}
