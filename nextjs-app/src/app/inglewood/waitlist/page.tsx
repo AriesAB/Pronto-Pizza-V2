@@ -20,13 +20,18 @@ export default function WaitlistPage() {
     const style = document.createElement('style');
     style.id = 'wlme_custom_styles';
     style.textContent = `
-      #wlme_widget_wrapper {
-        margin: 0 auto !important;
+      #wlme_widget_wrapper,
+      #wlme_widget_wrapper * {
+        position: static !important;
         float: none !important;
+      }
+      #wlme_widget_wrapper {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
       }
       #wlme_widget_wrapper > div {
         margin: 0 auto !important;
-        float: none !important;
       }
     `;
     document.head.appendChild(style);
