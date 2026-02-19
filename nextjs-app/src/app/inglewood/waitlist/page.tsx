@@ -1,20 +1,26 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export default function WaitlistPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const existingScript = document.getElementById('wlme_inclscript');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.id = 'wlme_inclscript';
-      script.src = 'https://www.waitlist.me/load_widget/?wg=18711190655';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    if (!containerRef.current) return;
+
+    const existing = document.getElementById('wlme_inclscript');
+    if (existing) existing.remove();
+
+    const existingWrapper = document.getElementById('wlme_widget_wrapper');
+    if (existingWrapper) existingWrapper.remove();
+
+    const script = document.createElement('script');
+    script.id = 'wlme_inclscript';
+    script.src = 'https://www.waitlist.me/load_widget/?wg=18711190655';
+    containerRef.current.appendChild(script);
   }, []);
 
   return (
@@ -33,18 +39,18 @@ export default function WaitlistPage() {
             Back to Menu
           </Link>
 
-          <h1 className="text-5xl md:text-8xl font-display text-pronto-cream tracking-wide leading-none mb-4">
+          <h1 className="text-5xl md:text-8xl font-display text-pronto-cream tracking-wide leading-none mb-4 text-center">
             JOIN THE
           </h1>
-          <h1 className="text-5xl md:text-8xl font-display text-pronto-orange tracking-wide leading-none mb-6">
+          <h1 className="text-5xl md:text-8xl font-display text-pronto-orange tracking-wide leading-none mb-6 text-center">
             WAITLIST
           </h1>
-          <p className="font-mono-serif text-lg md:text-xl text-white/70 tracking-wide mb-12">
+          <p className="font-mono-serif text-lg md:text-xl text-white/70 tracking-wide mb-12 text-center">
             Inglewood &mdash; 1139 9th Ave SE, Calgary
           </p>
 
-          <div className="bg-white/5 border border-white/10 rounded-lg p-6 md:p-10 min-h-[400px]">
-            <div id="wlme_widget_container"></div>
+          <div className="flex justify-center">
+            <div ref={containerRef} className="w-full max-w-md min-h-[200px]"></div>
           </div>
         </motion.div>
       </div>
