@@ -17,10 +17,29 @@ export default function WaitlistPage() {
     const existingWrapper = document.getElementById('wlme_widget_wrapper');
     if (existingWrapper) existingWrapper.remove();
 
+    const style = document.createElement('style');
+    style.id = 'wlme_custom_styles';
+    style.textContent = `
+      #wlme_widget_wrapper {
+        margin: 0 auto !important;
+        float: none !important;
+      }
+      #wlme_widget_wrapper > div {
+        margin: 0 auto !important;
+        float: none !important;
+      }
+    `;
+    document.head.appendChild(style);
+
     const script = document.createElement('script');
     script.id = 'wlme_inclscript';
     script.src = 'https://www.waitlist.me/load_widget/?wg=18711190655';
     containerRef.current.appendChild(script);
+
+    return () => {
+      const s = document.getElementById('wlme_custom_styles');
+      if (s) s.remove();
+    };
   }, []);
 
   return (
@@ -49,8 +68,8 @@ export default function WaitlistPage() {
             Inglewood &mdash; 1139 9th Ave SE, Calgary
           </p>
 
-          <div className="flex justify-center">
-            <div ref={containerRef} className="w-full max-w-md min-h-[200px]"></div>
+          <div className="flex items-center justify-center w-full">
+            <div ref={containerRef} className="w-full max-w-md min-h-[200px] mx-auto"></div>
           </div>
         </motion.div>
       </div>
