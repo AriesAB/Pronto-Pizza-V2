@@ -85,18 +85,18 @@ export default function WaitlistPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full max-w-3xl"
         >
-          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl shadow-pronto-orange/5">
-            <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-10">
-              <div className="w-full md:w-1/2 flex justify-center items-center">
+          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6 shadow-2xl shadow-pronto-orange/5">
+            <div className="flex flex-col md:flex-row items-start gap-5 md:gap-8">
+              <div className="w-full md:w-1/2 flex justify-center">
                 <iframe
                   src={WIDGET_URL}
                   title="Pronto Pizza Waitlist"
                   className="w-full border-0"
-                  style={{ minHeight: '280px', height: '280px' }}
+                  style={{ minHeight: '240px', height: '240px' }}
                   scrolling="no"
                 />
               </div>
-              <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
+              <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-start pt-1">
                 <h3 className="text-xl md:text-2xl font-display text-pronto-cream mb-3">
                   HOW IT WORKS
                 </h3>
