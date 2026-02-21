@@ -28,6 +28,7 @@ const Navbar: React.FC = () => {
   const [isMounted, setIsMounted] = useState(false);
   const currentPath = usePathname();
 
+  const hideCompletely = currentPath === '/inglewood/waitlist';
   const hideOnScrollPages = ['/inglewood', '/downtown', '/about', '/contact'];
   const shouldHideOnScroll = hideOnScrollPages.includes(currentPath);
 
