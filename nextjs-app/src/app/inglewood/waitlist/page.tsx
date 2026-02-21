@@ -21,7 +21,7 @@ export default function WaitlistPage() {
   }, []);
 
   return (
-    <div className="bg-black min-h-full w-full overflow-x-hidden relative">
+    <div className="bg-black min-h-full md:h-full w-full md:overflow-hidden overflow-x-hidden relative">
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -33,7 +33,7 @@ export default function WaitlistPage() {
         transition={{ duration: 1.5, ease: 'easeOut' }}
       />
 
-      <div className="absolute inset-0 min-h-full bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
 
       {isMounted && (
         <>
@@ -50,7 +50,7 @@ export default function WaitlistPage() {
         </>
       )}
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 min-h-full flex flex-col justify-center items-center py-16 md:py-0">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 min-h-full md:h-full flex flex-col justify-center items-center pt-14 pb-6 md:pt-0 md:pb-0">
         <div className="absolute top-3 left-6">
           <Link
             href="/inglewood"
@@ -65,12 +65,12 @@ export default function WaitlistPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center mb-3 md:mb-6"
+          className="text-center mb-2 md:mb-6"
         >
-          <h1 className="text-3xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-1">
+          <h1 className="text-3xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-1 md:mb-2">
             JOIN THE
           </h1>
-          <h1 className="text-3xl md:text-7xl font-display text-pronto-orange tracking-wide leading-none mb-2">
+          <h1 className="text-3xl md:text-7xl font-display text-pronto-orange tracking-wide leading-none mb-1 md:mb-3">
             WAITLIST
           </h1>
           <div className="flex items-center justify-center gap-2 text-white/60 font-mono-serif text-sm md:text-base tracking-wide">
