@@ -118,22 +118,19 @@ export default function WaitlistPage() {
           className="w-full max-w-3xl"
         >
           <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl shadow-pronto-orange/5">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
-              <div className="w-full md:w-1/2 flex justify-center">
-                <div ref={containerRef} className="w-full min-h-[120px]"></div>
+            <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-10">
+              <div className="w-full md:w-1/2 flex justify-center items-center">
+                <div ref={containerRef} className="w-full"></div>
               </div>
               <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
                 <h3 className="text-xl md:text-2xl font-display text-pronto-cream mb-3">
                   HOW IT WORKS
                 </h3>
-                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-3">
-                  Skip the line by joining our virtual waitlist. Add your name and party size, and we'll let you know when your table is ready.
-                </p>
-                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-3">
-                  You'll receive a text notification so you can wait wherever you're comfortable.
+                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-2">
+                  Skip the line by joining our virtual waitlist. Add your name and party size, and we'll notify you when your table is ready.
                 </p>
                 <p className="font-mono-serif text-pronto-orange/80 text-sm leading-relaxed italic">
-                  Walk-ins are always welcome. The waitlist helps us seat you faster during busy hours.
+                  Walk-ins always welcome. The waitlist helps us seat you faster during busy hours.
                 </p>
               </div>
             </div>
