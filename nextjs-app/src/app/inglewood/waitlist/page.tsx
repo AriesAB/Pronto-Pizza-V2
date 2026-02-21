@@ -21,7 +21,7 @@ export default function WaitlistPage() {
   }, []);
 
   return (
-    <div className="bg-black h-full w-full overflow-hidden relative">
+    <div className="bg-black min-h-full w-full overflow-y-auto relative">
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -50,8 +50,8 @@ export default function WaitlistPage() {
         </>
       )}
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex flex-col justify-center items-center pt-12 md:pt-0">
-        <div className="absolute top-3 left-6">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 min-h-full flex flex-col justify-center items-center py-16 md:py-0">
+        <div className="w-full mb-2">
           <Link
             href="/inglewood"
             className="inline-flex items-center gap-2 text-pronto-cream/70 hover:text-pronto-orange font-mono-serif text-sm uppercase tracking-wider transition-colors"
@@ -65,15 +65,15 @@ export default function WaitlistPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center mb-4 md:mb-6"
+          className="text-center mb-3 md:mb-6"
         >
-          <h1 className="text-4xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-2">
+          <h1 className="text-3xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-1">
             JOIN THE
           </h1>
-          <h1 className="text-4xl md:text-7xl font-display text-pronto-orange tracking-wide leading-none mb-3">
+          <h1 className="text-3xl md:text-7xl font-display text-pronto-orange tracking-wide leading-none mb-2">
             WAITLIST
           </h1>
-          <div className="flex items-center justify-center gap-2 text-white/60 font-mono-serif text-sm md:text-base tracking-wide">
+          <div className="flex items-center justify-center gap-2 text-white/60 font-mono-serif text-xs md:text-base tracking-wide">
             <MapPin size={14} className="text-pronto-orange" />
             <span>Inglewood &mdash; 1139 9th Ave SE, Calgary</span>
           </div>
@@ -85,8 +85,8 @@ export default function WaitlistPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full max-w-3xl"
         >
-          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-5 shadow-2xl shadow-pronto-orange/5">
-            <div className="flex flex-col md:flex-row items-center gap-5 md:gap-8">
+          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-3 md:p-5 shadow-2xl shadow-pronto-orange/5">
+            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8">
               <div className="w-full md:w-1/2 flex justify-center">
                 <iframe
                   src={WIDGET_URL}
