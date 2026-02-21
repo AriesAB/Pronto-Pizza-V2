@@ -118,12 +118,6 @@ export default function Home() {
             <h1 className="text-7xl md:text-9xl font-display font-black text-pronto-cream tracking-wide drop-shadow-lg leading-none">
               INGLEWOOD
             </h1>
-            <a
-              href="/inglewood/waitlist"
-              className="mt-4 bg-white/10 border-2 border-pronto-cream text-pronto-cream px-8 py-3 font-bold text-xl uppercase tracking-wider hover:bg-pronto-cream hover:text-pronto-navy transition-colors"
-            >
-              Join Waitlist
-            </a>
           </div>
         </div>
         <div className="w-full h-1/2 relative overflow-hidden">
@@ -203,20 +197,12 @@ export default function Home() {
               }}
               className="overflow-hidden"
             >
-               <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
-                 <button 
-                  onClick={(e) => { e.stopPropagation(); router.push('/inglewood'); }}
-                  className="bg-pronto-orange text-pronto-navy px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 hover:bg-white transition-colors"
-                 >
-                    View Menu <ArrowUpRight />
-                 </button>
-                 <button 
-                  onClick={(e) => { e.stopPropagation(); router.push('/inglewood/waitlist'); }}
-                  className="bg-white/10 border-2 border-pronto-cream text-pronto-cream px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 hover:bg-pronto-cream hover:text-pronto-navy transition-colors"
-                 >
-                    Join Waitlist
-                 </button>
-               </div>
+               <button 
+                onClick={(e) => { e.stopPropagation(); router.push('/inglewood'); }}
+                className="mt-6 bg-pronto-orange text-pronto-navy px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 mx-auto hover:bg-white transition-colors"
+               >
+                  View Menu <ArrowUpRight />
+               </button>
             </motion.div>
           </motion.div>
         </div>
