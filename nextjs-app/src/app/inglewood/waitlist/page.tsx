@@ -125,11 +125,27 @@ export default function WaitlistPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full max-w-md mx-auto"
+          className="w-full max-w-3xl mx-auto"
         >
-          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl shadow-pronto-orange/5">
-            <div className="flex items-center justify-center w-full">
-              <div ref={containerRef} className="w-full min-h-[150px]"></div>
+          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl shadow-pronto-orange/5">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+              <div className="w-full md:w-1/2 flex justify-center">
+                <div ref={containerRef} className="w-full min-h-[150px]"></div>
+              </div>
+              <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
+                <h3 className="text-2xl md:text-3xl font-display text-pronto-cream mb-4">
+                  HOW IT WORKS
+                </h3>
+                <p className="font-mono-serif text-white/60 text-sm md:text-base leading-relaxed mb-4">
+                  Skip the line by joining our virtual waitlist. Add your name and party size, and we'll let you know when your table is ready.
+                </p>
+                <p className="font-mono-serif text-white/60 text-sm md:text-base leading-relaxed mb-4">
+                  You'll receive a text notification so you can wait wherever you're comfortable — no need to stand around.
+                </p>
+                <p className="font-mono-serif text-pronto-orange/80 text-sm md:text-base leading-relaxed italic">
+                  Walk-ins are always welcome. The waitlist helps us seat you faster during busy hours.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
