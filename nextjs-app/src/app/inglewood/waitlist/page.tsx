@@ -144,11 +144,17 @@ export default function WaitlistPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-4 text-center"
+          className="mt-5 text-center"
         >
-          <p className="text-white/30 font-mono-serif text-xs uppercase tracking-widest">
-            403-993-9093
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-white/50 font-mono-serif text-xs sm:text-sm">
+            <span>403-993-9093</span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span>Mon-Thu 11AM-10PM</span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span>Fri-Sat 11AM-11PM</span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span>Sun 4-9PM</span>
+          </div>
         </motion.div>
       </div>
     </div>
