@@ -57,7 +57,7 @@ export default function WaitlistPage() {
             className="inline-flex items-center gap-2 text-pronto-cream/70 hover:text-pronto-orange font-mono-serif text-sm uppercase tracking-wider transition-colors"
           >
             <ArrowLeft size={16} />
-            Back to Menu
+            Menu
           </Link>
         </div>
 
