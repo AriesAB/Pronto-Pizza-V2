@@ -117,8 +117,8 @@ export default function WaitlistPage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-3 text-center"
         >
-          <p className="text-pronto-orange/70 font-mono-serif text-[10px] md:text-xs uppercase tracking-wider mb-1">Hours of Operation</p>
-          <p className="text-white/40 font-mono-serif text-[10px] md:text-xs leading-relaxed">
+          <p className="text-pronto-orange font-mono-serif text-xs md:text-sm uppercase tracking-wider mb-1">Hours of Operation</p>
+          <p className="text-white font-mono-serif text-xs md:text-sm leading-relaxed">
             Mon–Thu: 11 AM – 2 PM, 4 – 10 PM &nbsp;|&nbsp; Fri–Sat: 11 AM – 2 PM, 4 – 11 PM &nbsp;|&nbsp; Sun: 4 – 9 PM
           </p>
         </motion.div>
