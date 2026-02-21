@@ -85,25 +85,25 @@ export default function WaitlistPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full max-w-3xl"
         >
-          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6 shadow-2xl shadow-pronto-orange/5">
-            <div className="flex flex-col md:flex-row items-start gap-5 md:gap-8">
+          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-5 shadow-2xl shadow-pronto-orange/5">
+            <div className="flex flex-col md:flex-row items-center gap-5 md:gap-8">
               <div className="w-full md:w-1/2 flex justify-center">
                 <iframe
                   src={WIDGET_URL}
                   title="Pronto Pizza Waitlist"
                   className="w-full border-0"
-                  style={{ minHeight: '240px', height: '240px' }}
+                  style={{ minHeight: '200px', height: '200px' }}
                   scrolling="no"
                 />
               </div>
-              <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-start pt-1">
-                <h3 className="text-xl md:text-2xl font-display text-pronto-cream mb-3">
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                <h3 className="text-lg md:text-xl font-display text-pronto-cream mb-2">
                   HOW IT WORKS
                 </h3>
-                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-2">
+                <p className="font-mono-serif text-white/60 text-xs leading-relaxed mb-1.5">
                   Skip the line by joining our virtual waitlist. Add your name and party size, and we'll notify you when your table is ready.
                 </p>
-                <p className="font-mono-serif text-pronto-orange/80 text-sm leading-relaxed italic">
+                <p className="font-mono-serif text-pronto-orange/80 text-xs leading-relaxed italic">
                   Walk-ins always welcome. The waitlist helps us seat you faster during busy hours.
                 </p>
               </div>
