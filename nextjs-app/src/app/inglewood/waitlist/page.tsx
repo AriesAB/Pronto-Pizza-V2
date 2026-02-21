@@ -1,59 +1,23 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft, MapPin } from 'lucide-react';
 
+const WIDGET_URL = 'https://www.waitlist.me/load_widget_iframe_src/?wg=18711190655&';
+
 export default function WaitlistPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const cleanup = () => {
-      const script = document.getElementById('wlme_inclscript');
-      if (script) script.remove();
+    return () => {
       const wrapper = document.getElementById('wlme_widget_wrapper');
       if (wrapper) wrapper.remove();
-      const styles = document.getElementById('wlme_custom_styles');
-      if (styles) styles.remove();
-      const iframes = document.querySelectorAll('iframe[src*="waitlist.me"]');
-      iframes.forEach(iframe => iframe.remove());
+      const script = document.getElementById('wlme_inclscript');
+      if (script) script.remove();
     };
-
-    cleanup();
-
-    const style = document.createElement('style');
-    style.id = 'wlme_custom_styles';
-    style.textContent = `
-      #wlme_widget_wrapper,
-      #wlme_widget_wrapper * {
-        position: static !important;
-        float: none !important;
-      }
-      #wlme_widget_wrapper {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100% !important;
-      }
-      #wlme_widget_wrapper > div {
-        margin: 0 auto !important;
-      }
-    `;
-    document.head.appendChild(style);
-
-    const script = document.createElement('script');
-    script.id = 'wlme_inclscript';
-    script.src = 'https://www.waitlist.me/load_widget/?wg=18711190655';
-    containerRef.current.appendChild(script);
-
-    return cleanup;
   }, []);
 
   return (
@@ -124,7 +88,13 @@ export default function WaitlistPage() {
           <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl shadow-pronto-orange/5">
             <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-10">
               <div className="w-full md:w-1/2 flex justify-center items-center">
-                <div ref={containerRef} className="w-full"></div>
+                <iframe
+                  src={WIDGET_URL}
+                  title="Pronto Pizza Waitlist"
+                  className="w-full border-0"
+                  style={{ minHeight: '280px', height: '280px' }}
+                  scrolling="no"
+                />
               </div>
               <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
                 <h3 className="text-xl md:text-2xl font-display text-pronto-cream mb-3">
