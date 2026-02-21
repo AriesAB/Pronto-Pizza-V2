@@ -16,11 +16,18 @@ export default function WaitlistPage() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const existing = document.getElementById('wlme_inclscript');
-    if (existing) existing.remove();
+    const cleanup = () => {
+      const script = document.getElementById('wlme_inclscript');
+      if (script) script.remove();
+      const wrapper = document.getElementById('wlme_widget_wrapper');
+      if (wrapper) wrapper.remove();
+      const styles = document.getElementById('wlme_custom_styles');
+      if (styles) styles.remove();
+      const iframes = document.querySelectorAll('iframe[src*="waitlist.me"]');
+      iframes.forEach(iframe => iframe.remove());
+    };
 
-    const existingWrapper = document.getElementById('wlme_widget_wrapper');
-    if (existingWrapper) existingWrapper.remove();
+    cleanup();
 
     const style = document.createElement('style');
     style.id = 'wlme_custom_styles';
@@ -46,10 +53,7 @@ export default function WaitlistPage() {
     script.src = 'https://www.waitlist.me/load_widget/?wg=18711190655';
     containerRef.current.appendChild(script);
 
-    return () => {
-      const s = document.getElementById('wlme_custom_styles');
-      if (s) s.remove();
-    };
+    return cleanup;
   }, []);
 
   return (
