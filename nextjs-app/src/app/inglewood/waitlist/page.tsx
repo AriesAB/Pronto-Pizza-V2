@@ -100,10 +100,10 @@ export default function WaitlistPage() {
                 <h3 className="text-lg md:text-xl font-display text-pronto-cream mb-2">
                   HOW IT WORKS
                 </h3>
-                <p className="font-mono-serif text-white/60 text-xs leading-relaxed mb-1.5">
+                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-1.5">
                   Skip the line by joining our virtual waitlist. Add your name and party size, and we'll notify you when your table is ready.
                 </p>
-                <p className="font-mono-serif text-pronto-orange/80 text-xs leading-relaxed italic">
+                <p className="font-mono-serif text-pronto-orange/80 text-sm leading-relaxed italic">
                   Walk-ins always welcome. The waitlist helps us seat you faster during busy hours.
                 </p>
               </div>
