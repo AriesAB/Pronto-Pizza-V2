@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, Clock, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, MapPin } from 'lucide-react';
 
 export default function WaitlistPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ export default function WaitlistPage() {
   }, []);
 
   return (
-    <div className="bg-black min-h-full w-full overflow-x-hidden relative">
+    <div className="bg-black h-full w-full overflow-hidden relative">
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -79,16 +79,11 @@ export default function WaitlistPage() {
             transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
             className="absolute -top-32 -right-32 w-64 h-64 border-[30px] border-pronto-blue/10 rounded-full"
           />
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/2 -right-16 w-32 h-32 border-[15px] border-pronto-orange/5 rounded-full"
-          />
         </>
       )}
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-12 md:py-20 flex flex-col items-center min-h-full">
-        <div className="w-full mb-8">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex flex-col justify-center items-center">
+        <div className="absolute top-4 left-6">
           <Link
             href="/inglewood"
             className="inline-flex items-center gap-2 text-pronto-cream/70 hover:text-pronto-orange font-mono-serif text-sm uppercase tracking-wider transition-colors"
@@ -99,50 +94,45 @@ export default function WaitlistPage() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
-          <img
-            src="/assets/pronto-logo.png"
-            alt="Pronto Pizza"
-            className="h-16 w-auto mx-auto mb-8"
-          />
-          <h1 className="text-5xl md:text-8xl font-display text-pronto-cream tracking-wide leading-none mb-3">
+          <h1 className="text-4xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-2">
             JOIN THE
           </h1>
-          <h1 className="text-5xl md:text-8xl font-display text-pronto-orange tracking-wide leading-none mb-6">
+          <h1 className="text-4xl md:text-7xl font-display text-pronto-orange tracking-wide leading-none mb-3">
             WAITLIST
           </h1>
-          <div className="flex items-center justify-center gap-2 text-white/60 font-mono-serif text-lg md:text-xl tracking-wide">
-            <MapPin size={18} className="text-pronto-orange" />
+          <div className="flex items-center justify-center gap-2 text-white/60 font-mono-serif text-sm md:text-base tracking-wide">
+            <MapPin size={14} className="text-pronto-orange" />
             <span>Inglewood &mdash; 1139 9th Ave SE, Calgary</span>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full max-w-3xl mx-auto"
+          className="w-full max-w-3xl"
         >
-          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl shadow-pronto-orange/5">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl shadow-pronto-orange/5">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
               <div className="w-full md:w-1/2 flex justify-center">
-                <div ref={containerRef} className="w-full min-h-[150px]"></div>
+                <div ref={containerRef} className="w-full min-h-[120px]"></div>
               </div>
               <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
-                <h3 className="text-2xl md:text-3xl font-display text-pronto-cream mb-4">
+                <h3 className="text-xl md:text-2xl font-display text-pronto-cream mb-3">
                   HOW IT WORKS
                 </h3>
-                <p className="font-mono-serif text-white/60 text-sm md:text-base leading-relaxed mb-4">
+                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-3">
                   Skip the line by joining our virtual waitlist. Add your name and party size, and we'll let you know when your table is ready.
                 </p>
-                <p className="font-mono-serif text-white/60 text-sm md:text-base leading-relaxed mb-4">
-                  You'll receive a text notification so you can wait wherever you're comfortable — no need to stand around.
+                <p className="font-mono-serif text-white/60 text-sm leading-relaxed mb-3">
+                  You'll receive a text notification so you can wait wherever you're comfortable.
                 </p>
-                <p className="font-mono-serif text-pronto-orange/80 text-sm md:text-base leading-relaxed italic">
+                <p className="font-mono-serif text-pronto-orange/80 text-sm leading-relaxed italic">
                   Walk-ins are always welcome. The waitlist helps us seat you faster during busy hours.
                 </p>
               </div>
@@ -151,29 +141,13 @@ export default function WaitlistPage() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-4 text-center"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/50 font-mono-serif text-sm">
-            <div className="flex items-center gap-2">
-              <Phone size={14} className="text-pronto-orange/70" />
-              <span>403-993-9093</span>
-            </div>
-            <div className="hidden sm:block w-1 h-1 rounded-full bg-white/30"></div>
-            <div className="flex items-center gap-2">
-              <Clock size={14} className="text-pronto-orange/70" />
-              <span>Mon-Thu 11AM-10PM</span>
-            </div>
-            <div className="hidden sm:block w-1 h-1 rounded-full bg-white/30"></div>
-            <div className="flex items-center gap-2">
-              <Clock size={14} className="text-pronto-orange/70" />
-              <span>Fri-Sat 11AM-11PM</span>
-            </div>
-          </div>
-          <p className="text-white/30 font-mono-serif text-xs mt-6 uppercase tracking-widest">
-            Sunday 4-9PM
+          <p className="text-white/30 font-mono-serif text-xs uppercase tracking-widest">
+            403-993-9093
           </p>
         </motion.div>
       </div>
