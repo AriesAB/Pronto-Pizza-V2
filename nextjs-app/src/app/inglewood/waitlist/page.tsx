@@ -85,7 +85,7 @@ export default function WaitlistPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full max-w-3xl"
         >
-          <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-5 shadow-2xl shadow-pronto-orange/5">
+          <div className="bg-black border border-white/10 rounded-2xl p-4 md:p-5 shadow-2xl shadow-pronto-orange/5">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
               <div className="w-full md:w-1/2 flex justify-center">
                 <iframe
