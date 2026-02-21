@@ -94,16 +94,16 @@ const Navbar: React.FC = () => {
                 href={item.path}
                 className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
                   item.label === 'JOIN WAITLIST'
-                    ? 'text-[#FF5A1F] hover:text-white'
+                    ? 'text-lg text-[#FF5A1F] hover:text-white border border-[#FF5A1F]/30 px-3 py-1 rounded whitespace-nowrap hover:border-white/40'
                     : currentPath === item.path 
                       ? 'text-[#FF5A1F]'
                       : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                 }`}
               >
                 <span>{item.label}</span>
-                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${
-                  item.label === 'JOIN WAITLIST' ? 'w-full' : currentPath === item.path ? 'w-full' : 'w-0'
-                }`} />
+                {item.label !== 'JOIN WAITLIST' && (
+                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0'}`} />
+                )}
               </Link>
             ))}
           </div>
@@ -158,16 +158,16 @@ const Navbar: React.FC = () => {
                 onClick={handleNavClick}
                 className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
                   item.label === 'JOIN WAITLIST'
-                    ? 'text-[#FF5A1F] hover:text-white'
+                    ? 'text-lg text-[#FF5A1F] hover:text-white border border-[#FF5A1F]/30 px-3 py-1 rounded whitespace-nowrap hover:border-white/40'
                     : currentPath === item.path 
                       ? 'text-[#FF5A1F]'
                       : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                 }`}
               >
                 <span>{item.label}</span>
-                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${
-                  item.label === 'JOIN WAITLIST' ? 'w-full' : currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} />
+                {item.label !== 'JOIN WAITLIST' && (
+                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                )}
               </Link>
             )
           ))}
