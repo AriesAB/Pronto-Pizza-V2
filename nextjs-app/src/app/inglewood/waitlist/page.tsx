@@ -50,8 +50,8 @@ export default function WaitlistPage() {
         </>
       )}
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex flex-col justify-center items-center">
-        <div className="absolute top-4 left-6">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex flex-col justify-center items-center pt-12 md:pt-0">
+        <div className="absolute top-3 left-6">
           <Link
             href="/inglewood"
             className="inline-flex items-center gap-2 text-pronto-cream/70 hover:text-pronto-orange font-mono-serif text-sm uppercase tracking-wider transition-colors"
@@ -65,7 +65,7 @@ export default function WaitlistPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-6"
+          className="text-center mb-4 md:mb-6"
         >
           <h1 className="text-4xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-2">
             JOIN THE
