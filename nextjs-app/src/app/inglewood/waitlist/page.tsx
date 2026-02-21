@@ -67,11 +67,9 @@ export default function WaitlistPage() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center mb-2 md:mb-6"
         >
-          <h1 className="text-3xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-1 md:mb-2">
-            JOIN THE
-          </h1>
-          <h1 className="text-3xl md:text-7xl font-display text-pronto-orange tracking-wide leading-none mb-1 md:mb-3">
-            WAITLIST
+          <h1 className="text-3xl md:text-7xl font-display tracking-wide leading-none mb-1 md:mb-3">
+            <span className="text-pronto-cream">JOIN THE </span>
+            <span className="text-pronto-orange">WAITLIST</span>
           </h1>
           <div className="flex items-center justify-center gap-2 text-white/60 font-mono-serif text-sm md:text-base tracking-wide">
             <MapPin size={14} className="text-pronto-orange" />
