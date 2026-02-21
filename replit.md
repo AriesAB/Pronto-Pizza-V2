@@ -112,8 +112,6 @@ cd nextjs-app && npm run dev
   - Updated hero animation text to show "ANTIPASTI • PIZZA • DIPS •"
 - **Feb 2026**: Added Waitlist.me integration for Inglewood location
   - Created /inglewood/waitlist page with embedded Waitlist.me widget (widget ID: 18711190655)
-  - Added "JOIN WAITLIST" link to navbar (rightmost position, orange with subtle border CTA style)
+  - Added "JOIN WAITLIST" link to navbar (rightmost position, orange with underline CTA style)
   - Added "Join Waitlist" button on Inglewood page hero section
   - Landing page Inglewood hover shows only "View Menu" button
-  - Created /inglewood/waitlist/qr printable QR code page for in-store display
-  - Added print media query to hide navbar during printing

@@ -40,13 +40,3 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-@media print {
-  nav {
-    display: none !important;
-  }
-  main {
-    height: auto !important;
-    overflow: visible !important;
-  }
-}
