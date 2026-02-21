@@ -62,9 +62,22 @@ export default function WaitlistPage() {
         </div>
 
         <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-3"
+        >
+          <img
+            src="/assets/pronto-logo.png"
+            alt="Pronto Pizza"
+            className="h-12 md:h-16 w-auto mx-auto"
+          />
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center mb-4 md:mb-6"
         >
           <h1 className="text-4xl md:text-7xl font-display text-pronto-cream tracking-wide leading-none mb-2">
@@ -111,20 +124,6 @@ export default function WaitlistPage() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-3 text-center"
-        >
-          <div className="flex flex-col items-center justify-center gap-1 text-white/50 font-mono-serif text-xs sm:text-sm">
-            <span>403-993-9093</span>
-            <span className="mt-2 text-white/30 text-xs uppercase tracking-wider">Hours of Operation</span>
-            <span>Mon - Thu: 11 AM - 2 PM, 4 - 10 PM</span>
-            <span>Fri - Sat: 11 AM - 2 PM, 4 - 11 PM</span>
-            <span>Sun: 4 - 9 PM</span>
-          </div>
-        </motion.div>
       </div>
     </div>
   );
