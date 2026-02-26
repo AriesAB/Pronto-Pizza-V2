@@ -331,7 +331,7 @@ const menuSections: MenuSectionData[] = [
   {
     id: "vino",
     title: "VINO",
-    note: "6oz / 9oz / 750ml  •  Tuesdays ½ Price on Bottled Wine!!",
+    note: "6oz / 9oz / 750ml\nTuesdays ½ Price on Bottled Wine!!",
     subcategories: [
       {
         title: "WHITE WINE",
@@ -669,7 +669,7 @@ export default function InglewoodPage() {
                         {section.title}
                         </h3>
                         {section.note && (
-                        <p className="font-mono-serif text-white text-sm md:text-xl font-bold italic md:ml-auto max-w-md text-right">
+                        <p className="font-mono-serif text-white text-sm md:text-xl font-bold italic md:ml-auto max-w-md text-right whitespace-pre-line">
                             {section.note}
                         </p>
                         )}
