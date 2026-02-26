@@ -331,20 +331,30 @@ const menuSections: MenuSectionData[] = [
   {
     id: "vino",
     title: "VINO",
-    note: "6 OZ",
+    note: "GLASS / HALF / BOTTLE — Tuesdays ½ Price on Bottled Wine!!",
     subcategories: [
       {
         title: "WHITE WINE",
         items: [
           {
             name: "",
-            price: "15",
-            ingredients: "PINOT GRIGIO - SANTA MARGHERITA"
+            price: "14 / 21 / 54",
+            ingredients: "PINOT GRIGIO - TAVO"
           },
           {
             name: "",
-            price: "18",
-            ingredients: "CHARDONNAY"
+            price: "14.50 / 21.50 / 55",
+            ingredients: "PINOT GRIGIO - QUALIS GATE"
+          },
+          {
+            name: "",
+            price: "14 / 21 / 54",
+            ingredients: "PINOT GRIGIO - DELLE VENEZIE"
+          },
+          {
+            name: "",
+            price: "14 / 21 / 54",
+            ingredients: "PROSECCO SPUMANTE VENETO - RIONDO"
           }
         ]
       },
@@ -353,13 +363,23 @@ const menuSections: MenuSectionData[] = [
         items: [
           {
             name: "",
-            price: "18",
-            ingredients: "TORRE ZAMBRA"
+            price: "14 / 21 / 54",
+            ingredients: "MONTEPULCIANO D'ABRUZZO - BAJO"
           },
           {
             name: "",
-            price: "18",
-            ingredients: "CATENA MALBEC"
+            price: "15.50 / 22.75 / 60",
+            ingredients: "DOLCETTO D'ALBA PIEDMONT - VAJRA"
+          },
+          {
+            name: "",
+            price: "14.50 / 21 / 55",
+            ingredients: "LAMBRUSCO EMILIA ROMAGNA - LINI 910"
+          },
+          {
+            name: "",
+            price: "15 / 21.75 / 57",
+            ingredients: "ROSÉ IGP MEDITERRANEE - DOMAINE TRIENNES"
           }
         ]
       }
