@@ -331,7 +331,7 @@ const menuSections: MenuSectionData[] = [
   {
     id: "vino",
     title: "VINO",
-    note: "GLASS / HALF / BOTTLE — Tuesdays ½ Price on Bottled Wine!!",
+    note: "6oz / 9oz / 750ml  •  Tuesdays ½ Price on Bottled Wine!!",
     subcategories: [
       {
         title: "WHITE WINE",
