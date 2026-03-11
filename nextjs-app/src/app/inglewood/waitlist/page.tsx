@@ -117,8 +117,8 @@ export default function WaitlistPage() {
         >
           <p className="text-pronto-orange font-mono-serif text-xs md:text-sm uppercase tracking-wider mb-1">Hours of Operation</p>
           <div className="text-white font-mono-serif text-xs md:text-sm leading-relaxed">
-            <p>Mon–Thu: 11 AM – 2 PM, 4 – 10 PM</p>
-            <p>Fri–Sat: 11 AM – 2 PM, 4 – 11 PM</p>
+            <p>Mon–Thu: 11 AM – 2 PM, 4 – 9 PM</p>
+            <p>Fri–Sat: 11 AM – 2 PM, 4 – 10 PM</p>
             <p>Sun: 4 – 9 PM</p>
           </div>
         </motion.div>
