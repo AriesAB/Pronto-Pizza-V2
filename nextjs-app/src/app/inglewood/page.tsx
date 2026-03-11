@@ -31,18 +31,18 @@ const localBusinessSchema = {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
       "opens": "11:00",
-      "closes": "22:00"
+      "closes": "21:00"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Friday", "Saturday"],
       "opens": "11:00",
-      "closes": "23:00"
+      "closes": "22:00"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Sunday"],
-      "opens": "11:00",
+      "opens": "16:00",
       "closes": "21:00"
     }
   ]
@@ -730,8 +730,8 @@ export default function InglewoodPage() {
            <div className="py-6">
              <p className="text-pronto-orange font-bold uppercase tracking-wider mb-4">Hours of operation</p>
              <div className="space-y-1 text-base">
-                <p>Monday to Thursday - 11 AM - 2 PM, 4 - 10 PM</p>
-                <p>Friday to Saturday - 11 AM - 2 PM, 4 - 11 PM</p>
+                <p>Monday to Thursday - 11 AM - 2 PM, 4 - 9 PM</p>
+                <p>Friday to Saturday - 11 AM - 2 PM, 4 - 10 PM</p>
                 <p>Sunday - 4 - 9 PM</p>
              </div>
            </div>
