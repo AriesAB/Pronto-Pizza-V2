@@ -48,3 +48,8 @@ run = ["bash", "-c", "cd nextjs-app && npm run start"]
 [[deployment.rewrites]]
 from = "/*"
 to = "/index.html"
+
+[userenv]
+
+[userenv.shared]
+GMAIL_USER = "yycpronto@gmail.com"
