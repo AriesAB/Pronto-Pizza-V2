@@ -270,7 +270,7 @@ export default function Home() {
                 onClick={(e) => { e.stopPropagation(); router.push('/downtown'); }}
                 className="mt-16 bg-pronto-blue text-pronto-cream px-8 py-3 font-bold text-xl uppercase tracking-wider flex items-center gap-2 mx-auto hover:bg-white hover:text-pronto-blue transition-colors"
               >
-                  Book Catering <ArrowUpRight />
+                  View Menu <ArrowUpRight />
                </button>
             </motion.div>
           </motion.div>
