@@ -150,8 +150,7 @@ export async function POST(request: NextRequest) {
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <div style="background-color: #0a0a0a; padding: 30px; border-radius: 12px 12px 0 0; text-align: center;">
-              <h1 style="color: #FF5A1F; margin: 0; font-size: 28px;">PRONTO</h1>
-              <p style="color: #FEFBF6; margin: 8px 0 0 0; font-size: 14px; letter-spacing: 3px;">PIZZA</p>
+              <img src="https://yycpronto.com/assets/pronto-logo.png" alt="PRONTO Pizza" style="height: 70px; width: auto;" />
             </div>
             <div style="background-color: #1a1a1a; padding: 30px; color: #FEFBF6;">
               <p style="font-size: 18px; margin: 0 0 16px 0;">Hi ${htmlName},</p>
