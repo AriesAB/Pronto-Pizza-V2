@@ -23,7 +23,7 @@ const localBusinessSchema = {
   image: "https://yycpronto.com/assets/pronto-logo.png",
   logo: "https://yycpronto.com/assets/pronto-logo.png",
   url: "https://yycpronto.com/inglewood",
-  telephone: "+1-403-993-9093",
+  telephone: "+1-403-926-7717",
   priceRange: "$$",
   servesCuisine: ["Italian", "Pizza"],
   address: {

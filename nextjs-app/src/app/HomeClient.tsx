@@ -15,7 +15,7 @@ const restaurantSchema = {
       "name": "Pronto Pizza - Inglewood",
       "image": "https://yycpronto.com/assets/logo.jpg",
       "url": "https://yycpronto.com/inglewood",
-      "telephone": "+1-403-555-1234",
+      "telephone": "+1-403-926-7717",
       "priceRange": "$$",
       "servesCuisine": ["Italian", "Pizza"],
       "address": {

@@ -10,7 +10,7 @@ const localBusinessSchema = {
   "name": "Pronto Pizza - Inglewood",
   "image": "https://yycpronto.com/assets/pronto-logo.png",
   "url": "https://yycpronto.com/inglewood",
-  "telephone": "+1-403-555-1234",
+  "telephone": "+1-403-926-7717",
   "priceRange": "$$",
   "servesCuisine": ["Italian", "Pizza"],
   "address": {
@@ -725,7 +725,7 @@ export default function InglewoodPage() {
         <h3 className="text-5xl font-display text-white mb-8 uppercase tracking-widest">Inglewood</h3>
         <div className="font-mono-serif text-xl text-white space-y-2">
            <p className="font-bold">1139 9th Ave SE</p>
-           <p>403-993-9093</p>
+           <p>(403) 926-7717</p>
            
            <div className="py-6">
              <p className="text-pronto-orange font-bold uppercase tracking-wider mb-4">Hours of operation</p>
