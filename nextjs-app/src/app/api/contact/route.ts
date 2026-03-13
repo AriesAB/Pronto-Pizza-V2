@@ -22,6 +22,10 @@ function stripControlChars(str: string): string {
   return str.replace(/[\r\n\t\0]/g, ' ');
 }
 
+function stripControlCharsKeepNewlines(str: string): string {
+  return str.replace(/[\r\t\0]/g, ' ');
+}
+
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const entry = ipRequestMap.get(ip);
@@ -89,7 +93,7 @@ export async function POST(request: NextRequest) {
 
     const safeName = stripControlChars(rawName);
     const safeEmail = stripControlChars(rawEmail);
-    const safeMessage = stripControlChars(rawMessage);
+    const safeMessage = stripControlCharsKeepNewlines(rawMessage);
 
     const htmlName = escapeHtml(safeName);
     const htmlEmail = escapeHtml(safeEmail);
