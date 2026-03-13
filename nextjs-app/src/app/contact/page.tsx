@@ -46,6 +46,7 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setIsMounted(true);
@@ -54,10 +55,28 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Something went wrong. Please try again.');
+      } else {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      }
+    } catch {
+      setError('Could not send your message. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -275,6 +294,12 @@ export default function ContactPage() {
                         placeholder="What's on your mind?"
                       />
                     </div>
+                    {error && (
+                      <div className="bg-red-500/10 border border-red-500/30 rounded-xl px-5 py-4 text-red-400 font-mono-serif text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
