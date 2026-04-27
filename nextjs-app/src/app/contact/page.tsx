@@ -394,7 +394,8 @@ export default function ContactPage() {
                       <div className="font-mono-serif">
                         <p className="text-pronto-cream text-lg">(403) 926-7717</p>
                         <div className="text-sm mt-2 space-y-0.5">
-                          <p>Monday to Thursday - 11 AM - 2 PM, 4 - 9 PM</p>
+                          <p>Monday - Closed</p>
+                          <p>Tuesday to Thursday - 11 AM - 2 PM, 4 - 9 PM</p>
                           <p>Friday to Saturday - 11 AM - 2 PM, 4 - 10 PM</p>
                           <p>Sunday - 4 - 9 PM</p>
                         </div>
