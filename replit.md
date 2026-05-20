@@ -115,3 +115,13 @@ cd nextjs-app && npm run dev
   - Added "JOIN WAITLIST" link to navbar (rightmost position, orange with underline CTA style)
   - Added "Join Waitlist" button on Inglewood page hero section
   - Landing page Inglewood hover shows only "View Menu" button
+- **May 2026**: Inglewood closed on Mondays
+  - Added "Closed Monday" line to all visible Inglewood hours displays (Inglewood page, contact page)
+  - Removed Monday from Inglewood schema.org openingHoursSpecification (Inglewood page, Inglewood layout, homepage)
+  - Tuesday-Thursday, Friday-Saturday, and Sunday hours unchanged
+- **May 2026**: Removed waitlist page
+  - Deleted `/inglewood/waitlist` page and its directory
+  - Removed "JOIN WAITLIST" nav link from Navbar (desktop + mobile menu) and cleaned up the dead conditional styling
+  - Removed "Join Waitlist" buttons from Inglewood page hero (desktop + mobile versions)
+  - Design reference saved at `attached_assets/image_1779241849076.png` for future restoration
+  - To bring it back: recreate the page using the saved screenshot; the Waitlist.me widget ID is `18711190655` (iframe URL: `https://www.waitlist.me/load_widget_iframe_src/?wg=18711190655&`); add the nav item and hero buttons back

@@ -18,7 +18,6 @@ const navItems: NavItem[] = [
   { label: 'DOWNTOWN', path: '/downtown' },
   { label: 'ABOUT', path: '/about' },
   { label: 'CONTACT', path: '/contact' },
-  { label: 'JOIN WAITLIST', path: '/inglewood/waitlist' },
 ];
 
 const Navbar: React.FC = () => {
@@ -93,17 +92,13 @@ const Navbar: React.FC = () => {
                 key={item.label}
                 href={item.path}
                 className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
-                  item.label === 'JOIN WAITLIST'
-                    ? 'text-lg text-[#FF5A1F] hover:text-white border border-[#FF5A1F]/30 px-3 py-1 rounded whitespace-nowrap hover:border-white/40'
-                    : currentPath === item.path 
-                      ? 'text-[#FF5A1F]'
-                      : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
+                  currentPath === item.path 
+                    ? 'text-[#FF5A1F]'
+                    : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                 }`}
               >
                 <span>{item.label}</span>
-                {item.label !== 'JOIN WAITLIST' && (
-                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0'}`} />
-                )}
+                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0'}`} />
               </Link>
             ))}
           </div>
@@ -157,17 +152,13 @@ const Navbar: React.FC = () => {
                 href={item.path}
                 onClick={handleNavClick}
                 className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
-                  item.label === 'JOIN WAITLIST'
-                    ? 'text-lg text-[#FF5A1F] hover:text-white border border-[#FF5A1F]/30 px-3 py-1 rounded whitespace-nowrap hover:border-white/40'
-                    : currentPath === item.path 
-                      ? 'text-[#FF5A1F]'
-                      : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
+                  currentPath === item.path 
+                    ? 'text-[#FF5A1F]'
+                    : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                 }`}
               >
                 <span>{item.label}</span>
-                {item.label !== 'JOIN WAITLIST' && (
-                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                )}
+                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>
             )
           ))}
@@ -215,11 +206,9 @@ const Navbar: React.FC = () => {
                     href={item.path}
                     onClick={handleNavClick}
                     className={`text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center ${
-                      item.label === 'JOIN WAITLIST'
+                      currentPath === item.path
                         ? 'text-[#FF5A1F]'
-                        : currentPath === item.path
-                          ? 'text-[#FF5A1F]'
-                          : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
+                        : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
                     }`}
                   >
                     <span>{item.label}</span>
