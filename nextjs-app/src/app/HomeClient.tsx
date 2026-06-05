@@ -116,7 +116,7 @@ export default function Home() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2574&auto=format&fit=crop")',
+              backgroundImage: 'url("/assets/inglewood-hero.webp")',
             }}
           />
           <div className="absolute inset-0 bg-pronto-navy/40" />
@@ -174,7 +174,7 @@ export default function Home() {
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2574&auto=format&fit=crop")',
+            backgroundImage: 'url("/assets/inglewood-hero.webp")',
           }}
           variants={imageVariants}
           animate={hoveredSection === 'top' ? 'hovered' : 'initial'}
