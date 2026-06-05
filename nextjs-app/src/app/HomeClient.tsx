@@ -119,7 +119,7 @@ export default function Home() {
               backgroundImage: 'url("/assets/inglewood-hero.webp")',
             }}
           />
-          <div className="absolute inset-0 bg-pronto-navy/40" />
+          <div className="absolute inset-0 bg-pronto-navy/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
             <h1 className="text-7xl md:text-9xl font-display font-black text-pronto-cream tracking-wide drop-shadow-lg leading-none">
               INGLEWOOD
@@ -181,7 +181,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-pronto-navy/40 group-hover:bg-pronto-navy/20 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-pronto-navy/20 group-hover:bg-pronto-navy/10 transition-colors duration-500" />
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
