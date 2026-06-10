@@ -96,9 +96,10 @@ const Navbar: React.FC = () => {
                   href={item.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl font-bold font-mono-serif tracking-widest text-[#FF5A1F] border-2 border-[#FF5A1F] px-6 py-2 rounded transition-all duration-300 hover:scale-105 hover:bg-[#FF5A1F]/10 hover:shadow-[0_0_18px_rgba(255,90,31,0.55)]"
+                  className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group text-[#FF5A1F]"
                 >
                   <span>{item.label}</span>
+                  <span className="absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 w-0 group-hover:w-full" />
                 </a>
               ) : (
                 <Link
@@ -158,9 +159,10 @@ const Navbar: React.FC = () => {
                 href={item.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl font-bold font-mono-serif tracking-widest text-[#FF5A1F] border-2 border-[#FF5A1F] px-6 py-2 rounded transition-all duration-300 hover:scale-105 hover:bg-[#FF5A1F]/10 hover:shadow-[0_0_18px_rgba(255,90,31,0.55)]"
+                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group text-[#FF5A1F]"
               >
                 <span>{item.label}</span>
+                <span className="absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 w-0 group-hover:w-full" />
               </a>
             ) : item.isButton ? (
               <button
@@ -220,7 +222,7 @@ const Navbar: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleNavClick}
-                    className="text-4xl font-mono-serif font-bold my-4 transition-all duration-300 flex flex-col items-center text-[#FF5A1F] border-2 border-[#FF5A1F] px-8 py-3 rounded hover:scale-105 hover:bg-[#FF5A1F]/10 hover:shadow-[0_0_18px_rgba(255,90,31,0.55)]"
+                    className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-[#FF5A1F]"
                   >
                     <span>{item.label}</span>
                   </a>
