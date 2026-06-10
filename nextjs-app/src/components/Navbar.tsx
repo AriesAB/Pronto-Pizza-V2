@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
                   href={item.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl font-bold font-mono-serif tracking-widest transition-colors text-[#FF5A1F] hover:text-white border-2 border-[#FF5A1F] px-6 py-2 rounded"
+                  className="text-2xl font-bold font-mono-serif tracking-widest transition-colors text-[#FF5A1F] hover:text-white hover:bg-[#FF5A1F] border-2 border-[#FF5A1F] px-6 py-2 rounded"
                 >
                   <span>{item.label}</span>
                 </a>
@@ -158,7 +158,7 @@ const Navbar: React.FC = () => {
                 href={item.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors text-[#FF5A1F] hover:text-white border-2 border-[#FF5A1F] px-6 py-2 rounded"
+                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors text-[#FF5A1F] hover:text-white hover:bg-[#FF5A1F] border-2 border-[#FF5A1F] px-6 py-2 rounded"
               >
                 <span>{item.label}</span>
               </a>
@@ -220,7 +220,7 @@ const Navbar: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleNavClick}
-                    className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-[#FF5A1F] hover:text-white border-2 border-[#FF5A1F] px-8 py-3 rounded"
+                    className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-[#FF5A1F] hover:text-white hover:bg-[#FF5A1F] border-2 border-[#FF5A1F] px-8 py-3 rounded"
                   >
                     <span>{item.label}</span>
                   </a>
