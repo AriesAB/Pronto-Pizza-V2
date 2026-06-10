@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/inglewood/waitlist',
+        destination: '/inglewood',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
