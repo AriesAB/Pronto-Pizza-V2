@@ -10,6 +10,7 @@ interface NavItem {
   label: string;
   path: string;
   isButton?: boolean;
+  external?: boolean;
 }
 
 const navItems: NavItem[] = [
@@ -18,6 +19,7 @@ const navItems: NavItem[] = [
   { label: 'DOWNTOWN', path: '/downtown' },
   { label: 'ABOUT', path: '/about' },
   { label: 'CONTACT', path: '/contact' },
+  { label: 'RESERVATION', path: 'https://www.opentable.ca/r/pronto-pizza-reservations-calgary?restref=1525060&lang=en-CA&ot_source=Restaurant%20website', external: true },
 ];
 
 const Navbar: React.FC = () => {
@@ -88,18 +90,31 @@ const Navbar: React.FC = () => {
           </Link>
           <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.path}
-                className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
-                  currentPath === item.path 
-                    ? 'text-[#FF5A1F]'
-                    : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
-                }`}
-              >
-                <span>{item.label}</span>
-                <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0'}`} />
-              </Link>
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group text-[#FF5A1F]"
+                >
+                  <span>{item.label}</span>
+                  <span className="absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] w-full" />
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.path}
+                  className={`text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group ${
+                    currentPath === item.path 
+                      ? 'text-[#FF5A1F]'
+                      : 'text-[#1A1B8C] hover:text-[#FF5A1F]'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <span className={`absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] transition-all duration-300 ${currentPath === item.path ? 'w-full' : 'w-0'}`} />
+                </Link>
+              )
             ))}
           </div>
           <button className="md:hidden relative z-50 text-[#1A1B8C] hover:text-[#FF5A1F] transition-colors" aria-label="Open menu">
@@ -138,7 +153,18 @@ const Navbar: React.FC = () => {
 
         <div className="hidden md:flex items-center space-x-12">
           {navItems.map((item) => (
-            item.isButton ? (
+            item.external ? (
+              <a
+                key={item.label}
+                href={item.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group text-[#FF5A1F]"
+              >
+                <span>{item.label}</span>
+                <span className="absolute -bottom-1 left-0 h-1 bg-[#FF5A1F] w-full" />
+              </a>
+            ) : item.isButton ? (
               <button
                 key={item.label}
                 className="text-2xl font-bold font-mono-serif tracking-widest transition-colors relative group px-8 py-2 border-2 border-[#1A1B8C] text-[#1A1B8C] hover:border-[#FF5A1F] hover:text-[#FF5A1F] inline-flex flex-col items-center justify-center leading-tight"
@@ -184,7 +210,24 @@ const Navbar: React.FC = () => {
             className="fixed inset-0 bg-pronto-navy flex flex-col justify-center items-center z-40"
           >
             {navItems.map((item, index) => (
-              item.isButton ? (
+              item.external ? (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
+                >
+                  <a
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={handleNavClick}
+                    className="text-4xl font-mono-serif font-bold my-4 transition-colors flex flex-col items-center text-[#FF5A1F]"
+                  >
+                    <span>{item.label}</span>
+                  </a>
+                </motion.div>
+              ) : item.isButton ? (
                 <motion.button
                   key={item.label}
                   initial={{ opacity: 0, y: 50 }}
