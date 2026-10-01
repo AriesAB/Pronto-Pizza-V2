@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Send, MapPin, Phone } from 'lucide-react';
-import InglewoodHours from '@/components/InglewoodHours';
+import { inglewoodHours } from '@/lib/inglewood-hours';
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">
@@ -394,12 +394,19 @@ export default function ContactPage() {
                       </div>
                       <div className="font-mono-serif">
                         <p className="text-pronto-cream text-lg">(403) 926-7717</p>
+                        <div className="text-sm mt-1 space-y-1">
+                          <p>Monday: Closed</p>
+                          {inglewoodHours.map(({ label, dinnerLabel }) => (
+                            <p key={label}>
+                              {label}: <span className="inline-block">11:30 AM – 2 PM</span>
+                              {", "}<span className="inline-block">5 PM – {dinnerLabel}</span>
+                            </p>
+                          ))}
+                          <p>Sunday: 4 PM – 9 PM</p>
+                          <p>Tuesday–Saturday: Closed between 2 PM and 5 PM</p>
+                        </div>
                       </div>
                     </motion.div>
-                    <div className="w-full sm:pl-16 font-mono-serif text-pronto-cream/90">
-                      <p className="text-pronto-orange font-bold uppercase tracking-wider mb-2">Hours of operation</p>
-                      <InglewoodHours spacious compact />
-                    </div>
                   </div>
 
                   {/* Downtown */}
