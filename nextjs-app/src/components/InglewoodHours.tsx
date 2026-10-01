@@ -1,10 +1,10 @@
 import { inglewoodHours } from "@/lib/inglewood-hours";
 
-export default function InglewoodHours({ spacious = false }: { spacious?: boolean }) {
+export default function InglewoodHours({ spacious = false, compact = false }: { spacious?: boolean; compact?: boolean }) {
   if (spacious) {
     return (
       <div className="w-full text-left">
-        <table className="w-full table-fixed text-sm sm:text-lg md:text-xl">
+        <table className={`w-full table-fixed ${compact ? "text-sm xl:text-base" : "text-sm sm:text-lg md:text-xl"}`}>
           <caption className="sr-only">Inglewood hours of operation</caption>
           <thead className="text-pronto-orange">
             <tr className="border-b border-white/30">

@@ -394,11 +394,12 @@ export default function ContactPage() {
                       </div>
                       <div className="font-mono-serif">
                         <p className="text-pronto-cream text-lg">(403) 926-7717</p>
-                        <div className="text-sm mt-2">
-                          <InglewoodHours />
-                        </div>
                       </div>
                     </motion.div>
+                    <div className="w-full sm:pl-16 font-mono-serif text-pronto-cream/90">
+                      <p className="text-pronto-orange font-bold uppercase tracking-wider mb-2">Hours of operation</p>
+                      <InglewoodHours spacious compact />
+                    </div>
                   </div>
 
                   {/* Downtown */}
