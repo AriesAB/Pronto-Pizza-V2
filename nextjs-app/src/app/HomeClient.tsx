@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import Script from 'next/script';
+import { inglewoodOpeningHours } from '@/lib/inglewood-hours';
 
 const restaurantSchema = {
   "@context": "https://schema.org",
@@ -26,26 +27,7 @@ const restaurantSchema = {
         "postalCode": "T2G 0T3",
         "addressCountry": "CA"
       },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
-          "opens": "11:00",
-          "closes": "21:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Friday", "Saturday"],
-          "opens": "11:00",
-          "closes": "22:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Sunday"],
-          "opens": "16:00",
-          "closes": "21:00"
-        }
-      ]
+      "openingHoursSpecification": inglewoodOpeningHours
     },
     {
       "@type": "Restaurant",

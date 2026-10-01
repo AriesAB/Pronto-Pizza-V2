@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import InglewoodHours from '@/components/InglewoodHours';
+import { inglewoodOpeningHours } from '@/lib/inglewood-hours';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -26,26 +28,7 @@ const localBusinessSchema = {
     "latitude": 51.0360,
     "longitude": -114.0497
   },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
-      "opens": "11:00",
-      "closes": "21:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Friday", "Saturday"],
-      "opens": "11:00",
-      "closes": "22:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Sunday"],
-      "opens": "16:00",
-      "closes": "21:00"
-    }
-  ]
+  "openingHoursSpecification": inglewoodOpeningHours
 };
 
 const breadcrumbSchema = {
@@ -718,11 +701,8 @@ export default function InglewoodPage() {
            
            <div className="py-6">
              <p className="text-pronto-orange font-bold uppercase tracking-wider mb-4">Hours of operation</p>
-             <div className="space-y-1 text-base">
-                <p>Closed Monday</p>
-                <p>Tuesday to Thursday - 11 AM - 2 PM, 4 - 9 PM</p>
-                <p>Friday to Saturday - 11 AM - 2 PM, 4 - 10 PM</p>
-                <p>Sunday - 4 - 9 PM</p>
+             <div className="text-base">
+                <InglewoodHours />
              </div>
            </div>
         </div>

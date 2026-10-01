@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Send, MapPin, Phone } from 'lucide-react';
+import InglewoodHours from '@/components/InglewoodHours';
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">
@@ -393,11 +394,8 @@ export default function ContactPage() {
                       </div>
                       <div className="font-mono-serif">
                         <p className="text-pronto-cream text-lg">(403) 926-7717</p>
-                        <div className="text-sm mt-2 space-y-0.5">
-                          <p>Closed Monday</p>
-                          <p>Tuesday to Thursday - 11 AM - 2 PM, 4 - 9 PM</p>
-                          <p>Friday to Saturday - 11 AM - 2 PM, 4 - 10 PM</p>
-                          <p>Sunday - 4 - 9 PM</p>
+                        <div className="text-sm mt-2">
+                          <InglewoodHours />
                         </div>
                       </div>
                     </motion.div>

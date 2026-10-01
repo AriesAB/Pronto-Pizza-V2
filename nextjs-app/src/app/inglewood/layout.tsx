@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { inglewoodOpeningHours } from "@/lib/inglewood-hours";
 
 export const metadata: Metadata = {
   title: "Inglewood Menu | Pronto Pizza Calgary",
@@ -39,26 +40,7 @@ const localBusinessSchema = {
     latitude: 51.036,
     longitude: -114.0497,
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
-      opens: "11:00",
-      closes: "21:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Friday", "Saturday"],
-      opens: "11:00",
-      closes: "22:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Sunday"],
-      opens: "16:00",
-      closes: "21:00",
-    },
-  ],
+  openingHoursSpecification: inglewoodOpeningHours,
 };
 
 const breadcrumbSchema = {
