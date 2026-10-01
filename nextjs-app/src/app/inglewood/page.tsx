@@ -90,100 +90,94 @@ interface MenuSectionData {
 
 const menuSections: MenuSectionData[] = [
   {
-    id: "antipasti",
-    title: "ANTIPASTI",
+    id: "small-bites",
+    title: "SMALL BITES",
     items: [
       {
         name: "BRUSCHETTA",
         price: "12",
-        ingredients: "Italian Style Grilled Homemade Bread with Classic Pomodoro and Basil Topping (6pc). Add Burrata $8"
+        ingredients: "Grilled house bread, fresh tomato, basil & olive oil (6pc). Add burrata $8"
       },
       {
         name: "CAESAR SALAD",
         price: "15.50",
-        ingredients: "Romaine, Croutons, Shaved Parmesan with Homemade Caesar Dressing"
+        ingredients: "Romaine, croutons, shaved Parmesan & house Caesar dressing"
       },
       {
-        name: "CAPRESE",
-        price: "13.50",
-        ingredients: "Mozzarella, Pomodori, Arugula, with Olive Oil Dressing"
+        name: "GARLIC PARMESAN KNOTS",
+        price: "18",
+        ingredients: "Fresh-baked pizza dough tossed in garlic butter, Parmesan & herbs. Served with tomato sauce for dipping."
       },
       {
         name: "POLPETTE",
         price: "18",
-        ingredients: "House-made Meatballs Simmered in Rich Tomato Sauce, Finished with Shaved Parmesan"
-      },
-      {
-        name: "ANTIPASTO PLATTER",
-        price: "22",
-        ingredients: "Italian-Style Board with Proscuitto, Soppresata, Assorted Marinated Olives, Manchego, Taleggio, Chili Fig Jam, and Rosemary Croccantini"
+        ingredients: "House-made meatballs simmered in rich tomato sauce, finished with shaved Parmesan"
       }
     ]
   },
   {
     id: "pizza",
     title: '12" / 18" PIZZA',
-    note: "Ask your server what the pizza of the week is!",
     items: [
       {
         name: "THE OG",
         price: "23 / 33",
-        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Basil, Olive Oil"
+        ingredients: "San Marzano tomato sauce, mozzarella, basil, olive oil"
       },
       {
         name: "QUATTRO FORMAGGI",
         price: "25 / 35",
-        ingredients: "San Marzano Tomato Sauce, Parmigiano, Mozzarella di Bufala, Provolone, Asiago, hot Honey Drizzle"
+        ingredients: "San Marzano tomato sauce, Parmigiano, mozzarella, provolone, asiago, hot honey drizzle"
       },
       {
         name: "MAMMA MIA",
         price: "27 / 37",
-        ingredients: "San Marzano Tomato Sauce, Spicy Calabrese Sausage, Mozzarella di Bufala, Pepperoncino, Parmigiano"
+        ingredients: "San Marzano tomato sauce, spicy calabrese sausage, mozzarella, pepperoncino, Parmigiano"
       },
       {
-        name: "TONY PEPPERONI",
+        name: "TONY’S PEPPERONI",
         price: "27 / 37",
-        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Ezzo Pepperoni, Dollop of Ricotta, Hot Honey Drizzle"
+        ingredients: "San Marzano tomato sauce, mozzarella, Ezzo pepperoni, dollop of ricotta, hot honey drizzle"
       },
       {
         name: "FORBIDDEN PIE",
         price: "25 / 35",
-        ingredients: "San Marzano Tomato Sauce, Pineapple slices, Prosciutto Cotto, Asiago, Mozzarella di Bufala"
+        ingredients: "San Marzano tomato sauce, pineapple slices, prosciutto cotto, asiago, mozzarella"
       },
       {
         name: "PARMA-DRAMA",
         price: "27 / 37",
-        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Caramelized Cherry Tomato, Prosciutto, Arugula, Shaved Parmesan cheese"
-      },
-      {
-        name: "FUN GUY",
-        price: "27 / 37",
-        ingredients: "San Marzano Tomato Sauce, Mozzarella di Bufala, Italian Meatball, Marinated Oyster Mushroom, and Gorgonzola"
-      },
-      {
-        name: "FUGGADEBOUTIT",
-        price: "27 / 37",
-        ingredients: "Olive Oil base, Mozzarella di Bufala, Arugula, Prosciutto, Chili Fig Jam, Dollop of Ricotta"
-      },
-      {
-        name: "ITALIAN STALLION",
-        price: "28 / 38",
-        ingredients: "San Marzano Tomato Sauce, Ezzo Pepperoni, Fennel Sausage, Pancetta, Mozzarella di Bufala"
-      },
-      {
-        name: "LA MORTA BELLA",
-        price: "30 / 40",
-        ingredients: "San Marzano Tomato Sauce, Mortadella, Creamy Burrata, Crushed Roasted Pistachios, Finished with house made Pesto"
-      },
-      {
-        name: "NONNAS GARDEN",
-        price: "27 / 37",
-        ingredients: "San Marzano Tomato Sauce, Bell Peppers, Caramelized Cherry Tomato, Marinated Oyster Mushroom, Artichoke hearts, Mozzarella di Bufala"
+        ingredients: "San Marzano tomato sauce, mozzarella, caramelized cherry tomato, prosciutto, arugula, shaved Parmesan cheese"
       },
       {
         name: "PEP & SHROOM",
         price: "25 / 35",
-        ingredients: "San Marzano Tomato Sauce, Ezzo Pepperoni, Mozzarella di Bufala, Marinated Oyster mushrooms"
+        ingredients: "San Marzano tomato sauce, Ezzo pepperoni, mozzarella, marinated mushrooms"
+      },
+      {
+        name: "FUGGADEBOUTIT",
+        price: "27 / 37",
+        ingredients: "Olive oil base, mozzarella, arugula, prosciutto, chili fig jam, dollop of ricotta"
+      },
+      {
+        name: "ITALIAN STALLION",
+        price: "28 / 38",
+        ingredients: "San Marzano tomato sauce, Ezzo pepperoni, fennel sausage, pancetta, mozzarella"
+      },
+      {
+        name: "LA MORTA BELLA",
+        price: "30 / 40",
+        ingredients: "San Marzano tomato sauce, mortadella, creamy burrata, crushed roasted pistachios, finished with house made pesto"
+      },
+      {
+        name: "NONNAS GARDEN",
+        price: "27 / 37",
+        ingredients: "San Marzano tomato sauce, bell peppers, caramelized cherry tomato, marinated mushroom, artichoke hearts, mozzarella"
+      },
+      {
+        name: "THE GODFATHER",
+        price: "28 / 38",
+        ingredients: "San Marzano tomato sauce, caramelized cherry tomatoes, arugula, creamy burrata, balsamic glaze"
       }
     ]
   },
@@ -197,12 +191,22 @@ const menuSections: MenuSectionData[] = [
           {
             name: "",
             price: "4",
-            ingredients: "Garlic Parmesan Dip"
+            ingredients: "Garlic Parmesan Aioli"
           },
           {
             name: "",
             price: "4",
             ingredients: "Hot Honey"
+          },
+          {
+            name: "",
+            price: "3",
+            ingredients: "Whipped Garlic Butter"
+          },
+          {
+            name: "DIP TRIO",
+            price: "9",
+            ingredients: "Garlic Parmesan Aioli, Hot Honey & Whipped Garlic Butter"
           }
         ]
       }
@@ -214,13 +218,13 @@ const menuSections: MenuSectionData[] = [
     items: [
       {
         name: "TIRAMISU",
-        price: "12.50",
-        ingredients: "Espresso-Soaked Ladyfingers Layered with Silky Mascarpone Cream and Topped with Cocoa"
+        price: "12",
+        ingredients: "Espresso-soaked ladyfingers layered with silky mascarpone cream and topped with cocoa"
       },
       {
-        name: "CHEESECAKE",
-        price: "12.50",
-        ingredients: "Rich, Creamy Cheesecake with a buttery Graham Cracker Crust"
+        name: "NUTELLA PIZZA",
+        price: "16",
+        ingredients: "Nutella, whipped honey ricotta, crushed pistachios & flaky sea salt"
       }
     ]
   },
@@ -292,27 +296,27 @@ const menuSections: MenuSectionData[] = [
         ]
       },
       {
-        title: "COCKTAIL",
+        title: "Cocktails",
         items: [
           {
-            name: "MOSCOW MULE",
-            price: "15.50",
-            ingredients: "VODKA • LIME JUICE • GINGER BEER • MINT"
-          },
-          {
-            name: "THATS AMORE SPRITZ",
+            name: "Tiramisu Martini",
             price: "16",
-            ingredients: "RASPBERRY • LIMONCELLO • PROSECCO • SODA WATER • MINT"
+            ingredients: "Vodka, espresso, coffee liqueur, vanilla, mascarpone foam, cocoa"
           },
           {
-            name: "APEROL SPRITZ",
-            price: "17",
-            ingredients: "PROSECCO • APEROL • SODA WATER • ORANGE SLICE"
+            name: "Fig and Honey Sour",
+            price: "16",
+            ingredients: "Bourbon, fig, honey, fresh lemon"
           },
           {
-            name: "ESPRESSO MARTINI",
-            price: "17",
-            ingredients: "VODKA • ESPRESSO • COFFEE LIQUEUR"
+            name: "Cranberry Lemon Lemoncello Spritz",
+            price: "15",
+            ingredients: "Limoncello, cranberry, Prosecco, soda, fresh lemon"
+          },
+          {
+            name: "Hot Honey Margarita",
+            price: "21",
+            ingredients: "Tequila, fresh lime, orange liqueur, hot honey, chili-salt rim"
           }
         ]
       },
@@ -457,7 +461,7 @@ const MenuItem = ({ item, isMounted }: { item: MenuItemData; isMounted: boolean 
 };
 
 const HeroTextAnimation: React.FC<{ isMounted: boolean }> = ({ isMounted }) => {
-  const text = "ANTIPASTI • PIZZA • DESSERT • ";
+  const text = "SMALL BITES • PIZZA • DESSERT • ";
   const repeatedText = Array(15).fill(text).join("");
   
   if (!isMounted) {
