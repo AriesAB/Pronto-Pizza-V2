@@ -403,7 +403,7 @@ export default function ContactPage() {
                             </p>
                           ))}
                           <p>Sunday: 4 PM – 9 PM</p>
-                          <p>Tuesday–Saturday: Closed between 2 PM and 5 PM</p>
+                          <p>Tuesday–Saturday: (Closed between 2 PM and 5 PM)</p>
                         </div>
                       </div>
                     </motion.div>
