@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Send, MapPin, Phone } from 'lucide-react';
+import { Send, MapPin, Phone, Mail } from 'lucide-react';
 import { inglewoodHours } from '@/lib/inglewood-hours';
 
 const TikTokIcon = () => (
@@ -440,6 +440,20 @@ export default function ContactPage() {
                         </div>
                       </div>
                     </motion.div>
+                    <div className="flex items-center gap-4 text-pronto-cream/70">
+                      <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
+                        <Mail className="w-5 h-5 text-pronto-orange" aria-hidden="true" />
+                      </div>
+                      <div className="font-mono-serif min-w-0">
+                        <p className="text-sm mb-1">Catering enquiries</p>
+                        <a
+                          href="mailto:annibalebruno@gmail.com"
+                          className="text-pronto-cream text-base sm:text-lg break-all underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
+                        >
+                          annibalebruno@gmail.com
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </RevealText>

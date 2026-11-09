@@ -492,6 +492,15 @@ export default function DowntownPage() {
         <div className="font-mono-serif text-xl text-white space-y-2">
            <p className="font-bold">605 5th Ave, SW</p>
            <p>403-993-9093</p>
+           <div className="pt-4">
+             <p className="text-pronto-orange font-bold uppercase tracking-wider text-sm mb-2">Catering enquiries</p>
+             <a
+               href="mailto:annibalebruno@gmail.com"
+               className="inline-block max-w-full break-all text-base sm:text-xl underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
+             >
+               annibalebruno@gmail.com
+             </a>
+           </div>
            
            <div className="py-6 space-y-2">
              <p className="text-pronto-orange font-bold uppercase tracking-wider">Hours of operation</p>
