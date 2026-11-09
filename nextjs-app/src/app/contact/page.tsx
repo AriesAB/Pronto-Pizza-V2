@@ -436,23 +436,8 @@ export default function ContactPage() {
                   </div>
 
                   {/* Downtown */}
-                  <div id="downtown-catering" className="space-y-6 scroll-mt-32 min-w-0 border-t border-pronto-cream/15 pt-10 lg:border-t-0 lg:pt-0">
+                  <div id="downtown-catering" className="flex flex-col gap-6 scroll-mt-32 min-w-0 border-t border-pronto-cream/15 pt-10 lg:border-t-0 lg:pt-0">
                     <h4 className="text-xl font-mono-serif text-pronto-orange uppercase tracking-widest">Downtown (5th & 5th)</h4>
-                    <div className="rounded-lg border border-pronto-orange/40 bg-pronto-orange/5 p-5 sm:p-6 font-mono-serif">
-                      <p className="flex items-center gap-3 text-pronto-orange text-lg font-bold">
-                        <Mail className="w-5 h-5 shrink-0" aria-hidden="true" />
-                        Catering enquiries
-                      </p>
-                      <p className="text-pronto-cream/70 text-sm mt-3 mb-4">
-                        Planning an event? Email our Downtown catering team directly.
-                      </p>
-                      <a
-                        href="mailto:annibalebruno@gmail.com?subject=Downtown%20Catering%20Enquiry"
-                        className="block text-pronto-cream text-lg sm:text-xl break-all underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
-                      >
-                        annibalebruno@gmail.com
-                      </a>
-                    </div>
                     <motion.div
                       whileHover={{ x: 10 }}
                       className="flex items-center gap-4 text-pronto-cream/70"
@@ -481,6 +466,18 @@ export default function ContactPage() {
                         </div>
                       </div>
                     </motion.div>
+                    <div className="lg:mt-auto rounded-lg border border-pronto-orange/40 bg-pronto-orange/5 px-4 py-3 font-mono-serif">
+                      <p className="flex items-center gap-2 text-pronto-orange text-sm font-bold mb-1">
+                        <Mail className="w-4 h-4 shrink-0" aria-hidden="true" />
+                        Catering enquiries
+                      </p>
+                      <a
+                        href="mailto:annibalebruno@gmail.com?subject=Downtown%20Catering%20Enquiry"
+                        className="block text-pronto-cream text-base sm:text-lg break-all underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
+                      >
+                        annibalebruno@gmail.com
+                      </a>
+                    </div>
                   </div>
                   </div>
                 </div>
