@@ -127,7 +127,7 @@ export default function ContactPage() {
               Us
             </h1>
             <p className="mt-12 text-xl md:text-2xl text-[#FEFBF6]/70 max-w-2xl font-mono leading-relaxed">
-              We'd love to hear from you. Drop us a message or find us on social media.
+              We&apos;d love to hear from you. Drop us a message or find us on social media.
             </p>
           </div>
         </section>
@@ -210,29 +210,64 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-12 text-xl md:text-2xl text-pronto-cream/70 max-w-2xl font-mono-serif leading-relaxed"
           >
-            We'd love to hear from you. Drop us a message or find us on social media.
+            We&apos;d love to hear from you. Drop us a message or find us on social media.
           </motion.p>
         </div>
       </section>
 
-      <section ref={formRef} className="py-24 md:py-32 px-6 md:px-16 relative">
+      <section ref={formRef} className="py-12 md:py-20 px-6 md:px-16 relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pronto-orange/30 to-transparent" />
         
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-x-12 xl:gap-x-20 gap-y-12 md:gap-y-16 items-start">
             <div className="relative">
               <RevealText>
-                <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-8">
+                <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-6">
                   Send Us a <span className="text-pronto-orange">Message</span>
                 </h2>
               </RevealText>
 
               <RevealText delay={0.1}>
                 <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed mb-8">
-                  Have a question, feedback, or just want to say hello? Fill out the form and we'll get back to you as soon as possible.
+                  Have a question, feedback, or just want to say hello? Fill out the form and we&apos;ll get back to you as soon as possible.
                 </p>
               </RevealText>
 
+              <div className="mt-8 border-t border-pronto-cream/15 pt-8">
+                <RevealText>
+                  <h2 className="text-2xl md:text-3xl font-mono-serif text-pronto-cream mb-4">
+                    Follow <span className="text-pronto-orange">Along</span>
+                  </h2>
+                </RevealText>
+                <RevealText delay={0.1}>
+                  <p className="text-base text-pronto-cream/70 font-mono-serif leading-relaxed mb-6">
+                    Stay connected with us on social media for the latest updates, behind-the-scenes content, and more delicious moments.
+                  </p>
+                </RevealText>
+                <RevealText delay={0.2}>
+                  <div className="flex flex-wrap gap-3">
+                    {socialLinks.map((social, i) => (
+                      <motion.a
+                        key={social.name}
+                        href={social.href}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ delay: 0.3 + i * 0.1 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="flex items-center gap-2 px-4 py-3 rounded-full border border-pronto-cream/20 text-pronto-cream hover:border-pronto-orange hover:bg-pronto-orange/10 focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors group"
+                      >
+                        <span className="text-pronto-orange">
+                          <social.icon />
+                        </span>
+                        <span className="font-mono-serif">{social.name}</span>
+                      </motion.a>
+                    ))}
+                  </div>
+                </RevealText>
+              </div>
+            </div>
+
+            <div className="relative min-w-0">
               {submitted ? (
                 <RevealText delay={0.2}>
                   <motion.div
@@ -244,7 +279,7 @@ export default function ContactPage() {
                       <Send className="w-8 h-8 text-pronto-orange" />
                     </div>
                     <h3 className="text-2xl font-mono-serif text-pronto-cream mb-2">Message Sent!</h3>
-                    <p className="text-pronto-cream/70 font-mono-serif">Thank you for reaching out. We'll be in touch soon.</p>
+                    <p className="text-pronto-cream/70 font-mono-serif">Thank you for reaching out. We&apos;ll be in touch soon.</p>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -258,7 +293,8 @@ export default function ContactPage() {
               ) : (
                 <RevealText delay={0.2}>
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="min-w-0">
                       <label htmlFor="name" className="block text-pronto-cream/70 font-mono text-sm uppercase tracking-wider mb-2">
                         Name
                       </label>
@@ -273,7 +309,7 @@ export default function ContactPage() {
                         placeholder="Your name"
                       />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <label htmlFor="email" className="block text-pronto-cream/70 font-mono text-sm uppercase tracking-wider mb-2">
                         Email
                       </label>
@@ -287,6 +323,7 @@ export default function ContactPage() {
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-pronto-cream font-mono-serif focus:outline-none focus:border-pronto-orange transition-colors"
                         placeholder="your@email.com"
                       />
+                    </div>
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-pronto-cream/70 font-mono text-sm uppercase tracking-wider mb-2">
@@ -337,52 +374,19 @@ export default function ContactPage() {
               )}
             </div>
 
-            <div className="relative lg:pl-8">
-              <RevealText>
-                <h2 className="text-4xl md:text-6xl font-mono-serif text-pronto-cream mb-12">
-                  Follow <span className="text-pronto-orange">Along</span>
-                </h2>
-              </RevealText>
-
+            <div className="relative lg:col-span-2 border-t border-pronto-cream/15 pt-10 md:pt-12">
               <RevealText delay={0.1}>
-                <p className="text-lg text-pronto-cream/70 font-mono-serif leading-relaxed mb-8">
-                  Stay connected with us on social media for the latest updates, behind-the-scenes content, and more delicious moments.
-                </p>
-              </RevealText>
-
-              <RevealText delay={0.2}>
-                <div className="flex flex-wrap gap-4">
-                  {socialLinks.map((social, i) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ delay: 0.3 + i * 0.1 }}
-                      whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 107, 53, 0.2)" }}
-                      className="flex items-center gap-3 px-6 py-4 rounded-full border border-pronto-cream/20 text-pronto-cream hover:border-pronto-orange transition-colors group"
-                    >
-                      <span className="text-pronto-orange group-hover:scale-110 transition-transform">
-                        <social.icon />
-                      </span>
-                      <span className="font-mono-serif">{social.name}</span>
-                    </motion.a>
-                  ))}
-                </div>
-              </RevealText>
-
-              <RevealText delay={0.4}>
-                <div className="mt-16 space-y-12">
-                  <h3 className="text-2xl font-mono-serif text-pronto-cream mb-6">
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-mono-serif text-pronto-cream mb-8">
                     Location <span className="text-pronto-orange">& Info</span>
                   </h3>
-                  
+                  <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-20">
                   {/* Inglewood */}
-                  <div className="space-y-6">
+                  <div className="space-y-6 min-w-0">
                     <h4 className="text-xl font-mono-serif text-pronto-orange uppercase tracking-widest">Inglewood</h4>
                     <motion.div
                       whileHover={{ x: 10 }}
-                      className="flex items-center gap-4 text-pronto-cream/70"
+                      className="flex items-start gap-4 text-pronto-cream/70"
                     >
                       <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
                         <MapPin className="w-5 h-5 text-pronto-orange" />
@@ -395,7 +399,7 @@ export default function ContactPage() {
                     
                     <motion.div
                       whileHover={{ x: 10 }}
-                      className="flex items-center gap-4 text-pronto-cream/70"
+                      className="flex items-start gap-4 text-pronto-cream/70"
                     >
                       <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
                         <Phone className="w-5 h-5 text-pronto-orange" />
@@ -432,7 +436,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Downtown */}
-                  <div id="downtown-catering" className="space-y-6 scroll-mt-32">
+                  <div id="downtown-catering" className="space-y-6 scroll-mt-32 min-w-0 border-t border-pronto-cream/15 pt-10 lg:border-t-0 lg:pt-0">
                     <h4 className="text-xl font-mono-serif text-pronto-orange uppercase tracking-widest">Downtown (5th & 5th)</h4>
                     <div className="rounded-lg border border-pronto-orange/40 bg-pronto-orange/5 p-5 sm:p-6 font-mono-serif">
                       <p className="flex items-center gap-3 text-pronto-orange text-lg font-bold">
@@ -478,6 +482,7 @@ export default function ContactPage() {
                       </div>
                     </motion.div>
                   </div>
+                  </div>
                 </div>
               </RevealText>
             </div>
@@ -494,7 +499,7 @@ export default function ContactPage() {
           />
           <div className="font-mono text-pronto-cream/50 text-sm">
             <p>© 2026 PRONTO Pizza. All rights reserved.</p>
-            <p className="mt-2 text-pronto-orange">Made with ❤️ by the Bruno Family</p>
+            <p className="mt-2 text-pronto-orange">Made with love by the Bruno Family</p>
           </div>
         </div>
       </footer>
