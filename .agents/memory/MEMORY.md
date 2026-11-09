@@ -1,0 +1,1 @@
+- [Contact email policy](contact-email-policy.md) — notifications only; no automatic customer acknowledgment.

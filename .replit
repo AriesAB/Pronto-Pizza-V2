@@ -53,3 +53,4 @@ to = "/index.html"
 
 [userenv.shared]
 GMAIL_USER = "pronto.waitlist@gmail.com"
+CONTACT_RECIPIENT_EMAIL = "azn403@hotmail.com"
