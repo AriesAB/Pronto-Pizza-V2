@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 
-function CateringEmailLink() {
+function CateringContactLink() {
   return (
     <div className="border-b border-pronto-blue/10 bg-white px-6 py-6 text-center">
       <a
-        href="mailto:annibalebruno@gmail.com?subject=Downtown%20Catering%20Enquiry"
+        href="/contact#downtown-catering"
         className="inline-flex items-center justify-center gap-2 py-2 font-mono-serif text-base text-pronto-blue underline decoration-pronto-blue/30 underline-offset-4 hover:text-pronto-orange hover:decoration-pronto-orange transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pronto-blue"
       >
         <Mail size={18} aria-hidden="true" />
@@ -456,7 +456,7 @@ export default function DowntownPage() {
         </motion.div>
       </div>
 
-      <CateringEmailLink />
+      <CateringContactLink />
 
       <div className="relative w-full max-w-5xl mx-auto px-6 py-24 min-h-screen">
              
@@ -512,10 +512,10 @@ export default function DowntownPage() {
            <div className="pt-4">
              <p className="text-pronto-orange font-bold uppercase tracking-wider text-sm mb-2">Catering enquiries</p>
              <a
-               href="mailto:annibalebruno@gmail.com"
+               href="/contact#downtown-catering"
                className="inline-block max-w-full break-all text-base sm:text-xl underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
              >
-               annibalebruno@gmail.com
+               Contact us about catering
              </a>
            </div>
            
