@@ -415,6 +415,20 @@ export default function ContactPage() {
                         </div>
                       </div>
                     </motion.div>
+                    <div className="flex items-center gap-4 text-pronto-cream/70">
+                      <div className="w-12 h-12 rounded-full bg-pronto-orange/10 flex items-center justify-center shrink-0">
+                        <Mail className="w-5 h-5 text-pronto-orange" aria-hidden="true" />
+                      </div>
+                      <div className="font-mono-serif min-w-0">
+                        <p className="text-sm mb-1">Inglewood enquiries</p>
+                        <a
+                          href="mailto:prontoyyc@gmail.com"
+                          className="text-pronto-cream text-base sm:text-lg break-all underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
+                        >
+                          prontoyyc@gmail.com
+                        </a>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Downtown */}
