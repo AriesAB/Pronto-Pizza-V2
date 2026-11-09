@@ -2,6 +2,21 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Mail } from 'lucide-react';
+
+function CateringHeroButton() {
+  return (
+    <div className="mt-8 px-4">
+      <a
+        href="mailto:annibalebruno@gmail.com?subject=Downtown%20Catering%20Enquiry"
+        className="inline-flex items-center justify-center gap-3 rounded border-2 border-pronto-orange bg-pronto-orange px-6 py-4 font-mono-serif text-base sm:text-lg font-bold uppercase tracking-wider text-black hover:bg-black/70 hover:text-pronto-orange transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      >
+        <Mail size={22} aria-hidden="true" />
+        Email for Catering
+      </a>
+    </div>
+  );
+}
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -310,6 +325,7 @@ export default function DowntownPage() {
             <p className="text-pronto-cream font-mono-serif text-lg md:text-xl tracking-[0.2em] mt-4">
               605 5th Ave, SW, Calgary, Alberta
             </p>
+            <CateringHeroButton />
           </div>
           
           {/* Hero text animation - static version */}
@@ -391,6 +407,7 @@ export default function DowntownPage() {
           >
             605 5th Ave, SW, Calgary, Alberta
           </motion.p>
+          <CateringHeroButton />
         </div>
         
         {/* Hero text animation */}
