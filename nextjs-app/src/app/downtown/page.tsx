@@ -9,9 +9,9 @@ function CateringContactLink() {
     <div className="border-b border-pronto-blue/10 bg-white px-6 py-6 text-center">
       <a
         href="/contact#downtown-catering"
-        className="inline-flex items-center justify-center gap-2 py-2 font-mono-serif text-base text-pronto-blue underline decoration-pronto-blue/30 underline-offset-4 hover:text-pronto-orange hover:decoration-pronto-orange transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pronto-blue"
+        className="inline-flex items-center justify-center gap-3 py-3 font-mono-serif text-xl sm:text-2xl font-bold text-pronto-blue underline decoration-pronto-blue/30 underline-offset-4 hover:text-pronto-orange hover:decoration-pronto-orange transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pronto-blue"
       >
-        <Mail size={18} aria-hidden="true" />
+        <Mail size={24} className="shrink-0" aria-hidden="true" />
         Enquire about catering
       </a>
     </div>
