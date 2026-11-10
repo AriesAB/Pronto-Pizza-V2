@@ -426,10 +426,10 @@ export default function ContactPage() {
                       <div className="font-mono-serif min-w-0">
                         <p className="text-sm mb-1">Inglewood enquiries</p>
                         <a
-                          href="mailto:annibalebruno@gmail.com"
+                          href="mailto:prontoyyc@gmail.com"
                           className="text-pronto-cream text-base sm:text-lg break-all underline underline-offset-4 decoration-pronto-orange/60 hover:text-pronto-orange focus-visible:outline-2 focus-visible:outline-pronto-orange transition-colors"
                         >
-                          annibalebruno@gmail.com
+                          prontoyyc@gmail.com
                         </a>
                       </div>
                     </div>
